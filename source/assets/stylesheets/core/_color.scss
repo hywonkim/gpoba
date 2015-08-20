@@ -1,0 +1,171 @@
+/* ==========================================================================
+//  Global color styles
+// -> base colors are set here on global elements, but modules apply their own
+// -> refer to colors ONLY via the $theme maps
+// ========================================================================== */
+
+/*doc
+---
+title: Color
+name: color
+category: core
+---
+
+Some functions and globals to keep the color scheme DRY and easy to manage in one place. Color for the entire site is handled through structured SASS maps, assigning each color a role:
+
+```
+$theme--default: (
+    text--primary   : $black,
+    text--secondary : #706F6F,
+    text--tertiary  : darken($gray, 10),
+    bg              : white,
+    well            : $gray--superlight,
+    border          : $gray--light,
+    highlight       : $highlight--default,
+    accent          : $blue--dark
+);
+
+```
+You can easily access these colors by "role" with the `theme()` function, like so:
+
+```
+.your-module {
+    color: theme(highlight);
+    background-color: theme(bg);
+
+}
+```
+
+If the site has multiple color schemes (say, "default" and "reverse" themes), you can specify the theme by passing in a second parameter:
+
+```
+background-color: theme(bg, reverse);
+```
+
+The second parameter is optional, and theme() will default to the 'default' theme map.
+
+*/
+
+// Base Colors
+// ----------------------------------------------------------------------
+// -> PRIVATE, do not use outside this settings file
+// -> EXAMPLE:
+$black : #4A4A4A;
+$blue--dark: #8C9498;
+$gray: #C6CBCA;
+$gray--light: #DEE3E3;
+$gray--superlight: #F1F2F3;
+
+$highlight--default: #00AEEF;
+
+// Themes
+// ----------------------------------------------------------------------
+// -> PUBLIC, use these for color references
+
+$theme--default: (
+    text--primary   : $black,
+    text--secondary : #706F6F,
+    text--tertiary  : darken($gray, 10),
+    bg              : white,
+    well            : $gray--superlight,
+    border          : $gray--light,
+    highlight       : $highlight--default,
+    accent          : $blue--dark
+);
+
+$theme--reverse: (
+    text--primary   : white,
+    text--secondary : #ccc,
+    text--tertiary  : #999,
+    bg              : #333,
+    well            : darken(#333, 5),
+    border          : #666,
+    highlight       : white,
+    accent          : #999
+);
+
+// shortcut "get" function to access theme map values
+// -> PUBLIC
+// -> USAGE: color: theme(text--primary);
+@function theme($key, $name: "default") {
+  @if ($name == "reverse") {
+    @return map-get($theme--reverse, $key);
+  } @else {
+    @return map-get($theme--default, $key);
+  }
+}
+
+// Theme Globals
+// ----------------------------------------------------------------------
+// -> set up all the base colors
+
+@mixin theme($theme) {
+    color: theme(text--secondary, $theme);
+    background-color: theme(bg, $theme);
+
+    .well {
+        background: theme(well, $theme);
+    }
+
+    .highlight {
+        color: theme(highlight, $theme);
+    }
+
+    .accent {
+        color: theme(accent, $theme);
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      color: theme(text--secondary, $theme);
+    }
+
+    #{headers()} {
+        color: theme(text--primary, $theme);
+    }
+
+    p, table, li, span {
+        color: theme(text--secondary, $theme);
+    }
+
+    a {
+        color: theme(highlight, $theme);
+    }
+
+    input, textarea {
+        background: theme(well, $theme);
+        border-color: theme(border, $theme);
+
+        &:focus {
+            border-color: theme(highlight, $theme);
+        }
+
+        // http://css-tricks.com/snippets/css/style-placeholder-text/
+        &::-webkit-input-placeholder,
+        &:-moz-placeholder,
+        &::-moz-placeholder,
+        &:-ms-input-placeholder  {
+            color: theme(text--tertiary, $theme);
+        }
+    }
+
+    // highlight color when you select something
+    ::selection {
+      background: theme(highlight, $theme);
+      text-shadow: none;
+    }
+
+    // ditto, for mozilla engine
+    ::-moz-selection {
+      background: theme(highlight, $theme);
+      text-shadow: none;
+    }
+}
+
+/* Default
+// -------------------------------------------------------------------------- */
+body {
+  @include theme(default);
+}

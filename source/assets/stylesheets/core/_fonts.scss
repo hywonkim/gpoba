@@ -1,0 +1,118 @@
+/* =============================================================================
+//  Webfonts
+// ========================================================================== */
+
+/*doc
+---
+title: Fonts
+name: fonts
+category: core
+---
+
+Fonts are accessed through SASS placeholders. Just extend the appropriate one. Fonts are applied to type, globally, in _type.scss, and individual modules can set up their own font styles.
+
+Please DO NOT use your own font-family attributes in any circumstance. Always extend the placeholder.
+
+```
+// display fonts
+// -> headlines, buttons, labels, etc.
+
+@extend %font-display
+@extend %font-display-bold
+
+// body fonts
+// -> paragraphs, captions, etc.
+
+@extend %font-body
+@extend %font-body-italic
+@extend %font-body-bold
+```
+
+*/
+
+@import "libs";
+
+
+// Config & mixins
+// -----------------------------------------------------------------------------
+
+// default type sizes
+$type-size--default: 16px;
+$type-size-amp: 1.1em; // size of ampersands relative to their context
+$type-line_height: 1.5;
+
+@mixin type--default {
+  @include rem(font-size, $type-size--default);
+}
+
+// modular scale
+// -> requires SASS Type Helpers
+$font-scale: 10px 13px 16px 19px 26px 42px 68px 110px;
+
+/* Globals
+// -------------------------------------------------------------------------- */
+
+/* ----- Example @font-face ------------------------------------------------- */
+
+// @font-face {
+//     font-family: 'MuseoSans';
+//     src: font-url('#{$path-fonts}/MuseoSans300.eot');
+//     src: font-url('#{$path-fonts}/MuseoSans300.eot?#iefix') format('embedded-opentype'),
+//          font-url('#{$path-fonts}/MuseoSans300.woff') format('woff'),
+//          font-url('#{$path-fonts}/MuseoSans300.ttf') format('truetype'),
+//          font-url('#{$path-fonts}/MuseoSans300.svg#MuseoSans300') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+/* Font styles
+// -> PUBLIC, use these to style type globally & in modules
+// -------------------------------------------------------------------------- */
+
+/* ----- Display type ------------------------------------------------------- */
+
+%font-display {
+    font-family: $helvetica;
+    font-weight: normal;
+    font-style: normal;
+}
+
+%font-display--bold {
+    @extend %font-display;
+    font-family: $helvetica;
+    font-weight: bold;
+}
+
+
+/* ----- Body type ---------------------------------------------------------- */
+
+%font-body {
+    font-family: $helvetica;
+    font-weight: normal;
+    font-style: normal;
+}
+
+%font-body--italic {
+    @extend %font-body;
+    font-style: italic;
+}
+
+%font-body--bold {
+    @extend %font-body;
+    font-weight: bold;
+}
+
+/* ----- Ampersands --------------------------------------------------------- */
+
+%amp-system {
+  font-family: "Baskerville", "Palatino", "Book Antiqua", serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* use the best ampersands from common system fonts... */
+.amp {
+    @extend %amp-system;
+    font-size: $type-size-amp; /* relative to whatever type surrounds it -- it renders slightly bigger */
+    color: inherit;
+}
