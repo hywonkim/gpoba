@@ -1,7 +1,8 @@
 //= require normalize-css/normalize.css
-//= require vendor/html5bp.css
+//= require html5-boilerplate/dist/css/main.css
 // Pull normalize.css & html5bp in via sprockets, because SASS doesn't compile it
-//-> doing this via @import generates an "@import" in the CSS, which is undesirable
+// -> doing this via @import generates an "@import" in the CSS, which is undesirable
+// -> html5bp css is just base styles for the wireframe. delete or integrate for production.
 
 /* /////////////////////////////////////////////////////////////////////////////
 // Core style helpers
