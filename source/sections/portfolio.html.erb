@@ -1,0 +1,97 @@
+---
+title: Our portfolio
+---
+
+<article>
+    <div class="hero"></div>
+
+    <nav class="jump">
+        <ul>
+            <li>Introduction</li>
+            <li>Composition</li>
+            <li>Performance &amp; results</li>
+            <li>Monitoring &amp; evaluation</li>
+        </ul>
+    </nav>
+
+    <h1>Our portfolio</h1>
+    <div class="l-wrapper">
+        <% 1.upto(4) do |num| %>
+            <p><%= lorem.sentences 4 %></p>
+        <% end %>
+    </div>
+
+    <section class="panel">
+        <h2>Composition</h2>
+        <div class="l-wrapper">
+            <img src="<%= lorem.image '800x400' %>" />
+            <% 1.upto(4) do |num| %>
+                <p><%= lorem.sentences 4 %></p>
+            <% end %>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>Performance &amp; results</h2>
+        <div class="l-wrapper">
+            <% 1.upto(4) do |num| %>
+                <p><%= lorem.sentences 4 %></p>
+            <% end %>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>Monitoring &amp; evaluation</h2>
+        <div class="l-wrapper">
+            <img src="<%= lorem.image '800x400' %>" />
+            <% 1.upto(4) do |num| %>
+                <p><%= lorem.sentences 4 %></p>
+            <% end %>
+        </div>
+    </section>
+
+    <aside class="panel">
+        <h2>Case studies</h2>
+        <ul class="gallery">
+            <li class="gallery-item media">
+                <a href="#" class="media-thumb">
+                    <img src="<%= lorem.image '400x300' %>" />
+                </a>
+                <div class="media-content">
+                    <h3>Case study title lorem ipsum dolor sit</h3>
+                    <p><%= lorem.sentences 3 %></p>
+                    <a href="#" class="media-more">Read more &rsaquo;</a>
+            </li>
+            <li class="gallery-item media">
+                <a href="#" class="media-thumb">
+                    <img src="<%= lorem.image '400x300' %>" />
+                </a>
+                <div class="media-content">
+                    <h3>Case study title lorem ipsum dolor sit</h3>
+                    <p><%= lorem.sentences 3 %></p>
+                    <a href="#" class="media-more">Read more &rsaquo;</a>
+            </li>
+            <li class="gallery-item media">
+                <a href="#" class="media-thumb">
+                    <img src="<%= lorem.image '400x300' %>" />
+                </a>
+                <div class="media-content">
+                    <h3>Case study title lorem ipsum dolor sit</h3>
+                    <p><%= lorem.sentences 3 %></p>
+                    <a href="#" class="media-more">Read more &rsaquo;</a>
+            </li>
+        </ul>
+    </aside>
+
+    <nav class="pagination">
+        <ul>
+            <li><a href="#" class="pagination-item">
+                Overview
+            </a></li>
+            <li><a href="#" class="pagination-item">
+                New business development
+            </a></li>
+        </ul>
+    </nav>
+
+</article>
