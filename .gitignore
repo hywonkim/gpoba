@@ -20,4 +20,4 @@
 # Ignore bower/npm things
 # disable for heroku setup
 /bower_components
-/packages
+/node_modules
