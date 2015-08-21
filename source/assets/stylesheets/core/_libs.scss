@@ -2,11 +2,15 @@
 // Frameworks & vendor stuff
 // -> all dependencies should be imported here, then imported
 //    as-needed in modules
-// -> NOTE: the dependency scheme in this framework requires compass's 
+// -> NOTE: the dependency scheme in this framework requires compass's
 //    "import once" library. make it's installed somewhere.
 //    (it ships with middleman)
 // =============================================================================
 
 // bower components
+@import "bourbon/app/assets/stylesheets/bourbon";
 @import "breakpoint-sass/stylesheets/breakpoint";
 @import "singularity/stylesheets/singularitygs";
+@import "sass-type-helpers/type-helpers";
+@import "sass-units/units";
+@import "sass-list-helpers/helpers-lists";

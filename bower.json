@@ -19,6 +19,10 @@
     "normalize-css": "~3.0.3"
   },
   "devDependencies": {
-    "singularity": "~1.6.2"
+    "singularity": "~1.6.2",
+    "bourbon": "~4.2.3",
+    "sass-type-helpers": "~0.0.3",
+    "sass-units": "~0.0.5",
+    "sass-list-helpers": "~0.0.1"
   }
 }

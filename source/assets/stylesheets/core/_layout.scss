@@ -33,7 +33,7 @@ $screen--small  : nth($breakpoints, 2);
 $screen--medium : nth($breakpoints, 3);
 $screen--large  : nth($breakpoints, 4);
 
-$breakpoint-to-ems: true;
+@include breakpoint-set('to ems', true);
 
 %hide { display: none; }
 

@@ -4,19 +4,10 @@
 
 // Dependencies
 // -----------------------------------------------------------------------------
-// bower components
-// @import "bourbon/app/assets/stylesheets/bourbon";
-// @import "breakpoint-sass/stylesheets/breakpoint";
-// @import "singularity/stylesheets/singularitygs";
-// @import "sass-toolkit/stylesheets/toolkit";
-@import "sass-units/units";
-@import "sass-list-helpers/helpers-lists";
-// @import "sass-type-helpers/type-helpers";
+
 
 // local modules
-@import "../core/color";
-@import "../core/animation";
-@import "../core/fonts";
+@import "../core/*";
 
 /* Base
 // -------------------------------------------------------------------------- */
