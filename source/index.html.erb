@@ -1,6 +1,76 @@
 ---
-title: HTML5 Boilerplate Middleman
+title: home
 ---
 
-<!-- Add your site or application content here -->
-<p>Hello world! This is HTML5 Boilerplate.</p>
+<header class="hero">
+    <span class="hero-logo">GPOBA</span>
+    <h1 class="hero-title">Annual Report</h1>
+    <time class="hero-subtitle">2015</time>
+
+    <nav>
+        <ul>
+            <li>Overview</li>
+            <li>Our portfolio</li>
+            <li>New business</li>
+            <li>Building a COE</li>
+        </ul>
+    </nav>
+</header>
+
+<article class="panel">
+    <h2>A Year in Review</h2>
+    <%= lorem.paragraphs 4 %>
+    <%= lorem.image '800x400' %>
+    <%= lorem.paragraphs 2 %>
+
+    <aside>
+        <h3>Messages from our leadership</h3>
+        <ul class="gallery">
+            <li class="gallery-item media">
+                <a href="#" class="media-thumb">
+                    <%= lorem.image '400x400' %>
+                </a>
+                <div class="media-content">
+                    <h4>Ted Hypothetical</h4>
+                    <span>Senior Director</span>
+                </div>
+            </li>
+            <li class="gallery-item media">
+                <a href="#" class="media-thumb">
+                    <%= lorem.image '400x400' %>
+                </a>
+                <div class="media-content">
+                    <h4>Ted Hypothetical</h4>
+                    <span>Senior Director</span>
+                </div>
+            </li>
+            <li class="gallery-item media">
+                <a href="#" class="media-thumb">
+                    <%= lorem.image '400x400' %>
+                </a>
+                <div class="media-content">
+                    <h4>Ted Hypothetical</h4>
+                    <span>Senior Director</span>
+                </div>
+            </li>
+        </ul>
+    </aside>
+</article>
+
+<section class="panel">
+    <h2 class="panel-slug">Sections</h2>
+    <ul class="feed">
+        <li class="media">
+            <h3 class="media-title"></h3>
+
+        </li>
+        <li class="media">
+            <h3 class="media-title"></h3>
+
+        </li>
+        <li class="media">
+            <h3 class="media-title"></h3>
+
+        </li>
+    </ul>
+</section>
