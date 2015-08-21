@@ -7,29 +7,25 @@ title: home
     <h1 class="hero-title">Annual Report</h1>
     <time class="hero-subtitle">2015</time>
 
-    <nav>
-        <ul>
-            <li>Overview</li>
-            <li>Our portfolio</li>
-            <li>New business</li>
-            <li>Building a COE</li>
-        </ul>
-    </nav>
+    <%= partial "layouts/partials/main_menu" %>
 </header>
 
 <article class="panel">
     <h2>A Year in Review</h2>
-    <%= lorem.paragraphs 5 %>
-    <%= lorem.image '800x400' %>
-    <%= lorem.paragraphs 2 %>
+    <% 1.upto(4) do |num| %>
+        <p><%= lorem.sentences 4 %></p>
+    <% end %>
+    <img src="<%= lorem.image '800x400' %>" />
+    <% 1.upto(2) do |num| %>
+        <p><%= lorem.sentences 4 %></p>
+    <% end %>
 
     <aside>
         <h3>Messages from our leadership</h3>
         <ul class="gallery">
             <li class="gallery-item media">
                 <a href="#" class="media-thumb">
-                    <%= lorem.image '400x400' %>
-                    <%= lorem.paragraphs 1 %>
+                    <img src="<%= lorem.image '400x400' %>" />
                 </a>
                 <div class="media-content">
                     <h4>Ted Hypothetical</h4>
@@ -38,7 +34,7 @@ title: home
             </li>
             <li class="gallery-item media">
                 <a href="#" class="media-thumb">
-                    <%= lorem.image '400x400' %>
+                    <img src="<%= lorem.image '400x400' %>" />
                 </a>
                 <div class="media-content">
                     <h4>Ted Hypothetical</h4>
@@ -47,7 +43,7 @@ title: home
             </li>
             <li class="gallery-item media">
                 <a href="#" class="media-thumb">
-                    <%= lorem.image '400x400' %>
+                    <img src="<%= lorem.image '400x400' %>" />
                 </a>
                 <div class="media-content">
                     <h4>Ted Hypothetical</h4>
@@ -63,15 +59,22 @@ title: home
     <ul class="feed">
         <li class="media">
             <h3 class="media-title"></h3>
-
+            <a href="#" class="mjahaedia-thumb">
+                <img src="<%= lorem.image '600x400' %>" />
+            </a>
+            <
         </li>
         <li class="media">
             <h3 class="media-title"></h3>
-
+            <a href="#" class="media-thumb">
+                <img src="<%= lorem.image '600x400' %>" />
+            </a>
         </li>
         <li class="media">
             <h3 class="media-title"></h3>
-
+            <a href="#" class="media-thumb">
+                <img src="<%= lorem.image '600x400' %>" />
+            </a>
         </li>
     </ul>
 </section>
