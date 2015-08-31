@@ -1,0 +1,76 @@
+/* ==========================================================================
+//  Hero modules
+// ========================================================================== */
+
+@import "../core/*";
+@import "../atoms/logo";
+@import "../atoms/heading";
+@import "navigation";
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    height: 80vh;
+    text-align: center;
+    // background-image: url(<%=lorem.image '1200x800' %>);
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: cover;
+    background-color: #ccc;
+}
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+.hero-logo {
+    @include rem(padding, 6px 12px);
+    display: inline-block;
+    background-color: theme(bg);
+}
+
+.hero-headline {
+    display: inline-block;
+    margin-top: 100px;
+
+    .csstransforms & {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: 0;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.hero-title {
+    @extend %font-display--bold;
+    @include border(bottom);
+    @include rem(font-size, fs(5));
+    padding-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+.hero-date {
+    @extend %font-accent;
+    display: block;
+    font-size: fs(9);
+    font-size: 30vw;
+    line-height: 1;
+    letter-spacing: -0.06em;
+
+    @include breakpoint(600px) {
+        font-size: fs(11);
+        font-size: 23vw;
+    }
+    @include breakpoint(850px) {
+        font-size: fs(12);
+        font-size: 16vw;
+    }
+}
+
+.hero-menu {
+
+}

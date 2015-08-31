@@ -47,7 +47,7 @@ $type-line_height: 1.5;
 
 // modular scale
 // -> requires SASS Type Helpers
-$font-scale: 10px 13px 16px 19px 26px 42px 68px 110px;
+$font-scale: 10px 13px 16px 23px 26px 37px 42px 68px 97px 110px 157px 177px;
 
 /* Globals
 // -------------------------------------------------------------------------- */
@@ -81,6 +81,10 @@ $font-scale: 10px 13px 16px 19px 26px 42px 68px 110px;
     @extend %font-display;
     font-family: $helvetica;
     font-weight: bold;
+}
+
+%font-accent {
+    @extend %font-display;
 }
 
 
