@@ -28,11 +28,15 @@ $chapter-padding: fs(6);
 }
 
 .chapter-aside {
-    @include rem(margin-top, fs(4));
-    @include rem(margin-bottom, -($chapter-padding));
+    @include rem(margin-top, fs(5));
     @include rem(padding-top, fs(5));
     @include rem(padding-bottom, fs(5));
     background-color: theme('well');
+
+    // if this is the last thing in the container, make it flush with the bottom
+    &:last-child {
+        @include rem(margin-bottom, -($chapter-padding));
+    }
 }
 
 .chapter-content {

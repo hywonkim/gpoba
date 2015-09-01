@@ -35,17 +35,21 @@
             margin: 0;
             padding: 0;
         }
-
-        a {
-            @extend %font-body--bold;
-        	@include rem(padding, fs(3) fs(3));
-        	@include font-scale(2);
-        	display: inline-block;
-            text-transform: uppercase;
-        }
     }
 }
 
 /* Submodules
 // -------------------------------------------------------------------------- */
 
+.nav-item {
+    @extend %font-body--bold;
+    display: inline-block;
+
+    > a {
+        @extend %font-body--bold;
+        @include rem(padding, fs(3) fs(3));
+        @include font-scale(2);
+        display: inline-block;
+        text-transform: uppercase;
+    }
+}
