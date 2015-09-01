@@ -19,13 +19,26 @@
 /* Modifiers
 // -------------------------------------------------------------------------- */
 
+/* ------- Global/main nav -------------------------------------------------- */
 [role="navigation"], .nav {
     &.main {
         @include inline-list;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+        }
 
         a {
             @extend %font-body--bold;
-        	@include rem(padding, 0 16px);
+        	@include rem(padding, fs(3) fs(3));
         	@include font-scale(2);
         	display: inline-block;
             text-transform: uppercase;
@@ -36,8 +49,3 @@
 /* Submodules
 // -------------------------------------------------------------------------- */
 
-/* ------- Global/main nav -------------------------------------------------- */
-
-.nav {
-
-}

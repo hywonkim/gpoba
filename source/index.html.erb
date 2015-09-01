@@ -9,7 +9,7 @@ title: home
         <time class="hero-date">2015</time>
     </div>
 
-    <%= partial("layouts/partials/main_menu", :locals => { :classes => "hero-nav" }) %>
+    <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav" }) %>
 </header>
 
 <article class="chapter" role="main">
@@ -28,7 +28,7 @@ title: home
 
     <!-- Leadership messages -->
     <aside class="chapter-aside">
-        <h2 class="slug">Messages from our leadership</h2>
+        <h1 class="slug">Messages from our leadership</h1>
         <div class="l-wrapper">
             <ul class="gallery">
                 <li class="gallery-item card horizontal small">
@@ -36,7 +36,7 @@ title: home
                         <img src="<%= lorem.image '400x400' %>" />
                     </a>
                     <div class="card-content">
-                        <h4>Ted Hypothetical</h4>
+                        <h2 class="card-title">Ted Hypothetical</h2>
                         <span>Senior Director</span>
                     </div>
                 </li>
@@ -45,7 +45,7 @@ title: home
                         <img src="<%= lorem.image '400x400' %>" />
                     </a>
                     <div class="card-content">
-                        <h4>Susan Example</h4>
+                        <h2 class="card-title">Susan Example</h2>
                         <span>Program Manager</span>
                     </div>
                 </li>
@@ -54,7 +54,7 @@ title: home
                         <img src="<%= lorem.image '400x400' %>" />
                     </a>
                     <div class="card-content">
-                        <h4>Mark Case</h4>
+                        <h2 class="card-title">Mark Case</h2>
                         <span>Senior Director</span>
                     </div>
                 </li>
@@ -80,7 +80,7 @@ title: home
             <div class="card-content">
                 <h2 class="card-title">Overview</h2>
                 <p><%= lorem.sentences 3 %></p>
-                <a href="" class="read_more">Read More</a>
+                <a href="" class="read_more">Read More &rsaquo;</a>
             </div>
         </li>
         <li class="feed-item card horizontal">
@@ -90,7 +90,7 @@ title: home
             <div class="card-content">
                 <h2 class="card-title">Our Portfolio</h2>
                 <p><%= lorem.sentences 3 %></p>
-                <a href="" class="read_more">Read More</a>
+                <a href="" class="read_more">Read More &rsaquo;</a>
             </div>
         </li>
         <li class="feed-item card horizontal">
@@ -100,7 +100,7 @@ title: home
             <div class="card-content">
                 <h2 class="card-title">New Business</h2>
                 <p><%= lorem.sentences 3 %></p>
-                <a href="" class="read_more">Read More</a>
+                <a href="" class="read_more">Read More &rsaquo;</a>
             </div>
         </li>
         <li class="feed-item card horizontal">
@@ -110,7 +110,7 @@ title: home
             <div class="card-content">
                 <h2 class="card-title">Building a Center of Expertise</h2>
                 <p><%= lorem.sentences 3 %></p>
-                <a href="" class="read_more">Read More</a>
+                <a href="" class="read_more">Read More &rsaquo;</a>
             </div>
         </li>
     </ul>

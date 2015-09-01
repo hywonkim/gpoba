@@ -5,5 +5,7 @@
 /* Main logo
 // -------------------------------------------------------------------------- */
 .logo {
-	
+    @extend %font-body--bold;
+    font-weight: bold;
+    color: theme('text' 'primary');
 }

@@ -1,19 +1,84 @@
-// ==========================================================================
+/* ==========================================================================
 //  Footer modules
-// ==========================================================================
+// ========================================================================== */
 
-// BASE
-// -----------------------------------------------------------------------------
+@import "../core/*";
+@import "../atoms/logo";
+@import "../molecules/navigation";
+
+$footer-padding: $gutter-outside;
+
+/* Base
+// -------------------------------------------------------------------------- */
 
 [role="contentinfo"], .footer {
-	
+
 }
 
 
-// MODIFIERS
-// -----------------------------------------------------------------------------
+/* Modifiers
+// -------------------------------------------------------------------------- */
 
 // global/main footer @ bottom of each page
-[role="contentinfo"].global, .footer.global {
-	
+[role="contentinfo"].main, .footer.main {
+    @extend %theme--reverse;
+    padding-top: 0;
+    padding-bottom: $footer-padding;
 }
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+.footer-nav {
+    @extend .nav.main;
+    @include border(bottom);
+    width: 100%;
+    text-align: center;
+
+    a {
+        color: theme('text' 'primary', 'reverse');
+    }
+}
+
+.footer-section {
+    padding: $gutter 0;
+}
+
+    .footer-logo {
+        @extend .logo;
+        color: theme('text' 'primary', 'reverse');
+    }
+
+    .footer-affiliate {
+        display: inline-block;
+        float: right;
+        color: theme('text' 'secondary', 'reverse');
+    }
+
+.footer-utility {
+    @include inline-list;
+    padding-top: $gutter;
+    background-color: darken(theme('bg', 'reverse'), 5);
+
+    // if this is the last child in the footer, add padding inside
+    &:last-child {
+        margin-bottom: -($footer-padding);
+        padding-bottom: $footer-padding;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+    .footer-utility-item {
+        margin-right: $gutter;
+
+        &.copyright {
+            margin-right: 0;
+            float: right;
+        }
+
+        a, small { color: theme('text' 'tertiary', 'reverse'); }
+    }
