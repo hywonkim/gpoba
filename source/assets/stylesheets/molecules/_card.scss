@@ -61,3 +61,11 @@
 .card-content {
 
 }
+
+.card-title {
+    @extend %beta;
+
+    .card.small & {
+        @extend %delta;
+    }
+}

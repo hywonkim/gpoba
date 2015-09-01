@@ -61,12 +61,18 @@ address {
 
 // the first paragraph, often set slightly bigger
 .lead, .content > p:first-of-type {
-    @include font-scale(3);
+    @include font-scale(4);
 }
 
 // a caption
 .caption, figcaption {
     @extend %font-body;
-    @include font-scale(1);
+    @include font-scale(2);
     color: theme('text' 'secondary');
+}
+
+.read_more {
+    @extend %font-body--bold;
+    @include font-scale(2);
+    text-transform: uppercase;
 }
