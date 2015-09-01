@@ -1,0 +1,30 @@
+/* ==========================================================================
+// Billboard module
+// -> an area with short, featured content and a background image
+// -> similar to a hero unit but contains content, not a header/CTA
+// ========================================================================== */
+
+@import "../core/*";
+
+$billboard-padding: fs(8);
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.billboard {
+    @include rem(padding-top, $billboard-padding);
+    @include rem(padding-bottom, $billboard-padding);
+    position: relative;
+    background-color: #ccc;
+}
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+.billboard-frame {
+    @extend %l-wrapper--narrow;
+}
+
+.billboard-title {
+    color: theme(bg);
+}

@@ -155,19 +155,17 @@ html {
     margin-right: auto;
     padding-left: $gutter-outside;
     padding-right: $gutter-outside;
+}
 
-    // & > .headline:first-child {
-    //     margin-top: $gutter;
-    // }
+// narrow version of layout wrapper
+.l-wrapper.narrow, %l-wrapper--narrow {
+    @extend %l-wrapper;
+    @extend %l-base-w--narrow;
+}
 
-    // narrow version of layout wrapper
-    &.narrow {
-        @extend %l-base-w--narrow;
-    }
-
-    &.wide {
-        @extend %l-base-w--wide;
-    }
+.l-wrapper.wide, %l-wrapper--wide {
+    @extend %l-wrapper;
+    @extend %l-base-w--wide;
 }
 
 /* https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
