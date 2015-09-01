@@ -1,25 +1,62 @@
-/* =============================================================================
-//  Header modules
+/* ===========================================================================
+//  Header module
 // ========================================================================== */
+
+@import "../core/*";
+@import "../atoms/logo";
+@import "../molecules/navigation";
 
 $header-h: 36px;
 
-/* BASE
-// -------------------------------------------------------------------------- */
+// vertically center the children of an inline block element
+@mixin inline-block--centered($h: auto) {
+  display: inline-block;
+  vertical-align: middle;
+  height: $h;
 
-.header, [role="banner"] {
-	
+  &::before, &:before {
+    display: inline-block;
+    content: " ";
+    vertical-align: middle;
+    height: 100%;
+  }
 }
 
-/* MODIFIERS
+/* Base
 // -------------------------------------------------------------------------- */
 
-.header, [role="banner"] {
-	&.global {
-    
-	}
+.header, header, [role="banner"] {
 
-	&.local {
+}
 
+/* Modifiers
+// -------------------------------------------------------------------------- */
+
+.header, header, [role="banner"] {
+	&.main {
+        @include clearfix;
+        // height: $header-h;
+        position: relative;
+        display: block;
 	}
+}
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+.header-logo {
+    @extend .logo;
+    display: inline-block;
+    margin-left: $gutter-outside;
+    padding: fs(3) 0;
+}
+
+.header-nav {
+    display: none;
+    float: right;
+    margin-right: $gutter-outside;
+
+    @include breakpoint(800px) {
+        display: inline-block;
+    }
 }

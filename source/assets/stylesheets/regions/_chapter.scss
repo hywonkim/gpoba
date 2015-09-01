@@ -7,6 +7,7 @@
 @import "../core/*";
 @import "../atoms/heading";
 @import "../atoms/text";
+@import "../molecules/hero";
 
 $chapter-padding: fs(6);
 
@@ -21,6 +22,15 @@ $chapter-padding: fs(6);
 
 /* Submodules
 // -------------------------------------------------------------------------- */
+
+.chapter-hero {
+    @extend .hero;
+    height: 370px;
+    height: 60vh;
+    margin-bottom: 0;
+
+    &:first-child { margin-top: -($chapter-padding); }
+}
 
 .chapter-title {
     @extend %alpha;
