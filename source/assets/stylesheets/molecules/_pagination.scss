@@ -1,0 +1,65 @@
+/* ==========================================================================
+//  Pagination modules
+// -> "next" and "previous" links that allow you to continue reading
+// -> usually appears at the bottom of interior pages
+// ========================================================================== */
+
+@import "../core/*";
+@import "../atoms/heading";
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.pagination {
+    padding-top: $gutter-outside;
+    padding-bottom: $gutter;
+    background-color: darken(theme('well'), 30);
+    font-size: 0;
+}
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+.pagination-slug {
+    @extend .slug;
+    margin-bottom: $gutter;
+    // color: theme('bg');
+}
+
+// styles shared by both .pagination-next and .pagination-prev
+%pagination-item {
+    $padding: fs(5);
+
+    @include rem(padding-top, $padding);
+    @include rem(padding-bottom, $padding);
+    @include rem(font-size, fs(2));
+    display: inline-block;
+    width: 50%;
+}
+
+.pagination-prev {
+    @extend %pagination-item;
+    @include border(right);
+    padding-right: $gutter;
+    text-align: left;
+}
+
+.pagination-next {
+    @extend %pagination-item;
+    padding-left: $gutter;
+    text-align: right;
+}
+
+.pagination-subtitle {
+    @extend %zeta;
+    @extend %font-body--bold;
+    display: block;
+    text-transform: uppercase;
+    color: theme('text' 'primary');
+}
+
+.pagination-title {
+    @extend %beta;
+    @extend %font-display;
+    color: white;
+}
