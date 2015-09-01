@@ -75,9 +75,13 @@
 .hero-nav {
     @extend .nav.main;
     @include border(bottom);
-    display: block;
+    display: none;
     position: absolute;
     bottom: 0;
     width: 100%;
     background-color: theme(bg);
+
+    @include breakpoint(650px) {
+        display: block;
+    }
 }

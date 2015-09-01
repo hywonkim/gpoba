@@ -5,6 +5,7 @@
 // ========================================================================== */
 
 @import "../core/*";
+@import "../atoms/heading";
 
 $billboard-padding: fs(8);
 
@@ -26,5 +27,6 @@ $billboard-padding: fs(8);
 }
 
 .billboard-title {
+    @extend %beta;
     color: theme(bg);
 }

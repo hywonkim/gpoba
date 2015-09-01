@@ -1,0 +1,40 @@
+/* ==========================================================================
+// Chapter module
+// -> a major content area of the Annual Report
+// -> in the print version, this is stuff in the table of contents
+// ========================================================================== */
+
+@import "../core/*";
+@import "../atoms/heading";
+@import "../atoms/text";
+
+$chapter-padding: fs(6);
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.chapter {
+    @include rem(padding-top, $chapter-padding);
+    @include rem(padding-bottom, $chapter-padding);
+    position: relative;
+}
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+.chapter-title {
+    @extend %alpha;
+    text-align: center;
+}
+
+.chapter-aside {
+    @include rem(margin-top, fs(4));
+    @include rem(margin-bottom, -($chapter-padding));
+    @include rem(padding-top, fs(5));
+    @include rem(padding-bottom, fs(5));
+    background-color: theme('well');
+}
+
+.chapter-content {
+    img { margin: 1em 0; }
+}

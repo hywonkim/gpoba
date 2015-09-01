@@ -1,0 +1,63 @@
+/* ==========================================================================
+// Card module
+// -> A short listing pointing at more detailed content, like a chapter
+//    or large table. Often found in 'feed' and 'gallery' organisms.
+// ========================================================================== */
+
+@import "../core/*";
+@import "../atoms/heading";
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.card {
+    @include clearfix;
+    position: relative;
+    display: block;
+}
+
+/*  Modifiers
+// -------------------------------------------------------------------------- */
+
+/* --- "horizontal" (two column) version ------------------------------------ */
+.card.horizontal {
+
+    @include layout-at(ms(1) ms(2), $screen--xsmall) {
+        .card-thumb { @include grid-span(1, 1); }
+        .card-content { @include grid-span(1, 2); }
+    }
+}
+
+// small version
+// -> stays horizontal at mobile sizes
+.card.horizontal.small {
+
+    @include layout(ms(1) ms(3)) {
+        .card-thumb { @include grid-span(1, 1); }
+        .card-content { @include grid-span(1, 2); }
+    }
+}
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+/* --- thumbnail image ------------------------------------------------------ */
+.card-thumb {
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    float: none;
+    clear: both;
+    margin-bottom: ($gutter/2);
+
+    img {
+        // @include border(all, thin);
+        width: 100%; // force the thumbnail image to be fill its container
+    }
+}
+
+/* --- content container ---------------------------------------------------- */
+.card-content {
+
+}

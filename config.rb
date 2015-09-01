@@ -21,7 +21,7 @@ end
 # page "/path/to/file.html", :layout => :otherlayout
 #
 # A path which all have the same layout
-with_layout :section do
+with_layout :chapter do
   page "/sections/*"
 end
 

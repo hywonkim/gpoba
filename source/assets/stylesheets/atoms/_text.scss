@@ -40,7 +40,8 @@ a {
 }
 
 strong {
-
+    @extend %font-body--bold;
+    font-weight: bold;
 }
 
 small {
@@ -67,5 +68,5 @@ address {
 .caption, figcaption {
     @extend %font-body;
     @include font-scale(1);
-    color: theme(text--secondary);
+    color: theme('text' 'secondary');
 }

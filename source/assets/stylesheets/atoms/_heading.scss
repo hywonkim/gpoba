@@ -44,6 +44,7 @@ Many modules (like `media-box`, `profile`, etc.) define their own special headin
 #{headers()} {
     line-height: 1.2;
     margin-bottom: 0;
+    color: theme('text' 'primary');
 }
 
 #{headers()} {
@@ -96,6 +97,9 @@ h6, .zeta, %zeta {
 }
 
 .slug {
+    @extend %epsilon;
     @extend %font-body--bold;
+    display: block;
+    text-align: center;
     text-transform: uppercase;
 }

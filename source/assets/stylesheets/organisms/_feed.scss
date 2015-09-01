@@ -1,0 +1,28 @@
+/* ==========================================================================
+// Feed module
+// -> A scrollable, vertical list of content bits like blog posts, cards, etc.
+// ========================================================================== */
+
+@import "../core/*";
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.feed {
+    @include unstyled-list;
+    margin-top: $gutter-outside;
+    margin-bottom: $gutter-outside;
+
+    &.l-wrapper {
+        margin-left: auto;
+    }
+}
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+.feed-item {
+    display: block;
+    margin-top: $gutter;
+    margin-bottom: $gutter;
+}

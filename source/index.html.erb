@@ -12,10 +12,11 @@ title: home
     <%= partial("layouts/partials/main_menu", :locals => { :classes => "hero-nav" }) %>
 </header>
 
-<article class="panel">
+<article class="chapter" role="main">
+
     <!-- Executive summary -->
-    <div class="l-wrapper narrow">
-        <h2>A Year in Review</h2>
+    <div class="l-wrapper narrow chapter-content">
+        <h1 class="chapter-title">A Year in Review</h1>
         <% 1.upto(4) do |num| %>
             <p><%= lorem.sentences 4 %></p>
         <% end %>
@@ -26,34 +27,34 @@ title: home
     </div>
 
     <!-- Leadership messages -->
-    <aside class="">
-        <h3>Messages from our leadership</h3>
+    <aside class="chapter-aside">
+        <h2 class="slug">Messages from our leadership</h2>
         <div class="l-wrapper">
             <ul class="gallery">
-                <li class="gallery-item media">
-                    <a href="#" class="media-thumb">
+                <li class="gallery-item card horizontal small">
+                    <a href="#" class="card-thumb">
                         <img src="<%= lorem.image '400x400' %>" />
                     </a>
-                    <div class="media-content">
+                    <div class="card-content">
                         <h4>Ted Hypothetical</h4>
                         <span>Senior Director</span>
                     </div>
                 </li>
-                <li class="gallery-item media">
-                    <a href="#" class="media-thumb">
+                <li class="gallery-item card horizontal small">
+                    <a href="#" class="card-thumb">
                         <img src="<%= lorem.image '400x400' %>" />
                     </a>
-                    <div class="media-content">
-                        <h4>Ted Hypothetical</h4>
-                        <span>Senior Director</span>
+                    <div class="card-content">
+                        <h4>Susan Example</h4>
+                        <span>Program Manager</span>
                     </div>
                 </li>
-                <li class="gallery-item media">
-                    <a href="#" class="media-thumb">
+                <li class="gallery-item card horizontal small">
+                    <a href="#" class="card-thumb">
                         <img src="<%= lorem.image '400x400' %>" />
                     </a>
-                    <div class="media-content">
-                        <h4>Ted Hypothetical</h4>
+                    <div class="card-content">
+                        <h4>Mark Case</h4>
                         <span>Senior Director</span>
                     </div>
                 </li>
@@ -64,33 +65,53 @@ title: home
 
 <section class="billboard">
     <div class="billboard-frame">
-        <h2 class="billboard-title">Donor Contributions</h2>
-        <p>
-            Since the creation of GPOBA, donors have provided a total of $338 million in funding through contributions and pledges, of which $XXX has been received. Contributions received in FY15 consisted of $10.5 million from the Swedish International Development Cooperation Agency (Sida). GPOBA’s other current donors include the Dutch Directorate-General for International Cooperation (DGIS), DFID, the International Finance Corporation (IFC), and the Australian Department of Foreign Affairs and Trace (DFAT).
-        </p>
+        <h1 class="billboard-title">Donor Contributions</h1>
+        <p><%= lorem.sentences 6 %></p>
     </div>
 </section>
 
 <section class="panel">
-    <h2 class="panel-slug">Sections</h2>
-    <ul class="feed l-wrapper">
-        <li class="media">
-            <h3 class="media-title"></h3>
-            <a href="#" class="media-thumb">
+    <h1 class="panel-slug">Sections</h1>
+    <ul class="feed l-wrapper narrow">
+        <li class="feed-item card horizontal">
+            <a href="#" class="card-thumb">
                 <img src="<%= lorem.image '600x400' %>" />
             </a>
+            <div class="card-content">
+                <h2 class="card-title">Overview</h2>
+                <p><%= lorem.sentences 3 %></p>
+                <a href="" class="read_more">Read More</a>
+            </div>
         </li>
-        <li class="media">
-            <h3 class="media-title"></h3>
-            <a href="#" class="media-thumb">
+        <li class="feed-item card horizontal">
+            <a href="#" class="card-thumb">
                 <img src="<%= lorem.image '600x400' %>" />
             </a>
+            <div class="card-content">
+                <h2 class="card-title">Our Portfolio</h2>
+                <p><%= lorem.sentences 3 %></p>
+                <a href="" class="read_more">Read More</a>
+            </div>
         </li>
-        <li class="media">
-            <h3 class="media-title"></h3>
-            <a href="#" class="media-thumb">
+        <li class="feed-item card horizontal">
+            <a href="#" class="card-thumb">
                 <img src="<%= lorem.image '600x400' %>" />
             </a>
+            <div class="card-content">
+                <h2 class="card-title">New Business</h2>
+                <p><%= lorem.sentences 3 %></p>
+                <a href="" class="read_more">Read More</a>
+            </div>
+        </li>
+        <li class="feed-item card horizontal">
+            <a href="#" class="card-thumb">
+                <img src="<%= lorem.image '600x400' %>" />
+            </a>
+            <div class="card-content">
+                <h2 class="card-title">Building a Center of Expertise</h2>
+                <p><%= lorem.sentences 3 %></p>
+                <a href="" class="read_more">Read More</a>
+            </div>
         </li>
     </ul>
 </section>
