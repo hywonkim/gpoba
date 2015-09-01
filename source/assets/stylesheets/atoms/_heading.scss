@@ -94,3 +94,8 @@ h6, .zeta, %zeta {
 
     > a { color: inherit; }
 }
+
+.slug {
+    @extend %font-body--bold;
+    text-transform: uppercase;
+}

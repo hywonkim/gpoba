@@ -9,7 +9,7 @@ title: home
         <time class="hero-date">2015</time>
     </div>
 
-    <%= partial "layouts/partials/main_menu" %>
+    <%= partial("layouts/partials/main_menu", :locals => { :classes => "hero-nav" }) %>
 </header>
 
 <article class="panel">
@@ -65,10 +65,9 @@ title: home
     <ul class="feed l-wrapper">
         <li class="media">
             <h3 class="media-title"></h3>
-            <a href="#" class="mjahaedia-thumb">
+            <a href="#" class="media-thumb">
                 <img src="<%= lorem.image '600x400' %>" />
             </a>
-            <
         </li>
         <li class="media">
             <h3 class="media-title"></h3>

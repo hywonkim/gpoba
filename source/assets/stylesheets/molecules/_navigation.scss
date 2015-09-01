@@ -24,7 +24,8 @@
         @include inline-list;
 
         a {
-        	@include rem(padding, 0 12px);
+            @extend %font-body--bold;
+        	@include rem(padding, 0 16px);
         	@include font-scale(2);
         	display: inline-block;
             text-transform: uppercase;

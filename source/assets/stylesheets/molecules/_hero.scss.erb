@@ -45,32 +45,39 @@
     }
 }
 
-.hero-title {
-    @extend %font-display--bold;
+    .hero-title {
+        @extend %font-display--bold;
+        @include border(bottom);
+        @include rem(font-size, fs(5));
+        padding-bottom: 0.5em;
+        text-transform: uppercase;
+    }
+
+    .hero-date {
+        @extend %font-accent;
+        display: block;
+        font-size: fs(9);
+        font-size: 30vw;
+        line-height: 1;
+        letter-spacing: -0.06em;
+        color: theme(bg);
+
+        @include breakpoint(600px) {
+            font-size: fs(11);
+            font-size: 23vw;
+        }
+        @include breakpoint(850px) {
+            font-size: fs(12);
+            font-size: 16vw;
+        }
+    }
+
+.hero-nav {
+    @extend .nav.main;
     @include border(bottom);
-    @include rem(font-size, fs(5));
-    padding-bottom: 0.5em;
-    text-transform: uppercase;
-}
-
-.hero-date {
-    @extend %font-accent;
     display: block;
-    font-size: fs(9);
-    font-size: 30vw;
-    line-height: 1;
-    letter-spacing: -0.06em;
-
-    @include breakpoint(600px) {
-        font-size: fs(11);
-        font-size: 23vw;
-    }
-    @include breakpoint(850px) {
-        font-size: fs(12);
-        font-size: 16vw;
-    }
-}
-
-.hero-menu {
-
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: theme(bg);
 }

@@ -1,0 +1,38 @@
+/* ==========================================================================
+// Panel modules
+// -> a stacking, full-width section of content
+// ========================================================================== */
+
+@import "../core/*";
+@import "../atoms/heading";
+
+$panel-padding: fs(5);
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.panel {
+    @include rem(padding-top, $panel-padding);
+    @include rem(padding-bottom, $panel-padding);
+    @include border(top);
+    position: relative;
+}
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+/* --- Slug ----------------------------------------------------------------- */
+// -> a small "label" header describing the panel's content
+// -> adopts the regular slug module
+
+.panel-slug {
+    @extend %epsilon;
+    @extend .slug;
+    @include rem(margin-top, -($panel-padding));
+    display: block;
+    position: relative;
+    margin-bottom: 1em;
+    padding-top: 1em;
+    z-index: $z--high;
+    text-align: center;
+}
