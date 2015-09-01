@@ -12,29 +12,39 @@
 /* Base
 // -------------------------------------------------------------------------- */
 
-[role="navigation"], .nav {
+[role="navigation"], nav, .nav {
+    @include unstyled-list;
 
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 /* Modifiers
 // -------------------------------------------------------------------------- */
 
 /* ------- Global/main nav -------------------------------------------------- */
-[role="navigation"], .nav {
+[role="navigation"], nav, .nav {
     &.main {
         @include inline-list;
         padding-top: 0;
         padding-bottom: 0;
+    }
+}
 
-        ul {
-            margin: 0;
-            padding: 0;
-        }
-
-        li {
-            margin: 0;
-            padding: 0;
-        }
+/* ------- Local jump nav --------------------------------------------------- */
+nav, .nav {
+    &.jump {
+        @include rem(top, fs(6));
+        display: inline-block;
+        position: absolute;
+        width: 180px;
     }
 }
 
