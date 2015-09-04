@@ -1,0 +1,16 @@
+# CSV extension by Adolfo Villafiorita
+# http://www.ict4g.net/adolfo/notes/2015/05/30/csv_data_in_middleman.html
+
+class CSV_Helpers < Middleman::Extension
+  def initialize(app, options_hash={}, &block)
+    super
+  end
+  helpers do
+    def csv_data(file)
+      csv_data = File.read(File.join(data_dir, file))
+      hash = CSV.new(csv_data, :headers => true, :header_converters => :symbol)
+      return hash.to_a.map { |row| row.to_hash }
+    end
+  end
+end
+::Middleman::Extensions.register(:csv_helpers, CSV_Helpers)
