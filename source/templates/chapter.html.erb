@@ -31,43 +31,23 @@ layout: layout
     <% end %>
 </article>
 
-<%# set up an array of the local data for pagination %>
-<%# -> so we can access chapters via index %>
-<%
-    @chapter_slugs = []
-    data.chapters.each do |chapter|
-        @chapter_slugs.push(chapter.slug)
-    end
-    @current_index = @chapter_slugs.index(locals[:slug])
-    @prev_path = "#{data.site.paths.chapter}#{@chapter_slugs[@current_index - 1].to_s.urlize}/"
-    @next_path = "#{data.site.paths.chapter}#{@chapter_slugs[@current_index + 1].to_s.urlize}/"
-
-    @chapter_titles = []
-    data.chapters.each do |chapter|
-        @chapter_titles.push(chapter.title)
-    end
-    @prev_title = @chapter_titles[@current_index - 1]
-    @next_title = @chapter_titles[@current_index + 1]
-%>
-
-
 <!-- Local navigation (next/prev chapters) -->
 <nav class="pagination">
     <h2 class="pagination-slug">Read more</h2>
     <ul class="l-wrapper">
-        <% if @current_index > 0 %>
+        <% unless first_page(locals[:slug]) %>
         <li class="pagination-prev">
-            <a href="<%= @prev_path %>">
+            <a href="<%= pagination_url(locals[:slug], "prev") %>">
                 <span class="pagination-subtitle">Previous</span>
-                <strong class="pagination-title"><%= @prev_title %></strong>
+                <strong class="pagination-title"><%= pagination_title(locals[:title], "prev") %></strong>
             </a>
         </li>
         <% end %>
-        <% if @current_index < @chapter_slugs.length - 1 %>
+        <% unless last_page(locals[:slug]) %>
         <li class="pagination-next">
-            <a href="<%= @next_path %>">
+            <a href="<%= pagination_url(locals[:slug], "next") %>">
                 <span class="pagination-subtitle">Next</span>
-                <strong class="pagination-title"><%= @next_title %></strong>
+                <strong class="pagination-title"><%= pagination_title(locals[:title], "next") %></strong>
             </a>
         </li>
         <% end %>

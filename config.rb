@@ -33,8 +33,14 @@ page "/content/*", :layout => false
 #  :which_fake_page => "Rendering a fake page with a local variable" }
 
 # Create a page for each "chapter" using the chapters.html.erb template
+$chapter_slugs = []
+$chapter_titles = []
+
 data.chapters.each do |chapter|
     proxy "#{data.site.paths.chapter}#{chapter.slug.urlize}.html", "/templates/chapter.html", :locals => { :title => chapter.title, :slug => chapter.slug, :color => chapter.color || "blue", :image => chapter.slug || false }, :ignore => true
+
+    $chapter_slugs.push(chapter.slug)
+    $chapter_titles.push(chapter.title)
 end
 
 # Pretty URLs (ie about.html.erb => about/index.html)
@@ -80,15 +86,66 @@ helpers do
         end
     end
 
-    # $chapters = Hash.new
-    # data.chapters.each do |chapter|
-    #     $chapters[chapter.slug] = chapter.title
-    # end
-    # $chapter_keys = $chapters.keys
+    # Pagination helpers
 
-    # def prev_page_url(slug)
-    #     current_index = $chapter[slug]
+    # class Chapter
+    #     def initialize(resource)
+    #         @resource = resource
+    #     end
+
+    #     def url
+    #         @resource.url
+    #     end
+
+    #     def data
+    #     def self.all(resources)
+    #     resources.select do |chapter|
+    #         resource.start_with?(data.site.paths.chapter)
+    #     end
     # end
+
+    # def chapter
+    #     Chapter.all(sitemap.resources)
+    # end
+
+    def get_current_index(page, slug = true)
+        if slug == true
+            return $chapter_slugs.index(page)
+        else
+            return $chapter_titles.index(page)
+        end
+    end
+
+
+    # get the url for the next or previous chapter
+    def pagination_url(slug, sequence = "prev")
+        if sequence == "prev"
+            return "#{data.site.paths.chapter}#{$chapter_slugs[get_current_index(slug) - 1].to_s.urlize}/"
+        elsif sequence == "next"
+            return "#{data.site.paths.chapter}#{$chapter_slugs[get_current_index(slug) + 1].to_s.urlize}/"
+        end
+    end
+
+    # get the title for the next or previous chapter
+    def pagination_title(title, sequence = "prev")
+        if sequence == "prev"
+            return $chapter_titles[get_current_index(title, false) - 1].titleize
+        elsif sequence == "next"
+            return $chapter_titles[get_current_index(title, false) + 1].titleize
+        end
+    end
+
+    def first_page(slug)
+        if get_current_index(slug) <= 0
+            return true
+        end
+    end
+
+    def last_page(slug)
+        if get_current_index(slug) >= $chapter_slugs.length - 1
+            return true
+        end
+    end
 
 end
 
