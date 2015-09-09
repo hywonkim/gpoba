@@ -1,0 +1,18 @@
+---
+title: "RBF in the Solid Waste Management Sector"
+chapter: looking ahead
+order: 3
+type: box
+---
+
+<!-- Link to this from CoE – or from where? -->
+
+With rapid urbanization, population growth, and new economic activity, municipal solid waste is growing at alarming rates. In low and lower middle income countries, it is expected to triple by 2025. At the same time, solid waste management (SWM) systems in most developing countries are critically underfunded. Municipalities are unable to improve services and expand their capacities unless they can increase fee collection rates, while residents are unwilling to pay for inadequate services. The enormous amount of uncollected or improperly disposed of waste negatively effects public health, the environment, economic development, and quality of life, with the urban poor suffering the most, as they are more likely to live near unsanitary dumpsites. 
+
+Since 2000, the World Bank has maintained a significant portfolio in the SWM sector. However, a global shortfall of $40 billion in financing for the sector has persisted. In response, the Bank began to explore the use of innovative instruments to improve SWM services for the poor, including Results-based financing (RBF). In contrast to traditional financing – which tends to invest in capital assets, such as sanitary landfill construction, but often neglects to support the whole SWM system – RBF focuses on interventions all along the supply chain, from waste generation through collection, recycling, disposal, and energy recovery. Funding is contingent on achievement and verification of agreed upon targets. It also aims to incentivize behavior changes – individual, community and municipal efforts to reduce and recycle waste – necessary to improve SWM.
+
+GPOBA has funded a range of activities in the SWM sector, all of which support core GPOBA objectives, strongly integrating knowledge and operations, and testing OBA/RBF approaches in new sectors and in environments challenged by fragility, conflict, and violence. In FY15, GPOBA and the Work Bank launched a joint report, _Results-based Financing for Municipal Solid Waste_, a global study of MSW projects applying RBF approaches in eight countries, which presents lessons derived from these projects. The report incorporates analyses of two active GPOBA-funded projects, in the West Bank and Nepal, that use subsidies to improve financial sustainability of services by increasing user fee collection while improving waste collection services. Following the launch of the study, GPOBA hosted a webinar bringing together SWM experts for continued discussion of challenges and best practices in the sector. [Link to webinar: [https://www.gpoba.org/node/803](https://www.gpoba.org/node/803)]
+
+A new TA activity initiated by GPOBA in FY15 focuses on RBF for SWM in Africa, supporting the WBG Urban Team’s assessment of the SWM sector in selected African cities. The aim is to develop an RBF design, as well as policy, investment and institutional recommendations, that can improve performance of SWM in these cities, with particular emphasis on services for poor households.  
+
+Experience and analysis are showing that in the SWM sector, which faces budget constraints but also demonstrates demand for good service, RBF/OBA can be valuable mechanisms for ensuring efficient and transparent use of funds, and for jump-starting services in fragile and conflict-affected situations where the private sector may be reluctant to engage. A range of tools, technologies, and human resources already exists in SWM, and low-cost interventions utilizing these, combined with support for behavior changes, can bring about real enhancements in SWM.

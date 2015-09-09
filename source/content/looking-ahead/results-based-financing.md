@@ -1,0 +1,16 @@
+---
+title: "The Growth of Results-based Financing"
+chapter: looking ahead
+order: 4
+type: box
+---
+
+<!-- Link to this from CoE or from where? -->
+
+Since the late 1990s, when Results-based Financing (RBF) pilots began in the form of conditional cash transfers and performance-based contracting, the world of RBF has been rapidly expanding with new actors and approaches. In shifting the focus of development from inputs to outputs, so that financial disbursements depend on demonstrated and independently verified results, RBF has been changing the conversation on aid effectiveness. There are several types of RBF – including output-based aid (OBA), performance-based financing, and carbon financing – but the main feature of all forms is that performance criteria are specified up front. This allows performance to be measured, and increases transparency and accountability in the use of funds. GPOBA currently supports 19 RBF activities, totaling $3.6 million, in areas such as developing and monitoring verification protocols and disbursement-link indicators, scoping new RBF/OBA opportunities, and providing institutional and financial backing. 
+
+As part of its ongoing commitment to becoming a Center of Expertise on RBF/OBA and to improving its own operational effectiveness, GPOBA funded a study with Oxford Analytica on the Universe of Results-based Financing [title?]. Completed in FY15, the study aimed to develop a baseline of information on RBF, identifying and mapping major RBF actors, trends, and relevant international events. It produced a database of RBF practitioners (governments, national/regional development banks, NGOs, private sector actors, think tanks, and others), highlighting respective areas of expertise, and presenting portfolio snapshots, publications, and events. A scoring method gauged the relative importance of RBF actors based on such factors as portfolio size and regional and sectoral coverage. To date, the WBG, USAID, and DFID have deep and long-standing RBF portfolios. A number of organizations have expertise in more than one kind of RBF (eg, KfW, DFAT, Sida), while others, such as the African Development Bank, are just beginning to experiment with RBF. The study also presented a typology of RBF instruments**,** capturing trends, highlighting which RBF mechanisms are gaining the most traction, and identifying the actors leading the use of these instruments. 
+
+Building on the scoring and mapping methods presented in the study, GPOBA will continue analyzing key actors according to its own strategic criteria. This will help GPOBA to determine with whom it should develop or strengthen collaboration. The tools will also serve as important references for project team leaders looking for practitioners with experience in a particular sector, region, or RBF instrument. GPOBA will build on the study’s RBF typology in order to focus on the most relevant mechanisms – for instance, exploring where and how Public Private Partnerships (PPPs) might be most effective. 
+
+As GPOBA continues to play a leading role in supporting RBF/OBA approaches for the delivery of basic services to the world’s poorest people, it will build on the insights gained from work such as the Universe of RBF study to deepen its knowledge base and to generate opportunities to collaborate with and learn from other RBF practitioners.
