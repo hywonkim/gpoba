@@ -10,7 +10,7 @@ gem "middleman-autoprefixer"
 gem "middleman-minify-html"
 gem "middleman-imageoptim"
 gem "middleman-es6", github: "vast/middleman-es6"
-gem "middleman-blog"
+gem "middleman-pagination"
 
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
@@ -18,5 +18,6 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 # Windows does not come with time zone data
 gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 
-# Convert strings to friendly URLs
+# String helpers
 gem "string-urlize"
+gem "titleize"

@@ -43,6 +43,14 @@ page "README.md", :directory_index => false
 page "LICENSE", :directory_index => false
 page "404.html", :directory_index => false
 
+# Create a "pageable set" from the chapters local data
+# -> used for local navigation on chapter pages, for next/prev links
+activate :pagination do
+  pageable_set :chapters do |chapter|
+    data.chapters
+  end
+end
+
 ###
 # Helpers
 ###
@@ -71,6 +79,16 @@ helpers do
             return true
         end
     end
+
+    # $chapters = Hash.new
+    # data.chapters.each do |chapter|
+    #     $chapters[chapter.slug] = chapter.title
+    # end
+    # $chapter_keys = $chapters.keys
+
+    # def prev_page_url(slug)
+    #     current_index = $chapter[slug]
+    # end
 
 end
 
