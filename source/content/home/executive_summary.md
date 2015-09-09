@@ -2,6 +2,7 @@
 title: Year in Review
 chapter: home
 order: 1
+type: introduction
 ---
 
 Over the last two decades, **results-based financing, or RBF**, has played an increasingly important role in international development, as the World Bank Group, developments partners, and governments around the world have sought more effective ways of delivering services to poor populations. While traditional aid disburses money against expenditures or contracts, RBF makes disbursements against demonstrated and independently verified results, increasing accountability and helping to measure performance. Output-based aid (OBA) is a form of RBF that provides results-based subsidies for the delivery of basic services to the world’s poorest and most marginalized citizens. 

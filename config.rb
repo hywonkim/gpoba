@@ -21,13 +21,19 @@ end
 # page "/path/to/file.html", :layout => :otherlayout
 #
 # A path which all have the same layout
-with_layout :chapter do
-  page "/content/*"
-end
+# with_layout :chapter do
+#   page "/content/*"
+# end
+
+# no layout for content files
+page "/content/*", :layout => false
 
 # Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }
+data.chapters.each do |chapter|
+    proxy "#{data.site.paths.chapter}#{chapter.slug.urlize}.html", "/templates/chapter.html", :locals => { :title => chapter.title, :slug => chapter.slug, :color => chapter.color || "blue", :image => chapter.slug || false }, :ignore => true
+end
 
 # set options on blog
 activate :blog do |blog|

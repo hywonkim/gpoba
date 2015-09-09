@@ -2,6 +2,7 @@
 title: introduction
 chapter: portfolio
 order: 1
+type: introduction
 ---
 
 Grant funding is a critical element of GPOBA’s mission, providing the catalyst for design and implementation of RBF projects. GPOBA provides operational support for subsidy projects, technical assistance (TA), and knowledge dissemination. Monitoring and measuring project performance is a key part of the team’s work. Project completion reports, evaluations, and assessments all inform the design of future pilot projects and contribute to GPOBA’s objective of becoming a recognized Center of Expertise (CoE) on the use of OBA/RBF.

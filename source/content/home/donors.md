@@ -1,7 +1,7 @@
 ---
 title: "Support from Donors"
-chapter: overview
-order: 3
+chapter: home
+order: 2
 type: billboard
 background: http://placehold.it/1200x800
 ---

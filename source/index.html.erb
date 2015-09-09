@@ -2,7 +2,7 @@
 title: home
 ---
 
-<header class="hero" style="background-image: url('<%= data.site.cover_image %>');">
+<header class="hero">
     <span class="hero-logo"><%= data.site.organization %></span>
     <div class="hero-headline">
         <h1 class="hero-title"><%= data.site.title %></h1>
@@ -16,10 +16,9 @@ title: home
 
     <!-- Executive summary -->
     <div class="l-wrapper narrow chapter-content">
-        <h1 class="chapter-title">A Year in Review</h1>
-        <p class="lead"><%= lorem.sentences 4 %>.</p>
-        <% 1.upto(5) do |num| %>
-            <p><%= lorem.sentences 4 %>.</p>
+        <% sitemap.where(:chapter => "home", :type => "introduction").order_by(:order).all.each do |summary| %>
+            <h1 class="chapter-title"><%= summary.data.title %></h1>
+            <%= summary.render %>
         <% end %>
     </div>
 
@@ -62,53 +61,27 @@ title: home
 
 <section class="billboard">
     <div class="billboard-frame">
-        <h1 class="billboard-title">Donor Contributions</h1>
-        <p><%= lorem.sentences 6 %>.</p>
+        <% sitemap.where(:chapter => "home", :type => "billboard").order_by(:order).all.each do |billboard| %>
+            <h1 class="billboard-title"><%= billboard.data.title %></h1>
+            <%= billboard.render %>
+        <% end %>
     </div>
 </section>
 
 <section class="panel">
     <h1 class="panel-slug">Sections</h1>
     <ul class="feed l-wrapper narrow">
-        <li class="feed-item card horizontal">
-            <a href="#" class="card-thumb">
-                <img src="<%= lorem.image '600x400' %>" />
-            </a>
-            <div class="card-content">
-                <h2 class="card-title">Overview</h2>
-                <p><%= lorem.sentences 3 %>.</p>
-                <a href="" class="read_more">Read More &rsaquo;</a>
-            </div>
-        </li>
-        <li class="feed-item card horizontal">
-            <a href="#" class="card-thumb">
-                <img src="<%= lorem.image '600x400' %>" />
-            </a>
-            <div class="card-content">
-                <h2 class="card-title">Our Portfolio</h2>
-                <p><%= lorem.sentences 3 %>.</p>
-                <a href="" class="read_more">Read More &rsaquo;</a>
-            </div>
-        </li>
-        <li class="feed-item card horizontal">
-            <a href="#" class="card-thumb">
-                <img src="<%= lorem.image '600x400' %>" />
-            </a>
-            <div class="card-content">
-                <h2 class="card-title">New Business</h2>
-                <p><%= lorem.sentences 3 %>.</p>
-                <a href="" class="read_more">Read More &rsaquo;</a>
-            </div>
-        </li>
-        <li class="feed-item card horizontal">
-            <a href="#" class="card-thumb">
-                <img src="<%= lorem.image '600x400' %>" />
-            </a>
-            <div class="card-content">
-                <h2 class="card-title">Building a Center of Expertise</h2>
-                <p><%= lorem.sentences 3 %>.</p>
-                <a href="" class="read_more">Read More &rsaquo;</a>
-            </div>
-        </li>
+        <% data.chapters.each do |chapter| %>
+            <li class="feed-item card horizontal">
+                <a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>" class="card-thumb">
+                    <img src="<%= lorem.image '600x400' %>" />
+                </a>
+                <div class="card-content">
+                    <h2 class="card-title"><a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>"><%= chapter.title %></a></h2>
+                    <p><%= lorem.sentences 3 %>.</p>
+                    <a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>" class="read_more">Read More &rsaquo;</a>
+                </div>
+            </li>
+        <% end %>
     </ul>
 </section>

@@ -2,6 +2,7 @@
 title: Introduction
 chapter: looking ahead
 order: 1
+type: introduction
 ---
 
 <!-- Below may be saying way too much, and getting too specific -->

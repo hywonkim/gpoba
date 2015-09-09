@@ -1,0 +1,46 @@
+---
+layout: layout
+---
+
+<%= partial "layouts/partials/header" %>
+
+<article class="chapter theme-<%= locals[:color] %>">
+    <header class="chapter-hero">
+        <h1 class="hero-headline"><%= locals[:title] %></h1>
+    </header>
+
+    <div class="chapter-section first l-wrapper narrow" id="intro">
+        <% sitemap.where(:chapter => locals[:slug], :type => "introduction").order_by(:order).all.each do |intro| %>
+            <%= intro.render %>
+        <% end %>
+    </div>
+
+    <% sitemap.where(:chapter => locals[:slug]).order_by(:order).all.each do |section| %>
+        <% unless section.data.type == "introduction" %>
+            <section class="chapter-section" id="composition">
+                <h2 class="chapter-subtitle"><%= section.data.title %></h2>
+                <div class="l-wrapper narrow">
+                    <%= section.render %>
+                </div>
+            </section>
+        <% end %>
+    <% end %>
+</article>
+
+<nav class="pagination">
+    <h2 class="pagination-slug">Read more</h2>
+    <ul class="l-wrapper">
+        <li class="pagination-prev">
+            <a href="#">
+                <span class="pagination-subtitle">Previous</span>
+                <strong class="pagination-title">Overview</strong>
+            </a>
+        </li>
+        <li class="pagination-next">
+            <a href="#">
+                <span class="pagination-subtitle">Next</span>
+                <strong class="pagination-title">New Business</strong>
+            </a>
+        </li>
+    </ul>
+</nav>

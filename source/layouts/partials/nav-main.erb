@@ -3,7 +3,7 @@
 <nav class="<%= classes %>" role="navigation">
     <ul>
         <% data.chapters.each do |chapter| %>
-        <li class="nav-item"><a href="/<%= chapter.slug.urlize %>/"><%= chapter.slug %></a></li>
+        <li class="nav-item"><a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>/"><%= chapter.slug %></a></li>
         <% end %>
     </ul>
 </nav>

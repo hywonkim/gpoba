@@ -2,6 +2,7 @@
 title: introduction
 chapter: overview
 order: 1
+type: introduction
 ---
 
 Increasing access to basic infrastructure and social services is critical to reducing poverty. Too often in developing countries, however, the gap between what it costs to deliver a service and what potential users are able to pay means that millions go without access to clean water, electricity, healthcare, and other basic services. Traditional aid, which makes disbursements against expenditures or contracts, commonly lacks mechanisms for measuring results and monitoring financial accountability, and there is increasing recognition among donors and governments that alternative approaches to service delivery and poverty reduction are needed. 

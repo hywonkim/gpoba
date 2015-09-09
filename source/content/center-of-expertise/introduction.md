@@ -2,6 +2,7 @@
 title: Introduction
 chapter: center of expertise
 order: 1
+type: introduction
 ---
 
 One of GPOBA’s core objectives is to become a Center of Expertise (CoE) on the effective use of OBA and RBF for basic service delivery. GPOBA’s aim to ensure that knowledge and experience gained through the design, implementation, monitoring and evaluation of OBA subsidy projects and TA activities both feeds back into its own operations and is shared with development partners to support the adoption of OBA/RBF. 
