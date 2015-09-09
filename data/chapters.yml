@@ -1,4 +1,18 @@
+- title: "Overview"
+  slug: overview
+  color: green
 - title: "Our Portfolio"
-  slug: "portfolio"
+  slug: portfolio
+  image: http://placehold.it/1200x800
+  color: red
+- title: "New Business"
+  slug: new business
+  image: http://placehold.it/1200x800
+  color: orange
+- title: "Center of Expertise"
+  image: http://placehold.it/1200x800
+  color: purple
 - title: "Looking Ahead"
   slug: "looking ahead"
+  image: http://placehold.it/1200x800
+  color: blue

@@ -31,8 +31,8 @@ end
 
 # set options on blog
 activate :blog do |blog|
-    blog.prefix = "content"
-    blog.permalink = "{chapter}.html"
+    blog.prefix = "chapters"
+    blog.permalink = "{year}/{title}.html"
 end
 
 # Pretty URLs (ie about.html.erb => about/index.html)
@@ -59,8 +59,6 @@ end
 #     "Helping"
 #   end
 # end
-
-set :site_title, 'GPOBA Annual Report 2015'
 
 set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
