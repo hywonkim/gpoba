@@ -12,5 +12,5 @@ copyright: "World Bank Group, all rights reserved."
 
 # file paths for various types of content
 paths:
-  chapter: "/sections/"
+  chapter: "/chapters/"
   appendix: "/appendices/"
