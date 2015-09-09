@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <%# show interior page title if it's in the frontmatter %>
-        <title><%= site_title %><% if current_page.data.title.present? && current_page.data.title != "home" %> | <%= current_page.data.title %><% end %></title>
+        <title><%= data.site.organization %> <%= data.site.title %> <%= data.site.year %><% if current_page.data.title.present? && current_page.data.title != "home" %> | <%= current_page.data.title %><% end %></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="/assets/stylesheets/main.css">

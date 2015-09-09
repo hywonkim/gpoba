@@ -2,11 +2,11 @@
 title: home
 ---
 
-<header class="hero">
-    <span class="hero-logo">GPOBA</span>
+<header class="hero" style="background-image: url('<%= data.site.cover_image %>');">
+    <span class="hero-logo"><%= data.site.organization %></span>
     <div class="hero-headline">
-        <h1 class="hero-title">Annual Report</h1>
-        <time class="hero-date">2015</time>
+        <h1 class="hero-title"><%= data.site.title %></h1>
+        <time class="hero-date"><%= data.site.year %></time>
     </div>
 
     <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav" }) %>

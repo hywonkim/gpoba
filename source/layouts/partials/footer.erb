@@ -2,7 +2,7 @@
     <div class="l-wrapper">
         <%= partial("layouts/partials/nav-main", :locals => { :classes => "footer-nav" }) %>
         <div class="footer-section">
-            <span class="footer-logo">GPOBA</span> <span class="footer-title">Annual Report <strong>2015</strong></span>
+            <span class="footer-logo"><%= data.site.organization %></span> <span class="footer-title"><%= data.site.title %> <strong><%= data.site.year %></strong></span>
             <a href="http://gpoba.org" class="footer-affiliate">gpoba.org</a>
         </div>
     </div>
@@ -11,7 +11,7 @@
             <ul>
                 <li class="footer-utility-item"><a href="">Acronyms &amp; Abbreviations</a></li>
                 <li class="footer-utility-item"><a href="">Legal</a></li>
-                <li class="footer-utility-item copyright"><small>&copy; Copyright 2015 World Bank Group, all rights reserved.</small></li>
+                <li class="footer-utility-item copyright"><small>&copy; Copyright Copyright <%= Time.now.year %> <%= data.site.copyright %></small></li>
             </ul>
         </div>
     </div>
