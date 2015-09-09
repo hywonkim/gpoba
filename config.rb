@@ -31,14 +31,10 @@ page "/content/*", :layout => false
 # Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }
+
+# Create a page for each "chapter" using the chapters.html.erb template
 data.chapters.each do |chapter|
     proxy "#{data.site.paths.chapter}#{chapter.slug.urlize}.html", "/templates/chapter.html", :locals => { :title => chapter.title, :slug => chapter.slug, :color => chapter.color || "blue", :image => chapter.slug || false }, :ignore => true
-end
-
-# set options on blog
-activate :blog do |blog|
-    blog.prefix = "chapters"
-    blog.permalink = "{year}/{title}.html"
 end
 
 # Pretty URLs (ie about.html.erb => about/index.html)
@@ -60,11 +56,23 @@ configure :development do
 end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+
+    # is this url the current page?
+    def current_page?(url)
+        if current_resource.path == url
+            return true
+        end
+    end
+
+    # is this url in the current directory (in the sitemap)?
+    def current_dir?(url)
+        if current_page.url.include? url.gsub(".html", "/").to_s
+            return true
+        end
+    end
+
+end
 
 set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
