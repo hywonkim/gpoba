@@ -2,9 +2,8 @@
 
 <nav class="<%= classes %>" role="navigation">
     <ul>
-        <li class="nav-item"><a href="/sections/portfolio/">Overview</a></li>
-        <li class="nav-item"><a href="/sections/portfolio/">Our portfolio</a></li>
-        <li class="nav-item"><a href="/sections/portfolio/">New business</a></li>
-        <li class="nav-item"><a href="/sections/portfolio/">Center of Expertise</a></li>
+        <% data.chapters.each do |chapter| %>
+        <li class="nav-item"><a href="/<%= chapter.slug.urlize %>/"><%= chapter.slug %></a></li>
+        <% end %>
     </ul>
 </nav>
