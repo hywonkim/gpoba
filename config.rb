@@ -1,3 +1,5 @@
+# require './lib/chapter'
+
 ###
 # Compass
 ###
@@ -32,16 +34,39 @@ page "/content/*", :layout => false
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }
 
-# Create a page for each "chapter" using the chapters.html.erb template
+# Set up arrays of chapter slugs and titles, to help with pagination (see helpers below)
 $chapter_slugs = []
 $chapter_titles = []
 
-data.chapters.each do |chapter|
-    proxy "#{data.site.paths.chapter}#{chapter.slug.urlize}.html", "/templates/chapter.html", :locals => { :title => chapter.title, :slug => chapter.slug, :color => chapter.color || "blue", :image => chapter.slug || false }, :ignore => true
+# Create a page for each "chapter" using the chapters.html.erb template
+data.chapters.each_with_index do |chapter, index|
+    proxy "#{data.site.paths.chapter}#{chapter.slug.urlize}.html", "/templates/chapter.html", :locals => {
+        :title => chapter.title,
+        :slug => chapter.slug,
+        :color => chapter.color || "blue",
+        :image => chapter.image || false,
+        :order => index
+    }, :ignore => true
 
+    # add chapter data to title & slug arrays
     $chapter_slugs.push(chapter.slug)
     $chapter_titles.push(chapter.title)
 end
+
+# go back through the generated pages and add the locals to metadata
+# ready do
+#     data.chapters.each_with_index do |chapter, index|
+#         resource = sitemap.find_resource_by_path "#{data.site.paths.chapter}#{chapter.slug.urlize}.html"
+#         resource.add_metadata page: {
+#             title: chapter.title,
+#             slug: chapter.slug,
+#             type: "chapter",
+#             order: index,
+#             color: chapter.color || "blue",
+#             image: chapter.image || false
+#         }
+#     end
+# end
 
 # Pretty URLs (ie about.html.erb => about/index.html)
 activate :directory_indexes
@@ -88,6 +113,8 @@ helpers do
 
     # Pagination helpers
 
+    # http://talks.ruby.org.nz/2013/middleman/
+    # https://forum.middlemanapp.com/t/creating-next-and-prev-links-for-pages/1414/2
     # class Chapter
     #     def initialize(resource)
     #         @resource = resource

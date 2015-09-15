@@ -59,6 +59,7 @@ title: home
     </aside>
 </article>
 
+<!-- Donors -->
 <section class="billboard">
     <div class="billboard-frame">
         <% sitemap.where(:chapter => "home", :type => "billboard").order_by(:order).all.each do |billboard| %>
@@ -68,6 +69,7 @@ title: home
     </div>
 </section>
 
+<!-- Section cards -->
 <section class="panel">
     <h1 class="panel-slug">Sections</h1>
     <ul class="feed l-wrapper narrow">

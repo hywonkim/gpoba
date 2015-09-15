@@ -2,6 +2,8 @@
 layout: layout
 ---
 
+<% current_page.add_metadata({ 'title' => locals[:title], 'slug' => locals[:slug], 'type' => locals[:type], 'order' => locals[:order] }) %>
+
 <%= partial "layouts/partials/header" %>
 
 <article class="chapter theme-<%= locals[:color] %>">
@@ -32,6 +34,7 @@ layout: layout
 </article>
 
 <!-- Local navigation (next/prev chapters) -->
+<%#= current_page.metadata['order'] %><%#= current_page.metadata['slug'] %>
 <nav class="pagination">
     <h2 class="pagination-slug">Read more</h2>
     <ul class="l-wrapper">
