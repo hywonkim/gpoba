@@ -34,21 +34,25 @@ layout: layout
 </article>
 
 <!-- Local navigation (next/prev chapters) -->
+<!-- https://github.com/middleman/middleman/issues/1110 -->
 <%#= current_page.metadata['order'] %><%#= current_page.metadata['slug'] %>
 <nav class="pagination">
     <h2 class="pagination-slug">Read more</h2>
     <ul class="l-wrapper">
         <% unless first_page(locals[:slug]) %>
         <li class="pagination-prev">
-            <a href="<%= pagination_url(locals[:slug], "prev") %>">
+            <% resource = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] - 1) } %>
+            <% resource.each do |chapter| %>
+            <a href="<%= asset_url("#{data.site.paths.chapter}#{chapter.metadata[:locals][:slug]}/") %><%#= pagination_url(current_page.metadata['order'], "prev") %>">
                 <span class="pagination-subtitle">Previous</span>
-                <strong class="pagination-title"><%= pagination_title(locals[:title], "prev") %></strong>
+                <strong class="pagination-title"><%= chapter.metadata[:locals][:title] %></strong>
             </a>
+            <% end %>
         </li>
         <% end %>
         <% unless last_page(locals[:slug]) %>
         <li class="pagination-next">
-            <a href="<%= pagination_url(locals[:slug], "next") %>">
+            <a href="<%= pagination_url(current_page.metadata['order'], "next") %>">
                 <span class="pagination-subtitle">Next</span>
                 <strong class="pagination-title"><%= pagination_title(locals[:title], "next") %></strong>
             </a>

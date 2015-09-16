@@ -45,6 +45,7 @@ data.chapters.each_with_index do |chapter, index|
         :slug => chapter.slug,
         :color => chapter.color || "blue",
         :image => chapter.image || false,
+        :type => "chapter",
         :order => index
     }, :ignore => true
 
@@ -74,13 +75,6 @@ page "README.md", :directory_index => false
 page "LICENSE", :directory_index => false
 page "404.html", :directory_index => false
 
-# Create a "pageable set" from the chapters local data
-# -> used for local navigation on chapter pages, for next/prev links
-activate :pagination do
-  pageable_set :chapters do |chapter|
-    data.chapters
-  end
-end
 
 ###
 # Helpers
@@ -145,11 +139,17 @@ helpers do
 
 
     # get the url for the next or previous chapter
-    def pagination_url(slug, sequence = "prev")
+    def pagination_url(index, sequence = "prev")
+        # @index = index;
         if sequence == "prev"
-            return "#{data.site.paths.chapter}#{$chapter_slugs[get_current_index(slug) - 1].to_s.urlize}/"
+            @index = (index - 1);
         elsif sequence == "next"
-            return "#{data.site.paths.chapter}#{$chapter_slugs[get_current_index(slug) + 1].to_s.urlize}/"
+            @index = (index + 1);
+            # return "#{data.site.paths.chapter}#{$chapter_slugs[get_current_index(slug) + 1].to_s.urlize}/"
+        end
+
+        sitemap.where(:type => "chapter", :order => index).limit(1) do |chapter|
+            return chapter.metadata.slug
         end
     end
 
