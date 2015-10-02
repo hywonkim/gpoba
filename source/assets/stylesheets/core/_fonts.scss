@@ -52,18 +52,67 @@ $font-scale: 10px 13px 16px 23px 26px 37px 42px 68px 97px 110px 157px 177px;
 /* Globals
 // -------------------------------------------------------------------------- */
 
-/* ----- Example @font-face ------------------------------------------------- */
+/* ----- Newslab ------------------------------------------------------------ */
 
-// @font-face {
-//     font-family: 'MuseoSans';
-//     src: font-url('#{$path-fonts}/MuseoSans300.eot');
-//     src: font-url('#{$path-fonts}/MuseoSans300.eot?#iefix') format('embedded-opentype'),
-//          font-url('#{$path-fonts}/MuseoSans300.woff') format('woff'),
-//          font-url('#{$path-fonts}/MuseoSans300.ttf') format('truetype'),
-//          font-url('#{$path-fonts}/MuseoSans300.svg#MuseoSans300') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
-// }
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2015 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Latinotype
+ * License URL: http://www.fontspring.com/licenses/latinotype/webfont
+ *
+ *
+ */
+
+@include font-face("newslab-thin", font_path("NewslabThin-webfont"), $file-formats: eot ttf woff2 woff svg);
+@include font-face("newslab", font_path("Newslab-webfont"), bold, $file-formats: eot ttf woff2 woff svg);
+
+/* ----- Gibson ------------------------------------------------------------- */
+
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2012 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Canada Type
+ * License URL: http://www.fontspring.com/fflicense/canada-type
+ *
+ *
+ */
+
+@include font-face("gibson", font_path("Gibson-Light-webfont"), $file-formats: eot ttf woff svg);
+@include font-face("gibson-bold", font_path("Gibson-SemiBold-webfont"), bold, $file-formats: eot ttf woff svg);
+
+/* ----- Source Sans Pro ---------------------------------------------------- */
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic);
 
 /* Font styles
 // -> PUBLIC, use these to style type globally & in modules
@@ -72,27 +121,35 @@ $font-scale: 10px 13px 16px 23px 26px 37px 42px 68px 97px 110px 157px 177px;
 /* ----- Display type ------------------------------------------------------- */
 
 %font-display {
-    font-family: $helvetica;
+    font-family: "newslab-thin", $georgia;
     font-weight: normal;
     font-style: normal;
 }
 
 %font-display--bold {
     @extend %font-display;
-    font-family: $helvetica;
+    font-family: "newslab", $georgia;
     font-weight: bold;
 }
 
 %font-accent {
-    @extend %font-display;
+    font-family: "gibson", $helvetica;
+    font-weight: normal;
+    font-style: normal;
+}
+
+%font-accent-bold {
+    @extend %font-accent;
+    font-family: "gibson-bold", $helvetica;
+    font-weight: bold;
 }
 
 
 /* ----- Body type ---------------------------------------------------------- */
 
 %font-body {
-    font-family: $helvetica;
-    font-weight: normal;
+    font-family: 'Source Sans Pro', $lucida-grande;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -103,7 +160,7 @@ $font-scale: 10px 13px 16px 23px 26px 37px 42px 68px 97px 110px 157px 177px;
 
 %font-body--bold {
     @extend %font-body;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /* ----- Ampersands --------------------------------------------------------- */
