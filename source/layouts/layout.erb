@@ -7,8 +7,9 @@
         <title><%= data.site.organization %> <%= data.site.title %> <%= data.site.year %><% if current_page.data.title.present? && current_page.data.title != "home" %> | <%= current_page.data.title %><% end %></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="/assets/stylesheets/main.css">
-        <script src="/assets/javascripts/vendor/modernizr.js"></script>
+        <%# favicon_tag 'images/favicon.png' %>
+        <%= javascript_include_tag "lib" %>
+        <%= stylesheet_link_tag "main" %>
     </head>
     <body>
 
@@ -16,10 +17,7 @@
 
         <%= partial "layouts/partials/footer" %>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/assets/javascripts/vendor/jquery.js"><\/script>')</script>
-        <script src="/assets/javascripts/main.js"></script>
-
+        <%= javascript_include_tag "main" %>
         <%= partial "layouts/partials/analytics" %>
 
     </body>

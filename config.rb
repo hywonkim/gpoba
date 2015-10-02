@@ -190,6 +190,7 @@ after_configuration do
 
   sprockets.import_asset 'jquery'
   sprockets.import_asset 'modernizr/modernizr.js'
+  sprockets.import_asset 'picturefill'
 end
 
 # Build-specific configuration

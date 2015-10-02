@@ -17,7 +17,8 @@
     "jquery": "~2.1.4",
     "modernizr": "~2.8.3",
     "normalize-css": "~3.0.3",
-    "html5-boilerplate": "~5.2.0"
+    "html5-boilerplate": "~5.2.0",
+    "picturefill": "~3.0.1"
   },
   "devDependencies": {
     "singularity": "~1.6.2",
