@@ -1,10 +1,14 @@
 <% classes ||= "main" %>
+<% show_home ||= false %>
 
 <nav class="<%= classes %>" role="navigation">
     <ul>
+        <% if show_home == true %>
+            <li class="nav-item<% if current_dir? "/" %> is-active<% end %>"><a href="/">Home</a></li>
+        <% end %>
         <% data.chapters.each do |chapter| %>
-            <% @url = "#{data.site.paths.chapter}#{chapter.slug.urlize}/" %>
-            <li class="nav-item<% if current_dir? @url %> is-active<% end %>"><a href="<%= url_for(@url) %>"><%= chapter.slug %></a></li>
+            <% current_url = "#{data.site.paths.chapter}#{chapter.slug.urlize}/" %>
+            <li class="nav-item<% if current_dir? current_url %> is-active<% end %>"><a href="<%= asset_url(current_url) %>"><%= chapter.slug %></a></li>
         <% end %>
     </ul>
 </nav>
