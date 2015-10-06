@@ -4,7 +4,7 @@ title: "Annual Report"
 year: 2015
 
 # feature image on the homepage
-cover_image: http://placehold.it/1600x1200
+cover_image: media/site-cover.jpg
 
 # the copyright message (appears in the footer)
 # -> 'Copyright 2015' is automatically prepended to this.
@@ -14,3 +14,4 @@ copyright: "World Bank Group, all rights reserved."
 paths:
   chapter: "/chapters/"
   appendix: "/appendices/"
+  content: "/content/"

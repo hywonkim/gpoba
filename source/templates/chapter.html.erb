@@ -1,13 +1,20 @@
 ---
 layout: layout
 ---
-
-<% current_page.add_metadata({ 'title' => locals[:title], 'slug' => locals[:slug], 'type' => locals[:type], 'order' => locals[:order] }) %>
+<%# grab 'local' data passed in through config file (line 42), and attach it to this page's metadata, so it's accessible in the sitemap %>
+<% current_page.add_metadata({
+    'title' => locals[:title],
+    'slug' => locals[:slug],
+    'color' => locals[:color],
+    'type' => locals[:type],
+    'order' => locals[:order],
+    'image' => locals[:image],
+}) %>
 
 <%= partial "layouts/partials/header" %>
 
 <article class="chapter theme-<%= locals[:color] %>">
-    <header class="chapter-hero">
+    <header class="chapter-hero" <% if locals[:image].present? %>style="background-image: url('<%= asset_url(data.site.paths.content + locals[:slug].to_s.urlize + '/' + locals[:image].to_s) %>');"<% end %>>
         <h1 class="hero-headline"><%= locals[:title].titleize %></h1>
     </header>
 

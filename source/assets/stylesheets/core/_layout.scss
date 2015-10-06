@@ -129,6 +129,10 @@ html {
         font-size: 110%;
     }
 
+    @include breakpoint($screen--large) {
+        font-size: 115%;
+    }
+
     // set everything to roll with border-box sizing
     // -> much easier than reg box model
     // -> http://www.paulirish.com/2012/box-sizing-border-box-ftw/
