@@ -2,14 +2,21 @@
 title: home
 ---
 
-<header class="hero">
-    <span class="hero-logo"><%= data.site.organization %></span>
-    <div class="hero-headline">
-        <h1 class="hero-title"><%= data.site.title %></h1>
-        <time class="hero-date"><%= data.site.year %></time>
-    </div>
+<header class="hero" style="background-image: url('<%= asset_url(data.site.paths.content + 'home/' + data.site.cover_image.to_s) %>');">
 
-    <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav" }) %>
+    <!-- GPOBA logo -->
+    <picture class="hero-logo">
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source type="image/svg+xml" srcset="<%= asset_url images_dir + '/logos/logo-gpoba.svg'%>">
+        <!--[if IE 9]></video><![endif]-->
+        <img src="<%= asset_url images_dir + '/logos/logo-gpoba.png'%>" alt="<%= data.site.organization %>" />
+    </picture>
+
+    <!-- main title lockup -->
+    <%= partial "layouts/partials/hero-lockup" %>
+
+    <!-- main menu -->
+    <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav", :show_home => true }) %>
 </header>
 
 <article class="chapter" role="main">

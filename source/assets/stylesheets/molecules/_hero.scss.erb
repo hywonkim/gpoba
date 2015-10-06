@@ -27,7 +27,8 @@
 // -------------------------------------------------------------------------- */
 
 .hero-logo {
-    @include rem(padding, 6px 12px);
+    @include rem(max-width, 100px);
+    @include rem(padding, 12px);
     display: inline-block;
     background-color: theme(bg);
 }
@@ -71,6 +72,11 @@
             font-size: 16vw;
         }
     }
+
+.hero-lockup {
+    @extend .hero-headline;
+    @include rem(max-width, 350px);
+}
 
 .hero-nav {
     @extend .nav.main;

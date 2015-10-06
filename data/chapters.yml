@@ -1,23 +1,24 @@
 - title: "Overview"
   slug: overview
+  image: media/ch1-cover.jpg
   color: green
 
 - title: "Our Portfolio"
   slug: portfolio
-  image: http://placehold.it/1200x800
+  image: media/ch2-cover.jpg
   color: red
 
 - title: "Pilot Projects, Scale-ups and Facilities"
   slug: new business
-  image: http://placehold.it/1200x800
+  image: media/ch3-cover.jpg
   color: orange
 
 - title: "Center of Expertise"
   slug: center of expertise
-  image: http://placehold.it/1200x800
+  image: media/ch4-cover.jpg
   color: purple
 
 - title: "Looking Ahead"
   slug: looking ahead
-  image: http://placehold.it/1200x800
+  image: media/ch5-cover.jpg
   color: blue
