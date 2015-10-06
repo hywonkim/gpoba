@@ -73,6 +73,11 @@
         }
     }
 
+.hero-lockup {
+    @extend .hero-headline;
+    @include rem(max-width, 350px);
+}
+
 .hero-nav {
     @extend .nav.main;
     @include border(bottom);
