@@ -1,0 +1,64 @@
+- group:
+      type: "p_for_r"
+      countries: 
+        - MX
+      color: blue
+
+- group:
+      type: "sub"
+      countries:
+        - AM
+        - BD
+        - BO
+        - CM
+        - CO
+        - IN
+        - KE
+        - LS
+        - ML
+        - MN
+        - MA
+        - MZ
+        - SN
+        - LK
+        - UG
+        - VN
+        - PS
+        - YE
+      color: green
+
+- group:
+      type: "ta"
+      countries:
+        - BR
+        - TD
+        - PH
+        - SB
+        - ZW
+      color: red
+
+- group:
+      type: "ta sub"
+      countries:
+        - GH
+        - HN
+        - ID
+        - LR
+        - NP
+        - NG
+        - PH
+        - VU
+      color: yellow
+
+- group:
+      type: "p_for_r sub"
+      countries:
+        - ET
+      color: orange
+
+- group:
+      type: "p_for_r ta"
+      countries:
+      - TZ
+      - UY
+      color: purple

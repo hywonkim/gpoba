@@ -1,0 +1,28 @@
+/* ==========================================================================
+//  Map Styles
+// 
+// ========================================================================== */
+
+<% data.map.each do |g|  %>
+
+    <%= g.group.countries.map{ |c| "#" + c }.join(',') %> {
+        fill: <%= g.group.color %>;
+    }
+
+<% end %>
+
+.map {
+    width: 5000px;
+    height: 500px;
+    fill: #ccc;
+}
+
+.legend {
+    display:block;
+    width: 500px;
+    position: absolute;
+
+    .sub-text {
+    fill: red !important;
+    }
+}
