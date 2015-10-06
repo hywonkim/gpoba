@@ -38,27 +38,30 @@ layout: layout
 <!-- https://forum.middlemanapp.com/t/querying-proxy-pages-by-locals/1195 -->
 <!-- https://forum.middlemanapp.com/t/creating-next-and-prev-links-for-pages/1414/3 -->
 
-<%#= current_page.metadata['order'] %><%#= current_page.metadata['slug'] %>
 <nav class="pagination">
     <h2 class="pagination-slug">Read more</h2>
     <ul class="l-wrapper">
-        <% unless first_page(locals[:slug]) %>
+        <%= get_current_index %>
+        <% unless first_page? %>
         <li class="pagination-prev">
             <% resource = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] - 1) } %>
             <% resource.each do |chapter| %>
-            <a href="<%= asset_url("#{data.site.paths.chapter}#{chapter.metadata[:locals][:slug]}/") %><%#= pagination_url(current_page.metadata['order'], "prev") %>">
+            <a href="<%= asset_url("#{data.site.paths.chapter}#{chapter.metadata[:locals][:slug].urlize}/") %>">
                 <span class="pagination-subtitle">Previous</span>
                 <strong class="pagination-title"><%= chapter.metadata[:locals][:title] %></strong>
             </a>
             <% end %>
         </li>
         <% end %>
-        <% unless last_page(locals[:slug]) %>
+        <% unless last_page? %>
         <li class="pagination-next">
-            <a href="<%= pagination_url(current_page.metadata['order'], "next") %>">
+            <% resource = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] + 1) } %>
+            <% resource.each do |chapter| %>
+            <a href="<%= asset_url("#{data.site.paths.chapter}#{chapter.metadata[:locals][:slug].urlize}/") %>">
                 <span class="pagination-subtitle">Next</span>
-                <strong class="pagination-title"><%= pagination_title(locals[:title], "next") %></strong>
+                <strong class="pagination-title"><%= chapter.metadata[:locals][:title] %></strong>
             </a>
+            <% end %>
         </li>
         <% end %>
     </ul>

@@ -54,21 +54,6 @@ data.chapters.each_with_index do |chapter, index|
     $chapter_titles.push(chapter.title)
 end
 
-# go back through the generated pages and add the locals to metadata
-# ready do
-#     data.chapters.each_with_index do |chapter, index|
-#         resource = sitemap.find_resource_by_path "#{data.site.paths.chapter}#{chapter.slug.urlize}.html"
-#         resource.add_metadata page: {
-#             title: chapter.title,
-#             slug: chapter.slug,
-#             type: "chapter",
-#             order: index,
-#             color: chapter.color || "blue",
-#             image: chapter.image || false
-#         }
-#     end
-# end
-
 # Pretty URLs (ie about.html.erb => about/index.html)
 activate :directory_indexes
 page "README.md", :directory_index => false
@@ -129,47 +114,19 @@ helpers do
     #     Chapter.all(sitemap.resources)
     # end
 
-    def get_current_index(page, slug = true)
-        if slug == true
-            return $chapter_slugs.index(page)
-        else
-            return $chapter_titles.index(page)
-        end
+    def get_current_index
+        return current_page.metadata['order']
     end
 
 
-    # get the url for the next or previous chapter
-    def pagination_url(index, sequence = "prev")
-        # @index = index;
-        if sequence == "prev"
-            @index = (index - 1);
-        elsif sequence == "next"
-            @index = (index + 1);
-            # return "#{data.site.paths.chapter}#{$chapter_slugs[get_current_index(slug) + 1].to_s.urlize}/"
-        end
-
-        sitemap.where(:type => "chapter", :order => index).limit(1) do |chapter|
-            return chapter.metadata.slug
-        end
-    end
-
-    # get the title for the next or previous chapter
-    def pagination_title(title, sequence = "prev")
-        if sequence == "prev"
-            return $chapter_titles[get_current_index(title, false) - 1].titleize
-        elsif sequence == "next"
-            return $chapter_titles[get_current_index(title, false) + 1].titleize
-        end
-    end
-
-    def first_page(slug)
-        if get_current_index(slug) <= 0
+    def first_page?
+        if get_current_index <= 0
             return true
         end
     end
 
-    def last_page(slug)
-        if get_current_index(slug) >= $chapter_slugs.length - 1
+    def last_page?
+        if get_current_index >= $chapter_slugs.length - 1
             return true
         end
     end
