@@ -110,6 +110,7 @@ $font-scale: 10px 13px 16px 23px 26px 37px 42px 68px 97px 110px 157px 177px;
 @include font-face("gibson", font_path("Gibson-Light-webfont"), $file-formats: eot ttf woff svg);
 @include font-face("gibson-bold", font_path("Gibson-SemiBold-webfont"), bold, $file-formats: eot ttf woff svg);
 
+
 /* ----- Source Sans Pro ---------------------------------------------------- */
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic);

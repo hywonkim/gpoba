@@ -11,7 +11,7 @@
         <%= javascript_include_tag "lib" %>
         <%= stylesheet_link_tag "main" %>
     </head>
-    <body>
+    <body <% if current_page.metadata['color'].present? %>class="theme-highlight <%= current_page.metadata['color'] %>"<% end %>>
 
         <%= yield %>
 

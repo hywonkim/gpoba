@@ -55,6 +55,12 @@ nav, .nav {
     @extend %font-body--bold;
     display: inline-block;
 
+    &.is-active > a {
+        @include chapter_highlights(border-bottom-color color);
+        color: theme(highlight);
+        border-bottom: 2px solid theme(highlight);
+    }
+
     > a {
         @extend %font-body--bold;
         @include rem(padding, fs(3) fs(3));

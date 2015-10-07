@@ -1,14 +1,14 @@
 /* ==========================================================================
-//  Map Styles
-// 
+//  Map Module
 // ========================================================================== */
 
+/* assign the correct fill color to each highlighted country
+ * -> see data/map.yml
+ */
 <% data.map.each do |g|  %>
-
     <%= g.group.countries.map{ |c| "#" + c }.join(',') %> {
         fill: <%= g.group.color %>;
     }
-
 <% end %>
 
 .map {

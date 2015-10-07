@@ -62,19 +62,23 @@ $gray              : #DBD9DA;
 $light_gray        : #F2F2F2;
 
 // highlights
-// -> pulled in from /data/colors.yml
-// $blue   : #5eabbc;
-// $green  : #5dc0ba;
-// $red    : #f3385a;
-// $orange : #f5a100;
-// $purple : #8d64aa;
+// -> access with mixin "chapter_highlights()" below
+$highlights: (
+    'blue'   : #5eabbc,
+    'green'  : #5dc0ba,
+    'red'    : #f3385a,
+    'orange' : #f5a100,
+    'purple' : #8d64aa,
+);
+
+$highlight--default: map-get($highlights, 'blue');
 
 // Themes
 // ----------------------------------------------------------------------
 // -> PUBLIC, use these for color references
 
 // note: highlight is default; variations are assigned in local styles
-// "default": dark text over white. used throughout the main content.
+// -> "default": dark text over white. used throughout the main content.
 // -> "reverse": light text over dark. used in the footer.
 // -> "wash": b/w text over a bright background. used in local navs, billboards.
 $themes: (
@@ -88,7 +92,7 @@ $themes: (
         'bg'              : #fff,
         'well'            : $light_gray,
         'border'          : $gray,
-        'highlight'       : <%= data.colors["blue"] %>
+        'highlight'       : $highlight--default,
     ),
     'reverse': (
         'text': (
@@ -100,7 +104,7 @@ $themes: (
         'bg'              : $super_dark_purple,
         'well'            : $black,
         'border'          : lighten($super_dark_purple, 10),
-        'highlight'       : <%= data.colors["blue"] %>
+        'highlight'       : $highlight--default,
     ),
     'wash': (
         'text': (
@@ -109,10 +113,10 @@ $themes: (
             'tertiary'    : $dark_purple,
             'body'        : $dark_purple,
         ),
-        'bg'              : <%= data.colors["blue"] %>,
-        'well'            : darken(<%= data.colors["blue"] %>, 5),
-        'border'          : darken(<%= data.colors["blue"] %>, 10),
-        'highlight'       : #fff
+        'bg'              : $highlight--default,
+        'well'            : darken($highlight--default, 5),
+        'border'          : darken($highlight--default, 10),
+        'highlight'       : #fff,
     )
 );
 
@@ -128,6 +132,25 @@ $themes: (
     }
     @return $map;
 
+}
+
+// add all highlight colors for any attributes
+// -> PUBLIC
+// -> USAGE:
+//      single attribute:
+//          a { @include highlights(color); }
+//      multiple attributes:
+//          a { @include highlights(color border-bottom-color); }
+// -> NOTE: use after you set your default highlights, or it will be overridden.
+@mixin chapter_highlights($attributes: "color") {
+    @each $name, $color in $highlights {
+        .theme-highlight.#{$name} & {
+            @each $attr in $attributes {
+                #{$attr}: #{$color};
+                @debug "#{$attr}: #{$color}";
+            }
+        }
+    }
 }
 
 // @debug theme('text' 'primary', 'reverse');
@@ -173,3 +196,8 @@ body {
 %theme--wash {
     @include theme('wash');
 }
+
+/* Submodules
+// -> create highlight colors for individual chapters
+// -------------------------------------------------------------------------- */
+
