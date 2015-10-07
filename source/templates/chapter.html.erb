@@ -14,7 +14,7 @@ layout: layout
 <%= partial "layouts/partials/header" %>
 
 <article class="chapter">
-    <header class="chapter-hero" <% if locals[:image].present? %>style="background-image: url('<%= asset_url(data.site.paths.content + locals[:slug].to_s.urlize + '/' + locals[:image].to_s) %>');"<% end %>>
+    <header class="chapter-hero">
         <h1 class="hero-headline"><%= locals[:title].titleize %></h1>
     </header>
 

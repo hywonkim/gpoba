@@ -31,7 +31,18 @@ $chapter-padding: fs(6);
 
     &:first-child { margin-top: -($chapter-padding); }
 
-
+    /* set up chapter hero images and overlay gradients (where supported) */
+    <% data.chapters.each do |chapter| %>
+        .<%= chapter.slug.urlize %> & {
+            background-image:
+                url('<%= asset_url(data.site.paths.content + chapter.slug.to_s.urlize + '/' + chapter.image.to_s) %>');
+        }
+        .multiplebgs.cssgradients .<%= chapter.slug.urlize %> & {
+            background-image:
+                linear-gradient(to bottom, blue, white),
+                url('<%= asset_url(data.site.paths.content + chapter.slug.to_s.urlize + '/' + chapter.image.to_s) %>');
+        }
+    <% end %>
 }
 
 .chapter-title {

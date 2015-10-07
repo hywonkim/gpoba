@@ -31,3 +31,6 @@
         </li>
     </ul>
 </aside>
+
+<!-- Chapter hero backgorund image local style -->
+<% if locals[:image].present? %>style="background-image: url('<%= asset_url(data.site.paths.content + locals[:slug].to_s.urlize + '/' + locals[:image].to_s) %>');"<% end %>
