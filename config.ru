@@ -42,7 +42,7 @@ use Rack::TryStatic,
 
 # 404 Support
 run lambda { |env|
-      four_oh_four_page = File.expand_path('../build/index/404.html', __FILE__)
+      four_oh_four_page = File.expand_path('../build/404.html', __FILE__)
       [
           404,
           {'Content-Type'  => 'text/html', 'Cache-Control' => "public, max-age=#{ONE_WEEK}"},
