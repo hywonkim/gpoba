@@ -211,10 +211,10 @@ configure :build do
   end
 
   # Enable cache buster
-  activate :asset_hash
+  # activate :asset_hash
 
   # Gzip
-  activate :gzip
+  # activate :gzip
 
   # Use relative URLs
   activate :relative_assets
