@@ -1,4 +1,5 @@
 # require './lib/chapter'
+# require 'middleman-thumbnailer'
 
 ## Add CSV To Table
 require 'lib/csv_helpers.rb'
@@ -65,6 +66,16 @@ page "README.md", :directory_index => false
 page "LICENSE", :directory_index => false
 page "404.html", :directory_index => false
 
+# Thumbnailer extension
+# -> used for responsive images and media boxes
+# https://github.com/nhemsley/middleman-thumbnailer
+# activate :thumbnailer,
+#     :dimensions => {
+#       :small => '200x',
+#       :medium => '400x300'
+#     },
+#     :include_data_thumbnails => true,
+#     :namespace_directory => %w(gallery)
 
 ###
 # Helpers
