@@ -1,5 +1,5 @@
 namespace :assets do
   task :precompile do
-    sh 'bundle exec middleman build'
+    sh 'middleman build'
   end
 end
