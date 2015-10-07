@@ -1,5 +1,10 @@
 # require './lib/chapter'
 
+## Add CSV To Table
+require 'lib/csv_helpers.rb'
+activate :csv_helpers 
+
+
 ###
 # Compass
 ###

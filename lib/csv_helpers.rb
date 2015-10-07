@@ -1,4 +1,4 @@
-# CSV extension by Adolfo Villafiorita
+# Table creation extension based on CSV data by Adolfo Villafiorita
 # http://www.ict4g.net/adolfo/notes/2015/05/30/csv_data_in_middleman.html
 
 class CSV_Helpers < Middleman::Extension
@@ -6,10 +6,30 @@ class CSV_Helpers < Middleman::Extension
     super
   end
   helpers do
-    def csv_data(file)
-      csv_data = File.read(File.join(data_dir, file))
-      hash = CSV.new(csv_data, :headers => true, :header_converters => :symbol)
-      return hash.to_a.map { |row| row.to_hash }
+    def table(file, html_class = '')
+      # Create the Table object from CSV File
+        csv_data = File.read(File.join(data_dir, '/tables/'+ file)) # TODO potentially make it dynamically find the location. For now all tables must be added to the data/tables folder.
+        csv = CSV.new(csv_data, :headers => true, :header_converters => :symbol)
+        tbl_obj = csv.read
+
+      # Build HTML Table      
+        html_table = "<table class=\"#{html_class}\" >"
+
+        tbl_obj.headers.each do |header| 
+          html_table += "<th> #{ header.to_s.titlecase } </th>"
+        end
+
+        tbl_obj.each do |row|        
+          html_table += "<tr>"
+          row.to_hash.values.each do |value|          
+            html_table += "<td> #{value} </td>"
+          end
+          html_table += "</tr>"
+        end
+
+        html_table += "</table>"
+
+      return html_table
     end
   end
 end
