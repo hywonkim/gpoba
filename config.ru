@@ -1,8 +1,8 @@
 #\ -s puma
 require 'rack'
 require 'rack/contrib/try_static'
-# require 'rack/deflater'
-# require 'rack/cache'
+require 'rack/deflater'
+require 'rack/cache'
 
 # Enable proper HEAD responses
 use Rack::Head
@@ -13,14 +13,14 @@ unless ENV['RACK_ENV'] == 'development'
   use Rack::SSL
 end
 
-# # Rack Cache
-# use Rack::Cache,
-#     :verbose     => true,
-#     :metastore   => 'file:/var/cache/rack/meta',
-#     :entitystore => 'file:/var/cache/rack/body'
+# Rack Cache
+use Rack::Cache,
+    :verbose     => true,
+    :metastore   => 'file:/var/cache/rack/meta',
+    :entitystore => 'file:/var/cache/rack/body'
 
-# # Enables compression of http responses, used in conjunction with `activate :gzip` in config.rb
-# use Rack::Deflater
+# Enables compression of http responses, used in conjunction with `activate :gzip` in config.rb
+use Rack::Deflater
 
 ONE_WEEK = 604_800
 
@@ -45,7 +45,7 @@ use Rack::TryStatic,
 
 # 404 Support
 run lambda { |env|
-      four_oh_four_page = File.expand_path('../build/404/index.html', __FILE__)
+      four_oh_four_page = File.expand_path('../build/404.html', __FILE__)
       [
           404,
           {'Content-Type'  => 'text/html', 'Cache-Control' => "public, max-age=#{ONE_WEEK}"},
