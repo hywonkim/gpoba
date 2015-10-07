@@ -21,3 +21,6 @@
 # disable for heroku setup
 /vendor/assets/bower_components
 /node_modules
+
+# Ignore Tmp files
+/tmp
