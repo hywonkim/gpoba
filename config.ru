@@ -4,9 +4,6 @@ require 'rack/contrib/try_static'
 require 'rack/deflater'
 require 'rack/cache'
 
-# Build the static site when the app boots
-`bundle exec middleman build`
-
 # Enable proper HEAD responses
 use Rack::Head
 
@@ -28,11 +25,11 @@ use Rack::Deflater
 ONE_WEEK = 604_800
 
 # Basic Auth:
-# if ENV['RACK_ENV'] == 'production'
-#   use Rack::Auth::Basic, "Restricted Area" do |username, password|
-#     [username, password] == [ENV['HTTP_AUTH_USER'], ENV['HTTP_AUTH_PASS']]
-#   end
-# end
+if ENV['RACK_ENV'] == 'production'
+  use Rack::Auth::Basic, "Restricted Area" do |username, password|
+    [username, password] == [ENV['HTTP_AUTH_USER'], ENV['HTTP_AUTH_PASS']]
+  end
+end
 
 # Serve files from the build directory
 use Rack::TryStatic,
