@@ -11,6 +11,21 @@ layout: layout
     'image' => locals[:image],
 }) %>
 
+<% content_for :local_styles do %>
+    <style>
+        <% img_url = asset_url(data.site.paths.content + locals[:slug].to_s.urlize + '/' + locals[:image].to_s) %>
+        .chapter-hero {
+            background-image: url('<%= img_url %>');
+        }
+        /* if gradient bgs are supported (Modernizr test), use them */
+        .rgba.multiplebgs.cssgradients .chapter-hero {
+            background-image:
+                linear-gradient(to bottom, rgba(93,192,186,0.6), rgba(229,183,95,0.7)),
+                url('<%= img_url %>');
+        }
+    </style>
+<% end %>
+
 <%= partial "layouts/partials/header" %>
 
 <article class="chapter">

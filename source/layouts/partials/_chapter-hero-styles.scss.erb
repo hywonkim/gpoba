@@ -1,0 +1,10 @@
+<% img_url = asset_url(data.site.paths.content + locals[:slug].to_s.urlize + '/' + locals[:image].to_s) %>
+        .chapter-hero {
+            background-image: url('<%= img_url %>');
+        }
+        /* if gradient bgs are supported (Modernizr test), use them */
+        .rgba.multiplebgs.cssgradients .chapter-hero {
+            background-image:
+                linear-gradient(to bottom, blue, rgba(255,255,255,0)),
+                url('<%= img_url %>');
+        }
