@@ -131,7 +131,12 @@ $themes: (
         $map: map-get($map, $color);
     }
     @return $map;
+}
 
+// "get" function to access a highlight color
+// -> PUBLIC
+@function highlight($color) {
+    @return map-get($highlights, $color);
 }
 
 // add all highlight colors for any attributes
@@ -147,7 +152,7 @@ $themes: (
         .theme-highlight.#{$name} & {
             @each $attr in $attributes {
                 #{$attr}: #{$color};
-                @debug "#{$attr}: #{$color}";
+                // @debug "#{$attr}: #{$color}";
             }
         }
     }

@@ -25,6 +25,7 @@
     "bourbon": "~4.2.3",
     "sass-type-helpers": "~0.0.3",
     "sass-units": "~0.0.5",
-    "sass-list-helpers": "~0.0.1"
+    "sass-list-helpers": "~0.0.1",
+    "accoutrement-maps": "~1.0.1"
   }
 }
