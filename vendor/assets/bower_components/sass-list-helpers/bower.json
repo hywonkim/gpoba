@@ -1,0 +1,11 @@
+{
+  "name": "sass-list-helpers",
+  "version": "0.0.1",
+  "main": "_helpers-lists.scss",
+  "ignore": [
+    "**/.*",
+    "README.md",
+    "LICENSE",
+    "bower.json"
+  ]
+}

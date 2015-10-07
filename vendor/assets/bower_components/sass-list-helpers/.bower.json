@@ -1,0 +1,21 @@
+{
+  "name": "sass-list-helpers",
+  "version": "0.0.1",
+  "main": "_helpers-lists.scss",
+  "ignore": [
+    "**/.*",
+    "README.md",
+    "LICENSE",
+    "bower.json"
+  ],
+  "homepage": "https://github.com/jayperryworks/sass-list-helpers",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "bd35072227db57038da0d63e3a5653ada5c8a1b7"
+  },
+  "_source": "git://github.com/jayperryworks/sass-list-helpers.git",
+  "_target": "~0.0.1",
+  "_originalSource": "sass-list-helpers"
+}

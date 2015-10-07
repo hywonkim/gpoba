@@ -200,21 +200,21 @@ set :file_watcher_ignore,
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  activate :minify_css
+  # activate :minify_css
 
-  # Minify Javascript on build
-  activate :minify_javascript
+  # # Minify Javascript on build
+  # activate :minify_javascript
 
-  # Minify HTML on build
-  activate :minify_html do |html|
-    html.remove_http_protocol = false
-  end
+  # # Minify HTML on build
+  # activate :minify_html do |html|
+  #   html.remove_http_protocol = false
+  # end
 
   # Enable cache buster
   # activate :asset_hash
 
   # Gzip
-  activate :gzip
+  # activate :gzip
 
   # Use relative URLs
   activate :relative_assets

@@ -1,0 +1,11 @@
+{
+  "name": "sass-units",
+  "version": "0.0.4",
+  "main": "_units.scss",
+  "ignore": [
+    "**/.*",
+    "README.md",
+    "LICENSE",
+    "bower.json"
+  ]
+}

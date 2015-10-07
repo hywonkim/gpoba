@@ -1,0 +1,21 @@
+{
+  "name": "sass-type-helpers",
+  "version": "0.0.3",
+  "main": "_type-helpers.scss",
+  "ignore": [
+    "**/.*",
+    "README.md",
+    "LICENSE",
+    "bower.json"
+  ],
+  "homepage": "https://github.com/jayperryworks/sass-type-helpers",
+  "_release": "0.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.3",
+    "commit": "13c602e3f915140b886151ca6f85d5a8bb1d5564"
+  },
+  "_source": "git://github.com/jayperryworks/sass-type-helpers.git",
+  "_target": "~0.0.3",
+  "_originalSource": "sass-type-helpers"
+}

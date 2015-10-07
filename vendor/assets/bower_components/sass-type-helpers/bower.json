@@ -1,0 +1,11 @@
+{
+  "name": "sass-type-helpers",
+  "version": "0.0.3",
+  "main": "_type-helpers.scss",
+  "ignore": [
+    "**/.*",
+    "README.md",
+    "LICENSE",
+    "bower.json"
+  ]
+}

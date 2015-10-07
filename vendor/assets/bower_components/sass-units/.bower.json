@@ -1,0 +1,21 @@
+{
+  "name": "sass-units",
+  "version": "0.0.5",
+  "main": "_units.scss",
+  "ignore": [
+    "**/.*",
+    "README.md",
+    "LICENSE",
+    "bower.json"
+  ],
+  "homepage": "https://github.com/jayperryworks/sass-units",
+  "_release": "0.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.5",
+    "commit": "cb1abf960f6a5e4a5ee57aa34ece284d2b8e3804"
+  },
+  "_source": "git://github.com/jayperryworks/sass-units.git",
+  "_target": "~0.0.5",
+  "_originalSource": "sass-units"
+}

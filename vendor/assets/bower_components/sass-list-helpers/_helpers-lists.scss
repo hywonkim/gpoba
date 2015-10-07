@@ -1,0 +1,74 @@
+// strip default browser styling from a list element
+@mixin unstyled-list {
+  list-style: none;
+  list-style-type: none;
+  // margin-left: 0;
+  padding-left: 0;
+  margin-left: 0;
+
+  & > li {
+    list-style: none;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+// make a list flow horizontally, "inline"
+@mixin inline-list($children: "li") {
+  @include unstyled-list;
+
+  #{$children} {
+    display: inline-block;
+  }
+}
+
+// make an inline (horizontal) list and vertically center child elements
+// use this on the li elements or just inside them (ie anchors)
+@mixin inline-list--centered($height: 100%) {
+  @include rem(height, $height);
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+// kill default margins/padding on lists used as a nav. can use with inline-list and inline-block
+@mixin nav-list {
+  margin: 0;
+  padding: 0;
+}
+
+// add a counter to a list (mimic an ordered list)
+@mixin counter($style: default, $append: ". ", $color: $color-text--primary, $item: li) {
+  list-style: none;
+  counter-reset: $item;
+
+  #{$item}:before {
+    content: counter(#{$item}) "#{$append}";
+    counter-increment: $item;
+    color: $color;
+  }
+}
+
+// make a definition list flow horizontally, "inline"
+// @param $break: if true, create a break after each dd element (so one "definition" per "line")
+@mixin inline-dl($break: false) {
+  & > dt, & > dd {
+    display: inline;
+  }
+  & > dt {
+    margin-right: em(3);
+  }
+  & > dd {
+    margin-left: 0;
+
+    @if ($break == false) {
+      margin-right: em(12);
+    } @else {
+      &:after {
+        content: '\A';
+        white-space: pre;
+      }
+    }
+  }
+}
