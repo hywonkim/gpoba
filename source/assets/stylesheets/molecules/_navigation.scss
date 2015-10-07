@@ -2,11 +2,6 @@
 //  Navigation modules
 // ========================================================================== */
 
-// Dependencies
-// -----------------------------------------------------------------------------
-
-
-// local modules
 @import "../core/*";
 
 /* Base
@@ -30,22 +25,25 @@
 // -------------------------------------------------------------------------- */
 
 /* ------- Global/main nav -------------------------------------------------- */
-[role="navigation"], nav, .nav {
-    &.main {
-        @include inline-list;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
+[role="navigation"].main,
+nav.main,
+.nav.main,
+%nav--main {
+    @include inline-list;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    li { display: inline-block; }
 }
 
 /* ------- Local jump nav --------------------------------------------------- */
-nav, .nav {
-    &.jump {
-        @include rem(top, fs(6));
-        display: inline-block;
-        position: absolute;
-        width: 180px;
-    }
+nav.jump ,
+.nav.jump,
+%nav--jump {
+    @include rem(top, fs(6));
+    display: inline-block;
+    position: absolute;
+    width: 180px;
 }
 
 /* Submodules
@@ -53,19 +51,14 @@ nav, .nav {
 
 .nav-item {
     @extend %font-body--bold;
+    @include rem(padding, fs(3) fs(3));
+    @include font-scale(2);
     display: inline-block;
+    text-transform: uppercase;
 
-    &.is-active > a {
+    &.is-active {
         @include chapter_highlights(border-bottom-color color);
         color: theme(highlight);
         border-bottom: 2px solid theme(highlight);
-    }
-
-    > a {
-        @extend %font-body--bold;
-        @include rem(padding, fs(3) fs(3));
-        @include font-scale(2);
-        display: inline-block;
-        text-transform: uppercase;
     }
 }

@@ -22,3 +22,8 @@
   slug: looking ahead
   image: media/ch5-cover.jpg
   color: blue
+
+- title: "Appendices"
+  slug: appendices
+  image: media/ch6-cover.jpg
+  color: blue
