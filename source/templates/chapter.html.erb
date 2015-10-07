@@ -13,7 +13,12 @@ layout: layout
 
 <% content_for :local_styles do %>
     <style>
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients */
+        /* https://css-tricks.com/css3-gradients/ */
+        /* http://www.css3.info/preview/multiple-backgrounds/ */
         <% img_url = asset_url(data.site.paths.content + locals[:slug].to_s.urlize + '/' + locals[:image].to_s) %>
+
+        /* default bg */
         .chapter-hero {
             background-image: url('<%= img_url %>');
         }

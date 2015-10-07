@@ -139,7 +139,7 @@ $font-scale: 10px 13px 16px 23px 26px 37px 42px 68px 97px 110px 157px 177px;
     font-style: normal;
 }
 
-%font-accent-bold {
+%font-accent--bold {
     @extend %font-accent;
     font-family: "gibson-bold", $helvetica;
     font-weight: bold;

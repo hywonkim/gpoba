@@ -18,18 +18,6 @@ Inline text is mostly styled globally and doesn't change a whole lot from one co
 
 */
 
-// make a dropcap for article openings
-%dropcap {
-    &:first-letter {
-        @extend %font-display--bold;
-        float: left;
-        margin: 0 0.06em 0 -0.04em;
-        font-size: 3.5em;
-        line-height: 0.8;
-        color: theme('text' 'primary');
-    }
-}
-
 
 /* Globals
 // -------------------------------------------------------------------------- */
@@ -72,9 +60,18 @@ address {
 // -------------------------------------------------------------------------- */
 
 // the first paragraph, often set slightly bigger
-.lead, .content > p:first-of-type {
-    @extend %dropcap;
+.lead {
+    // @extend %dropcap;
     @include font-scale(2);
+
+    &:first-letter {
+        @extend %font-accent--bold;
+        float: left;
+        margin: 0 0.06em 0 -0.04em;
+        font-size: 3.5em;
+        line-height: 0.8;
+        color: theme('text' 'primary');
+    }
 }
 
 // a caption

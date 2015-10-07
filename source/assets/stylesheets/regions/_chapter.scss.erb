@@ -47,7 +47,13 @@ $chapter-padding: fs(6);
     @include border(top);
     @include rem(padding, fs(5));
 
-    &.first { border-top: none; }
+    &.first {
+        border-top: none;
+
+        p:first-of-type, p:first-child {
+            @extend .lead;
+        }
+    }
 }
 
 .chapter-aside {
@@ -63,5 +69,9 @@ $chapter-padding: fs(6);
 }
 
 .chapter-content {
+    p:first-of-type, p:first-child {
+        @extend .lead;
+    }
+
     img { margin: 1em 0; }
 }
