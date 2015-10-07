@@ -16,7 +16,7 @@ use Rack::Cache,
     :metastore   => 'file:/var/cache/rack/meta',
     :entitystore => 'file:/var/cache/rack/body'
 
-Enables compression of http responses, used in conjunction with `activate :gzip` in config.rb
+# Enables compression of http responses, used in conjunction with `activate :gzip` in config.rb
 use Rack::Deflater
 
 ONE_WEEK = 604_800
