@@ -51,6 +51,7 @@ GEM
     exifr (1.2.3.1)
     ffi (1.9.10)
     fspath (2.1.1)
+    git-version-bump (0.15.1)
     haml (4.0.7)
       tilt
     hike (1.2.3)
@@ -129,11 +130,16 @@ GEM
     padrino-support (0.12.5)
       activesupport (>= 3.1)
     progress (3.1.0)
+    puma (2.14.0)
     rack (1.6.4)
+    rack-contrib (1.4.0)
+      git-version-bump (~> 0.15)
+      rack (~> 1.4)
     rack-livereload (0.3.16)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rake (10.4.2)
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -173,7 +179,13 @@ DEPENDENCIES
   middleman-imageoptim
   middleman-livereload (~> 3.1.0)
   middleman-minify-html
+  puma (~> 2.7)
+  rack-contrib
+  rake (~> 10.1)
   string-urlize
   titleize
   tzinfo-data
   wdm (~> 0.1.0)
+
+BUNDLED WITH
+   1.10.6

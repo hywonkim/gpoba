@@ -21,3 +21,8 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 # String helpers
 gem "string-urlize"
 gem "titleize"
+
+# Adding Rake & Puma for Heroku Hosting
+gem 'puma',      '~> 2.7'
+gem 'rake',      '~> 10.1'
+gem 'rack-contrib'
