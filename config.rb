@@ -166,6 +166,37 @@ after_configuration do
   sprockets.import_asset 'picturefill'
 end
 
+# For Heroku Builds
+set :url_root, "https://#{ENV['APP_DOMAIN'] ? ENV['APP_DOMAIN'] : 'localhost:4567'}"
+
+activate :search_engine_sitemap,
+         exclude_if: -> (resource) {
+           # Exclude all paths from sitemap that are sub-date indexes
+           resource.path.match(/[0-9]{4}(\/[0-9]{2})*.html/)
+         },
+         default_change_frequency: 'weekly'
+
+# Filewatcher ignore list (workaround for search_engine_sitemap on
+# Heroku - see https://github.com/Aupajo/middleman-search_engine_sitemap/issues/2)
+set :file_watcher_ignore,
+    [
+        /^bin(\/|$)/,
+        /^\.bundle(\/|$)/,
+        # /^vendor(\/|$)/,
+        /^node_modules(\/|$)/,
+        /^\.sass-cache(\/|$)/,
+        /^\.cache(\/|$)/,
+        /^\.git(\/|$)/,
+        /^\.gitignore$/,
+        /\.DS_Store/,
+        /^\.rbenv-.*$/,
+        /^Gemfile$/,
+        /^Gemfile\.lock$/,
+        /~$/,
+        /(^|\/)\.?#/,
+        /^tmp\//
+    ]
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -175,10 +206,15 @@ configure :build do
   activate :minify_javascript
 
   # Minify HTML on build
-  activate :minify_html
+  activate :minify_html do |html|
+    html.remove_http_protocol = false
+  end
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
+
+  # Gzip
+  activate :gzip
 
   # Use relative URLs
   activate :relative_assets

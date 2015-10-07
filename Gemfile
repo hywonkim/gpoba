@@ -10,6 +10,7 @@ gem "middleman-autoprefixer"
 gem "middleman-minify-html"
 gem "middleman-imageoptim"
 gem "middleman-es6", github: "vast/middleman-es6"
+gem 'middleman-search_engine_sitemap'
 # gem 'middleman-thumbnailer'
 
 # For faster file watcher updates on Windows:
@@ -23,6 +24,11 @@ gem "string-urlize"
 gem "titleize"
 
 # Adding Rake & Puma for Heroku Hosting
-gem 'puma',      '~> 2.7'
-gem 'rake',      '~> 10.1'
+gem 'puma'
 gem 'rack-contrib'
+gem 'rack-ssl'
+gem 'rack-cache'
+
+# JS Compilation speed boosts
+gem 'therubyracer' # faster JS compiles
+gem 'oj' # faster JS compiles
