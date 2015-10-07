@@ -11,10 +11,10 @@ unless ENV['RACK_ENV'] == 'development'
 end
 
 # Rack Cache
-use Rack::Cache,
-    :verbose     => true,
-    :metastore   => 'file:/var/cache/rack/meta',
-    :entitystore => 'file:/var/cache/rack/body'
+# use Rack::Cache,
+#     :verbose     => true,
+#     :metastore   => 'file:/var/cache/rack/meta',
+#     :entitystore => 'file:/var/cache/rack/body'
 
 # Enables compression of http responses, used in conjunction with `activate :gzip` in config.rb
 use Rack::Deflater
