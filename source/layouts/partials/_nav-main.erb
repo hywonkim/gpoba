@@ -11,7 +11,7 @@
         <% data.chapters.each do |chapter| %>
             <% current_url = "#{data.site.paths.chapter}#{chapter.slug.urlize}/" %>
             <li>
-                <a class="nav-item<% if current_dir? current_url %> is-active<% end %>" href="<%= asset_url(data.site.paths.chapter + '/' + current_url) %>"><%= chapter.slug %></a>
+                <a class="nav-item<% if current_dir? current_url %> is-active<% end %>" href="<%= asset_url(current_url) %>"><%= chapter.slug %></a>
             </li>
         <% end %>
     </ul>

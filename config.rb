@@ -4,7 +4,6 @@
 ## Add CSV To Table
 require 'lib/csv_helpers.rb'
 activate :csv_helpers 
-activate :directory_indexes #For pretty URLs
 
 ###
 # Compass
@@ -134,7 +133,6 @@ helpers do
         return current_page.metadata['order']
     end
 
-
     def first_page?
         if get_current_index <= 0
             return true
@@ -206,9 +204,9 @@ configure :build do
   activate :minify_javascript
 
   # Minify HTML on build
-  activate :minify_html do |html|
-    html.remove_http_protocol = false
-  end
+  # activate :minify_html do |html|
+  #   html.remove_http_protocol = false
+  # end
 
   # Enable cache buster
   # activate :asset_hash
