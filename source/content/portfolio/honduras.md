@@ -9,6 +9,10 @@ In Honduras, millions of people lack access to safe drinking water and basic san
 
 <!-- [Partnership in Honduras: Output-Based Aid for Water and Sanitation](https://cdnapisec.kaltura.com/p/619672/sp/61967200/embedIframeJs/uiconf_id/24449191/partner_id/619672?iframeembed=true&playerId=kaltura_player_1426640720&entry_id=1_6gpuxdg8&flashvars%5BstreamerType%5D=rtmp&flashvars%5BmediaProtocol%5D=rtmp) -->
 
-<object name="kaltura_player_1441403734" id="kaltura_player_1441403734" type="application/x-shockwave-flash" allowScriptAccess="always" allowNetworking="all" allowFullScreen="true" height="300" width="533" data="https://www.kaltura.com/index.php/kwidget/wid/1_t9tlon6n/uiconf_id/8700151"><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="allowFullScreen" value="true" /><param name="bgcolor" value="#000000" /><param name="movie" value="https://www.kaltura.com/index.php/kwidget/wid/1_t9tlon6n/uiconf_id/8700151"/><param name="flashVars" value=""/><a href="http://corp.kaltura.com">video platform</a><a href="http://corp.kaltura.com/video_platform/video_management">video management</a><a href="http://corp.kaltura.com/solutions/video_solution">video solutions</a><a href="http://corp.kaltura.com/video_platform/video_publishing">video player</a></object>
+<iframe src="https://cdnapisec.kaltura.com/p/619672/sp/61967200/embedIframeJs/uiconf_id/26723411/partner_id/619672?iframeembed=true&playerId=kaltura_player_1444255588&entry_id=1_q7058ue3&flashvars[streamerType]=rtmp&flashvars[mediaProtocol]=rtmp" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+<span itemprop="name" content="Development Financing for Results"></span>
+<span itemprop="description" content="This animated video takes a brief look at traditional and results-based financing. Output-based aid is also discussed which focuses on access to basic services for the poor."></span>
+<span itemprop="thumbnail" content="https://cfvod.kaltura.com/p/619672/sp/61967200/thumbnail/entry_id/1_q7058ue3/version/100021/acv/321"></span>
+</iframe>
 
 _Partnership in Honduras: Output-Based Aid for Water and Sanitation_
