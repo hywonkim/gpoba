@@ -1,0 +1,16 @@
+---
+title: Output-Based Aid in Fragile and Conflict-Affected Situations
+chapter: portfolio
+order: 6
+type: box
+---
+
+Throughout the world, poverty is increasingly concentrated in countries and regions affected by fragility and conflict. There are now 33 countries and territories on the World Bank’s list of Fragile Situations, and it is estimated that the share of global poor living in fragile and conflict-affected situations (FCS) will at least double by 2030. Fragility and conflict can range from domestic or cross-border violence to vulnerability to extreme weather events related to climate change, such as flooding or droughts.
+
+The provision of basic services has the potential to support stabilization and lessen the impact of fragility and conflict, and GPOBA is committed to exploring the use of OBA and RBF in delivering services in these difficult environments. It has built up a significant FCS subsidy portfolio, with active and closed projects now totaling almost $42 million and with an expected 2.4 million beneficiaries. GPOBA also has a portfolio of almost $4 million of technical assistance activities in FCS. Working in FCS brings with it a range of challenges, and the table below highlights issues faced in FY15 by GPOBA subsidy projects in FCS. 
+
+Flexibility is key to designing and implementing projects in FCS. For instance, the West Bank solid waste management project has been affected by unpredictable restrictions on movement resulting from fluctuating political tensions. The project design includes a catch-up mechanism, so that if municipalities fail to meet their targets during one period due to these restrictions, they can make up the deficit in a succeeding period. Flexibility has also been utilized with regard to the transfer of risk. Risk transfer to the service provider is a key component of OBA projects, but in FCS, service providers are sometimes unable to carry the full pre-financing risk. In Liberia, for example, a project expanding electricity access required no pre-financing from Liberia Electricity Corporation. Instead, the corporation is operating under a management contract with an international private operator, Manitoba Hydro International.
+
+In FY15, as part of the World Bank Group’s Fragility, Conflict and Violence Global Forum in February, GPOBA convened specialists in several sectors for a panel on Efficient Basic Services Delivery in FCS. Panelists shared experience from projects in Africa and Asia on how OBA/RBF can be used to expand access to basic services in FCS. GPOBA also produced an OBApproaches document on [OBA in FCS](https://www.gpoba.org/OBA47_FCS), which is published on the GPOBA website.
+
+Experience with OBA in FCS has shown that fragility factors are not necessarily the best indicators of a project’s eventual success. Quality of design, flexibility, and targeted technical assistance have proved stronger predictors. OBA is most likely to be effective in FCS showing signs of recovery, where government institutions are relatively stable and increasing in legitimacy. When such an enabling environment exists, OBA and RBF mechanisms can contribute to broader efforts at breaking cycles of fragility and violence.
