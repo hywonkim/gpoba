@@ -7,17 +7,27 @@ order: 6
 GPOBA’s knowledge management activities support the close relationship between operations and knowledge. The team works to capture and facilitate knowledge flows, develop new knowledge tools, and disseminate knowledge products in order to reach interested practitioners and the wider development community.
 
 Current publications draw on experience gained from GPOBA’s portfolio of projects, presenting information that informs future investments and operations. The OBApproaches series discusses OBA design and implementation, either through individual projects or through a thematic focus. In FY15, GPOBA produced five OBApproaches:
+
 - [Mali Rural Electrification Hybrid Project](http://www.gpoba.org/OBA45_MaliEnergy);
+
 - [Philippines Public Health Project](http://www.gpoba.org/Philippines.PublicHealth);
+
 - [OBA and Solid Waste Management](http://www.gpoba.org/OBA46_SolidWaste);
+
 - Scaling up Blended Financing of Water and Sanitation Investments in Kenya; and
+
 - [OBA in Fragile and Conflict-Affected Situations](http://www.gpoba.org/OBA47_FCS).
 
 The Lessons Learned series is based on findings following project completion. Five issues were produced in FY15:
+
 - [Vietnam Rural Water](http://www.gpoba.org/LL07_VietnamWater);
+
 - [Bangladesh Solar Homes Systems](http://www.gpoba.org/LL10_BangladeshEnergy);
+
 - [Ethiopia Electricity](http://www.gpoba.org/LL09_EthiopiaElectricity);
+
 - [Nepal Biogas](http://www.gpoba.org/LL08_NepalBiogas); and
+
 - [Mumbai electricity](http://www.gpoba.org/LL06_MumbaiElectricity).
 
 The Mumbai note, which explained the challenges faced in implementing the electricity project, won the GPSURR award for Best Documentation of Failure. GPOBA also contributed to the World Bank report, [Surge in Solar-Powered Homes: Experience in Off-grid Rural Bangladesh](http://www.gpoba.org/Solar.Home.Projects), which detailed on the positive effects SHSs have had on health outcomes, study hours, and security.

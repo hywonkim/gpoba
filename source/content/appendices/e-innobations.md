@@ -1,0 +1,9 @@
+---
+title: E. Inn-OBA-tions Awards
+chapter: appendices
+order: 5
+---
+
+#### Table E.1: Inn-oba-tions Awards Winners in FY15
+<%= table('table_E1.csv', 'cool-css-class') %>
+

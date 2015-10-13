@@ -1,0 +1,8 @@
+---
+title: B. Projects
+chapter: appendices
+order: 2
+---
+
+#### Table B.1: Fully Implemented Projects
+<%= table('table_B1.csv', 'cool-css-class') %>

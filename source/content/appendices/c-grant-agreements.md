@@ -1,0 +1,10 @@
+---
+title: C. Grant Agreements
+chapter: appendices
+order: 3
+---
+
+#### Table C.1: Grant Agreements
+<!-- key? -->
+<%= table('table_C1.csv', 'cool-css-class') %>
+

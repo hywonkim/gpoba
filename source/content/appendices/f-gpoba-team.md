@@ -1,0 +1,9 @@
+---
+title: F. GPOBA Team
+chapter: appendices
+order: 6
+---
+
+#### Table F.1: GPOBA Team in 2015
+<%= table('table_F1.csv', 'cool-css-class') %>
+
