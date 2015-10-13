@@ -3,7 +3,9 @@
 
 ## Add CSV To Table
 require 'lib/csv_helpers.rb'
+require 'lib/pullquote_helpers.rb'
 activate :csv_helpers 
+activate :pullquote_helpers
 
 ###
 # Compass
