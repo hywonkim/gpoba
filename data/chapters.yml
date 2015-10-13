@@ -1,29 +1,29 @@
 - title: "Overview"
   slug: overview
-  image: media/ch1-cover.jpg
+  image: media/ch1-cover-fallback.jpg
   color: green
 
 - title: "Our Portfolio"
   slug: portfolio
-  image: media/ch2-cover.jpg
+  image: media/ch2-cover-fallback.jpg
   color: red
 
 - title: "Pilot Projects, Scale-ups and Facilities"
   slug: new business
-  image: media/ch3-cover.jpg
+  image: media/ch3-cover-fallback.jpg
   color: orange
 
 - title: "Center of Expertise"
   slug: center of expertise
-  image: media/ch4-cover.jpg
+  image: media/ch4-cover-fallback.jpg
   color: purple
 
 - title: "Looking Ahead"
   slug: looking ahead
-  image: media/ch5-cover.jpg
+  image: media/ch5-cover-fallback.jpg
   color: blue
 
 - title: "Appendices"
   slug: appendices
-  image: media/ch6-cover.jpg
+  image: media/ch6-cover-fallback.jpg
   color: blue
