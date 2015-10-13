@@ -14,15 +14,20 @@ category: core
 Some functions and globals to keep the color scheme DRY and easy to manage in one place. Color for the entire site is handled through structured SASS maps, assigning each color a role:
 
 ```
-$theme--default: (
-    text--primary   : $black,
-    text--secondary : #706F6F,
-    text--tertiary  : darken($gray, 10),
-    bg              : #fff,
-    well            : $gray--superlight,
-    border          : $gray--light,
-    highlight       : $highlight--default,
-    accent          : $blue--dark
+$themes: (
+    'default': (
+        'text': (
+            'primary'     : $black,
+            'secondary'   : $super_dark_purple,
+            'tertiary'    : $gray_blue,
+            'body'        : $dark_purple,
+        ),
+        'bg'              : #fff,
+        'well'            : $light_gray,
+        'border'          : $gray,
+        'highlight'       : $highlight--default,
+    ),
+    // etc.
 );
 
 ```
@@ -30,9 +35,8 @@ You can easily access these colors by "role" with the `theme()` function, like s
 
 ```
 .your-module {
-    color: theme(highlight);
+    color: theme(text primary);
     background-color: theme(bg);
-
 }
 ```
 

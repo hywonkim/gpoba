@@ -18,7 +18,6 @@ Global layout styles.
 */
 
 @import "libs";
-@import "fonts";
 
 
 // Config/mixins
@@ -116,22 +115,6 @@ $z--high   : 2;
 // ---------------------------------------------------------------------------*/
 
 html {
-    // set up the base font size at each breakpoint
-    // this will scale the whole layout proportionately as the screen size changes
-    // and we only have to change one thing
-    font-size: 95%;
-
-    @include breakpoint($screen--small) {
-        font-size: 100%;
-    }
-
-    @include breakpoint($screen--medium) {
-        font-size: 110%;
-    }
-
-    @include breakpoint($screen--large) {
-        font-size: 115%;
-    }
 
     // set everything to roll with border-box sizing
     // -> much easier than reg box model
