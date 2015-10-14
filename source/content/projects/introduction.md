@@ -1,6 +1,6 @@
 ---
 title: Introduction
-chapter: new business
+chapter: projects
 order: 1
 type: introduction
 ---

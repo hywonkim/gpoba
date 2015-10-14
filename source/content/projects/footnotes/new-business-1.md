@@ -2,7 +2,7 @@
 
 ---
 title: Note 1
-chapter: new business
+chapter: projects
 order: 1
 type: note
 ---

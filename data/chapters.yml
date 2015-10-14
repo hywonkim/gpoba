@@ -7,6 +7,7 @@
   color: green
 
 - title: "Our <strong>Portfolio</strong>"
+  subtitle: "Results, Composition, and Performance"
   slug: portfolio
   image:
     default: media/ch2-cover-fallback.jpg
@@ -15,15 +16,15 @@
     align: bottom
   color: red
 
-- title: "Pilot Projects, Scale-ups and Facilities"
-  slug: new business
+- title: "<strong>Pilot Projects</strong>, Scale-ups &amp; Facilities"
+  slug: projects
   image:
     default: media/ch3-cover-fallback.jpg
     sizes:
       - media/ch-3cover.jpg
   color: orange
 
-- title: "Center of Expertise"
+- title: "Building a Center of <strong>Expertise</strong>"
   slug: center of expertise
   image:
     default: media/ch4-cover-fallback.jpg
@@ -31,7 +32,7 @@
       - media/ch-4cover.jpg
   color: purple
 
-- title: "Looking Ahead"
+- title: "Looking <strong>Ahead</strong>"
   slug: looking ahead
   image:
     default: media/ch5-cover-fallback.jpg

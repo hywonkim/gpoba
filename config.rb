@@ -76,6 +76,10 @@ end
 # Methods defined in the helpers block are available in templates
 helpers do
 
+    # def render_formatting(string)
+    #     return string.gsub("**.***", "<strong>.*</strong>").gsub("_.*_", "<em>.*</em>").to_s
+    # end
+
     # is this url the current page?
     def current_page?(url)
         if current_resource.path == url

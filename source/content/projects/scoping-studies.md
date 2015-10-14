@@ -1,6 +1,6 @@
 ---
 title: Scoping Study in the Education Sector
-chapter: new business
+chapter: projects
 order: 3
 type: box
 ---

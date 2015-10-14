@@ -1,6 +1,6 @@
 ---
 title: Grant Agreements and Scale-ups
-chapter: new business
+chapter: projects
 order: 2
 ---
 
