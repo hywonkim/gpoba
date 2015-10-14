@@ -22,7 +22,7 @@
 /* --- "horizontal" (two column) version ------------------------------------ */
 .card.horizontal {
 
-    @include layout-at(ms(1) ms(2), $screen--xsmall) {
+    @include layout-at(ms(1) ms(2), screen('xsmall')) {
         .card-thumb { @include grid-span(1, 1); }
         .card-content { @include grid-span(1, 2); }
     }

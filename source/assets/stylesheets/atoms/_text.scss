@@ -65,12 +65,13 @@ address {
     @include font-scale(2);
 
     &:first-letter {
+        @include chapter_highlights(color);
         @extend %font-accent--bold;
         float: left;
         margin: 0 0.06em 0 -0.04em;
         font-size: 3.5em;
         line-height: 0.8;
-        color: theme('text' 'primary');
+        color: theme(highlight);
     }
 }
 

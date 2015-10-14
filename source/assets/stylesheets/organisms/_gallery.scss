@@ -65,13 +65,13 @@ There are three (column) size variations: small, medium, and large. Medium is de
 
 .gallery.small {
     .gallery-item {
-        @include breakpoint($screen--xsmall) {
+        @include respond-to('xsmall') {
             @include flex-columns(2);
         }
-        @include breakpoint($screen--small) {
+        @include respond-to('small') {
             @include flex-columns(3);
         }
-        @include breakpoint($screen--medium) {
+        @include respond-to('medium') {
             @include flex-columns(4);
         }
     }
@@ -79,7 +79,7 @@ There are three (column) size variations: small, medium, and large. Medium is de
     // non-flexbox fallback
     // .no-flexbox & {
     //     .gallery-item {
-    //         @include breakpoint($screen--small) {
+    //         @include respond-to('small') {
     //             @include thumb-span(4, $gutstyle: $gallery-gutter-style);
     //             padding-bottom: 0;
     //         }
@@ -89,7 +89,7 @@ There are three (column) size variations: small, medium, and large. Medium is de
 
 .gallery.large {
     .gallery-item {
-        @include breakpoint($screen--small) {
+        @include respond-to('small') {
             @include flex-columns(2);
         }
     }
@@ -97,7 +97,7 @@ There are three (column) size variations: small, medium, and large. Medium is de
     // non-flexbox fallback
     // .no-flexbox & {
     //     .gallery-item {
-    //         @include breakpoint($screen--small) {
+    //         @include respond-to('small') {
     //             @include thumb-span(2, $gutstyle: $gallery-gutter-style);
     //             padding-bottom: 0;
     //         }
@@ -114,17 +114,17 @@ There are three (column) size variations: small, medium, and large. Medium is de
     // margin: 0 0 $gutter 0;
     padding: $gutter $gutter 0 0;
 
-    @include breakpoint($screen--small) {
+    @include respond-to('small') {
         @include flex-columns(2);
     }
 
-    @include breakpoint($screen--medium) {
+    @include respond-to('medium') {
         @include flex-columns(3);
     }
 
     // non-flexbox fallback
     // .no-flexbox & {
-    //     @include breakpoint($screen--small") {
+    //     @include respond-to('small") {
     //         @include thumb-span(3, $gutstyle: $gallery-gutter-style);
     //         padding-bottom: 0;
     //     }

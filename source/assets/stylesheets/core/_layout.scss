@@ -25,12 +25,26 @@ Global layout styles.
 
 // --- global breakpoints ------------------------------------------------------
 // -> requires Breakpoint library
-$breakpoints: 480px 768px 1024px 1280px;
 
-$screen--xsmall : nth($breakpoints, 1);
-$screen--small  : nth($breakpoints, 2);
-$screen--medium : nth($breakpoints, 3);
-$screen--large  : nth($breakpoints, 4);
+$breakpoints: (
+    'xsmall' : 400px,
+    'small'  : 700px,
+    'medium' : 1000px,
+    'large'  : 1280px,
+);
+
+// getter/helper function to pull breakpoints from the map
+@function screen($size) {
+    @return map-get($breakpoints, $size);
+    @debug map-get($breakpoints, $size);
+}
+
+// add the breakpoints to Breakpoint library
+// -> so we can use 'respond-to' syntax
+// -> https://github.com/at-import/breakpoint/wiki/Respond-To
+@each $name, $size in $breakpoints {
+    @include add-breakpoint($name, $size);
+}
 
 @include breakpoint-set('to ems', true);
 
@@ -40,7 +54,7 @@ $screen--large  : nth($breakpoints, 4);
 .show-small {
     @extend %hide;
 
-    @include breakpoint($screen--small) {
+    @include respond-to('small') {
         display: block;
     }
 }
@@ -48,7 +62,7 @@ $screen--large  : nth($breakpoints, 4);
 .show-medium {
     @extend %hide;
 
-    @include breakpoint($screen--medium) {
+    @include respond-to('medium') {
         display: block;
     }
 }
@@ -56,7 +70,7 @@ $screen--large  : nth($breakpoints, 4);
 // --- global element dimensions -----------------------------------------------
 $gutter: fs(4); // based on font scale (see _fonts.scss)
 $gutter-outside: fs(6); // based on font scale (see _fonts.scss)
-$layout-w: $screen--medium; // max width of main layout
+$layout-w: screen('medium'); // max width of main layout
 $layout-w--narrow: 680px; // max width of 'narrow' elements (e.g. body type)
 $layout-w--wide: 1200px;
 
@@ -82,9 +96,6 @@ $layout-w--wide: 1200px;
 // Singularity globals
 @include add-gutter($gutter);
 // @include add-gutter-style('split' 'fixed');
-
-// Singularity Quick Spanner globals
-$sqs-thumb-span-bottom-margins: false;
 
 // scale for ratio-based grids and/or type
 // -> http://alistapart.com/article/content-out-layout

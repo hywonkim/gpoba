@@ -14,9 +14,8 @@
     position: relative;
     width: 100%;
     height: 600px;
-    height: 80vh;
+    height: 100vh;
     text-align: center;
-    // background-image: url(<%=lorem.image '1200x800' %>);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -28,21 +27,28 @@
 
 .hero-logo {
     @include rem(max-width, 100px);
-    @include rem(padding, 12px);
+    @include rem(padding, 13px);
     display: inline-block;
     background-color: theme(bg);
 }
 
 .hero-headline {
-    display: inline-block;
-    margin-top: 100px;
+    @extend %alpha;
+    display: block;
+    position: relative;
+    top: 54%;
+    margin: 0 auto;
+    padding-left: $gutter;
+    padding-right: $gutter;
+    text-align: center;
 
     .csstransforms & {
         position: absolute;
-        top: 50%;
+        width: 100%;
+        bottom: 20%;
         left: 50%;
         margin-top: 0;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
     }
 }
 

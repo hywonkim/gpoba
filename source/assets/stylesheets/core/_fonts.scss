@@ -59,15 +59,15 @@ html {
     // and we only have to change one thing
     font-size: 100%;
 
-    @include breakpoint($screen--small) {
+    @include respond-to('small') {
         font-size: 105%;
     }
 
-    @include breakpoint($screen--medium) {
+    @include respond-to('medium') {
         font-size: 110%;
     }
 
-    @include breakpoint($screen--large) {
+    @include respond-to('large') {
         font-size: 125%;
     }
 }

@@ -32,11 +32,20 @@ $chapter-padding: fs(6);
     &:first-child { margin-top: -($chapter-padding); }
 }
 
-.chapter-title {
-    @extend %alpha;
-    text-align: center;
+.chapter-headline {
+    @extend .hero-headline;
+    @include rem(font-size, 54px);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: theme(bg);
+
+    @include respond-to('xsmall') { @include rem(font-size, 68px); }
+    @include respond-to('small') { @include rem(font-size, 76px); }
+    @include respond-to('medium') { @include rem(font-size, 85px); }
+    @include respond-to('large') { @include rem(font-size, 97px); }
 }
 
+// section header
 .chapter-subtitle {
     @extend %beta;
     text-align: center;
