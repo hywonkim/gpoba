@@ -4,6 +4,7 @@ layout: layout
 <%# grab 'local' data passed in through config file (line 42), and attach it to this page's metadata, so it's accessible in the sitemap %>
 <% current_page.add_metadata({
     'title' => locals[:title],
+    'subtitle' => locals[:subtitle],
     'slug' => locals[:slug],
     'color' => locals[:color],
     'type' => locals[:type],
@@ -41,6 +42,9 @@ layout: layout
 <article class="chapter">
     <header class="chapter-hero">
         <h1 class="chapter-headline"><%= locals[:title] %></h1>
+        <% if locals[:subtitle].present? %>
+        <span class="chapter-subtitle"><%= locals[:subtitle] %></span>
+        <% end %>
     </header>
 
     <!-- Introduction -->

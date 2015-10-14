@@ -48,10 +48,15 @@ $header-h: 36px;
 // -------------------------------------------------------------------------- */
 
 .header-logo {
+    $h: 28px;
     @extend .logo;
+    @include rem(height, $h);
+    @include rem(width, 70px);
+    @include rem(margin-top, -($h/2));
     display: inline-block;
+    position: absolute;
+    top: 50%;
     margin-left: $gutter-outside;
-    padding: fs(3) 0;
     color: theme(text primary, reverse);
 }
 

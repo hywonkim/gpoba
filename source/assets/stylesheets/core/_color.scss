@@ -98,13 +98,13 @@ $themes: (
     'reverse': (
         'text': (
             'primary'     : #fff,
-            'secondary'   : $gray,
+            'secondary'   : lighten($gray_blue, 10),
             'tertiary'    : lighten($super_dark_purple, 35),
             'body'        : $light_gray,
         ),
         'bg'              : $super_dark_purple,
         'well'            : $black,
-        'border'          : lighten($super_dark_purple, 10),
+        'border'          : lighten($super_dark_purple, 20),
         'highlight'       : $highlight--default,
     ),
     'wash': (

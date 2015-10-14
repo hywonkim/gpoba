@@ -31,28 +31,37 @@ $footer-padding: $gutter-outside;
 
 .footer-nav {
     @extend .nav.main;
-    @include border(bottom);
+    @include border(bottom, $color: theme(border, reverse));
     width: 100%;
     text-align: center;
-
-    a {
-        color: theme('text' 'primary', 'reverse');
-    }
 }
 
 .footer-section {
     padding: $gutter 0;
 }
 
+    .footer-title {
+        @extend %font-accent;
+        color: theme(text primary, reverse);
+        text-transform: uppercase;
+
+        strong { @extend %font-accent--bold; }
+    }
+
     .footer-logo {
         @extend .logo;
+        @include rem(width, 90px);
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.5em;
         color: theme('text' 'primary', 'reverse');
     }
 
     .footer-affiliate {
+        @extend %font-accent;
         display: inline-block;
         float: right;
-        color: theme('text' 'secondary', 'reverse');
+        color: theme('text' 'primary', 'reverse');
     }
 
 .footer-utility {
