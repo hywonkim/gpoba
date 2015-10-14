@@ -7,13 +7,16 @@
 @import "../core/*";
 @import "../atoms/heading";
 
+$pagination-break: 760px;
+
 /* Base
 // -------------------------------------------------------------------------- */
 
 .pagination {
+    @include chapter_highlights(background-color);
     padding-top: $gutter-outside;
     padding-bottom: $gutter;
-    background-color: darken(theme('well'), 30);
+    background-color: theme('highlight');
     font-size: 0;
 }
 
@@ -23,31 +26,41 @@
 .pagination-slug {
     @extend .slug;
     margin-bottom: $gutter;
-    // color: theme('bg');
+    color: theme('text' 'secdonary', 'wash');
 }
 
 // styles shared by both .pagination-next and .pagination-prev
 %pagination-item {
     $padding: fs(5);
 
-    @include rem(padding-top, $padding);
-    @include rem(padding-bottom, $padding);
+    @include rem(padding, $padding $gutter);
     @include rem(font-size, fs(2));
     display: inline-block;
-    width: 50%;
+    width: 100%;
+    vertical-align: top;
+
+    @include breakpoint($pagination-break) { width: 50%; }
 }
 
 .pagination-prev {
     @extend %pagination-item;
-    @include border(right);
-    padding-right: $gutter;
-    text-align: left;
+    @include border(bottom);
+
+    @include breakpoint($pagination-break) {
+        @include border(right);
+        padding-left: 0;
+        text-align: left;
+        border-bottom: none;
+    }
 }
 
 .pagination-next {
     @extend %pagination-item;
-    padding-left: $gutter;
-    text-align: right;
+
+    @include breakpoint($pagination-break) {
+        padding-right: 0;
+        text-align: right;
+    }
 }
 
 .pagination-subtitle {
@@ -55,11 +68,16 @@
     @extend %font-body--bold;
     display: block;
     text-transform: uppercase;
-    color: theme('text' 'primary');
+    color: theme('text' 'secondary', 'wash');
 }
 
 .pagination-title {
     @extend %beta;
     @extend %font-display;
-    color: white;
+    line-height: 1.1;
+    color: theme('text' 'primary', 'wash');
+
+    > strong {
+        @extend %font-display--bold;
+    }
 }

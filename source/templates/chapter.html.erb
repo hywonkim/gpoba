@@ -60,7 +60,7 @@ layout: layout
     <% sitemap.where(:chapter => locals[:slug]).order_by(:order).all.each do |section| %>
         <% unless section.data.type == "introduction" %>
             <section class="chapter-section<% if section.data.type.present? %> <%= section.data.type %><% end %>" id="composition">
-                <h2 class="chapter-subtitle"><%= section.data.title %></h2>
+                <h2 class="chapter-subheading"><%= section.data.title %></h2>
                 <div class="l-wrapper narrow">
                     <%= section.render %>
                 </div>

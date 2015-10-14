@@ -17,6 +17,9 @@
     </head>
     <body class="<%= current_page.metadata['slug'].to_s.urlize %><% if current_page.metadata['color'].present? %> theme-highlight <%= current_page.metadata['color'] %><% end %>">
 
+        <!-- icons -->
+        <%= partial "layouts/partials/svgdefs" %>
+
         <%= yield %>
 
         <%= partial "layouts/partials/footer" %>
