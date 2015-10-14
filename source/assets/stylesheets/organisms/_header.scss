@@ -38,6 +38,9 @@ $header-h: 36px;
         // height: $header-h;
         position: relative;
         display: block;
+        z-index: $z--high;
+        color: theme(text primary, reverse);
+        background-color: theme(bg, reverse);
 	}
 }
 
@@ -49,6 +52,7 @@ $header-h: 36px;
     display: inline-block;
     margin-left: $gutter-outside;
     padding: fs(3) 0;
+    color: theme(text primary, reverse);
 }
 
 .header-nav {
@@ -57,7 +61,7 @@ $header-h: 36px;
     float: right;
     margin-right: $gutter-outside;
 
-    @include breakpoint(800px) {
+    @include breakpoint(925px) {
         display: inline-block;
     }
 }

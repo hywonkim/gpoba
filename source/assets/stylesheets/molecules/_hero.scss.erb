@@ -26,8 +26,8 @@
 // -------------------------------------------------------------------------- */
 
 .hero-logo {
-    @include rem(max-width, 100px);
-    @include rem(padding, 13px);
+    @include rem(max-width, 120px);
+    @include rem(padding, 16px);
     display: inline-block;
     background-color: theme(bg);
 }
@@ -45,6 +45,7 @@
     .csstransforms & {
         position: absolute;
         width: 100%;
+        top: auto;
         bottom: 20%;
         left: 50%;
         margin-top: 0;
@@ -81,7 +82,7 @@
 
 .hero-lockup {
     @extend .hero-headline;
-    @include rem(max-width, 350px);
+    @include rem(max-width, 400px);
 }
 
 .hero-nav {
@@ -91,9 +92,10 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: theme(bg);
+    border: none;
+    background-color: theme(bg, reverse);
 
-    @include breakpoint(650px) {
+    @include breakpoint(900px) {
         display: block;
     }
 }

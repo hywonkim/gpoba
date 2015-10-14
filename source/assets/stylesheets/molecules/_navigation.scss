@@ -32,6 +32,7 @@ nav.main,
     @include inline-list;
     padding-top: 0;
     padding-bottom: 0;
+    z-index: $z--high;
 
     li { display: inline-block; }
 }
@@ -46,19 +47,60 @@ nav.jump,
     width: 180px;
 }
 
+// modifiers to position the "active" highlight
+// nav.is-above
+// nav.is-left
+
 /* Submodules
 // -------------------------------------------------------------------------- */
 
 .nav-item {
     @extend %font-body--bold;
-    @include rem(padding, fs(3) fs(3));
+    @include rem(margin, 0 fs(3));
+    @include rem(padding, fs(3) 0);
     @include font-scale(2);
     display: inline-block;
+    position: relative;
     text-transform: uppercase;
+    color: theme(text tertiary, reverse);
+
+    &:hover, &:active { color: theme(text primary, reverse); }
 
     &.is-active {
-        @include chapter_highlights(border-bottom-color color);
+        $border-w: 6px;
+        @include chapter_highlights(color);
         color: theme(highlight);
-        border-bottom: 2px solid theme(highlight);
+        // border-bottom: 4px solid theme(highlight);
+
+        &:after {
+            @include chapter_highlights(background-color);
+            content: " ";
+            display: block;
+            position: absolute;
+            top: -($border-w/2);
+            left: 0;
+            right: 0;
+            height: $border-w;
+            background-color: theme(highlight);
+
+            .is-above & {
+                top: auto;
+                bottom: -($border-w/2);
+            }
+
+            .is-left & {
+                bottom: 0;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: $border-w;
+            }
+        }
+
+        // .top & {
+        //     @include chapter_highlights(border-top-color color);
+        //     border-bottom: none;
+        //     border-top: 4px solid theme(highlight);
+        // }
     }
 }
