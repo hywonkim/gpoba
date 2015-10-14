@@ -4,7 +4,7 @@
 ## Add CSV To Table
 require 'lib/csv_helpers.rb'
 require 'lib/pullquote_helpers.rb'
-activate :csv_helpers 
+activate :csv_helpers
 activate :pullquote_helpers
 
 ###
@@ -41,10 +41,6 @@ page "/content/*", :layout => false
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }
 
-# Set up arrays of chapter slugs and titles, to help with pagination (see helpers below)
-$chapter_slugs = []
-$chapter_titles = []
-
 # Create a page for each "chapter" using the chapters.html.erb template
 data.chapters.each_with_index do |chapter, index|
     proxy "#{data.site.paths.chapter}#{chapter.slug.urlize}.html", "/templates/chapter.html", :locals => {
@@ -55,10 +51,6 @@ data.chapters.each_with_index do |chapter, index|
         :type => "chapter",
         :order => index
     }, :ignore => true
-
-    # add chapter data to title & slug arrays
-    $chapter_slugs.push(chapter.slug)
-    $chapter_titles.push(chapter.title)
 end
 
 # Pretty URLs (ie about.html.erb => about/index.html)
@@ -67,16 +59,7 @@ page "README.md", :directory_index => false
 page "LICENSE", :directory_index => false
 page "404.html", :directory_index => false
 
-# Thumbnailer extension
-# -> used for responsive images and media boxes
-# https://github.com/nhemsley/middleman-thumbnailer
-# activate :thumbnailer,
-#     :dimensions => {
-#       :small => '200x',
-#       :medium => '400x300'
-#     },
-#     :include_data_thumbnails => true,
-#     :namespace_directory => %w(gallery)
+set :markdown_engine, :kramdown
 
 ###
 # Helpers
@@ -131,18 +114,21 @@ helpers do
     #     Chapter.all(sitemap.resources)
     # end
 
+    # get the "order" field from page metadata, to figure out where we are in the order of chapters
     def get_current_index
         return current_page.metadata['order']
     end
 
+    # is this the first chapter?
     def first_page?
         if get_current_index <= 0
             return true
         end
     end
 
+    # is this the last chapter?
     def last_page?
-        if get_current_index >= $chapter_slugs.length - 1
+        if get_current_index >= data.chapters.length - 1
             return true
         end
     end

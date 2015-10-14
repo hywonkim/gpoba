@@ -6,7 +6,7 @@
       - media/ch-1cover.jpg
   color: green
 
-- title: "Our Portfolio"
+- title: "Our <strong>Portfolio</strong>"
   slug: portfolio
   image:
     default: media/ch2-cover-fallback.jpg
