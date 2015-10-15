@@ -6,7 +6,7 @@ class CSV_Helpers < Middleman::Extension
     super
   end
   helpers do
-    def table(file, html_class = '')
+    def table(file, html_class = '', highlight_rows= nil)
       # Create the Table object from CSV File
         csv_data = File.read(File.join(data_dir, '/tables/'+ file)) # TODO potentially make it dynamically find the location. For now all tables must be added to the data/tables folder.
         csv = CSV.new(csv_data, :headers => true, :header_converters => :symbol)
@@ -19,8 +19,13 @@ class CSV_Helpers < Middleman::Extension
           html_table += "<th> #{ header.to_s.titlecase } </th>"
         end
 
-        tbl_obj.each do |row|        
-          html_table += "<tr>"
+        tbl_obj.each_with_index do |row, index|        
+          if highlight_rows
+            html_table += "<tr class=\"row-#{index}\">"
+          else 
+            html_table += "<tr>"
+          end
+          
           row.to_hash.values.each do |value|          
             html_table += "<td> #{value} </td>"
           end

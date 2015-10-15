@@ -52,7 +52,7 @@
 // -> put quick and dirty hacks here, then clean up & organize later
 ///////////////////////////////////////////////////////////////////////////// */
 
-//============ Figure Styles
+//============ Figure Styles ============///
     .figure .text {
         @extend %font-body;
         font-size: fs(5);    
@@ -92,13 +92,14 @@
         fill: highlight('green');
     }
 
-//============///
+//============//============//============//============
 
 
-//============ Table Styles
+//============ Table Styles ============///
 
 table {
     width: 100%;
+    margin-top: 25px;
 
     th {
         border-bottom: 4px solid theme(highlight);
@@ -106,9 +107,11 @@ table {
         background-color: #fff;
     }
     
-    td {
-        padding-left: 8px;
-        line-height: 220%;
+    tr {        
+        line-height: 115%;        
+    }
+    td {    
+        padding: 20px;  
     }
     tr:nth-child(even) {
         background-color: theme(well);
@@ -121,7 +124,35 @@ table {
             @extend %font-body--bold; 
         }
     }
+
+    &.highlight-table {
+
+        .row-0, .row-1, .row-2 {          
+            border-left: 4px solid theme(highlight);
+            border-right: 4px solid theme(highlight);
+
+            td:first-child {
+                background-color: rgba(94, 171, 188, .5);
+                border-bottom: 2px solid #fff;
+                border-right: 4px solid theme(highlight);
+                text-align: center;
+            }            
+
+         }
+
+         td:first-child {
+            background-color: theme(well);
+            border-right: 1px solid theme(border);
+
+         }
+
+         .row-2 {
+            border-bottom: 4px solid theme(highlight);
+         }
+    }
 }
+
+//============//============//============//============
 
 
 // refs for scott
