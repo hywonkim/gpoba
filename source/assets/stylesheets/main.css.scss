@@ -154,6 +154,14 @@ table {
 
 //============//============//============//============
 
+@media screen and (max-width: 600px) {
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
 
 // refs for scott
 // .some_random_thing {

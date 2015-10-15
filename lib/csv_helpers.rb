@@ -27,7 +27,7 @@ class CSV_Helpers < Middleman::Extension
           end
           
           row.to_hash.values.each do |value|          
-            html_table += "<td> #{value} </td>"
+            html_table += "<td data-label=\"#{value}\"> #{value} </td>"
           end
           html_table += "</tr>"
         end
