@@ -45,6 +45,7 @@ page "/content/*", :layout => false
 data.chapters.each_with_index do |chapter, index|
     proxy "#{data.site.paths.chapter}#{chapter.slug.urlize}.html", "/templates/chapter.html", :locals => {
         :title => chapter.title,
+        :subtitle => chapter.subtitle,
         :slug => chapter.slug,
         :color => chapter.color || "blue",
         :image => chapter.image || false,

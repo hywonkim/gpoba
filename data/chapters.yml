@@ -1,49 +1,37 @@
 - title: "Overview"
   slug: overview
   image:
-    default: media/ch1-cover-fallback.jpg
-    sizes:
-      - media/ch-1cover.jpg
+    - "media/ch1-cover@2000.jpg"
   color: green
 
 - title: "Our <strong>Portfolio</strong>"
   subtitle: "Results, Composition, and Performance"
   slug: portfolio
   image:
-    default: media/ch2-cover-fallback.jpg
-    sizes:
-      - media/ch-2cover.jpg
-    align: bottom
+    - "media/ch2-cover@2000.jpg"
+  image_align: bottom
   color: red
 
 - title: "<strong>Pilot Projects</strong>, Scale-ups &amp; Facilities"
   slug: projects
   image:
-    default: media/ch3-cover-fallback.jpg
-    sizes:
-      - media/ch-3cover.jpg
+    - "media/ch3-cover@2000.jpg"
   color: orange
 
 - title: "Building a Center of <strong>Expertise</strong>"
   slug: center of expertise
   image:
-    default: media/ch4-cover-fallback.jpg
-    sizes:
-      - media/ch-4cover.jpg
+    - "media/ch4-cover@2000.jpg"
   color: purple
 
 - title: "Looking <strong>Ahead</strong>"
   slug: looking ahead
   image:
-    default: media/ch5-cover-fallback.jpg
-    sizes:
-      - media/ch-5cover.jpg
+    - "media/ch5-cover@2000.jpg"
   color: blue
 
 - title: "Appendices"
   slug: appendices
   image:
-    default: media/ch6-cover-fallback.jpg
-    sizes:
-      - media/ch-6cover.jpg
+    - "media/ch6-cover@2000.jpg"
   color: blue

@@ -4,7 +4,10 @@ title: "Annual Report"
 year: 2015
 
 # feature image on the homepage
-cover_image: media/site-cover-fallback.jpg
+cover_image:
+  - media/site-cover@2000.jpg
+  - media/site-cover@3000.jpg
+  - media/site-cover@4000.jpg
 
 # the copyright message (appears in the footer)
 # -> 'Copyright 2015' is automatically prepended to this.
@@ -15,3 +18,9 @@ paths:
   chapter: "/chapters/"
   appendix: "/appendices/"
   content: "/content/"
+
+breakpoints:
+  xsmall: 400
+  small: 700
+  medium: 1000
+  large: 1280

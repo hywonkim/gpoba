@@ -27,23 +27,22 @@ Global layout styles.
 // -> requires Breakpoint library
 
 $breakpoints: (
-    'xsmall' : 400px,
-    'small'  : 700px,
-    'medium' : 1000px,
-    'large'  : 1280px,
+<% data.site.breakpoints.each do |name, size| %>
+    '<%= name %>' : <%= size %>px,
+<% end %>
 );
-
-// getter/helper function to pull breakpoints from the map
-@function screen($size) {
-    @return map-get($breakpoints, $size);
-    @debug map-get($breakpoints, $size);
-}
 
 // add the breakpoints to Breakpoint library
 // -> so we can use 'respond-to' syntax
 // -> https://github.com/at-import/breakpoint/wiki/Respond-To
 @each $name, $size in $breakpoints {
     @include add-breakpoint($name, $size);
+}
+
+// getter/helper function to pull breakpoints from the map
+@function screen($size) {
+    @return map-get($breakpoints, $size);
+    @debug map-get($breakpoints, $size);
 }
 
 @include breakpoint-set('to ems', true);
