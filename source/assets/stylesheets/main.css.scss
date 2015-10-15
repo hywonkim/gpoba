@@ -52,8 +52,64 @@
 // -> put quick and dirty hacks here, then clean up & organize later
 ///////////////////////////////////////////////////////////////////////////// */
 
-text.text.dark {
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 15px;
-    fill: burlywood;
+.figure .text {
+    @extend %font-body;
+    font-size: fs(5);    
+
+    &.light { fill: theme('text' 'primary', 'reverse'); }
+    &.dark { fill: theme(text secondary); }
+    &.data { @extend %font-body--bold; }
+    &.bold { @extend %font-body--bold; }    
+
+    &.title{
+        font-size: fs(7);
+        fill: theme(text tertiary);
+
+        &.type {
+            @extend %font-body--bold;
+        }
+    }
 }
+
+.gridline {
+    stroke-width: .2px;
+}
+
+.circle.white {
+    fill: theme('text' 'primary', 'reverse');
+}
+
+.rings {
+    fill: theme(border, wash);
+}
+
+.graph.fill{
+    fill: highlight('green');
+}
+
+.text.y-axis { 
+    fill: highlight('green');
+}
+
+
+// refs for scott
+// .some_random_thing {
+//     // font placeholder
+//     @extend %font-body--bold;
+
+//     // border helper
+//     @include border(bottom right, thick);
+//     @include border(bottom); // defaults to "thin" border style
+//     @include border; // if you don't pass anything it makes a thin border on all sides
+
+//     // font scale function - 2 = ~13px
+//     font-size: fs(2);
+
+//     // highlight color
+//     color: theme(highlight);
+
+//     // text color -- add primary, secondary, tertiary
+//     color: theme(text tertiary);
+// }
+
+
