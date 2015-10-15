@@ -16,10 +16,3 @@ A web-based version of the 2015 Annual Report. Built primarily with [Middleman](
 3. Run `$ bundle exec middleman`. This will start a local server at `localhost:4567` and will live-reload your browser.
 
 To run a (deploy-able) build, `$ bundle exec middleman build`
-
-
-****
-
-Additionally, we manage icons with [Gulp](http://gulpjs.com), using the [gulp-svgstore](https://github.com/w0rm/gulp-svgstore) module, among others. To run Gulp, you'll need [NPM](http://npmjs.com). Once NPM is up and running, run `$ [sudo] npm install` in the project root to install the Gulp modules.
-
-To update the SVG spritemap, run `$ gulp icons` or just `$ gulp`.
