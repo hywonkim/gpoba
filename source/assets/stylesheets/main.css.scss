@@ -52,43 +52,75 @@
 // -> put quick and dirty hacks here, then clean up & organize later
 ///////////////////////////////////////////////////////////////////////////// */
 
-.figure .text {
-    @extend %font-body;
-    font-size: fs(5);    
+//============ Figure Styles
+    .figure .text {
+        @extend %font-body;
+        font-size: fs(5);    
 
-    &.light { fill: theme('text' 'primary', 'reverse'); }
-    &.dark { fill: theme(text secondary); }
-    &.data { @extend %font-body--bold; }
-    &.bold { @extend %font-body--bold; }    
+        &.light { fill: theme('text' 'primary', 'reverse'); }
+        &.dark { fill: theme(text secondary); }
+        &.data { @extend %font-body--bold; }
+        &.bold { @extend %font-body--bold; }    
 
-    &.title{
-        font-size: fs(7);
-        fill: theme(text tertiary);
+        &.title{
+            font-size: fs(7);
+            fill: theme(text tertiary);
 
-        &.type {
-            @extend %font-body--bold;
+            &.type {
+                @extend %font-body--bold;
+            }
         }
     }
-}
 
-.gridline {
-    stroke-width: .2px;
-}
+    .gridline {
+        stroke-width: .2px;
+    }
 
-.circle.white {
-    fill: theme('text' 'primary', 'reverse');
-}
+    .circle.white {
+        fill: theme('text' 'primary', 'reverse');
+    }
 
-.rings {
-    fill: theme(border, wash);
-}
+    .rings {
+        fill: theme(border, wash);
+    }
 
-.graph.fill{
-    fill: highlight('green');
-}
+    .graph.fill{
+        fill: highlight('green');
+    }
 
-.text.y-axis { 
-    fill: highlight('green');
+    .text.y-axis { 
+        fill: highlight('green');
+    }
+
+//============///
+
+
+//============ Table Styles
+
+table {
+    width: 100%;
+
+    th {
+        border-bottom: 4px solid theme(highlight);
+        text-align: left;
+        background-color: #fff;
+    }
+    
+    td {
+        padding-left: 8px;
+        line-height: 220%;
+    }
+    tr:nth-child(even) {
+        background-color: theme(well);
+    }
+
+    &.total-table {
+        tr:last-child {
+            background-color: theme(highlight);
+            color: theme(text primary, reverse);
+            @extend %font-body--bold; 
+        }
+    }
 }
 
 
