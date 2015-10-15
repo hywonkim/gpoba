@@ -33,12 +33,16 @@ $footer-padding: $gutter-outside;
     @extend .nav.main;
     @include border(bottom, $color: theme(border, reverse));
     width: 100%;
-    text-align: center;
+
+    @include respond-to('small') { text-align: center; }
 }
 
 .footer-section {
     padding: $gutter 0;
 }
+    .footer-lockup {
+        border-bottom: none;
+    }
 
     .footer-title {
         @extend %font-accent;
@@ -58,10 +62,21 @@ $footer-padding: $gutter-outside;
     }
 
     .footer-affiliate {
+        @extend %base-transition;
         @extend %font-accent;
-        display: inline-block;
-        float: right;
+        @include border(top, $color: theme(border, reverse));
+        display: block;
+        margin-top: $gutter;
+        padding-top: 1em;
         color: theme('text' 'primary', 'reverse');
+
+        @include breakpoint(450px) {
+            display: inline-block;
+            float: right;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
     }
 
 .footer-utility {
@@ -89,5 +104,13 @@ $footer-padding: $gutter-outside;
             float: right;
         }
 
-        a, small { color: theme('text' 'tertiary', 'reverse'); }
+        a, small {
+            @extend %base-transition;
+            border-bottom: none;
+            color: theme('text' 'tertiary', 'reverse');
+        }
+
+        a:hover, a:active {
+            color: theme(text primary, reverse);
+        }
     }

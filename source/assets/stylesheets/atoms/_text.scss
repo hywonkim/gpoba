@@ -36,7 +36,15 @@ p {
 }
 
 a {
+    // @extend %base-transition;
+    // @include chapter_highlights(color border-bottom-color);
     text-decoration: none;
+    color: theme(highlight);
+    border-bottom: 0px dotted theme(highlight);
+
+    &:hover, &:active {
+        border-bottom-width: 1px;
+    }
 }
 
 strong {
