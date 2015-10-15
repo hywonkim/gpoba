@@ -9,11 +9,29 @@
 
 $pagination-break: 760px;
 
+@mixin half-circle($w:30px, $color: theme(bg)) {
+  &:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -($w/2);
+    top: 0;
+    z-index: $z--high;
+    height: ($w/2);
+    width: $w;
+    border-radius: 0 0 $w $w;
+    background-color: $color;
+  }
+}
+
 /* Base
 // -------------------------------------------------------------------------- */
 
 .pagination {
     @include chapter_highlights(background-color);
+    @include half-circle;
+    position: relative;
     padding-top: $gutter-outside;
     padding-bottom: $gutter;
     background-color: theme('highlight');
@@ -29,6 +47,18 @@ $pagination-break: 760px;
     color: theme('text' 'secdonary', 'wash');
 }
 
+.pagination-wrapper {
+    @extend .l-wrapper;
+
+    // use flexbox on larger screens, where supported
+    .flexbox & {
+        @include breakpoint($pagination-break) {
+            display: flex;
+            flex-flow: row wrap;
+        }
+    }
+}
+
 // styles shared by both .pagination-next and .pagination-prev
 %pagination-item {
     $padding: fs(5);
@@ -40,17 +70,27 @@ $pagination-break: 760px;
     vertical-align: top;
 
     @include breakpoint($pagination-break) { width: 50%; }
+
+    .flexbox & {
+        @include breakpoint($pagination-break) {
+            width: auto;
+            flex: 1;
+        }
+    }
 }
 
 .pagination-prev {
     @extend %pagination-item;
-    @include border(bottom);
+    @include border(bottom, $color: theme(border, wash));
 
     @include breakpoint($pagination-break) {
-        @include border(right);
         padding-left: 0;
         text-align: left;
         border-bottom: none;
+    }
+
+    .flexbox & {
+        @include breakpoint($pagination-break) { @include border(right, $color: theme(border, wash)); }
     }
 }
 

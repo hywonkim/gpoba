@@ -57,6 +57,7 @@ $header-h: 36px;
     position: absolute;
     top: 50%;
     margin-left: $gutter-outside;
+    border-bottom: none;
     color: theme(text primary, reverse);
 }
 

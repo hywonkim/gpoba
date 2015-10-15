@@ -78,7 +78,7 @@ $highlight--default: map-get($highlights, 'blue');
 // ----------------------------------------------------------------------
 // -> PUBLIC, use these for color references
 
-// note: highlight is default; variations are assigned in local styles
+// note: highlight is default; variations are assigned via overrides in chapter_highlights mixin.
 // -> "default": dark text over white. used throughout the main content.
 // -> "reverse": light text over dark. used in the footer.
 // -> "wash": b/w text over a bright background. used in local navs, billboards.
@@ -115,8 +115,8 @@ $themes: (
             'body'        : $dark_purple,
         ),
         'bg'              : $highlight--default,
-        'well'            : darken($highlight--default, 5),
-        'border'          : darken($highlight--default, 10),
+        'well'            : $dark_purple,
+        'border'          : $super_dark_purple,
         'highlight'       : #fff,
     )
 );
@@ -173,12 +173,14 @@ $themes: (
     // highlight color when you select something
     ::selection {
       background: theme('highlight', $theme);
+      color: white;
       text-shadow: none;
     }
 
     // ditto, for mozilla engine
     ::-moz-selection {
       background: theme('highlight', $theme);
+      color: white;
       text-shadow: none;
     }
 
