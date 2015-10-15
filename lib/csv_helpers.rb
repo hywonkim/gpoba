@@ -6,28 +6,44 @@ class CSV_Helpers < Middleman::Extension
     super
   end
   helpers do
-    def table(file, html_class = '', highlight_rows= nil)
+    def table(file, html_class = '', highlight_rows= nil, table_title = nil, column_label = nil)
       # Create the Table object from CSV File
         csv_data = File.read(File.join(data_dir, '/tables/'+ file)) # TODO potentially make it dynamically find the location. For now all tables must be added to the data/tables folder.
         csv = CSV.new(csv_data, :headers => true, :header_converters => :symbol)
         tbl_obj = csv.read
 
-      # Build HTML Table      
+      # Build HTML Table              
+        
         html_table = "<table class=\"#{html_class}\" >"
 
-        tbl_obj.headers.each do |header| 
-          html_table += "<th> #{ header.to_s.titlecase } </th>"
-        end
+        html_table.prepend("<h5 class=\"table_title\">#{table_title}</h5>") if table_title
 
-        tbl_obj.each_with_index do |row, index|        
+        # Build Headers
+        html_table += "<thead><tr>"
+
+        indexed_headers = Array.new 
+        tbl_obj.headers.each_with_index do |header, index|
+          header_string = header.to_s.titlecase
+          indexed_headers[index] = header_string
+          html_table += "<th> #{ header_string } </th>"
+        end
+                
+        html_table += "</tr></thead>"
+
+        # Build Rows
+        tbl_obj.each_with_index do |row, index|                  
           if highlight_rows
             html_table += "<tr class=\"row-#{index}\">"
           else 
             html_table += "<tr>"
           end
           
-          row.to_hash.values.each do |value|          
-            html_table += "<td data-label=\"#{value}\"> #{value} </td>"
+          row.to_hash.values.each_with_index do |value, index|             
+            header_label = indexed_headers[index]
+            if column_label && index == (column_label - 1)
+              column_class = 'column_label'
+            end
+            html_table += "<td class=\"#{column_class}\" data-label=\"#{header_label}\"> #{value} </td>"
           end
           html_table += "</tr>"
         end

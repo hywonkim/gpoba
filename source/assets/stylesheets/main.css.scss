@@ -99,20 +99,33 @@
 
 table {
     width: 100%;
-    margin-top: 25px;
+    margin-top: 35px;
+    margin-bottom: 35px;
 
     th {
         border-bottom: 4px solid theme(highlight);
         text-align: left;
         background-color: #fff;
+        color: theme(text secondary);
+        padding-bottom: 10px;
     }
-    
+
+    &.all-caps-header th {
+        text-transform: uppercase;
+        text-align: center;
+    }
+
     tr {        
         line-height: 115%;        
     }
     td {    
-        padding: 20px;  
-    }
+        padding: 20px;     
+
+        &.column_label {
+            @extend %font-body--bold;   
+        }
+    }    
+
     tr:nth-child(even) {
         background-color: theme(well);
     }
@@ -150,18 +163,58 @@ table {
             border-bottom: 4px solid theme(highlight);
          }
     }
+
+    &.basic-table {
+        th {
+            border-bottom: 0px;
+            text-align: none;
+            background-color: #fff;
+            @extend %font-body; 
+            padding: 20px;
+            line-height: 115%;
+        }
+    }
 }
 
 //============//============//============//============
 
-@media screen and (max-width: 600px) {
-  table td:before {
-    content: attr(data-label);
-    float: left;
-    text-transform: uppercase;
-    font-weight: bold;
+// Responsive Tables
+
+ @media screen and (max-width: 600px) {
+
+    table {
+      border: 0;
+    }
+
+    table th {
+      display: none;
+    }
+
+    table tr {
+      margin-bottom: 10px;
+      display: block;
+      border-bottom: 2px solid #ddd;
+    }
+
+    table td {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      border-bottom: 1px dotted #ccc;
+    }
+
+    table td:last-child {
+      border-bottom: 0;
+    }
+
+    table td:before {
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: bold;
+      display: block;      
+    }
   }
-}
 
 // refs for scott
 // .some_random_thing {
