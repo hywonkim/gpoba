@@ -4,7 +4,7 @@
 
 @import "../core/*";
 @import "../atoms/logo";
-@import "../molecules/navigation";
+@import "../molecules/main_nav";
 
 $header-h: 36px;
 
@@ -34,7 +34,7 @@ $header-h: 36px;
 
 .header, header, [role="banner"] {
 	&.main {
-        @include rem(min-height, 54px);
+        @include rem(min-height, 40px);
         @include clearfix;
         // height: $header-h;
         position: relative;
@@ -63,7 +63,7 @@ $header-h: 36px;
 }
 
 .header-nav {
-    @extend %nav--main;
+    @extend .main_nav;
     display: none;
     float: right;
     margin-right: $gutter-outside;

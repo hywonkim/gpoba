@@ -12,6 +12,8 @@ layout: layout
     'image' => locals[:image],
 }) %>
 
+<% sections = sitemap.where(:chapter => locals[:slug]).order_by(:order).all %>
+
 <% content_for :local_styles do %>
     <style>
 
@@ -42,6 +44,14 @@ layout: layout
         </div>
     </header>
 
+    <nav class="jump_nav">
+        <ul>
+            <% sections.each_with_index do |section, index| %>
+            <li><a href="#<%= section.data.title.urlize %>" class="jump_nav-item<% if index == 0 %> is-active<% end %>"><%= section.data.title %></a></li>
+            <% end %>
+        </ul>
+    </nav>
+
     <!-- Introduction -->
     <div class="chapter-section first l-wrapper narrow" id="intro">
         <%# https://forum.middlemanapp.com/t/sitemap-where-querying-the-sitemap/1241/2 %>
@@ -52,9 +62,9 @@ layout: layout
     </div>
 
     <!-- Sections -->
-    <% sitemap.where(:chapter => locals[:slug]).order_by(:order).all.each do |section| %>
+    <% sections.each do |section| %>
         <% unless section.data.type == "introduction" %>
-            <section class="chapter-section<% if section.data.type.present? %> <%= section.data.type %><% end %>" id="composition">
+            <section class="chapter-section<% if section.data.type.present? %> <%= section.data.type %><% end %>" id="<%= section.data.title.urlize %>">
                 <h2 class="chapter-subtitle"><%= section.data.title %></h2>
                 <div class="l-wrapper narrow">
                     <%= section.render %>

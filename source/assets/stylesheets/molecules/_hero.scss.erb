@@ -5,7 +5,7 @@
 @import "../core/*";
 @import "../atoms/logo";
 @import "../atoms/heading";
-@import "navigation";
+@import "../molecules/main_nav";
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -86,7 +86,7 @@
 }
 
 .hero-nav {
-    @extend .nav.main;
+    @extend .main_nav;
     @include border(bottom);
     display: none;
     position: absolute;

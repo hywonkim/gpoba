@@ -1,5 +1,6 @@
 /* ==========================================================================
-//  Navigation modules
+//  Main navigation modules
+// -> the horizontal "table of contents"
 // ========================================================================== */
 
 @import "../core/*";
@@ -7,12 +8,11 @@
 /* Base
 // -------------------------------------------------------------------------- */
 
-[role="navigation"], nav, .nav {
+.main_nav {
     @include unstyled-list;
-
-    a {
-        &:hover, &:active { border-bottom: none; }
-    }
+    padding-top: 0;
+    padding-bottom: 0;
+    z-index: $z--high;
 
     ul {
         margin: 0;
@@ -20,26 +20,9 @@
     }
 
     li {
+        display: block;
         margin: 0;
         padding: 0;
-    }
-}
-
-/* Modifiers
-// -------------------------------------------------------------------------- */
-
-/* ------- Global/main nav -------------------------------------------------- */
-[role="navigation"].main,
-nav.main,
-.nav.main,
-%nav--main {
-    // @include inline-list;
-    padding-top: 0;
-    padding-bottom: 0;
-    z-index: $z--high;
-
-    li {
-        display: block;
 
         @include breakpoint(400px) {
             display: inline-block;
@@ -47,41 +30,30 @@ nav.main,
     }
 }
 
-/* ------- Local jump nav --------------------------------------------------- */
-nav.jump,
-.nav.jump,
-%nav--jump {
-    @include rem(top, fs(6));
-    display: inline-block;
-    position: absolute;
-    width: 180px;
-}
+/* Modifiers
+// -------------------------------------------------------------------------- */
 
-// modifiers to position the "active" highlight
-// nav.is-above
-// nav.is-left
+/* ------- STATE: above/below ----------------------------------------------- */
+// -> the nav's relationship to the section 'border'.
+// -> used to place the highlight rule over or under the active item.
+.main_nav.is-above {}
+
 
 /* Submodules
 // -------------------------------------------------------------------------- */
 
-.nav-item {
-    @extend %base-transition;
-    @extend %font-body--bold;
+.main_nav-item {
+    @extend .nav-item;
     @include rem(margin, 0 fs(3));
-    @include rem(padding, fs(3) 0);
-    @include font-scale(2);
     display: block;
     position: relative;
-    text-transform: uppercase;
+    padding: 1.5em 0;
     color: theme(text tertiary, reverse);
 
     &:hover, &:active { color: theme(text primary, reverse); }
 
     &.is-active {
-        $border-w: 6px;
-        @include chapter_highlights(color);
-        color: theme(highlight);
-        // border-bottom: 4px solid theme(highlight);
+        $border-w: 4px;
 
         @include breakpoint(820px) {
             &:after {
@@ -98,14 +70,6 @@ nav.jump,
                 .is-above & {
                     top: auto;
                     bottom: -($border-w/2);
-                }
-
-                .is-left & {
-                    bottom: 0;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    width: $border-w;
                 }
             }
         }

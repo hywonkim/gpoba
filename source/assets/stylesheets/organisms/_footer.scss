@@ -4,7 +4,7 @@
 
 @import "../core/*";
 @import "../atoms/logo";
-@import "../molecules/navigation";
+@import "../molecules/main_nav";
 
 $footer-padding: $gutter-outside;
 
@@ -30,7 +30,7 @@ $footer-padding: $gutter-outside;
 // -------------------------------------------------------------------------- */
 
 .footer-nav {
-    @extend .nav.main;
+    @extend .main_nav;
     @include border(bottom, $color: theme(border, reverse));
     width: 100%;
 

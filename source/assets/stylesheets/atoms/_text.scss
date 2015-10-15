@@ -64,7 +64,7 @@ address {
 
 }
 
-/* Helpers
+/* Text modules
 // -------------------------------------------------------------------------- */
 
 // the first paragraph, often set slightly bigger
@@ -88,4 +88,24 @@ address {
     @extend %font-body;
     @include font-scale(2);
     color: theme('text' 'secondary');
+}
+
+// base styles for menu items
+// -> see jump nav and main nav modules
+.nav-item {
+    @extend %base-transition;
+    @extend %font-body--bold;
+    @include font-scale(2);
+    border-bottom: none;
+    text-transform: uppercase;
+    line-height: 1;
+    color: lighten(theme(text tertiary), 5);
+
+    &:hover, &:active { color: theme(text primary); }
+
+    // active state
+    &.is-active {
+        @include chapter_highlights(color);
+        color: theme(highlight);
+    }
 }
