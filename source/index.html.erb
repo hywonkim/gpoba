@@ -2,7 +2,25 @@
 title: home
 ---
 
-<header class="hero" style="background-image: url('<%= asset_url(data.site.paths.content + 'home/' + data.site.cover_image.to_s) %>');">
+<% content_for :local_styles do %>
+    <style>
+        .hero {
+            <% img_path = asset_url(data.site.paths.content + 'home/') %>
+            background-image: url('<%= img_path + data.site.cover_image[0].to_s %>');
+        }
+        <% if data.site.cover_image.length > 1 %>
+        <% data.site.breakpoints.values.each_with_index do |size, index| %>
+            <% next if index == 0 %>
+            <% break if index == data.site.cover_image.length %>
+                @media (min-width: <%= (size/16) %>em) {
+                  .hero { background-image: url('<%= img_path + data.site.cover_image[index].to_s %>'); }
+                }
+            <% end %>
+        <% end %>
+    </style>
+<% end %>
+
+<header class="hero">
 
     <!-- GPOBA logo -->
     <%= partial("layouts/partials/logo-gpoba", :locals => { :classes => "hero-logo" }) %>
@@ -19,7 +37,7 @@ title: home
     <!-- Executive summary -->
     <div class="l-wrapper narrow chapter-content">
         <% sitemap.where(:chapter => "home", :type => "introduction").order_by(:order).all.each do |summary| %>
-            <h1 class="chapter-title"><%= summary.data.title %></h1>
+            <h1 class="chapter-headline standalone"><%= summary.data.title %></h1>
             <%= summary.render %>
         <% end %>
     </div>
@@ -78,7 +96,7 @@ title: home
         <% data.chapters.each do |chapter| %>
             <li class="feed-item card horizontal">
                 <a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>" class="card-thumb">
-                    <img src="<%= lorem.image '600x400' %>" />
+                    <img src="<%= asset_url(data.site.paths.content + chapter.slug.urlize + '/' + chapter.image[0].to_s) %>" />
                 </a>
                 <div class="card-content">
                     <h2 class="card-title"><a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>"><%= chapter.title %></a></h2>

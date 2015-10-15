@@ -32,6 +32,7 @@ $chapter-padding: fs(6);
     &:first-child { margin-top: -($chapter-padding); }
 }
 
+// headline lockup appearing in a hero
 .chapter-headline {
     @extend .hero-headline;
     @include rem(font-size, 54px);
@@ -42,7 +43,20 @@ $chapter-padding: fs(6);
     @include respond-to('xsmall') { @include rem(font-size, 68px); }
     @include respond-to('small') { @include rem(font-size, 76px); }
     @include respond-to('medium') { @include rem(font-size, 85px); }
-    @include respond-to('large') { @include rem(font-size, 97px); }
+    @include respond-to('large') { @include rem(font-size, 90px); }
+}
+
+// the chapter title, generally not in a hero (see homepage)
+.chapter-headline.standalone {
+    position: relative;
+    bottom: auto;
+    margin: 0.6em 0 0.4em;
+    color: theme(text primary);
+
+    @include respond-to('xsmall') { @include rem(font-size, 54px); }
+    @include respond-to('small') { @include rem(font-size, 60px); }
+    @include respond-to('medium') { @include rem(font-size, 68px); }
+    @include respond-to('large') { @include rem(font-size, 72px); }
 }
 
 // subtitle to chapter-headine
@@ -58,6 +72,7 @@ $chapter-padding: fs(6);
     text-align: center;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+    letter-spacing: -0.02em;
 }
 
 .chapter-section {

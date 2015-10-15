@@ -21,9 +21,9 @@ layout: layout
 
         /* default bg */
         .chapter-hero {
-            background-image: url('<%= img_path + locals[:image][:default].to_s %>');
+            background-image: url('<%= img_path + locals[:image][0].to_s %>');
             <% if locals[:image][:align] %>
-            background-position: <%= locals[:image][:align] %>;
+                background-position: <%= locals[:image][:align] %>;
             <% end %>
         }
         /* if gradient bgs are supported (Modernizr test), use them */
