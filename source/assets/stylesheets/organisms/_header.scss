@@ -34,6 +34,7 @@ $header-h: 36px;
 
 .header, header, [role="banner"] {
 	&.main {
+        @include rem(min-height, 54px);
         @include clearfix;
         // height: $header-h;
         position: relative;

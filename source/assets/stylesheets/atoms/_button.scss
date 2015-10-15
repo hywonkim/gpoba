@@ -46,30 +46,6 @@ button, .button {
 /* Modifiers
 // -------------------------------------------------------------------------- */
 
-// --- types ---------------------------------------------------------------
-// -> variations that indicate relative importance.
-
-// obnoxious button that demands attention. click me! i'm all orange and stuff.
-.button.primary {
-
-}
-
-// an introvert button; not making a big deal of it, just here if you need me.
-.button.secondary {
-
-}
-
-// --- sizes ---------------------------------------------------------------
-// -> default size is "medium." add these classes to go bigger or smaller.
-
-.button.small {
-
-}
-
-.button.large {
-
-}
-
 // --- special variations --------------------------------------------------
 // -> buttons of a strange and amazing nature
 
@@ -88,12 +64,4 @@ button, .button {
         margin-left: 0.3em;
         fill: theme(highlight);
     }
-}
-
-/* Submodules
-// -------------------------------------------------------------------------- */
-
-// group/row of buttons joined together
-.button-group {
-
 }

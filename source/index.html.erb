@@ -37,7 +37,7 @@ title: home
     <!-- Executive summary -->
     <div class="l-wrapper narrow chapter-content">
         <% sitemap.where(:chapter => "home", :type => "introduction").order_by(:order).all.each do |summary| %>
-            <h1 class="chapter-headline standalone"><%= summary.data.title %></h1>
+            <h1 class="chapter-headline"><%= summary.data.title %></h1>
             <%= summary.render %>
         <% end %>
     </div>

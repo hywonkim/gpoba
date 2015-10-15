@@ -34,10 +34,12 @@ layout: layout
 
 <article class="chapter">
     <header class="chapter-hero">
-        <h1 class="chapter-headline"><%= locals[:title] %></h1>
-        <% if locals[:subtitle].present? %>
-        <span class="chapter-subtitle"><%= locals[:subtitle] %></span>
-        <% end %>
+        <div class="chapter-hero-lockup">
+            <h1 class="chapter-hero-headline"><%= locals[:title] %></h1>
+            <% if locals[:subtitle].present? %>
+            <span class="chapter-hero-subtitle"><%= locals[:subtitle] %></span>
+            <% end %>
+        </div>
     </header>
 
     <!-- Introduction -->
@@ -53,7 +55,7 @@ layout: layout
     <% sitemap.where(:chapter => locals[:slug]).order_by(:order).all.each do |section| %>
         <% unless section.data.type == "introduction" %>
             <section class="chapter-section<% if section.data.type.present? %> <%= section.data.type %><% end %>" id="composition">
-                <h2 class="chapter-subheading"><%= section.data.title %></h2>
+                <h2 class="chapter-subtitle"><%= section.data.title %></h2>
                 <div class="l-wrapper narrow">
                     <%= section.render %>
                 </div>
