@@ -46,6 +46,37 @@ video {
     max-width: 100%;
 }
 
+// force html5 video elements to be as wide as their container
+// -> does not work for iframes
+video {
+    width: 100%;
+    height: auto;
+}
+
+// use a wrapper for iframe videos
+// -> constrain to 16:9
+.wrapper-video {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    padding-bottom: (9/16 * 100%); // 16:9
+    // padding-top: 25px;
+    height: 0;
+
+    p + & {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
 
 /* Fix IE SVG scaling issue
  * https://gist.github.com/larrybotha/7881691
