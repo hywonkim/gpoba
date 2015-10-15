@@ -92,16 +92,16 @@ title: home
 <!-- Section cards -->
 <section class="panel">
     <h1 class="panel-slug">Sections</h1>
-    <ul class="feed l-wrapper narrow">
+    <ul class="feed l-wrapper">
         <% data.chapters.each do |chapter| %>
             <li class="feed-item card horizontal">
-                <a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>" class="card-thumb">
+                <a class="card-thumb" href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>">
                     <img src="<%= asset_url(data.site.paths.content + chapter.slug.urlize + '/' + chapter.image[0].to_s) %>" />
                 </a>
                 <div class="card-content">
                     <h2 class="card-title"><a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>"><%= chapter.title %></a></h2>
                     <p><%= lorem.sentences 3 %>.</p>
-                    <a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>" class="read_more">Read More &rsaquo;</a>
+                    <a class="read_more" href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>">Read More &rsaquo;</a>
                 </div>
             </li>
         <% end %>

@@ -54,7 +54,7 @@ $pagination-break: 760px;
     .flexbox & {
         @include breakpoint($pagination-break) {
             display: flex;
-            flex-flow: row wrap;
+            // flex-flow: row wrap;
         }
     }
 }

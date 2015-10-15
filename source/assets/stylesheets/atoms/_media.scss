@@ -2,6 +2,40 @@
 //  Global media styles
 // ========================================================================== */
 
+// padding to force an aspect ratio
+// -> apply mixin to a container element, and the child image will be constrained
+@mixin aspect($w, $ratio: 1, $child_el: ".aspect-content") {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: " ";
+        width: $w;
+        padding-top: (ms(2)/ms(1)) * 100%;
+    }
+
+    > img, #{$child_el} {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+    }
+
+    // center the image within its frame if transforms are supported
+    .csstransforms & {
+        > img, > .aspect-content {
+            @include transform(translateY(-50%) translateX(-50%));
+            top: 50%;
+            left: 50%;
+        }
+    }
+}
+
+/* Globals
+// -------------------------------------------------------------------------- */
+
 audio,
 canvas,
 img,
@@ -10,4 +44,26 @@ source,
 video {
     vertical-align: middle;
     max-width: 100%;
+}
+
+
+/* Fix IE SVG scaling issue
+ * https://gist.github.com/larrybotha/7881691
+ */
+
+/*
+ * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
+ *
+ * [1] IE9
+ * [2] IE10+
+ */
+/* 1 */
+.ie9 img[src*=".svg"] {
+  width: 100%;
+}
+/* 2 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src*=".svg"], source[type*="svg+xml"] {
+    width: 100%;
+  }
 }

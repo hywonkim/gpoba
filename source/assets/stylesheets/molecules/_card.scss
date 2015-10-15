@@ -5,7 +5,11 @@
 // ========================================================================== */
 
 @import "../core/*";
+@import "../atoms/media";
 @import "../atoms/heading";
+
+$card-break: 'small';
+$card-thumb-w: 50%;
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -14,6 +18,8 @@
     @include clearfix;
     position: relative;
     display: block;
+    background-color: theme(well);
+    font-size: 0;
 }
 
 /*  Modifiers
@@ -22,50 +28,97 @@
 /* --- "horizontal" (two column) version ------------------------------------ */
 .card.horizontal {
 
-    @include layout-at(ms(1) ms(2), screen('xsmall')) {
-        .card-thumb { @include grid-span(1, 1); }
-        .card-content { @include grid-span(1, 2); }
-    }
+    // @include layout-at(2, screen('xsmall')) {
+    //     .card-thumb { @include grid-span(1, 1); }
+    //     .card-content { @include grid-span(1, 2); }
+    // }
 }
 
 // small version
 // -> stays horizontal at mobile sizes
 .card.horizontal.small {
 
-    @include layout(ms(1) ms(3)) {
-        .card-thumb { @include grid-span(1, 1); }
-        .card-content { @include grid-span(1, 2); }
-    }
+    // @include layout(ms(1) ms(3)) {
+    //     .card-thumb { @include grid-span(1, 1); }
+    //     .card-content { @include grid-span(1, 2); }
+    // }
 }
+
+// has a solid bg and full-bleed thumb
+.card.tile {}
 
 /* Submodules
 // -------------------------------------------------------------------------- */
 
 /* --- thumbnail image ------------------------------------------------------ */
 .card-thumb {
-    display: block;
+    // @include aspect(100%, $ratio: 2);
+    display: inline-block;
     position: relative;
     width: 100%;
+    padding: $gutter;
     overflow: hidden;
-    float: none;
-    clear: both;
-    margin-bottom: ($gutter/2);
+    vertical-align: top;
+
+    .card.horizontal & {
+        @include respond-to($card-break) {
+            width: $card-thumb-w;
+            padding-right: 0;
+        }
+    }
+
+    .card.horizontal.small & { width: $card-thumb-w; }
+
+
 
     img {
         // @include border(all, thin);
         width: 100%; // force the thumbnail image to be fill its container
+
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     right: 0;
+        //     bottom: 0;
+        //     object-fit: cover;
+
+        // // center the image within its frame if transforms are supported
+        // .csstransforms & {
+        //         @include transform(translateY(-50%) translateX(-50%));
+        //         top: 50%;
+        //         left: 50%;
+        // }
     }
 }
 
 /* --- content container ---------------------------------------------------- */
 .card-content {
+    @include rem(padding, $gutter);
+    @include rem(font-size, 16px);
+    display: inline-block;
+    padding: $gutter;
+    vertical-align: top;
 
+    .card.horizontal & {
+        @include respond-to($card-break) {
+            width: (100% - $card-thumb-w);
+        }
+    }
 }
 
 .card-title {
     @extend %beta;
+    @extend %base-transition;
+    @include chapter_highlights;
+    border-bottom: none;
+
+    &:hover, &:active {
+        color: theme(highlight);
+    }
 
     .card.small & {
         @extend %delta;
     }
+
+    a { border-bottom: none; }
 }

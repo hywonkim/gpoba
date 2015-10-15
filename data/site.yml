@@ -18,7 +18,7 @@ paths:
   content: "/content/"
 
 # global breakpoints
-# -> in pixels, no unit. converted to em's when used in media queries.
+# -> in pixels, no units. converted to em's when used in media queries.
 breakpoints:
   xsmall: 400
   small: 700
