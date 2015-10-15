@@ -101,7 +101,10 @@ title: home
                 <div class="card-content">
                     <h2 class="card-title"><a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>"><%= chapter.title %></a></h2>
                     <p><%= lorem.sentences 3 %>.</p>
-                    <a class="read_more" href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>">Read More &rsaquo;</a>
+                    <a class="button read_more" href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>">
+                        Read More &rsaquo;
+                        <%# partial("layouts/partials/icon", :locals => { :id => "arrow-right" }) %>
+                    </a>
                 </div>
             </li>
         <% end %>

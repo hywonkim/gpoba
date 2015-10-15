@@ -89,9 +89,3 @@ address {
     @include font-scale(2);
     color: theme('text' 'secondary');
 }
-
-.read_more {
-    @extend %font-body--bold;
-    @include font-scale(2);
-    text-transform: uppercase;
-}

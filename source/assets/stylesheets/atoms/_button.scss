@@ -3,6 +3,7 @@
 // ========================================================================== */
 
 @import "../core/*";
+@import "../atoms/icon";
 
 /*doc
 ---
@@ -35,45 +36,57 @@ $button-radius--default: 3px;
 // -------------------------------------------------------------------------- */
 
 button, .button {
-
+    @extend %font-body--bold;
+    display: inline-block;
+    text-transform: uppercase;
 }
 
 
 
 /* Modifiers
 // -------------------------------------------------------------------------- */
-button, .button {
 
-    // --- types ---------------------------------------------------------------
-    // -> variations that indicate relative importance.
+// --- types ---------------------------------------------------------------
+// -> variations that indicate relative importance.
 
-    // obnoxious button that demands attention. click me! i'm all orange and stuff.
-    &.primary {
+// obnoxious button that demands attention. click me! i'm all orange and stuff.
+.button.primary {
 
+}
+
+// an introvert button; not making a big deal of it, just here if you need me.
+.button.secondary {
+
+}
+
+// --- sizes ---------------------------------------------------------------
+// -> default size is "medium." add these classes to go bigger or smaller.
+
+.button.small {
+
+}
+
+.button.large {
+
+}
+
+// --- special variations --------------------------------------------------
+// -> buttons of a strange and amazing nature
+
+
+.button.read_more {
+    @include font-scale(2);
+    color: theme(text-primary);
+
+    &:hover, &:active {
+        @include chapter_highlights(color);
+        color: theme(highlight);
     }
 
-    // an introvert button; not making a big deal of it, just here if you need me.
-    &.secondary {
-
-    }
-
-    // --- sizes ---------------------------------------------------------------
-    // -> default size is "medium." add these classes to go bigger or smaller.
-
-    &.small {
-
-    }
-
-    &.large {
-
-    }
-
-    // --- special variations --------------------------------------------------
-    // -> buttons of a strange and amazing nature
-
-    // a "hidden," text-only button. doesn't look like a button but behaves like one in every other way.
-    &.text {
-
+    > .icon {
+        @include chapter_highlights(fill);
+        margin-left: 0.3em;
+        fill: theme(highlight);
     }
 }
 

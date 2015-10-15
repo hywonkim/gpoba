@@ -10,14 +10,21 @@
 <% role ||= "img" %>
 <% type ||= "icon" %>
 <% link ||= false %>
+<% fallback_type ||= "png" %>
 <% fallback ||= "#{id}.png" %>
 
 <% if link != false %>
-<a class="<%= type %> <%= id %> <%= classes %>" href="<%= link %>">
+<a class="<%= type %> icon-<%= id %> <%= classes %>" href="<%= link %>">
 <% end %>
-    <svg <% if link == false %>class="<%= type %> <%= id %> <%= classes %>"<% end %> title="<%= title %>" role="<%= role %>" preserveAspectRatio="xMinYMin meet">
-      <use xlink:href="#<%= id %>"></use>
-      <image src="<%= asset_url("#{images_dir}/icons/#{fallback}") %>" xlink:href="" />
+    <svg <% if link == false %>class="<%= type %> icon-<%= id %> <%= classes %>"<% end %> title="<%= title %>" role="<%= role %>" preserveAspectRatio="xMinYMin meet">
+        <use xlink:href="#icon-<%= id %>"></use>
+        <% if fallback_type == "png" %>
+        <image src="<%= asset_url("#{images_dir}/icons/#{fallback}") %>" xlink:href="" />
+        <% else %>
+        <desc>
+            <%= fallback %>
+        </desc>
+        <% end %>
     </svg>
 <% if link != false %>
 </a>
