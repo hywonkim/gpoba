@@ -14,6 +14,7 @@ layout: layout
 
 <% content_for :local_styles do %>
     <style>
+
         /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients */
         /* https://css-tricks.com/css3-gradients/ */
         /* http://www.css3.info/preview/multiple-backgrounds/ */
@@ -22,17 +23,9 @@ layout: layout
         /* default bg */
         .chapter-hero {
             background-image: url('<%= img_path + locals[:image][0].to_s %>');
-            <% if locals[:image][:align] %>
-                background-position: <%= locals[:image][:align] %>;
+            <% if locals[:image_align] %>
+                background-position: <%= locals[:image_align] %>;
             <% end %>
-        }
-        /* if gradient bgs are supported (Modernizr test), use them */
-        .rgba.multiplebgs.cssgradients .chapter-hero {
-            /*background-image: none;
-            background-image: url;
-            background-image:
-                linear-gradient(to bottom, rgba(93,192,186,0.6), rgba(229,183,95,0.7)),
-                url('<%= img_path %>');*/
         }
     </style>
 <% end %>
