@@ -101,13 +101,17 @@ table {
     width: 100%;
     margin-top: 35px;
     margin-bottom: 35px;
+    font-size: fs(2);
 
     th {
         border-bottom: 4px solid theme(highlight);
         text-align: left;
         background-color: #fff;
         color: theme(text secondary);
-        padding-bottom: 10px;
+        padding: 10px;
+        font-size: fs(3);
+        line-height: 125%;
+
     }
 
     &.all-caps-header th {
@@ -165,13 +169,15 @@ table {
     }
 
     &.basic-table {
+
         th {
+            background-color: theme(well);
             border-bottom: 0px;
-            text-align: none;
-            background-color: #fff;
+            text-align: none;            
             @extend %font-body; 
             padding: 20px;
             line-height: 115%;
+            font-size: fs(2);
         }
     }
 }
