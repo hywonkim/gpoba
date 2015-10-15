@@ -94,7 +94,7 @@ title: home
     <h1 class="panel-slug">Sections</h1>
     <ul class="feed l-wrapper">
         <% data.chapters.each do |chapter| %>
-            <li class="feed-item card horizontal">
+            <li class="feed-item card horizontal tile">
                 <a class="card-thumb" href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>">
                     <img src="<%= asset_url(data.site.paths.content + chapter.slug.urlize + '/' + chapter.image[0].to_s) %>" />
                 </a>
