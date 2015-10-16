@@ -11,7 +11,7 @@
 .jump_nav {
     @include rem(top, fs(6));
     display: none;
-    background: #fff;
+    // background: #fff;
     width: 180px;
     z-index: $z--high;
 
@@ -34,7 +34,7 @@
     padding: 0.5em 0 0.5em $gutter;
     font-size: fs(2);
     line-height: 1.2;
-    color: lighten(theme(text tertiary), 30);
+    color: lighten(theme(text tertiary), 20);
 
     &.is-active:before {
         @include chapter_highlights(background-color);
