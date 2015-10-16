@@ -6,7 +6,7 @@ class CSV_Helpers < Middleman::Extension
     super
   end
   helpers do
-    def table(file, html_class = '', highlight_rows= nil, table_title = nil, column_label = nil)
+    def table(file, html_class = '', highlight_rows= nil, table_title = nil, column_label = nil, column_icon = nil)
       # Create the Table object from CSV File
         csv_data = File.read(File.join(data_dir, '/tables/'+ file)) # TODO potentially make it dynamically find the location. For now all tables must be added to the data/tables folder.
         csv = CSV.new(csv_data, :headers => true, :header_converters => :symbol)
@@ -14,7 +14,8 @@ class CSV_Helpers < Middleman::Extension
 
       # Build HTML Table              
         
-        html_table = "<table class=\"#{html_class}\" >"
+        table_title_class = 'titled_table' if table_title
+        html_table = "<table class=\"#{html_class} #{table_title_class}\" >"
 
         html_table.prepend("<h5 class=\"table_title\">#{table_title}</h5>") if table_title
 
@@ -43,7 +44,12 @@ class CSV_Helpers < Middleman::Extension
             if column_label && index == (column_label - 1)
               column_class = 'column_label'
             end
-            html_table += "<td class=\"#{column_class}\" data-label=\"#{header_label}\"> #{value} </td>"
+
+            if column_icon && index == (column_icon - 1)
+              column_icon_value = " data-icon-value=\"#{value}\" "
+            end
+
+            html_table += "<td class=\"#{column_class}\" #{column_icon_value} data-label=\"#{header_label}\"> #{value} </td>"
           end
           html_table += "</tr>"
         end

@@ -102,6 +102,15 @@
 
 //============ Table Styles ============///
 
+.table_title {
+    font-size: fs(3);
+    color: theme(text tertiary);
+    text-align: left;
+    @extend %font-body--bold;
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+
 table {
     width: 100%;
     margin-top: 35px;
@@ -122,6 +131,9 @@ table {
     &.all-caps-header th {
         text-transform: uppercase;
         text-align: center;
+    }
+    &.titled_table{
+        margin-top: 0px;
     }
 
     tr {
