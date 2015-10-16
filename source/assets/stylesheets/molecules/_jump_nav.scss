@@ -11,7 +11,7 @@
 .jump_nav {
     @include rem(top, fs(6));
     display: none;
-    background: rgba(255, 255, 255, 0.5);
+    background: #fff;
     width: 180px;
     z-index: $z--high;
 
