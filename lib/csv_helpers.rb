@@ -46,10 +46,10 @@ class CSV_Helpers < Middleman::Extension
             end
 
             if column_icon && index == (column_icon - 1)
-              column_icon_value = value
+              column_icon_value = " data-icon-value=\"#{value}\" "
             end
 
-            html_table += "<td class=\"#{column_class}\" data-icon-value=\"#{column_icon_value}\" data-label=\"#{header_label}\"> #{value} </td>"
+            html_table += "<td class=\"#{column_class}\" #{column_icon_value} data-label=\"#{header_label}\"> #{value} </td>"
           end
           html_table += "</tr>"
         end
