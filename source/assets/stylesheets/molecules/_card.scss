@@ -26,7 +26,7 @@ $card-thumb-w: 50%;
 /* --- Layout --------------------------------------------------------------- */
 
 // horizontal layout (2 columns, thumb on left)
-.card.horizontal {
+.card.horizontal, %card--horizontal {
     font-size: 0; // fix whitespace issues with inline-block
 
     .flexbox & {
@@ -36,9 +36,12 @@ $card-thumb-w: 50%;
 
 /* --- Sizing --------------------------------------------------------------- */
 
-// small version
+// "medium" version
+.card.secondary {}
+
+// "small" version
 // -> stays horizontal at mobile sizes when used with .horizontal modifier
-.card.small {}
+.card.tertiary {}
 
 /* --- Appearance ----------------------------------------------------------- */
 
@@ -46,7 +49,7 @@ $card-thumb-w: 50%;
 // has a solid bg and full-bleed thumb
 .card.tile {
     padding: $gutter;
-    background-color: theme(well);
+    background-color: theme(bg);
 
     .flexbox & { padding: 0; }
 }
@@ -63,6 +66,7 @@ $card-thumb-w: 50%;
     border-bottom: 0;
     background-color: theme(text tertiary);
 
+    &.small {width: 40%; }
     &.stretch { width: 100%; }
 
     .card.horizontal & {
@@ -72,7 +76,7 @@ $card-thumb-w: 50%;
         }
     }
 
-    .card.horizontal.small & {
+    .card.horizontal.tertiary & {
         display: inline-block;
         width: $card-thumb-w;
     }
@@ -86,7 +90,6 @@ $card-thumb-w: 50%;
 
     img {
         // @include border(all, thin);
-
         .stretch > & { width: 100%; } // force the thumbnail image to be fill its container
 
         // imitate "background-size: cover" with img element
@@ -127,7 +130,7 @@ $card-thumb-w: 50%;
 
     .card-thumb + & { padding-top: $gutter; }
 
-    .card.small .card-thumb + & { padding-top: 0.5em; }
+    .card.tertiary .card-thumb + & { padding-top: 0.5em; }
 
     .card.tile & { padding: $gutter; }
 
@@ -135,7 +138,7 @@ $card-thumb-w: 50%;
         @include respond-to($card-break) { @include col-right; }
     }
 
-    .card.horizontal.small & { @include col-right; }
+    .card.horizontal.tertiary & { @include col-right; }
 
     .flexbox .card.tile & {
         @include respond-to($card-break) {
@@ -159,7 +162,12 @@ $card-thumb-w: 50%;
         color: theme(highlight);
     }
 
-    .card.small & {
+    .card.secondary & {
+        @extend %font-accent;
+        @extend %cappa;
+    }
+
+    .card.tertiary & {
         @extend %font-accent;
         @extend %epsilon;
     }
@@ -169,15 +177,19 @@ $card-thumb-w: 50%;
 
 .card-subtitle {
     @extend %delta;
+    @extend %font-accent--bold;
     @extend %base-transition;
     display: block;
     margin-top: 0.5em;
 
-    .card.small & {
-        @extend %font-accent--bold;
-        font-size: fs(2);
+    .card.secondary & {
+        font-size: fs(3);
         line-height: 1.2;
-        // text-transform: uppercase;
         color: theme(text tertiary);
+    }
+
+    .card.tertiary & {
+        @extend .card.secondary;
+        font-size: fs(2);
     }
 }

@@ -1,5 +1,5 @@
 ---
-title: Message from the Senior Director
+title: Senior Director
 subtitle: Social, Urban, Rural and Resilience Global Practice, World Bank Group
 authors:
   - name: Ede Jorge Ijjaz-Vasquez

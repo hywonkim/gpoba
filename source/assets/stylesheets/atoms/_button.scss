@@ -36,9 +36,11 @@ $button-radius--default: 3px;
 // -------------------------------------------------------------------------- */
 
 button, .button {
+    @extend %base-transition;
     @extend %font-body--bold;
     display: inline-block;
     text-transform: uppercase;
+    border-bottom: 0;
 }
 
 

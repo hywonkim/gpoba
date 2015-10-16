@@ -5,6 +5,7 @@
             <a href="/" class="button read_more">&lsaquo; Back to the <strong>Annual Report</strong></a>
         </div>
         <header class="message-header">
+            <span class="message-slug"><strong>Message</strong> from the</span>
             <h1 class="message-title"><%= current_page.data.title %></h1>
             <% if current_page.data.subtitle.present? %>
             <span class="message-subtitle"><%= current_page.data.subtitle %></span>
@@ -14,8 +15,8 @@
             <aside class="message-feed">
                 <ul>
                     <% current_page.data.authors.each do |author| %>
-                    <li class="feed-item card small">
-                        <img class="card-thumb" src="<%= asset_url("#{data.site.paths.content}#{current_page.data.chapter}/#{author.portrait}") %>" alt="<%= author.name %>" />
+                    <li class="feed-item card tertiary">
+                        <img class="card-thumb small" src="<%= asset_url("#{data.site.paths.content}#{current_page.data.chapter}/#{author.portrait}") %>" alt="<%= author.name %>" />
                         <div class="card-content">
                             <h3 class="card-title"><%= author.name %></h3>
                             <span class="card-subtitle"><%= author.job_title %></span>

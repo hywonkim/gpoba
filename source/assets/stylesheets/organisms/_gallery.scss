@@ -112,7 +112,7 @@ There are three (column) size variations: small, medium, and large. Medium is de
 .gallery-item {
     // $gutter: 1px;
     // margin: 0 0 $gutter 0;
-    padding: $gutter $gutter 0 0;
+    padding: $gutter;
 
     @include respond-to('small') {
         @include flex-columns(2);

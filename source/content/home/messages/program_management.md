@@ -1,5 +1,5 @@
 ---
-title: Message from the Program Management Unit
+title: Program Management Unit
 authors:
   - name: Carmen Nonay
     job_title: Program Manager, Parnterships and Resource Mobilization, GPSURR

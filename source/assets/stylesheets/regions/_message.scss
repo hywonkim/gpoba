@@ -20,6 +20,7 @@ $chapter-padding: fs(6);
 /* Base
 // -------------------------------------------------------------------------- */
 
+// "back to report" link
 .message-nav {
     @extend %l-wrapper--narrow;
     @include rem(padding-top, $gutter/2);
@@ -27,11 +28,21 @@ $chapter-padding: fs(6);
     @include border(bottom);
 }
 
+// headines
 .message-header {
-    @extend %l-wrapper;
+    @extend %l-wrapper--narrow;
     @include rem(margin, fs(6) auto);
-    text-align: center;
+    // text-align: center;
 }
+
+    .message-slug {
+        @extend .slug;
+        text-align: left;
+        text-transform: none;
+        // color: theme(text tertiary);
+
+        // strong { color: theme(text primary); }
+    }
 
     .message-title {
         @extend %beta;
@@ -45,16 +56,21 @@ $chapter-padding: fs(6);
         color: theme(text tertiary);
     }
 
-
+// author portraits, names
 .message-feed {
     @extend .feed;
-    @include rem(width, 180px);
-    @include rem(margin-right, -(180px + $gutter));
+    display: block;
     position: relative;
-    float: right;
-    margin-top: 0;
+
+    @include breakpoint(1180px) {
+        @include rem(width, 180px);
+        @include rem(margin-right, -(180px + $gutter));
+        float: right;
+        margin-top: 0;
+    }
 }
 
+// main content
 .message-content {
     @extend %l-wrapper--narrow;
     padding-bottom: 2.5em;
