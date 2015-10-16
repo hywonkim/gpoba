@@ -43,37 +43,23 @@ title: home
     </div>
 
     <!-- Leadership messages -->
-    <aside class="chapter-aside">
+    <aside class="box">
         <h1 class="slug">Messages from our leadership</h1>
         <div class="l-wrapper">
-            <ul class="gallery">
-                <li class="gallery-item card horizontal small">
-                    <a href="#" class="card-thumb">
-                        <img src="<%= lorem.image '400x400' %>" />
-                    </a>
-                    <div class="card-content">
-                        <h2 class="card-title">Ted Hypothetical</h2>
-                        <span>Senior Director</span>
-                    </div>
+            <ul class="gallery large">
+                <% sitemap.where(:chapter => "home", :type => "message").order_by(:order).all.each do |message| %>
+                <li class="gallery-item card tile secondary">
+                    <h2 class="card-title"><a href="<%= message.url %>"><%= message.data.title %></a></h2>
+                    <span class="card-subtitle">
+                        <a href="<%= message.url %>">
+                            <% message.data.authors.each_with_index do |author, index| %>
+                                <%= author.name %><% if message.data.authors.length > 1 && index < message.data.authors.length - 1 %>, <% end %>
+                            <% end %>
+                        </a>
+                    </span>
+                    <a class="button read_more" href="<%= message.url %>">Read More &rsaquo;</a>
                 </li>
-                <li class="gallery-item card horizontal small">
-                    <a href="#" class="card-thumb">
-                        <img src="<%= lorem.image '400x400' %>" />
-                    </a>
-                    <div class="card-content">
-                        <h2 class="card-title">Susan Example</h2>
-                        <span>Program Manager</span>
-                    </div>
-                </li>
-                <li class="gallery-item card horizontal small">
-                    <a href="#" class="card-thumb">
-                        <img src="<%= lorem.image '400x400' %>" />
-                    </a>
-                    <div class="card-content">
-                        <h2 class="card-title">Mark Case</h2>
-                        <span>Senior Director</span>
-                    </div>
-                </li>
+                <% end %>
             </ul>
         </div>
     </aside>
@@ -90,7 +76,7 @@ title: home
 </section>
 
 <!-- Section cards -->
-<section class="panel">
+<section class="panel well">
     <h1 class="panel-slug">Sections</h1>
     <ul class="feed l-wrapper">
         <% data.chapters.each do |chapter| %>

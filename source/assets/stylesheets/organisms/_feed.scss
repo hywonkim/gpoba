@@ -15,8 +15,11 @@
 
     &.l-wrapper {
         margin-left: auto;
+        margin-right: auto;
         padding-left: $gutter-outside;
     }
+
+    ul { padding: 0; margin: 0; }
 }
 
 /* Submodules
@@ -24,6 +27,5 @@
 
 .feed-item {
     display: block;
-    margin-top: $gutter;
     margin-bottom: $gutter;
 }

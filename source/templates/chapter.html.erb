@@ -10,6 +10,7 @@ layout: layout
     'type' => locals[:type],
     'order' => locals[:order],
     'image' => locals[:image],
+    'image_align' => locals[:image_align],
 }) %>
 
 <% sections = sitemap.where(:chapter => locals[:slug]).order_by(:order).all %>

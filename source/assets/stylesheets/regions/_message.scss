@@ -1,0 +1,81 @@
+/* ==========================================================================
+// Chapter module
+// -> a major content area of the Annual Report
+// -> in the print version, this is stuff in the table of contents
+// ========================================================================== */
+
+@import "../core/*";
+@import "../atoms/heading";
+@import "../organisms/feed";
+
+$chapter-padding: fs(6);
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.message {
+    position: relative;
+}
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+// "back to report" link
+.message-nav {
+    @extend %l-wrapper--narrow;
+    @include rem(padding-top, $gutter/2);
+    @include rem(padding-bottom, $gutter/2);
+    @include border(bottom);
+}
+
+// headines
+.message-header {
+    @extend %l-wrapper--narrow;
+    @include rem(margin, fs(6) auto);
+    // text-align: center;
+}
+
+    .message-slug {
+        @extend .slug;
+        text-align: left;
+        text-transform: none;
+        // color: theme(text tertiary);
+
+        // strong { color: theme(text primary); }
+    }
+
+    .message-title {
+        @extend %beta;
+        @include chapter_highlights;
+        color: theme(highlight);
+    }
+
+    .message-subtitle {
+        @extend %epsilon;
+        @extend %font-accent;
+        color: theme(text tertiary);
+    }
+
+// author portraits, names
+.message-feed {
+    @extend .feed;
+    display: block;
+    position: relative;
+
+    @include breakpoint(1180px) {
+        @include rem(width, 180px);
+        @include rem(margin-right, -(180px + $gutter));
+        float: right;
+        margin-top: 0;
+    }
+}
+
+// main content
+.message-content {
+    @extend %l-wrapper--narrow;
+    padding-bottom: 2.5em;
+
+    p:first-of-type, p:first-child {
+        @extend .lead;
+    }
+}

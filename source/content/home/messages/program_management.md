@@ -1,5 +1,13 @@
 ---
-title: Message from the Program Management Unit
+title: Program Management Unit
+authors:
+  - name: Carmen Nonay
+    job_title: Program Manager, Parnterships and Resource Mobilization, GPSURR
+    portrait: "media/carmen_nonay@600.jpg"
+  - name: Catherine Commander O'Farrell
+    job_title: Head, GPOBA
+    portrait: "media/catherine_ofarrell@600.jpg"
+layout: message
 chapter: home
 order: 2
 type: message

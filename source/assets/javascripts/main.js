@@ -96,9 +96,8 @@ gpoba.sticky = (function($) {
 
 
 jQuery(function($) {
-
     // make jump navs 'sticky' on scroll
-    gpoba.sticky.init(".js-sticky", ".js-highlight", ".js-sticky-stop");
+    if ($(".js-sticky").length > 0) gpoba.sticky.init(".js-sticky", ".js-highlight", ".js-sticky-stop");
 });
 
 

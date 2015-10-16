@@ -53,14 +53,14 @@
 ///////////////////////////////////////////////////////////////////////////// */
 
 //============ Figure Styles ============///
-    .figure .text {        
+    .figure .text {
         @extend %font-body;
-        font-size: fs(5);    
+        font-size: fs(6);
 
         &.light { fill: theme('text' 'primary', 'reverse'); }
         &.dark { fill: theme(text secondary); }
         &.data { @extend %font-body--bold; }
-        &.bold { @extend %font-body--bold; }    
+        &.bold { @extend %font-body--bold; }
 
         &.title{
             font-size: fs(7);
@@ -93,7 +93,7 @@
         fill: highlight('green');
     }
 
-    .text.y-axis { 
+    .text.y-axis {
         fill: highlight('green');
     }
 
@@ -106,7 +106,7 @@
     font-size: fs(3);
     color: theme(text tertiary);
     text-align: left;
-    @extend %font-body--bold; 
+    @extend %font-body--bold;
     margin-top: 25px;
     text-transform: uppercase;
 }
@@ -132,21 +132,20 @@ table {
         text-transform: uppercase;
         text-align: center;
     }
-
     &.titled_table{
         margin-top: 0px;
     }
 
-    tr {        
-        line-height: 115%;        
+    tr {
+        line-height: 115%;
     }
-    td {    
-        padding: 20px;     
+    td {
+        padding: 20px;
 
         &.column_label {
-            @extend %font-body--bold;   
+            @extend %font-body--bold;
         }
-    }    
+    }
 
     tr:nth-child(even) {
         background-color: theme(well);
@@ -156,13 +155,13 @@ table {
         tr:last-child {
             background-color: theme(highlight);
             color: theme(text primary, reverse);
-            @extend %font-body--bold; 
+            @extend %font-body--bold;
         }
     }
 
     &.highlight-table {
 
-        .row-0, .row-1, .row-2 {          
+        .row-0, .row-1, .row-2 {
             border-left: 4px solid theme(highlight);
             border-right: 4px solid theme(highlight);
 
@@ -171,7 +170,7 @@ table {
                 border-bottom: 2px solid #fff;
                 border-right: 4px solid theme(highlight);
                 text-align: center;
-            }            
+            }
 
          }
 
@@ -191,8 +190,8 @@ table {
         th {
             background-color: theme(well);
             border-bottom: 0px;
-            text-align: none;            
-            @extend %font-body; 
+            text-align: none;
+            @extend %font-body;
             padding: 20px;
             line-height: 115%;
             font-size: fs(2);
@@ -236,7 +235,7 @@ table {
       float: left;
       text-transform: uppercase;
       font-weight: bold;
-      display: block;      
+      display: block;
     }
 
 }
