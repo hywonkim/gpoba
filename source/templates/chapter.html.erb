@@ -69,13 +69,21 @@ layout: layout
 
     <!-- Sections -->
     <% sections.each do |section| %>
-        <% unless section.data.type == "introduction" %>
+        <% unless section.data.type == "introduction" || section.data.type == "box" %>
             <section class="chapter-section<% if section.data.type.present? %> <%= section.data.type %><% end %>" id="<%= section.data.title.urlize %>">
                 <h2 class="chapter-subtitle"><%= section.data.title %></h2>
                 <div class="l-wrapper narrow">
                     <%= section.render %>
                 </div>
             </section>
+        <% end %>
+        <% if section.data.type == "box" %>
+            <aside class="box<% if section.data.type.present? %> <%= section.data.type %><% end %>" id="<%= section.data.title.urlize %>">
+                <h1 class="box-title"><%= section.data.title %></h2>
+                <div class="box-content l-wrapper narrow">
+                    <%= section.render %>
+                </div>
+            </aside>
         <% end %>
     <% end %>
 </article>

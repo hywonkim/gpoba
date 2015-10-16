@@ -9,22 +9,6 @@
 
 $pagination-break: 760px;
 
-@mixin half-circle($w:30px, $color: theme(bg)) {
-  &:after {
-    content: " ";
-    display: block;
-    position: absolute;
-    left: 50%;
-    margin-left: -($w/2);
-    top: 0;
-    z-index: $z--high;
-    height: ($w/2);
-    width: $w;
-    border-radius: 0 0 $w $w;
-    background-color: $color;
-  }
-}
-
 /* Base
 // -------------------------------------------------------------------------- */
 
@@ -36,6 +20,8 @@ $pagination-break: 760px;
     padding-bottom: $gutter;
     background-color: theme('highlight');
     font-size: 0;
+
+    a{ border-bottom: none; }
 }
 
 /* Submodules
@@ -92,6 +78,9 @@ $pagination-break: 760px;
     .flexbox & {
         @include breakpoint($pagination-break) { @include border(right, $color: theme(border, wash)); }
     }
+
+    // if this is the first chapter, don't show the border
+    &:last-of-type { border: none; }
 }
 
 .pagination-next {
@@ -107,6 +96,7 @@ $pagination-break: 760px;
     @extend %zeta;
     @extend %font-body--bold;
     display: block;
+    border-bottom: 0;
     text-transform: uppercase;
     color: theme('text' 'secondary', 'wash');
 }
@@ -114,6 +104,7 @@ $pagination-break: 760px;
 .pagination-title {
     @extend %beta;
     @extend %font-display;
+    border-bottom: 0;
     line-height: 1.1;
     color: theme('text' 'primary', 'wash');
 

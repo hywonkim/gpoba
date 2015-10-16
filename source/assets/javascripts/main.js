@@ -61,9 +61,6 @@ gpoba.sticky = (function($) {
             _scrollBottom = _scrollPos + elH,
             _yPosInit = offset ? offset : 0;
 
-            console.log("stopPos: " + stopPos);
-            console.log("bottom of jump: " + (_scrollPos + elH));
-
         if (_yPosInit <= _scrollPos && _scrollBottom <= stopPos) {
             $(el).addClass(exports.displayClass);
             $(el).removeClass(exports.bottomClass);
