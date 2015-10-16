@@ -18,6 +18,7 @@ Global layout styles.
 */
 
 @import "libs";
+@import "fonts";
 
 
 // Config/mixins
@@ -74,7 +75,7 @@ $layout-w--narrow: 680px; // max width of 'narrow' elements (e.g. body type)
 $layout-w--wide: 1200px;
 
 @function add_outside_gutters($w) {
-    // compensate with for outside margins (ie padding) and split gutters
+    // compensate for outside margins (ie padding)
     @return ($w + ($gutter-outside * 2));
 }
 

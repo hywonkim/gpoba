@@ -11,12 +11,17 @@
 
 $chapter-padding: fs(6);
 
+// print out the chapter-hero height in px and vh units
+// -> used in .chapter-hero and also .chapter-jump_nav
+@mixin chapter-hero-h($attr: height) {
+        #{$attr}: 370px;
+        #{$attr}: 70vh;
+}
+
 /* Base
 // -------------------------------------------------------------------------- */
 
 .chapter {
-    // @include rem(padding-top, $chapter-padding);
-    // @include rem(padding-bottom, $chapter-padding);
     position: relative;
 }
 
@@ -25,9 +30,8 @@ $chapter-padding: fs(6);
 
 .chapter-hero {
     @extend .hero;
+    @include chapter-hero-h;
     position: relative;
-    height: 370px;
-    height: 70vh;
     margin-bottom: 0;
 
     &:first-child { margin-top: -($chapter-padding); }
@@ -76,9 +80,27 @@ $chapter-padding: fs(6);
 .chapter-subtitle {
     @extend %beta;
     text-align: center;
-    margin-top: 0.5em;
+    margin: 0.5em auto 0 auto;
+    padding: 0 $gutter-outside;
     margin-bottom: 0.5em;
+    // max-width: add_outside_gutters($layout-w);
     letter-spacing: -0.02em;
+
+    @include respond-to('medium') { max-width: add_outside_gutters($layout-w--narrow); }
+    @include respond-to('large') { max-width: add_outside_gutters($layout-w); }
+}
+
+.chapter-jump_nav {
+    @extend .jump_nav;
+    @include chapter-hero-h(top);
+    @include rem(padding-top, fs(5));
+    position: absolute;
+    left: 0;
+
+    &.is-fixed {
+        position: fixed;
+        top: 0;
+    }
 }
 
 .chapter-section {

@@ -11,11 +11,10 @@
 .jump_nav {
     @include rem(top, fs(6));
     display: none;
-    position: relative;
-    float: left;
     width: 180px;
+    z-index: $z--high;
 
-    ul { margin: 0; }
+    ul, ol { margin: 0; }
 
     li { margin: 0; }
 

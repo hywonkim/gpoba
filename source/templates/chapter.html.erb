@@ -44,22 +44,28 @@ layout: layout
         </div>
     </header>
 
-    <nav class="jump_nav">
-        <ul>
+    <% if sections.length > 1 %>
+    <!-- Jump Nav -->
+    <nav class="chapter-jump_nav js-sticky">
+        <ol>
             <% sections.each_with_index do |section, index| %>
-            <li><a href="#<%= section.data.title.urlize %>" class="jump_nav-item<% if index == 0 %> is-active<% end %>"><%= section.data.title %></a></li>
+            <li><a href="#<%= section.data.title.urlize %>" class="jump_nav-item js-highlight"><%= section.data.title %></a></li>
             <% end %>
-        </ul>
+        </ol>
     </nav>
+    <% end %>
 
     <!-- Introduction -->
-    <div class="chapter-section first l-wrapper narrow" id="intro">
+    <% intro = sitemap.where(:chapter => locals[:slug], :type => "introduction").order_by(:order).all %>
+    <% if intro.length >= 1 %>
+    <div class="chapter-section first l-wrapper narrow" id="<%= intro[0].data.title.urlize %>">
         <%# https://forum.middlemanapp.com/t/sitemap-where-querying-the-sitemap/1241/2 %>
-        <% sitemap.where(:chapter => locals[:slug], :type => "introduction").order_by(:order).all.each do |intro| %>
+        <% intro.each do |intro| %>
             <%# http://stackoverflow.com/questions/25219509/how-to-get-the-raw-content-from-all-pages %>
             <%= intro.render %>
         <% end %>
     </div>
+    <% end %>
 
     <!-- Sections -->
     <% sections.each do |section| %>
@@ -79,7 +85,7 @@ layout: layout
 <!-- https://forum.middlemanapp.com/t/querying-proxy-pages-by-locals/1195 -->
 <!-- https://forum.middlemanapp.com/t/creating-next-and-prev-links-for-pages/1414/3 -->
 
-<nav class="pagination">
+<nav class="pagination js-sticky-stop">
     <h2 class="pagination-slug">Read more</h2>
     <ul class="pagination-wrapper">
         <%= get_current_index %>
