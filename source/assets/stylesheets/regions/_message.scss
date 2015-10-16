@@ -1,0 +1,65 @@
+/* ==========================================================================
+// Chapter module
+// -> a major content area of the Annual Report
+// -> in the print version, this is stuff in the table of contents
+// ========================================================================== */
+
+@import "../core/*";
+@import "../atoms/heading";
+@import "../organisms/feed";
+
+$chapter-padding: fs(6);
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.message {
+    position: relative;
+}
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.message-nav {
+    @extend %l-wrapper--narrow;
+    @include rem(padding-top, $gutter/2);
+    @include rem(padding-bottom, $gutter/2);
+    @include border(bottom);
+}
+
+.message-header {
+    @extend %l-wrapper;
+    @include rem(margin, fs(6) auto);
+    text-align: center;
+}
+
+    .message-title {
+        @extend %beta;
+        @include chapter_highlights;
+        color: theme(highlight);
+    }
+
+    .message-subtitle {
+        @extend %epsilon;
+        @extend %font-accent;
+        color: theme(text tertiary);
+    }
+
+
+.message-feed {
+    @extend .feed;
+    @include rem(width, 180px);
+    @include rem(margin-right, -(180px + $gutter));
+    position: relative;
+    float: right;
+    margin-top: 0;
+}
+
+.message-content {
+    @extend %l-wrapper--narrow;
+    padding-bottom: 2.5em;
+
+    p:first-of-type, p:first-child {
+        @extend .lead;
+    }
+}

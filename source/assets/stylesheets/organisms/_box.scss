@@ -12,6 +12,15 @@
     @include rem(padding, fs(6) $gutter-outside);
     position: relative;
     background-color: theme(well);
+
+    // change the border/decoration when two boxes are next to each other
+    // -> remove half-circle cutout thingy and add a hairline
+    // -> this is the "owl wearing shades" selector: http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
+    & + & {
+        @include border(top);
+
+        &:before { content: none; }
+    }
 }
 
 /* Submodules

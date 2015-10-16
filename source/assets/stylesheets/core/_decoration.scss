@@ -4,7 +4,7 @@
 // ===========================================================================*/
 
 @mixin half-circle($w:30px, $color: theme(bg)) {
-  &:after {
+  &:before {
     content: " ";
     display: block;
     position: absolute;

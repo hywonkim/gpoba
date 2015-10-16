@@ -43,37 +43,23 @@ title: home
     </div>
 
     <!-- Leadership messages -->
-    <aside class="chapter-aside">
+    <aside class="box">
         <h1 class="slug">Messages from our leadership</h1>
         <div class="l-wrapper">
             <ul class="gallery">
-                <li class="gallery-item card horizontal small">
+                <% sitemap.where(:chapter => "home", :type => "message").order_by(:order).all.each do |message| %>
+                <li class="gallery-item card horizontal tile small">
                     <a href="#" class="card-thumb">
                         <img src="<%= lorem.image '400x400' %>" />
                     </a>
                     <div class="card-content">
-                        <h2 class="card-title">Ted Hypothetical</h2>
-                        <span>Senior Director</span>
+                        <h2 class="card-title"><%= message.data.title %></h2>
+                        <% message.data.authors.each do |author| %>
+                        <span class="card-subtitle"><%= author.name %></span>
+                        <% end %>
                     </div>
                 </li>
-                <li class="gallery-item card horizontal small">
-                    <a href="#" class="card-thumb">
-                        <img src="<%= lorem.image '400x400' %>" />
-                    </a>
-                    <div class="card-content">
-                        <h2 class="card-title">Susan Example</h2>
-                        <span>Program Manager</span>
-                    </div>
-                </li>
-                <li class="gallery-item card horizontal small">
-                    <a href="#" class="card-thumb">
-                        <img src="<%= lorem.image '400x400' %>" />
-                    </a>
-                    <div class="card-content">
-                        <h2 class="card-title">Mark Case</h2>
-                        <span>Senior Director</span>
-                    </div>
-                </li>
+                <% end %>
             </ul>
         </div>
     </aside>

@@ -23,7 +23,9 @@ $card-thumb-w: 50%;
 /*  Modifiers
 // -------------------------------------------------------------------------- */
 
-/* --- "horizontal" (two column) version ------------------------------------ */
+/* --- Layout --------------------------------------------------------------- */
+
+// horizontal layout (2 columns, thumb on left)
 .card.horizontal {
     font-size: 0; // fix whitespace issues with inline-block
 
@@ -32,10 +34,15 @@ $card-thumb-w: 50%;
     }
 }
 
-// small version
-// -> stays horizontal at mobile sizes
-.card.horizontal.small {}
+/* --- Sizing --------------------------------------------------------------- */
 
+// small version
+// -> stays horizontal at mobile sizes when used with .horizontal modifier
+.card.small {}
+
+/* --- Appearance ----------------------------------------------------------- */
+
+// "tile" card
 // has a solid bg and full-bleed thumb
 .card.tile {
     padding: $gutter;
@@ -51,11 +58,12 @@ $card-thumb-w: 50%;
 .card-thumb {
     display: block;
     position: relative;
-    width: 100%;
     overflow: hidden;
     vertical-align: top;
     border-bottom: 0;
     background-color: theme(text tertiary);
+
+    &.stretch { width: 100%; }
 
     .card.horizontal & {
         @include respond-to($card-break) {
@@ -78,7 +86,8 @@ $card-thumb-w: 50%;
 
     img {
         // @include border(all, thin);
-        width: 100%; // force the thumbnail image to be fill its container
+
+        .stretch > & { width: 100%; } // force the thumbnail image to be fill its container
 
         // imitate "background-size: cover" with img element
         .flexbox .card.horizontal.tile & {
@@ -118,6 +127,8 @@ $card-thumb-w: 50%;
 
     .card-thumb + & { padding-top: $gutter; }
 
+    .card.small .card-thumb + & { padding-top: 0.5em; }
+
     .card.tile & { padding: $gutter; }
 
     .card.horizontal & {
@@ -126,7 +137,7 @@ $card-thumb-w: 50%;
 
     .card.horizontal.small & { @include col-right; }
 
-    .flexbox & {
+    .flexbox .card.tile & {
         @include respond-to($card-break) {
             flex: 1;
             padding: $gutter;
@@ -142,13 +153,31 @@ $card-thumb-w: 50%;
     border-bottom: none;
     line-height: 1.1;
 
+    @include respond-to('medium') { @include rem(font-size, 34px) }
+
     &:hover, &:active {
         color: theme(highlight);
     }
 
     .card.small & {
-        @extend %delta;
+        @extend %font-accent;
+        @extend %epsilon;
     }
 
     a { border-bottom: none; }
+}
+
+.card-subtitle {
+    @extend %delta;
+    @extend %base-transition;
+    display: block;
+    margin-top: 0.5em;
+
+    .card.small & {
+        @extend %font-accent--bold;
+        font-size: fs(2);
+        line-height: 1.2;
+        // text-transform: uppercase;
+        color: theme(text tertiary);
+    }
 }

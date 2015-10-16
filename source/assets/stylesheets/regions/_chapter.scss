@@ -34,8 +34,6 @@ $chapter-padding: fs(6);
     @include chapter-hero-h;
     position: relative;
     margin-bottom: 0;
-
-    &:first-child { margin-top: -($chapter-padding); }
 }
 
 .chapter-hero-lockup {
@@ -80,12 +78,14 @@ $chapter-padding: fs(6);
 // section header
 .chapter-subtitle {
     @extend %beta;
+    @include chapter_highlights;
     text-align: center;
     margin: 0.5em auto 0 auto;
     padding: 0 $gutter-outside;
     margin-bottom: 0.5em;
     // max-width: add_outside_gutters($layout-w);
     letter-spacing: -0.02em;
+    color: theme(highlight);
 
     @include respond-to('medium') { max-width: add_outside_gutters($layout-w--narrow); }
     @include respond-to('large') { max-width: add_outside_gutters($layout-w); }
@@ -129,19 +129,21 @@ $chapter-padding: fs(6);
     }
 }
 
-.chapter-aside {
-    @include rem(margin-top, fs(5));
-    @include rem(padding-top, fs(5));
-    @include rem(padding-bottom, fs(5));
-    background-color: theme('well');
+// .chapter-aside {
+//     @include rem(margin-top, fs(5));
+//     @include rem(padding-top, fs(5));
+//     @include rem(padding-bottom, fs(5));
+//     background-color: theme('well');
 
-    // if this is the last thing in the container, make it flush with the bottom
-    &:last-child {
-        @include rem(margin-bottom, -($chapter-padding));
-    }
-}
+//     // if this is the last thing in the container, make it flush with the bottom
+//     &:last-child {
+//         @include rem(margin-bottom, -($chapter-padding));
+//     }
+// }
 
 .chapter-content {
+    padding-bottom: 2.5em;
+
     p:first-of-type, p:first-child {
         @extend .lead;
     }

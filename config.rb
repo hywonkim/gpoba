@@ -49,6 +49,7 @@ data.chapters.each_with_index do |chapter, index|
         :slug => chapter.slug,
         :color => chapter.color || "blue",
         :image => chapter.image || false,
+        :image_align => chapter.image_align || false,
         :type => "chapter",
         :order => index
     }, :ignore => true
