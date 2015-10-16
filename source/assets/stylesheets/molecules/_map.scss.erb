@@ -7,22 +7,29 @@
  */
 <% data.map.each do |g|  %>
     <%= g.group.countries.map{ |c| "#" + c }.join(',') %> {
-        fill: <%= g.group.color %>;
+        fill: theme(<%= g.group.type %>, map);
     }
+    
+    .legend-element.<%= g.group.type %> {
+        fill: theme(<%= g.group.type %>, map);
+    }
+
 <% end %>
 
 .map {
-    width: 5000px;
-    height: 500px;
-    fill: #ccc;
+    height: 700px;
+    width: 1000px;
+    fill: rgb(219, 217, 218);
 }
 
 .legend {
-    display:block;
-    width: 500px;
+    display: block;
+    bottom: 50px;
+    left: 5px;
     position: absolute;
 
     .sub-text {
-    fill: red !important;
+        fill: theme(body, reverse);
+        text-transform: uppercase;    
     }
 }

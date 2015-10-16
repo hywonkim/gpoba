@@ -1,8 +1,7 @@
 - group:
       type: "p_for_r"
       countries: 
-        - MX
-      color: blue
+        - MX      
 
 - group:
       type: "sub"
@@ -24,8 +23,7 @@
         - UG
         - VN
         - PS
-        - YE
-      color: green
+        - YE      
 
 - group:
       type: "ta"
@@ -35,10 +33,9 @@
         - PH
         - SB
         - ZW
-      color: red
 
 - group:
-      type: "ta sub"
+      type: "ta-sub"
       countries:
         - GH
         - HN
@@ -48,17 +45,14 @@
         - NG
         - PH
         - VU
-      color: yellow
 
 - group:
-      type: "p_for_r sub"
+      type: "p_for_r-sub"
       countries:
         - ET
-      color: orange
 
 - group:
-      type: "p_for_r ta"
+      type: "p_for_r-ta"
       countries:
       - TZ
       - UY
-      color: purple
