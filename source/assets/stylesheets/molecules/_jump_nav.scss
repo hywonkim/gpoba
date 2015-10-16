@@ -33,6 +33,7 @@
     padding: 0.5em 0 0.5em $gutter;
     font-size: fs(2);
     line-height: 1.2;
+    color: lighten(theme(text tertiary), 30);
 
     &.is-active:before {
         @include chapter_highlights(background-color);

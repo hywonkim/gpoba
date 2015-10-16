@@ -1,0 +1,20 @@
+/* =============================================================================
+// Decoration helpers
+// -> shapes, corners, etc.
+// ===========================================================================*/
+
+@mixin half-circle($w:30px, $color: theme(bg)) {
+  &:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -($w/2);
+    top: 0;
+    z-index: $z--high;
+    height: ($w/2);
+    width: $w;
+    border-radius: 0 0 $w $w;
+    background-color: $color;
+  }
+}

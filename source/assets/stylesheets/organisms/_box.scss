@@ -1,0 +1,26 @@
+/* ==========================================================================
+//  Box modules
+// -> an aside/sidebar in the chapter text
+// ========================================================================== */
+
+@import "../core/*";
+
+/* Base
+// -------------------------------------------------------------------------- */
+.box {
+    @include half-circle;
+    @include rem(padding, fs(6) $gutter-outside);
+    position: relative;
+    background-color: theme(well);
+}
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+.box-title {
+    @extend %font-accent--bold;
+    @include chapter_highlights;
+    font-size: fs(4);
+    text-align: center;
+    color: theme(highlight);
+}
