@@ -17,20 +17,23 @@ gpoba.sticky = (function($) {
     var exports = {
         displayClass: "is-fixed",
         currentClass: "is-active",
+        bottomClass: "at-bottom",
         viewportMargin: 4,
     };
 
-    exports.init = function(el, highlightEl, parent) {
+    exports.init = function(el, highlightEl, stopEl, parent) {
         var _parent = parent ? parent : window; // the parent container; defaults to the window
         var _parentH = $(_parent).height;
         var _yPosInit = $(el).offset().top; // target element's offset (distance to top)
         var _$highlightEl = highlightEl ? $(highlightEl) : false; // a nav element to be highlighted on scroll
+        var _stopPos = stopEl ? $(stopEl).offset().top : false; // element which "stops" the sticky behavior
+        var _elH = $(el).outerHeight();
 
         // console.log(_$highlightEl);
-        _toggleSticky(el, _yPosInit);
+        _toggleSticky(el, _elH, _yPosInit, _stopPos);
 
         $(_parent).scroll(function() {
-            _toggleSticky(el, _yPosInit);
+            _toggleSticky(el, _elH, _yPosInit, _stopPos);
 
             // highlight the current nav item based on scroll position
             if (_$highlightEl) {
@@ -49,19 +52,28 @@ gpoba.sticky = (function($) {
 
         // reset the target element's offset when the window resizes
         $(_parent).resize(function() {
-            _toggleSticky(el, $(el).offset().top);
+            _toggleSticky(el, _elH, $(el).offset().top, _stopPos);
         });
     };
 
-    function _toggleSticky(el, offset) {
+    function _toggleSticky(el, elH, offset, stopPos) {
         var _scrollPos = $(window).scrollTop(),
+            _scrollBottom = _scrollPos + elH,
             _yPosInit = offset ? offset : 0;
 
-        if (_yPosInit <= _scrollPos) {
+            console.log("stopPos: " + stopPos);
+            console.log("bottom of jump: " + (_scrollPos + elH));
+
+        if (_yPosInit <= _scrollPos && _scrollBottom <= stopPos) {
             $(el).addClass(exports.displayClass);
+            $(el).removeClass(exports.bottomClass);
             console.log("sticky");
         } else {
             $(el).removeClass(exports.displayClass);
+
+            if (_scrollBottom >= stopPos) {
+                $(el).addClass(exports.bottomClass);
+            }
         }
     }
 
@@ -89,7 +101,7 @@ gpoba.sticky = (function($) {
 jQuery(function($) {
 
     // make jump navs 'sticky' on scroll
-    gpoba.sticky.init(".js-sticky", ".js-highlight");
+    gpoba.sticky.init(".js-sticky", ".js-highlight", ".js-sticky-stop");
 });
 
 

@@ -94,12 +94,18 @@ $chapter-padding: fs(6);
     @extend .jump_nav;
     @include chapter-hero-h(top);
     @include rem(padding-top, fs(5));
+    @include rem(padding-bottom, $gutter-outside);
     position: absolute;
     left: 0;
 
     &.is-fixed {
         position: fixed;
         top: 0;
+    }
+
+    &.at-bottom {
+        top: auto;
+        bottom: 0;
     }
 }
 
