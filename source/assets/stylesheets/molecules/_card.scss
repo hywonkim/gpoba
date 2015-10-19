@@ -29,9 +29,16 @@ $card-thumb-w: 50%;
 .card.horizontal, %card--horizontal {
     font-size: 0; // fix whitespace issues with inline-block
 
-    .flexbox & {
+    .flexbox &.tile {
         @include respond-to($card-break) { display: flex; }
     }
+}
+
+// force a horizontal card to display vertically at a given screen size
+
+// large
+.card.vertical-at-large {
+    display: block;
 }
 
 /* --- Sizing --------------------------------------------------------------- */
@@ -66,25 +73,45 @@ $card-thumb-w: 50%;
     border-bottom: 0;
     background-color: theme(text tertiary);
 
-    &.small {width: 40%; }
+    &.small { width: 40%; }
     &.stretch { width: 100%; }
 
     .card.horizontal & {
+
+        &.small { width: 20%; }
+
         @include respond-to($card-break) {
             display: inline-block;
             width: $card-thumb-w;
+
+            &.small { width: 10%; }
         }
     }
 
     .card.horizontal.tertiary & {
         display: inline-block;
         width: $card-thumb-w;
+
+        &.small {
+            width: 20%;
+
+            @include respond-to($card-break) { width: 10%; }
+        }
     }
 
     .flexbox .card.horizontal.tile & {
         @include respond-to($card-break) {
             flex: 1;
             width: auto;
+        }
+    }
+
+    .vertical-at-large & {
+        @include respond-to('large') {
+            display: block !important;
+            width: auto;
+
+            &.small { width: 40% !important; }
         }
     }
 
@@ -140,11 +167,18 @@ $card-thumb-w: 50%;
 
     .card.horizontal.tertiary & { @include col-right; }
 
-    .flexbox .card.tile & {
+    .flexbox .card.horizontal.tile & {
         @include respond-to($card-break) {
             flex: 1;
             padding: $gutter;
             width: auto;
+        }
+    }
+
+    .vertical-at-large & {
+        @include respond-to('large') {
+            display: block !important;
+            padding-left: 0 !important;
         }
     }
 }
