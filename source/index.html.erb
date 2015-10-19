@@ -23,7 +23,9 @@ title: home
 <header class="hero">
 
     <!-- GPOBA logo -->
-    <%= partial("layouts/partials/logo-gpoba", :locals => { :classes => "hero-logo" }) %>
+    <a href="http://www.gpoba.org" target="_blank">
+        <%= partial("layouts/partials/logo-gpoba", :locals => { :classes => "hero-logo" }) %>
+    </a>
 
     <!-- main title lockup -->
     <%= partial "layouts/partials/hero-lockup" %>
