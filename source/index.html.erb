@@ -4,8 +4,9 @@ title: home
 
 <% content_for :local_styles do %>
     <style>
-        .hero {
-            <% img_path = asset_url(data.site.paths.content + 'home/') %>
+        <% img_path = asset_url(data.site.paths.content + 'home/') %>
+
+        #cover {
             background-image: url('<%= img_path + data.site.cover_image[0].to_s %>');
         }
         <% if data.site.cover_image.length > 1 %>
@@ -13,14 +14,29 @@ title: home
             <% next if index == 0 %>
             <% break if index == data.site.cover_image.length %>
                 @media (min-width: <%= (size/16) %>em) {
-                  .hero { background-image: url('<%= img_path + data.site.cover_image[index].to_s %>'); }
+                  #cover { background-image: url('<%= img_path + data.site.cover_image[index].to_s %>'); }
                 }
+            <% end %>
+        <% end %>
+
+        <% sitemap.where(:chapter => "home", :type => "billboard").order_by(:order).all.each do |billboard| %>
+            #donors {
+                background-image: url('<%= img_path + billboard.data.background[0].to_s %>');
+            }
+            <% if billboard.data.background.length > 1 %>
+            <% data.site.breakpoints.values.each_with_index do |size, index| %>
+                <% next if index == 0 %>
+                <% break if index == billboard.data.background.length %>
+                    @media (min-width: <%= (size/16) %>em) {
+                      #cover { background-image: url('<%= img_path + billboard.data.background[index].to_s %>'); }
+                    }
+                <% end %>
             <% end %>
         <% end %>
     </style>
 <% end %>
 
-<header class="hero">
+<header class="hero" id="cover">
 
     <!-- GPOBA logo -->
     <a href="http://www.gpoba.org" target="_blank">
@@ -37,7 +53,7 @@ title: home
 <article class="chapter" role="main">
 
     <!-- Executive summary -->
-    <div class="l-wrapper narrow chapter-content">
+    <div class="l-wrapper narrow chapter-content" id="summary">
         <% sitemap.where(:chapter => "home", :type => "introduction").order_by(:order).all.each do |summary| %>
             <h1 class="chapter-headline"><%= summary.data.title %></h1>
             <%= summary.render %>
@@ -45,7 +61,7 @@ title: home
     </div>
 
     <!-- Leadership messages -->
-    <aside class="box">
+    <aside class="box" id="messages">
         <h1 class="slug">Messages from our leadership</h1>
         <div class="l-wrapper">
             <ul class="gallery large">
@@ -68,7 +84,7 @@ title: home
 </article>
 
 <!-- Donors -->
-<section class="billboard">
+<section class="billboard" id="donors">
     <div class="billboard-frame">
         <% sitemap.where(:chapter => "home", :type => "billboard").order_by(:order).all.each do |billboard| %>
             <h1 class="billboard-title"><%= billboard.data.title %></h1>
@@ -77,8 +93,8 @@ title: home
     </div>
 </section>
 
-<!-- Section cards -->
-<section class="panel well">
+<!-- Section cards ("table of contents") -->
+<section class="panel well" id="toc">
     <h1 class="panel-slug">Sections</h1>
     <ul class="feed l-wrapper">
         <% data.chapters.each do |chapter| %>

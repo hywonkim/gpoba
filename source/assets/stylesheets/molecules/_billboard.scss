@@ -1,7 +1,8 @@
 /* ==========================================================================
 // Billboard module
 // -> an area with short, featured content and a background image
-// -> similar to a hero unit but contains content, not a header/CTA
+// -> similar to a hero unit but contains flowed content, not a header/CTA
+// -> is variable height (hero is fixed height)
 // ========================================================================== */
 
 @import "../core/*";
@@ -16,6 +17,9 @@ $billboard-padding: fs(8);
     @include rem(padding-top, $billboard-padding);
     @include rem(padding-bottom, $billboard-padding);
     position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-color: #ccc;
 }
 
