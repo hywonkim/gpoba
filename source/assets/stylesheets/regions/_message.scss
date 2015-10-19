@@ -59,14 +59,18 @@ $chapter-padding: fs(6);
 // author portraits, names
 .message-feed {
     @extend .feed;
+    @include border(top bottom);
     display: block;
     position: relative;
+    padding-top: $gutter;
 
-    @include breakpoint(1180px) {
+    @include respond-to('large') {
         @include rem(width, 180px);
         @include rem(margin-right, -(180px + $gutter));
         float: right;
         margin-top: 0;
+        padding-top: 0;
+        border: none;
     }
 }
 

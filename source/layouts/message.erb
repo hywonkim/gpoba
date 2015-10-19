@@ -15,7 +15,7 @@
             <aside class="message-feed">
                 <ul>
                     <% current_page.data.authors.each do |author| %>
-                    <li class="feed-item card tertiary">
+                    <li class="feed-item card tertiary horizontal vertical-at-large">
                         <img class="card-thumb small" src="<%= asset_url("#{data.site.paths.content}#{current_page.data.chapter}/#{author.portrait}") %>" alt="<%= author.name %>" />
                         <div class="card-content">
                             <h3 class="card-title"><%= author.name %></h3>
