@@ -11,3 +11,5 @@ Since the creation of GPOBA, donors have provided a total of $338 million in fun
 <!-- Link to Donors’ websites? via clickable icons? -->
 
 <!-- Link to: Pop-up tables? - Financial statements appendix of donor contributions -->
+
+![charitywater-india1.jpg](/content/home/media/charitywater-india1.jpg)
