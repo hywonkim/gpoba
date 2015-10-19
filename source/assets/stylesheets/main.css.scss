@@ -97,6 +97,41 @@
         fill: highlight('green');
     }
 
+
+// Chartist Styles ============///
+
+.ct-label {
+    font-size: fs(3);
+    @extend %font-body;
+    fill: theme(text secondary);
+
+}
+
+.ct-line-graph {
+    .ct-vertical {
+        color: highlight('green');
+    }
+
+    .ct-point {
+        stroke: theme(border, wash);
+    }
+
+    .ct-line {
+        stroke: highlight('green');
+    }
+
+    .ct-area{
+        fill: highlight('green');
+    }
+}
+
+.chart-title {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;    
+}
+
+
 //============//============//============//============
 
 

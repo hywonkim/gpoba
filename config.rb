@@ -156,6 +156,8 @@ after_configuration do
   sprockets.import_asset 'jquery'
   sprockets.import_asset 'modernizr/modernizr.js'
   sprockets.import_asset 'picturefill'
+  sprockets.import_asset 'chartist/dist/chartist.min.js'
+  sprockets.import_asset 'chartist/dist/chartist.min.js.map'
 end
 
 # For Heroku Builds

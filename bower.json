@@ -18,7 +18,8 @@
     "modernizr": "~2.8.3",
     "normalize-css": "~3.0.3",
     "html5-boilerplate": "~5.2.0",
-    "picturefill": "~3.0.1"
+    "picturefill": "~3.0.1",
+    "chartist": "~0.9.4"
   },
   "devDependencies": {
     "singularity": "~1.6.2",
