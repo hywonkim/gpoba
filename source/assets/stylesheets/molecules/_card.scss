@@ -18,6 +18,7 @@ $card-thumb-w: 50%;
     @include clearfix;
     position: relative;
     display: block;
+    border-bottom: 0;
 }
 
 /*  Modifiers
@@ -58,7 +59,7 @@ $card-thumb-w: 50%;
     padding: $gutter;
     background-color: theme(bg);
 
-    .flexbox & { padding: 0; }
+    .flexbox &.horizontal { padding: 0; }
 }
 
 /* Submodules
@@ -215,6 +216,7 @@ $card-thumb-w: 50%;
     @extend %base-transition;
     display: block;
     margin-top: 0.5em;
+    margin-bottom: 0.5em;
 
     .card.secondary & {
         font-size: fs(3);
