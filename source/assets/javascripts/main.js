@@ -319,6 +319,17 @@ gpoba.chartist = (function($) {
 })(jQuery);
 
 
+//====== Datatables 
+gpoba.tables = (function($) {
+    'use strict';
+    var exports = {};
+
+    exports.init = function(){
+        $('.js_responsive_table').DataTable();
+    }
+
+    return exports;
+})(jQuery);
 
 // =============================================================================
 // Global/init logic
@@ -329,7 +340,8 @@ gpoba.chartist = (function($) {
 jQuery(function($) {
     // make jump navs 'sticky' on scroll
     if ($(".js-sticky").length > 0) gpoba.sticky.init(".js-sticky", ".js-highlight", ".js-sticky-stop");
-    gpoba.chartist.init();
+    if ($(".js-chart").length > 0) gpoba.chartist.init();
+    if ($(".js_responsive_table").length > 0) gpoba.tables.init();
 });
 
 

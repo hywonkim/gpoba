@@ -6,17 +6,23 @@ class CSV_Helpers < Middleman::Extension
     super
   end
   helpers do
+
+    def is_number? string
+      true if Float(string) rescue false
+    end
+
     def table(file, html_class = '', highlight_rows= nil, table_title = nil, column_label = nil, column_icon = nil)
+      
       # Create the Table object from CSV File
         csv_data = File.read(File.join(data_dir, '/tables/'+ file)) # TODO potentially make it dynamically find the location. For now all tables must be added to the data/tables folder.
-        csv = CSV.new(csv_data, :headers => true, :header_converters => :symbol)
+        csv = CSV.new(csv_data, :headers => true)
         tbl_obj = csv.read
 
       # Build HTML Table              
-        
         table_title_class = 'titled_table' if table_title
-        html_table = "<table class=\"#{html_class} #{table_title_class}\" >"
+        html_table = "<table class=\"js_responsive_table #{html_class} #{table_title_class}\" >"
 
+        # Adds table title 
         html_table.prepend("<h5 class=\"table_title\">#{table_title}</h5>") if table_title
 
         # Build Headers
@@ -24,7 +30,7 @@ class CSV_Helpers < Middleman::Extension
 
         indexed_headers = Array.new 
         tbl_obj.headers.each_with_index do |header, index|
-          header_string = header.to_s.titlecase
+          header_string = header
           indexed_headers[index] = header_string
           html_table += "<th> #{ header_string } </th>"
         end
@@ -41,15 +47,23 @@ class CSV_Helpers < Middleman::Extension
           
           row.to_hash.values.each_with_index do |value, index|             
             header_label = indexed_headers[index]
+            
+            # Adds a class for all row elements in a column
             if column_label && index == (column_label - 1)
               column_class = 'column_label'
             end
 
+            # Check for Numericalness
+            if value && is_number?( value.gsub('$','').gsub(',','') )
+              number_class = 'number_class'
+            end
+
+            # Adds value for rows in data element
             if column_icon && index == (column_icon - 1)
               column_icon_value = " data-icon-value=\"#{value}\" "
             end
 
-            html_table += "<td class=\"#{column_class}\" #{column_icon_value} data-label=\"#{header_label}\"> #{value} </td>"
+            html_table += "<td class=\"#{number_class} #{column_class}\" #{column_icon_value} data-label=\"#{header_label}\"> #{value} </td>"
           end
           html_table += "</tr>"
         end

@@ -1,5 +1,6 @@
 //= require normalize-css/normalize.css
 //= require html5-boilerplate/dist/css/main.css
+
 // Pull normalize.css & html5bp in via sprockets, because SASS doesn't compile it
 // -> doing this via @import generates an "@import" in the CSS, which is undesirable
 // -> html5bp css is just base styles for the wireframe. delete or integrate for production.
@@ -180,6 +181,10 @@ table {
         &.column_label {
             @extend %font-body--bold;
         }
+
+        &.number_class{
+            text-align: right;
+        }
     }
 
     tr:nth-child(even) {
@@ -238,42 +243,42 @@ table {
 
 // Responsive Tables
 
- @media screen and (max-width: 600px) {
+//  @media screen and (max-width: 600px) {
 
-    table {
-      border: 0;
-    }
+//     table {
+//       border: 0;
+//     }
 
-    table th {
-      display: none;
-    }
+//     table th {
+//       display: none;
+//     }
 
-    table tr {
-      margin-bottom: 10px;
-      display: block;
-      border-bottom: 2px solid #ddd;
-    }
+//     table tr {
+//       margin-bottom: 10px;
+//       display: block;
+//       border-bottom: 2px solid #ddd;
+//     }
 
-    table td {
-      display: block;
-      text-align: right;
-      font-size: 13px;
-      border-bottom: 1px dotted #ccc;
-    }
+//     table td {
+//       display: block;
+//       text-align: right;
+//       font-size: 13px;
+//       border-bottom: 1px dotted #ccc;
+//     }
 
-    table td:last-child {
-      border-bottom: 0;
-    }
+//     table td:last-child {
+//       border-bottom: 0;
+//     }
 
-    table td:before {
-      content: attr(data-label);
-      float: left;
-      text-transform: uppercase;
-      font-weight: bold;
-      display: block;
-    }
+//     table td:before {
+//       content: attr(data-label);
+//       float: left;
+//       text-transform: uppercase;
+//       font-weight: bold;
+//       display: block;
+//     }
 
-}
+// }
 // refs for scott
 // .some_random_thing {
 //     // font placeholder
