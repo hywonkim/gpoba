@@ -4,6 +4,8 @@ chapter: projects
 order: 2
 ---
 
+![Kenya-Slum-electrification_-Mediabase-Productions.jpg](/content/projects/media/Kenya-Slum-electrification_-Mediabase-Productions.jpg)
+
 Over the years, OBA projects have utilized a range of approaches, each one with a unique design and financial model, and incorporating lessons learned from previous experience. All new project proposals come before an independent Panel of Experts (PoE) at two stages of their preparation:
 
 **Eligibility**: An initial assessment to ensure that the project meets GPOBA’s eligibility criteria, which include the country and sector, project sustainability, and the number of poor people expected to receive services.
