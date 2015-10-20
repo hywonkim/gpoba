@@ -16,9 +16,9 @@ donors:
     url: http://diplomatie.belgium.be/nl/Beleid/Ontwikkelingssamenwerking/
 
 partners:
-  - name: [partner name]
-    filename: [logo file path w/out extension]
-    url: [website]
+  # - name: [partner name]
+  #   filename: [logo file path w/out extension]
+  #   url: [website]
   - name: Surtigas
     filename: logos/surtigas
     url: http://www.surtigas.com.co/
@@ -27,5 +27,5 @@ partners:
     url: http://www.promigas.com/
 
 flags:
-  - country: [country name]
-    filename: [flag file path w/o extension]
+  # - country: [country name]
+  #   filename: [flag file path w/o extension]

@@ -42,22 +42,21 @@ $billboard-padding: fs(8);
     @extend .gallery;
     padding: $gutter $gutter 0 $gutter;
     margin-left: -($gutter);
-    margin-right: -($gutter);
+    margin-right: -($gutter * 2);
     z-index: $z--high;
-    background-color: theme(bg);
 
     &:last-child { margin-bottom: -($gutter); }
 
     // create white bg with pseudo element b/c the gallery has a negative margin on the right -- won't be aligned otherwise
-    // &:before {
-    //     content: " ";
-    //     display: block;
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     bottom: 0;
-    //     right: $gutter;
-    //     z-index: -1;
-    //     background-color: theme(bg);
-    // }
+    &:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: $gutter;
+        z-index: -1;
+        background-color: theme(bg);
+    }
 }
