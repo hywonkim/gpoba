@@ -106,8 +106,6 @@ gpoba.chartist = (function($) {
         // 3) Modularize so that data can be passed in via JSON instead.
         // Turn into partial?
 
-
-
         // --- BAR CHART ---- 
 
         new Chartist.Bar('.ct-figure-04', {
@@ -440,13 +438,6 @@ gpoba.tables = (function($) {
 
     exports.init = function(){
         $( document ).trigger( "enhance.tablesaw" );
-
-        Tablesaw.config = {
-          swipe: {
-            horizontalThreshold: 50,
-            verticalThreshold: 20
-          }
-        };
     }
 
     return exports;
