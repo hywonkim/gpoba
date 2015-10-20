@@ -20,7 +20,7 @@ class CSV_Helpers < Middleman::Extension
 
       # Build HTML Table              
         table_title_class = 'titled_table' if table_title
-        html_table = "<table class=\"js_responsive_table #{html_class} #{table_title_class}\" >"
+        html_table = "<table class=\"tablesaw #{html_class} #{table_title_class}\" data-tablesaw-mode=\"swipe\" >"
 
         # Adds table title 
         html_table.prepend("<h5 class=\"table_title\">#{table_title}</h5>") if table_title
@@ -32,7 +32,8 @@ class CSV_Helpers < Middleman::Extension
         tbl_obj.headers.each_with_index do |header, index|
           header_string = header
           indexed_headers[index] = header_string
-          html_table += "<th> #{ header_string } </th>"
+          persist = 'data-tablesaw-priority="persist"' if index == 0
+          html_table += "<th #{persist}> #{ header_string } </th>"
         end
                 
         html_table += "</tr></thead>"

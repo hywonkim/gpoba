@@ -325,7 +325,14 @@ gpoba.tables = (function($) {
     var exports = {};
 
     exports.init = function(){
-        $('.js_responsive_table').DataTable();
+        $( document ).trigger( "enhance.tablesaw" );
+
+        Tablesaw.config = {
+          swipe: {
+            horizontalThreshold: 50,
+            verticalThreshold: 20
+          }
+        };
     }
 
     return exports;
@@ -341,7 +348,7 @@ jQuery(function($) {
     // make jump navs 'sticky' on scroll
     if ($(".js-sticky").length > 0) gpoba.sticky.init(".js-sticky", ".js-highlight", ".js-sticky-stop");
     if ($(".js-chart").length > 0) gpoba.chartist.init();
-    if ($(".js_responsive_table").length > 0) gpoba.tables.init();
+    gpoba.tables.init();
 });
 
 

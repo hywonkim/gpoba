@@ -19,7 +19,8 @@
     "normalize-css": "~3.0.3",
     "html5-boilerplate": "~5.2.0",
     "picturefill": "~3.0.1",
-    "chartist": "~0.9.4"
+    "chartist": "~0.9.4",
+    "filament-tablesaw": "tablesaw#~2.0.1"
   },
   "devDependencies": {
     "singularity": "~1.6.2",
