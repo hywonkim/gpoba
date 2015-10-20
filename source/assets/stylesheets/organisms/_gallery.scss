@@ -111,9 +111,6 @@ $gallery-gutter: $gutter;
 
     .gallery.small & {
         @include respond-to('xsmall') {
-            @include columns(2);
-        }
-        @include respond-to('small') {
             @include columns(3);
         }
         @include respond-to('medium') {
