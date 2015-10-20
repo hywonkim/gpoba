@@ -6,7 +6,8 @@
         <%# show interior page title if it's in the frontmatter %>
         <title><%= data.site.organization %> <%= data.site.title %> <%= data.site.year %><% if current_page.data.title.present? && current_page.data.title != "home" %> | <%= current_page.data.title %><% end %></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+
         <%# favicon_tag 'images/favicon.png' %>     
         <%= stylesheet_link_tag "main" %>
 

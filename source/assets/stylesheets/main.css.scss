@@ -133,6 +133,30 @@
     margin-top: 25px;    
 }
 
+.label-element{
+    font-size: fs(1);
+    line-height: 100%;
+}
+
+.label-line {
+    stroke: theme(border, wash);
+    stroke-width: 1px;
+
+}
+
+.bar-chart {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.vertical_text{
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+}
+
+.ct-series-a .ct-bar{
+    fill: green;
+}
 
 //============//============//============//============
 

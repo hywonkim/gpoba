@@ -159,6 +159,47 @@ gpoba.chartist = (function($) {
                     data.element.attr({
                     style: 'stroke-width: 30px'
                 });
+
+                var offset = 0
+                var label_y1 = 0
+                var label_y2 = 0
+                var text_y = 0
+                var text2_y = 0
+                var line_boost = 1
+                var label_boost = 1
+                var vertical_text = ''
+
+                if(data.seriesIndex%2 == 0){
+                    offset = 50
+                    label_y1 = 80
+                    label_y2 = 105
+                    text_y = 110
+                    text2_y = 125
+                } else {
+                    offset = -50
+                    label_y1 = 50
+                    label_y2 = 30
+                    text_y = 0
+                    text2_y = -10
+                }
+
+                if(data.seriesIndex > 1){
+                    line_boost = 25
+                    label_boost = 30
+                }
+
+                if(data.seriesIndex < 2){
+                    vertical_text = 'vertical_text'
+                }
+
+
+                console.log(data);
+
+                data.element.parent().foreignObject('<p class="label-element ' + vertical_text + '">'+ data.series.name + '<strong class="label-value"> ' + data.series.data[0] + ' </strong>'+'</p>', {x: data.x1+label_boost, y: text_y, height:35, width:35 }, 'bar-label').attr({ style: 'overflow: visible;' });
+                data.element.parent().elem('line', {y1: label_y1, y2: label_y2, x1: data.x1+line_boost, x2: data.x1+line_boost, }, 'label-line');
+
+
+
             }
         });
 
@@ -209,6 +250,40 @@ gpoba.chartist = (function($) {
                     data.element.attr({
                     style: 'stroke-width: 30px'
                 });
+
+                var offset = 0
+                var label_y1 = 0
+                var label_y2 = 0
+                var text_y = 0
+                var text2_y = 0
+                var line_boost = 1
+                var label_boost = 1
+
+                if(data.seriesIndex%2 == 0){
+                    offset = 50
+                    label_y1 = 80
+                    label_y2 = 105
+                    text_y = 110
+                    text2_y = 125
+                } else {
+                    offset = -50
+                    label_y1 = 50
+                    label_y2 = 30
+                    text_y = 0
+                    text2_y = -10
+                }
+
+                if(data.seriesIndex > 0){
+                    line_boost = 10
+                    label_boost = 15
+                }
+
+                console.log(data);
+
+                data.element.parent().foreignObject('<p class="label-element">'+ data.series.name + '<strong class="label-value"> ' + data.series.data[0] + ' </strong>'+'</p>', {x: data.x1+label_boost, y: text_y, height:35, width:35 }, 'bar-label').attr({ style: 'overflow: visible;' });
+                // data.element.parent().foreignObject('<p class="label-element">test2</p>', {x: data.x1, y: text2_y, height:35, width:35 }, 'bar-label').attr({ style: 'overflow: visible;' });
+                data.element.parent().elem('line', {y1: label_y1, y2: label_y2, x1: data.x1+line_boost, x2: data.x1+line_boost, }, 'label-line');
+
             }
         });
 
@@ -220,7 +295,7 @@ gpoba.chartist = (function($) {
                       data: [2]
                     },
                     {
-                      name: 'Non-Governmanetal Organization',                      
+                      name: 'Non-Governmental Organization',                      
                       data: [5]
                     },
                     {
@@ -253,37 +328,76 @@ gpoba.chartist = (function($) {
             }).on('draw', function(data) {
                 if(data.type === 'bar') {
                     data.element.attr({
-                    style: 'stroke-width: 30px'
-                });
-            }
-        });
+                        style: 'stroke-width: 30px'
+                    });
+                    
+                    var offset = 0
+                    var label_y1 = 0
+                    var label_y2 = 0
+                    var text_y = 0
+                    var text2_y = 0
+                    var line_boost = 1
+                    var label_boost = 1
+
+                    if(data.seriesIndex%2 == 0){
+                        offset = 50
+                        label_y1 = 80
+                        label_y2 = 105
+                        text_y = 110
+                        text2_y = 125
+                    } else {
+                        offset = -50
+                        label_y1 = 50
+                        label_y2 = 30
+                        text_y = 0
+                        text2_y = -10
+                    }
+
+                    if(data.seriesIndex > 0){
+                        line_boost = 10
+                        label_boost = 15
+                    }
+
+                    console.log(data);
+
+                    data.element.parent().foreignObject('<p class="label-element">'+ data.series.name + '<strong class="label-value"> ' + data.series.data[0] + ' </strong>'+'</p>', {x: data.x1+label_boost, y: text_y, height:35, width:35 }, 'bar-label').attr({ style: 'overflow: visible;' });
+                    // data.element.parent().foreignObject('<p class="label-element">test2</p>', {x: data.x1, y: text2_y, height:35, width:35 }, 'bar-label').attr({ style: 'overflow: visible;' });
+                    data.element.parent().elem('line', {y1: label_y1, y2: label_y2, x1: data.x1+line_boost, x2: data.x1+line_boost, }, 'label-line');
+                }
+            });
 
         // --- Provide Chart Labels    
 
-        var $chart = $('.bar-chart');
+        
+        // seriesName = chart.parent().attr('ct:series-name');
+        // value = chart.attr('ct:value');
+        // chart.append(seriesName + '<br>' + value + '%');
 
-        var $toolTip = $chart
-          .append('<div class="tooltip"></div>')
-          .find('.tooltip')
-          .hide();
+        // var $chart = $('.bar-chart');
 
-        $chart.on('mouseenter', '.ct-bar', function() {
-          var $point = $(this),
-            value = $point.attr('ct:value'),
-            seriesName = $point.parent().attr('ct:series-name');
-          $toolTip.html(seriesName + '<br>' + value + '%').show();
-        });
 
-        $chart.on('mouseleave', '.ct-bar', function() {
-          $toolTip.hide();
-        });
+        // var $toolTip = $chart
+        //   .append('<div class="tooltip"></div>')
+        //   .find('.tooltip')
+        //   .hide();
 
-        $chart.on('mousemove', function(event) {
-          $toolTip.css({
-            left: (event.offsetX || event.originalEvent.layerX) - $toolTip.width() / 2 - 10,
-            top: (event.offsetY || event.originalEvent.layerY) - $toolTip.height() - 40
-          });
-        });
+        // $chart.on('mouseenter', '.ct-bar', function() {
+        //   var $point = $(this),
+        //     value = $point.attr('ct:value'),
+        //     seriesName = $point.parent().attr('ct:series-name');
+        //   $toolTip.html(seriesName + '<br>' + value + '%').show();
+        // });
+
+        // $chart.on('mouseleave', '.ct-bar', function() {
+        //   $toolTip.hide();
+        // });
+
+        // $chart.on('mousemove', function(event) {
+        //   $toolTip.css({
+        //     left: (event.offsetX || event.originalEvent.layerX) - $toolTip.width() / 2 - 10,
+        //     top: (event.offsetY || event.originalEvent.layerY) - $toolTip.height() - 40
+        //   });
+        // });
 
         // --- LINE CHART ---- 
 
