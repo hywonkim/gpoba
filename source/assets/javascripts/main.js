@@ -1,4 +1,6 @@
 //= require 'jquery'
+//= require chartist/dist/chartist.min.js
+//= require filament-tablesaw/dist/tablesaw.js
 
 // namespace for this site's custom code
 var gpoba = {};
@@ -197,8 +199,6 @@ gpoba.chartist = (function($) {
 
                 data.element.parent().foreignObject('<p class="label-element ' + vertical_text + '">'+ data.series.name + '<strong class="label-value"> ' + data.series.data[0] + ' </strong>'+'</p>', {x: data.x1+label_boost, y: text_y, height:35, width:35 }, 'bar-label').attr({ style: 'overflow: visible;' });
                 data.element.parent().elem('line', {y1: label_y1, y2: label_y2, x1: data.x1+line_boost, x2: data.x1+line_boost, }, 'label-line');
-
-
 
             }
         });
