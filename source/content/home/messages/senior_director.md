@@ -19,8 +19,6 @@ Since 2006, GPOBA has been implementing projects focused on reaching marginalize
 
 Due to climate change, the challenges and disasters facing societies around the world will become more frequent and extreme in the coming years. A critical part of our Global Practice is strengthening resilience and preparedness among our clients, who are among the most vulnerable for the natural disasters of today, and those of tomorrow expected to be stronger and more frequent due to climate change. GPOBA will play a key role in this work, supporting governments and development partners in expanding services to the poor enhancing their resilience to disasters and climate change.
 
-The challenges and disasters facing societies around the world will become more frequent and extreme in the coming years. A critical part of SURR’s mission is strengthening resilience and preparedness among our clients, who are among the most vulnerable when shocks occur. GPOBA plays a key role in this work, supporting governments and development partners in expanding services to the poor.
-
 The creation of SURR’s Partnership and Resource Mobilization Unit in FY15 is recognition of the importance of partnerships to achieving our goals. Carmen Nonay, formerly manager of GPOBA, leads this unit as practice manager, with GPOBA coming under her strategic management as one of our largest partnership programs.
 
 We expect to leverage even further the work across partnership programs, and deepen our strategic engagement with development partners in the public, private and philanthropic sectors.
