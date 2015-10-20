@@ -3,20 +3,25 @@
 // -> shapes, corners, etc.
 // ===========================================================================*/
 
+// add a half-circle cutout to a container @ top & center
+// @param $w (number): width
+// @param $color (hex or rgb): color of the circle
 @mixin half-circle($w:30px, $color: theme(bg)) {
-  &:before {
-    content: " ";
-    display: block;
-    position: absolute;
-    left: 50%;
-    margin-left: -($w/2);
-    top: 0;
-    z-index: $z--high;
-    height: ($w/2);
-    width: $w;
-    border-radius: 0 0 $w $w;
-    background-color: $color;
-  }
+    position: relative;
+
+    &:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        left: 50%;
+        margin-left: -($w/2);
+        top: 0;
+        z-index: $z--high;
+        height: ($w/2);
+        width: $w;
+        border-radius: 0 0 $w $w;
+        background-color: $color;
+    }
 }
 
 // add corner bracket decorations to a container.

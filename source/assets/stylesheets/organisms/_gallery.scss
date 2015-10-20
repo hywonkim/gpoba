@@ -45,6 +45,7 @@ There are three (column) size variations: small, medium, and large. Medium is de
 $gallery-gutter: $gutter;
 
 @mixin columns($number: 2, $g: $gallery-gutter) {
+    display: inline-block;
     width: (100%/$number);
     padding-right: $g;
 
@@ -97,7 +98,7 @@ $gallery-gutter: $gutter;
 .gallery-item {
     // $gutter: 1px;
     // margin: 0 0 $gutter 0;
-    display: inline-block;
+    display: block;
     padding-bottom: $gutter;
     font-size: $type-size--default;
 
