@@ -18,3 +18,35 @@
     background-color: $color;
   }
 }
+
+// add corner bracket decorations to a container.
+// -> defaults to nothing, displays pngs in multiple bgs are supported, displays svgs if svg is supported.
+// @param $color (string): color of bracket
+// @param $size (string): size.
+// @param $z: z-index of pseudo element. modify to sit above your container.
+//
+// usage: .my_container { @include brackets(orange, small, 20); }
+@mixin brackets($color: black, $size: large, $z: $z--middle) {
+    .multiplebgs &:before {
+        @include position(absolute, 0 0 0 0);
+        content: " ";
+        z-index: $z;
+        background-image: url(image_path("icons/bracket-top-left-#{$color}.png")),
+            url(image_path("icons/bracket-top-right-#{$color}.png")),
+            url(image_path("icons/bracket-bottom-left-#{$color}.png")),
+            url(image_path("icons/bracket-bottom-right-#{$color}.png"));
+        background-position: top left, top right, bottom left, bottom right;
+        background-repeat: no-repeat;
+
+        @if ($size == "small") {
+            background-size: 12px, 12px, 12px, 12px;
+        }
+    }
+
+    .multiplebgs.svg &:before {
+        background-image: url(image_path("icons/bracket-top-left-#{$color}.svg")),
+            url(image_path("icons/bracket-top-right-#{$color}.svg")),
+            url(image_path("icons/bracket-bottom-left-#{$color}.svg")),
+            url(image_path("icons/bracket-bottom-right-#{$color}.svg"));
+    }
+}

@@ -30,25 +30,12 @@ $billboard-padding: fs(8);
 .billboard-frame {
     @extend %l-wrapper--narrow;
     @include border($color: theme(bg));
+    @include brackets;
     position: relative;
     z-index: $z--low;
     padding: $gutter;
 
-    .multiplebgs & {
-        border: none;
-
-        &:before {
-            @include position(absolute, 0 0 0 0);
-            content: " ";
-            z-index: $z--middle;
-            background-image: url(image_path("icons/bracket-top-left.svg")),
-                url(image_path("icons/bracket-top-right.svg")),
-                url(image_path("icons/bracket-bottom-left.svg")),
-                url(image_path("icons/bracket-bottom-right.svg"));
-            background-position: top left, top right, bottom left, bottom right;
-            background-repeat: no-repeat;
-        }
-    }
+    .multiplebgs & { border: none; }
 }
 
 .billboard-title {
