@@ -6,6 +6,7 @@ title: home
     <style>
         <% img_path = asset_url(data.site.paths.content + 'home/') %>
 
+        /* cover image */
         #cover {
             background-image: url('<%= img_path + data.site.cover_image[0].to_s %>');
         }
@@ -19,6 +20,7 @@ title: home
             <% end %>
         <% end %>
 
+        /* donors section */
         <% sitemap.where(:chapter => "home", :type => "billboard").order_by(:order).all.each do |billboard| %>
             #donors {
                 background-image: url('<%= img_path + billboard.data.background[0].to_s %>');
@@ -40,7 +42,7 @@ title: home
 
     <!-- GPOBA logo -->
     <a href="http://www.gpoba.org" target="_blank">
-        <%= partial("layouts/partials/logo-gpoba", :locals => { :classes => "hero-logo" }) %>
+        <%= partial("layouts/partials/logo", :locals => { :classes => "hero-logo" }) %>
     </a>
 
     <!-- main title lockup -->
@@ -90,6 +92,13 @@ title: home
             <h1 class="billboard-title"><%= billboard.data.title %></h1>
             <%= billboard.render %>
         <% end %>
+        <ul class="billboard-gallery small align-middle">
+            <% data.logos_and_flags.donors.each do |donor| %>
+            <li class="gallery-item">
+                <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => donor.filename, :link => donor.url, :alt => donor.name }) %>
+            </li>
+            <% end %>
+        </ul>
     </div>
 </section>
 

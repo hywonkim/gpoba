@@ -1,0 +1,17 @@
+<% filename ||= data.site.logo %>
+<% classes ||= "logo" %>
+<% alt ||= data.site.organization %>
+<% link ||= false %>
+
+<% if link != false %>
+<a class="<%= classes %>" href="<%= link %>">
+<% end %>
+<picture<% if link == false %> class="<%= classes %>"<% end %>>
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    <source type="image/svg+xml" srcset="<%= asset_url images_dir + '/' + filename + '.svg'%>">
+    <!--[if IE 9]></video><![endif]-->
+    <img src="<%= asset_url images_dir + '/' + filename + '.png'%>" alt="<%= alt %>" />
+</picture>
+<% if link != false %>
+</a>
+<% end %>

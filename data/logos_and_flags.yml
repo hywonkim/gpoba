@@ -1,0 +1,31 @@
+donors:
+  - name: UKAid
+    filename: logos/ukaid
+    url: https://www.gov.uk/government/organisations/department-for-international-development/
+  - name: Australian Government Department of Foreign Affairs and Trade
+    filename: logos/australian-dfat
+    url: http://dfat.gov.au/
+  - name: International Finance Corporation
+    filename: logos/ifc
+    url: http://www.ifc.org/
+  - name: Swedish International Development Agency
+    filename: logos/sida
+    url: http://www.sida.se/English/
+  - name: Buitenlandse Zaken Ontwikkelingssamenwerking
+    filename: logos/belgian-bzos
+    url: http://diplomatie.belgium.be/nl/Beleid/Ontwikkelingssamenwerking/
+
+partners:
+  - name: [partner name]
+    filename: [logo file path w/out extension]
+    url: [website]
+  - name: Surtigas
+    filename: logos/surtigas
+    url: http://www.surtigas.com.co/
+  - name: Promigas
+    filename: logos/promigas
+    url: http://www.promigas.com/
+
+flags:
+  - country: [country name]
+    filename: [flag file path w/o extension]

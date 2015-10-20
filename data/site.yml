@@ -3,6 +3,11 @@ organization: "GPOBA"
 title: "Annual Report"
 year: 2015
 
+# GPOBA logo used in header & footer
+# -> relative to images directory
+# -> leave off extension. requires svg and png versions with same filename.
+logo: logos/gpoba
+
 # feature image on the homepage
 cover_image:
   - media/site-cover@2000.jpg

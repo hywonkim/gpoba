@@ -2,10 +2,13 @@
 //  Logo modules
 // ========================================================================== */
 
-/* Main logo
+/* Base
 // -------------------------------------------------------------------------- */
 .logo {
     @extend %font-body--bold;
+    display: inline-block;
+    max-width: 100%;
+    border-bottom: none;
     font-weight: bold;
     color: theme('text' 'primary');
 }

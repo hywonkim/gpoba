@@ -89,7 +89,7 @@ video {
  * [2] IE10+
  */
 /* 1 */
-.ie9 img[src*=".svg"] {
+.ie9 img[src*=".svg"], source[type*="svg+xml"] {
   width: 100%;
 }
 /* 2 */

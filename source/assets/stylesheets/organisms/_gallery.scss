@@ -42,8 +42,16 @@ There are three (column) size variations: small, medium, and large. Medium is de
 
 @import "../core/*";
 
-@mixin flex-columns($number: 2) {
-    flex: 0 0 (100%/$number);
+$gallery-gutter: $gutter;
+
+@mixin columns($number: 2, $g: $gallery-gutter) {
+    width: (100%/$number);
+    padding-right: $g;
+
+    .flexbox & {
+        width: auto;
+        flex: 0 0 (100%/$number);
+    }
 }
 
 /* Base
@@ -53,56 +61,33 @@ There are three (column) size variations: small, medium, and large. Medium is de
     @include unstyled-list;
     @include rem(margin-top, $gutter);
     display: block; // in case flexbox isn't supported
-    display: flex;
-    flex-flow: row wrap;
-    align-items: stretch;
+    @include display(flex);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(stretch);
+    position: relative;
     margin-bottom: 0;
+    margin-right: -($gallery-gutter); // to prevent uneven column widths
     padding-bottom: 0;
+    font-size: 0;
 }
 
 /* Modifiers
 // ---------------------------------------------------------------------------*/
 
-.gallery.small {
-    .gallery-item {
-        @include respond-to('xsmall') {
-            @include flex-columns(2);
-        }
-        @include respond-to('small') {
-            @include flex-columns(3);
-        }
-        @include respond-to('medium') {
-            @include flex-columns(4);
-        }
-    }
+// "small" columns
+// -> see .gallery-item submodule for styles
+.gallery.small {}
 
-    // non-flexbox fallback
-    // .no-flexbox & {
-    //     .gallery-item {
-    //         @include respond-to('small') {
-    //             @include thumb-span(4, $gutstyle: $gallery-gutter-style);
-    //             padding-bottom: 0;
-    //         }
-    //     }
-    // }
-}
+// "large" columns
+// -> see .gallery-item submodule for styles
+.gallery.large {}
 
-.gallery.large {
-    .gallery-item {
-        @include respond-to('small') {
-            @include flex-columns(2);
-        }
-    }
-
-    // non-flexbox fallback
-    // .no-flexbox & {
-    //     .gallery-item {
-    //         @include respond-to('small') {
-    //             @include thumb-span(2, $gutstyle: $gallery-gutter-style);
-    //             padding-bottom: 0;
-    //         }
-    //     }
-    // }
+// align everything to the middle
+.gallery.align-middle {
+    @include align-items(center);
+    justify-content: center;
+    text-align: center;
 }
 
 
@@ -112,21 +97,33 @@ There are three (column) size variations: small, medium, and large. Medium is de
 .gallery-item {
     // $gutter: 1px;
     // margin: 0 0 $gutter 0;
-    padding: $gutter;
+    display: inline-block;
+    padding-bottom: $gutter;
+    font-size: $type-size--default;
 
     @include respond-to('small') {
-        @include flex-columns(2);
+        @include columns(2);
     }
 
     @include respond-to('medium') {
-        @include flex-columns(3);
+        @include columns(3);
     }
 
-    // non-flexbox fallback
-    // .no-flexbox & {
-    //     @include respond-to('small") {
-    //         @include thumb-span(3, $gutstyle: $gallery-gutter-style);
-    //         padding-bottom: 0;
-    //     }
-    // }
+    .gallery.small & {
+        @include respond-to('xsmall') {
+            @include columns(2);
+        }
+        @include respond-to('small') {
+            @include columns(3);
+        }
+        @include respond-to('medium') {
+            @include columns(5);
+        }
+    }
+
+    .gallery.large & {
+        @include respond-to('small') {
+            @include columns(2);
+        }
+    }
 }

@@ -7,6 +7,7 @@
 
 @import "../core/*";
 @import "../atoms/heading";
+@import "../organisms/gallery";
 
 $billboard-padding: fs(8);
 
@@ -28,9 +29,35 @@ $billboard-padding: fs(8);
 
 .billboard-frame {
     @extend %l-wrapper--narrow;
+    padding: $gutter;
+    border: 1px solid #fff;
 }
 
 .billboard-title {
     @extend %beta;
-    color: theme(bg);
+    // color: theme(bg);
+}
+
+.billboard-gallery {
+    @extend .gallery;
+    padding: $gutter $gutter 0 $gutter;
+    margin-left: -($gutter);
+    margin-right: -($gutter);
+    z-index: $z--high;
+    background-color: theme(bg);
+
+    &:last-child { margin-bottom: -($gutter); }
+
+    // create white bg with pseudo element b/c the gallery has a negative margin on the right -- won't be aligned otherwise
+    // &:before {
+    //     content: " ";
+    //     display: block;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     bottom: 0;
+    //     right: $gutter;
+    //     z-index: -1;
+    //     background-color: theme(bg);
+    // }
 }
