@@ -44,11 +44,13 @@ html {
 body {
     @extend %font-body;
     line-height: $type-line_height;
+    color: theme('text' 'secondary');
 }
 
 p {
     @include font-scale(3);
     // @include rem(font-size, 13px);
+    color: theme('text' 'secondary');
 
     strong {
         @extend %font-body--bold;

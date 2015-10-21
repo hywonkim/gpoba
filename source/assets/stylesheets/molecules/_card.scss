@@ -55,7 +55,7 @@ $card-thumb-w: 50%;
 // "tile" card
 // has a solid bg and full-bleed thumb
 .card.tile {
-    @include brackets($size: 12px);
+    @include brackets($color: 'highlight', $size: 12px);
     padding: $gutter;
     background-color: theme(bg);
 
@@ -189,13 +189,13 @@ $card-thumb-w: 50%;
 .card-title {
     @extend %beta;
     @extend %base-transition;
-    @include chapter_highlights;
     border-bottom: none;
     line-height: 1.1;
 
     @include respond-to('medium') { @include rem(font-size, 34px) }
 
     &:hover, &:active {
+        @include chapter_highlights(color);
         color: theme(highlight);
     }
 

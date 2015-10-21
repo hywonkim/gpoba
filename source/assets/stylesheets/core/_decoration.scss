@@ -3,6 +3,9 @@
 // -> shapes, corners, etc.
 // ===========================================================================*/
 
+@import "libs";
+@import "color";
+
 // add a half-circle cutout to a container @ top & center
 // @param $w (number): width
 // @param $color (hex or rgb): color of the circle
@@ -25,48 +28,96 @@
 }
 
 // add corner bracket decorations to a container.
-// -> defaults to nothing, displays pngs in multiple bgs are supported, displays svgs if svg is supported.
+// -> defaults to nothing, displays svgs if svg & multiple bgs are supported.
 // @param $color (string): color of bracket
 // @param $size (string): size.
 // @param $z: z-index of pseudo element. modify to sit above your container.
 //
 // usage: .my_container { @include brackets(orange, small, 20); }
-@mixin brackets($color: black, $size: 18px, $z: $z--middle) {
-    .multiplebgs &:before {
-        @include position(absolute, 0 0 null 0);
-        content: " ";
-        height: #{$size};
-        z-index: $z;
-        background-image:
-            url(image_path("icons/bracket-top-left-#{$color}.png")),
-            url(image_path("icons/bracket-top-right-#{$color}.png"));
-        background-position: top left, top right, bottom left, bottom right;
-        background-repeat: no-repeat;
-        background-size: #{$size}, #{$size};
+@mixin brackets($color: 'black', $size: 18px, $z: $z--middle) {
+    .multiplebgs.svg & {
+        &:before, &:after {
+            content: " ";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: $size;
+            z-index: $z;
+            background-repeat: no-repeat;
+            background-size: #{$size}, #{$size};
+        }
+
+        &:before {
+            // @extend %bracket;
+            top: 0;
+            background-position: top left, top right;
+        }
+
+        &:after {
+            // @extend %bracket;
+            bottom: 0;
+            background-position: bottom left, bottom right;
+        }
     }
 
-    .multiplebgs.svg &:before {
-        background-image:
-            url(image_path("icons/bracket-top-left-#{$color}.svg")),
-            url(image_path("icons/bracket-top-right-#{$color}.svg"));
-    }
+    // loop through the $highlights map in the color library and output highlight-colored brackets for each
+    @if $color == 'highlight' {
+        @each $name, $highlight in $highlights {
+            .multiplebgs.svg & {
+                &:before {
+                    background-image:
+                        url(image_path("icons/bracket-top-left-black.svg")),
+                        url(image_path("icons/bracket-top-right-black.svg"));
+                }
 
-    .multiplebgs &:after {
-        @include position(absolute, null 0 0 0);
-        height: #{$size};
-        content: " ";
-        z-index: $z;
-        background-image:
-            url(image_path("icons/bracket-bottom-left-#{$color}.png")),
-            url(image_path("icons/bracket-bottom-right-#{$color}.png"));
-        background-position: top left, top right, bottom left, bottom right;
-        background-repeat: no-repeat;
-        background-size: #{$size}, #{$size};
-    }
+                &:after {
+                    background-image:
+                        url(image_path("icons/bracket-bottom-left-black.svg")),
+                        url(image_path("icons/bracket-bottom-right-black.svg"));
+                }
+            }
 
-    .multiplebgs.svg &:after {
-        background-image:
-            url(image_path("icons/bracket-bottom-left-#{$color}.svg")),
-            url(image_path("icons/bracket-bottom-right-#{$color}.svg"));
+            .multiplebgs.svg .theme-highlight.#{$name} {
+                &:before {
+                    background-image:
+                        url(image_path("icons/bracket-top-left-#{$name}.svg")),
+                        url(image_path("icons/bracket-top-right-#{$name}.svg"));
+                }
+
+                &:after {
+                    background-image:
+                        url(image_path("icons/bracket-bottom-left-#{$name}.svg")),
+                        url(image_path("icons/bracket-bottom-right-#{$name}.svg"));
+                }
+            }
+
+            .multiplebgs.svg &.theme-highlight.#{$name} {
+                &:before {
+                    background-image:
+                        url(image_path("icons/bracket-top-left-#{$name}.svg")),
+                        url(image_path("icons/bracket-top-right-#{$name}.svg"));
+                }
+
+                &:after {
+                    background-image:
+                        url(image_path("icons/bracket-bottom-left-#{$name}.svg")),
+                        url(image_path("icons/bracket-bottom-right-#{$name}.svg"));
+                }
+            }
+        }
+    } @else {
+        .multiplebgs.svg & {
+            &:before {
+                background-image:
+                    url(image_path("icons/bracket-top-left-#{$color}.svg")),
+                    url(image_path("icons/bracket-top-right-#{$color}.svg"));
+            }
+
+            &:after {
+                background-image:
+                    url(image_path("icons/bracket-bottom-left-#{$color}.svg")),
+                    url(image_path("icons/bracket-bottom-right-#{$color}.svg"));
+            }
+        }
     }
 }
