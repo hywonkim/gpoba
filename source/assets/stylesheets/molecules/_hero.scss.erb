@@ -3,6 +3,7 @@
 // ========================================================================== */
 
 @import "../core/*";
+@import "../atoms/icon";
 @import "../atoms/logo";
 @import "../atoms/button";
 @import "../atoms/heading";
@@ -93,7 +94,7 @@ $hero-pointer-h: 37px;
     @include border(bottom);
     display: none;
     position: absolute;
-    bottom: 0; //$hero-pointer-h;
+    bottom: $hero-pointer-h;
     width: 100%;
     border: none;
     background-color: theme(bg, reverse);
@@ -124,6 +125,8 @@ $hero-pointer-h: 37px;
 }
 
 .hero-pointer {
+    @extend %base-transition;
+    display: block;
     // @include border(top)
     position: absolute;
     bottom: 0;
@@ -131,4 +134,20 @@ $hero-pointer-h: 37px;
     right: 0;
     height: $hero-pointer-h;
     background-color: darken(theme('bg', 'reverse'), 5);
+
+    &:hover, &:active {
+        background-color: theme(highlight);
+        border: none;
+    }
 }
+
+    .hero-pointer-icon {
+        $h: 0.8em;
+        @extend .icon;
+        height: $h;
+        fill: theme(text primary, reverse);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -($h/2) 0 -($h/2);
+    }

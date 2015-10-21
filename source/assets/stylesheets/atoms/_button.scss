@@ -66,21 +66,35 @@ button, .button {
 .button.read_more {
     @extend %font-accent--bold;
     @include font-scale(2);
-    @include chapter_highlights(color);
+    // @include chapter_highlights(color);
     padding: 0;
     border: none;
-    // color: theme('text' 'primary');
     text-transform: uppercase;
-    color: theme('highlight');
+    color: theme('text' 'primary');
+    // color: theme('highlight');
 
     &:hover, &:active {
         @include chapter_highlights(color);
         color: theme('highlight');
+        background-color: transparent;
     }
 
-    > .icon {
+    > .button-icon {
         @include chapter_highlights(fill);
-        margin-left: 0.3em;
-        fill: theme('highlight');
+        fill: theme(highlight);
     }
 }
+
+    .button-icon {
+        @extend .icon;
+        margin-left: 0.3em;
+        // margin-right: -0.2em;
+        height: 1em;
+        width: 1em;
+        fill: currentColor;
+
+        &.before {
+            margin-left: -0.2em;
+            // margin-right: 0.1em;
+        }
+    }

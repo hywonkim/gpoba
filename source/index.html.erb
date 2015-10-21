@@ -43,9 +43,15 @@ title: home
     <!-- GPOBA logo -->
     <%= partial("layouts/partials/logo", :locals => { :classes => "hero-logo" }) %>
 
-    <a class="hero-button" href="http://gpoba.org" target="_blank">&lsaquo; GPOBA Home</a>
+    <a class="hero-button" href="http://gpoba.org" target="_blank">
+        <%= partial("layouts/partials/icon", :locals => { :id => "arrow-left-outline", :classes => "button-icon before", :fallback_type => "text", :fallback => "&lsaquo;" }) %>
+        GPOBA Home
+    </a>
 
-    <a class="hero-button right" href="<%= asset_url data.site.download_version %>">Download</a>
+    <a class="hero-button right" href="<%= asset_url data.site.download_version %>">
+        <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "button-icon before", :fallback_type => "text", :fallback => "" }) %>
+        Download
+    </a>
 
     <!-- main title lockup -->
     <%= partial "layouts/partials/hero-lockup" %>
@@ -53,12 +59,12 @@ title: home
     <!-- main menu -->
     <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav", :show_home => true }) %>
 
-    <div class="hero-pointer">
-
-    </div>
+    <a class="hero-pointer" href="#intro">
+        <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down", :classes => "hero-pointer-icon", :fallback_type => "text", :fallback => "Scroll for more" }) %>
+    </a>
 </header>
 
-<article class="chapter" role="main">
+<article class="chapter" role="main" id="intro">
 
     <!-- Executive summary -->
     <div class="l-wrapper narrow chapter-content" id="summary">
@@ -82,7 +88,10 @@ title: home
                                 <%= author.name %><% if message.data.authors.length > 1 && index < message.data.authors.length - 1 %>, <% end %>
                             <% end %>
                         </span>
-                        <span class="button read_more" href="<%= message.url %>">Read More &rsaquo;</span>
+                        <span class="button read_more">
+                            Read More
+                            <%= partial("layouts/partials/icon", :locals => { :id => "arrow-right", :classes => "button-icon", :fallback_type => "text", :fallback => "&rsaquo;" }) %>
+                        </span>
                     </a>
                 </li>
                 <% end %>
@@ -121,8 +130,8 @@ title: home
                     <h2 class="card-title"><a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>"><%= chapter.title %></a></h2>
                     <p><%= lorem.sentences 3 %>.</p>
                     <a class="button read_more" href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>">
-                        Read More &rsaquo;
-                        <%# partial("layouts/partials/icon", :locals => { :id => "arrow-right" }) %>
+                        Read More
+                        <%= partial("layouts/partials/icon", :locals => { :id => "arrow-right", :classes => "button-icon", :fallback_type => "text", :fallback => "&rsaquo;" }) %>
                     </a>
                 </div>
             </li>
