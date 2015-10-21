@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="54 217 720 360" style="enable-background:new 54 217 720 360;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#D91F26;}
+	.st1{fill:#FBDD02;}
+	.st2{fill:#0F8944;}
+	.st3{fill:#254DA1;}
+	.st4{stroke:#FBDD02;stroke-width:4;}
+</style>
+<rect x="54" y="217" class="st0" width="720" height="360"/>
+<rect x="54" y="217" class="st1" width="720" height="240"/>
+<rect x="54" y="217" class="st2" width="720" height="120"/>
+<g transform="translate(360,180)">
+	<circle class="st3" cx="54" cy="217" r="120"/>
+	<g id="t">
+		<path class="st1" d="M54,121l-4.2,12.9l17.3,53.4H44l-2.6,8h74.2l11-8h-51L54,121z"/>
+		<path class="st4" d="M79.9,181.4l30.6-42.1"/>
+	</g>
+	<g transform="rotate(72)">
+		<g id="t_1_">
+			<path class="st1" d="M145.3,187.3h-13.6l-45.4,33l-7.1-22h-8.4l22.9,70.5l11,8l-15.8-48.5L145.3,187.3z"/>
+			<path class="st4" d="M95.8,230.6l49.5,16.1"/>
+		</g>
+	</g>
+	<g transform="rotate(144)">
+		<g id="t_2_">
+			<path class="st1" d="M110.4,294.7l-4.2-12.9l-45.4-33l18.7-13.6l-2.6-8l-60,43.6l-4.2,12.9l41.3-30L110.4,294.7z"/>
+			<path class="st4" d="M54,261v52"/>
+		</g>
+	</g>
+	<g transform="rotate(216)">
+		<g id="t_3_">
+			<path class="st1" d="M-2.4,294.7l11-8l17.3-53.4l18.7,13.6l6.8-4.9l-60-43.6h-13.6l41.3,30L-2.4,294.7z"/>
+			<path class="st4" d="M12.2,230.6l-49.5,16.1"/>
+		</g>
+	</g>
+	<g transform="rotate(288)">
+		<g id="t_4_">
+			<path class="st1" d="M-37.3,187.3l11,8h56.1l-7.1,22l6.8,4.9l22.9-70.5l-4.2-12.9l-15.8,48.5H-37.3z"/>
+			<path class="st4" d="M28.1,181.4l-30.6-42.1"/>
+		</g>
+	</g>
+</g>
+</svg>

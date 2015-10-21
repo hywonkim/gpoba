@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="144 97 900 600" style="enable-background:new 144 97 900 600;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#156734;}
+	.st2{stroke:#000000;stroke-miterlimit:10;}
+	.st3{fill:#BA2025;}
+</style>
+<rect x="145.2" y="97" class="st0" width="900" height="600"/>
+<rect x="145.2" y="97" width="900" height="180"/>
+<rect x="145.2" y="517" class="st1" width="900" height="180"/>
+<g id="spear">
+	<g>
+		<path id="spearshape" class="st2" d="M488.1,575.1l6.5,3.8l175.2-303.4c10.2-2.7,15.9-12.5,21.5-22.2c3.8-6.5,18.8-32.5,25.3-66.2
+			c-26,22.5-41,48.5-44.7,55c-5.6,9.7-11.2,19.5-8.5,29.7L488.1,575.1z"/>
+	</g>
+	<g>
+		<path id="spearshape_1_" class="st0" d="M488.1,575.1l6.5,3.8l175.2-303.4c10.2-2.7,15.9-12.5,21.5-22.2
+			c3.8-6.5,18.8-32.5,25.3-66.2c-26,22.5-41,48.5-44.7,55c-5.6,9.7-11.2,19.5-8.5,29.7L488.1,575.1z"/>
+	</g>
+</g>
+<g>
+	<g id="spear_1_">
+		<g>
+			<path id="spearshape_2_" class="st2" d="M702.4,575.1l-6.5,3.8L520.7,275.5c-10.2-2.7-15.9-12.5-21.5-22.2
+				c-3.8-6.5-18.8-32.5-25.3-66.2c26,22.5,41,48.5,44.7,55c5.6,9.7,11.2,19.5,8.5,29.7L702.4,575.1z"/>
+		</g>
+		<g transform="scale(-1,1)">
+			<path id="spearshape_3_" class="st0" d="M702.4,575.1l-6.5,3.8L520.7,275.5c-10.2-2.7-15.9-12.5-21.5-22.2
+				c-3.8-6.5-18.8-32.5-25.3-66.2c26,22.5,41,48.5,44.7,55c5.6,9.7,11.2,19.5,8.5,29.7L702.4,575.1z"/>
+		</g>
+	</g>
+	<path class="st3" d="M145.2,307v180H524c11.2,30,48.8,90,71.2,90s60-60,71.2-90h378.8V307H666.5c-11.2-30-48.8-90-71.2-90
+		s-60,60-71.2,90H145.2z"/>
+	<path id="deco_r" d="M666.5,487c11.2-30,18.8-60,18.8-90s-7.5-60-18.8-90c-11.2,30-18.8,60-18.8,90S655.2,457,666.5,487"/>
+	<g transform="scale(-1,1)">
+		<path id="deco_r_1_" d="M524,487c-11.2-30-18.7-60-18.7-90s7.5-60,18.7-90c11.2,30,18.8,60,18.8,90S535.2,457,524,487"/>
+	</g>
+	<g>
+		<ellipse class="st0" cx="595.2" cy="397" rx="15" ry="22.5"/>
+		<path id="deco_br" class="st0" d="M599,418.9c0,0,15,30,15,78.8s-15,78.8-15,78.8V418.9z"/>
+		<g transform="scale(-1)">
+			<path id="deco_br_1_" class="st0" d="M591.5,375.1c0,0-15-30-15-78.8s15-78.8,15-78.8V375.1z"/>
+		</g>
+		<g transform="scale(-1,1)">
+			<path id="deco_br_2_" class="st0" d="M591.5,418.9c0,0-15,30-15,78.8s15,78.8,15,78.8V418.9z"/>
+		</g>
+		<g transform="scale(1,-1)">
+			<path id="deco_br_3_" class="st0" d="M599,375.1c0,0,15-30,15-78.8s-15-78.8-15-78.8V375.1z"/>
+		</g>
+	</g>
+</g>
+</svg>

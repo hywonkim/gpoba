@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-5 197 600 400" style="enable-background:new -5 197 600 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#017A5E;}
+	.st1{fill:#CE2028;}
+	.st2{fill:#FBD116;}
+</style>
+<rect x="-5" y="197" class="st0" width="200" height="400"/>
+<rect x="195" y="197" class="st1" width="200" height="400"/>
+<rect x="395" y="197" class="st2" width="200" height="400"/>
+<g>
+	<g id="c">
+		<path id="t" class="st2" d="M250,313.7l-16.5,50.7l25.4,8.2L250,313.7z"/>
+		<g transform="scale(-1,1)">
+			<path id="t_1_" class="st2" d="M250,313.7l16.5,50.7l-25.4,8.2L250,313.7z"/>
+		</g>
+	</g>
+	<g>
+		<g id="c_1_">
+			<path id="t_2_" class="st2" d="M300.7,350.5h-53.3v26.7L300.7,350.5z"/>
+			<g transform="rotate(72)">
+				<path id="t_3_" class="st2" d="M300.7,350.5l-43.1,31.3l-15.7-21.6L300.7,350.5z"/>
+			</g>
+		</g>
+		<g>
+			<g id="c_2_">
+				<path id="t_4_" class="st2" d="M281.3,410.1l-16.5-50.7l-25.4,8.2L281.3,410.1z"/>
+				<g transform="rotate(144)">
+					<path id="t_5_" class="st2" d="M281.3,410.1l-43.1-31.3l15.7-21.6L281.3,410.1z"/>
+				</g>
+			</g>
+			<g>
+				<g id="c_3_">
+					<path id="t_6_" class="st2" d="M218.7,410.1l43.1-31.3l-15.7-21.6L218.7,410.1z"/>
+					<g transform="rotate(216)">
+						<path id="t_7_" class="st2" d="M218.7,410.1l16.5-50.7l25.4,8.2L218.7,410.1z"/>
+					</g>
+				</g>
+				<g transform="translate(45,30)">
+					<g id="c_4_">
+						<path id="t_8_" class="st2" d="M199.3,350.5l43.1,31.3l15.7-21.6L199.3,350.5z"/>
+						<g transform="rotate(288)">
+							<path id="t_9_" class="st2" d="M199.3,350.5h53.3v26.7L199.3,350.5z"/>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
