@@ -31,26 +31,41 @@
 // @param $z: z-index of pseudo element. modify to sit above your container.
 //
 // usage: .my_container { @include brackets(orange, small, 20); }
-@mixin brackets($color: black, $size: large, $z: $z--middle) {
+@mixin brackets($color: black, $size: 18px, $z: $z--middle) {
     .multiplebgs &:before {
-        @include position(absolute, 0 0 0 0);
+        @include position(absolute, 0 0 null 0);
+        content: " ";
+        height: #{$size};
+        z-index: $z;
+        background-image:
+            url(image_path("icons/bracket-top-left-#{$color}.png")),
+            url(image_path("icons/bracket-top-right-#{$color}.png"));
+        background-position: top left, top right, bottom left, bottom right;
+        background-repeat: no-repeat;
+        background-size: #{$size}, #{$size};
+    }
+
+    .multiplebgs.svg &:before {
+        background-image:
+            url(image_path("icons/bracket-top-left-#{$color}.svg")),
+            url(image_path("icons/bracket-top-right-#{$color}.svg"));
+    }
+
+    .multiplebgs &:after {
+        @include position(absolute, null 0 0 0);
+        height: #{$size};
         content: " ";
         z-index: $z;
-        background-image: url(image_path("icons/bracket-top-left-#{$color}.png")),
-            url(image_path("icons/bracket-top-right-#{$color}.png")),
+        background-image:
             url(image_path("icons/bracket-bottom-left-#{$color}.png")),
             url(image_path("icons/bracket-bottom-right-#{$color}.png"));
         background-position: top left, top right, bottom left, bottom right;
         background-repeat: no-repeat;
-
-        @if ($size == "small") {
-            background-size: 12px, 12px, 12px, 12px;
-        }
+        background-size: #{$size}, #{$size};
     }
 
-    .multiplebgs.svg &:before {
-        background-image: url(image_path("icons/bracket-top-left-#{$color}.svg")),
-            url(image_path("icons/bracket-top-right-#{$color}.svg")),
+    .multiplebgs.svg &:after {
+        background-image:
             url(image_path("icons/bracket-bottom-left-#{$color}.svg")),
             url(image_path("icons/bracket-bottom-right-#{$color}.svg"));
     }

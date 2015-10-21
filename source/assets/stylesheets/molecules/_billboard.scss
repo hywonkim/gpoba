@@ -40,6 +40,7 @@ $billboard-padding: fs(8);
 
 .billboard-title {
     @extend %beta;
+    text-align: center;
     // color: theme(bg);
 }
 

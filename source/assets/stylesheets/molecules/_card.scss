@@ -15,7 +15,6 @@ $card-thumb-w: 50%;
 // -------------------------------------------------------------------------- */
 
 .card {
-    @include clearfix;
     position: relative;
     display: block;
     border-bottom: 0;
@@ -56,7 +55,7 @@ $card-thumb-w: 50%;
 // "tile" card
 // has a solid bg and full-bleed thumb
 .card.tile {
-    @include brackets($size: small);
+    @include brackets($size: 12px);
     padding: $gutter;
     background-color: theme(bg);
 
@@ -153,7 +152,7 @@ $card-thumb-w: 50%;
         width: (100% - $card-thumb-w);
     }
 
-    @include rem(font-size, 16px);
+    @include rem(font-size, $type-size--default);
     display: block;
     vertical-align: top;
 
@@ -183,6 +182,8 @@ $card-thumb-w: 50%;
             padding-left: 0 !important;
         }
     }
+
+    > p { @include font-scale(2); }
 }
 
 .card-title {

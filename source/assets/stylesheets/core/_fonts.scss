@@ -50,28 +50,6 @@ $type-line_height: 1.5;
 // -> requires SASS Type Helpers
 $font-scale: 10px 13px 16px 23px 26px 37px 42px 68px 97px 110px 157px 177px;
 
-/* Globals
-// -------------------------------------------------------------------------- */
-
-html {
-    // set up the base font size at each breakpoint
-    // this will scale the whole layout proportionately as the screen size changes
-    // and we only have to change one thing
-    font-size: 100%;
-
-    @include respond-to('small') {
-        font-size: 105%;
-    }
-
-    @include respond-to('medium') {
-        font-size: 110%;
-    }
-
-    @include respond-to('large') {
-        font-size: 125%;
-    }
-}
-
 /* ----- Newslab ------------------------------------------------------------ */
 
 /*

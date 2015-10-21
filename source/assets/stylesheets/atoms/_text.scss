@@ -22,15 +22,36 @@ Inline text is mostly styled globally and doesn't change a whole lot from one co
 /* Globals
 // -------------------------------------------------------------------------- */
 
+html {
+    // set up the base font size at each breakpoint
+    // this will scale the whole layout proportionately as the screen size changes
+    // and we only have to change one thing
+    font-size: 100%;
+
+    @include respond-to('small') {
+        font-size: 105%;
+    }
+
+    @include respond-to('medium') {
+        font-size: 110%;
+    }
+
+    @include respond-to('large') {
+        font-size: 120%;
+    }
+}
+
 body {
     @extend %font-body;
     line-height: $type-line_height;
 }
 
 p {
-    @include font-scale(2);
+    @include font-scale(3);
+    // @include rem(font-size, 13px);
 
     strong {
+        @extend %font-body--bold;
         font-weight: bold;
     }
 }
@@ -70,7 +91,7 @@ address {
 // the first paragraph, often set slightly bigger
 .lead {
     // @extend %dropcap;
-    @include font-scale(2);
+    @include font-scale(3);
 
     &:first-letter {
         @include chapter_highlights(color);
