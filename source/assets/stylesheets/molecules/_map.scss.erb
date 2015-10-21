@@ -1,6 +1,28 @@
 /* ==========================================================================
 //  Map Module
+// -> a big world map and legend
 // ========================================================================== */
+
+@import "../core/*";
+@import "../atoms/heading";
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.map {
+    @include rem(margin, $gutter 0);
+    @include rem(padding-top, $gutter);
+    @include border(top);
+    position: relative;
+
+    @include respond-to('medium') {
+        @include rem(margin, $gutter -100px);
+    }
+
+    @include respond-to('large') {
+        @include rem(margin, $gutter -200px);
+    }
+}
 
 /* assign the correct fill color to each highlighted country
  * -> see data/map.yml
@@ -9,31 +31,50 @@
     <%= g.group.countries.map{ |c| "#" + c }.join(',') %> {
         fill: theme(<%= g.group.type %>, map);
     }
-    
+
     .legend-element.<%= g.group.type %> {
         fill: theme(<%= g.group.type %>, map);
     }
 
 <% end %>
 
-.map {
-    height: 700px;
-    width: 1000px;
-    fill: rgb(219, 217, 218);
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+/* --- the actual map ------------------------------------------------------- */
+.map-render {
+    // height: 700px;
+    width: 100%;
+    fill: darken(theme(well), 5);
 }
 
-.legend {
+/* --- map title ------------------------------------------------------------ */
+.map-title {
+    @extend %cappa;
+    @include chapter_highlights;
+    margin-bottom: 1em;
+    text-align: center;
+    color: theme('highlight');
+}
+
+/* --- the legend ----------------------------------------------------------- */
+.map-legend {
+    @include rem(max-width, 320px);
     display: block;
-    bottom: 50px;
-    left: 5px;
-    position: absolute;
+    position: relative;
+    margin: 1em auto;
+    // right: 0;
+    z-index: $z--high;
+
+    @include respond-to('medium') {
+        margin-top: -3em;
+        // bottom: 0;
+    }
 
     .sub-text {
-        fill: theme(body, reverse);
-        text-transform: uppercase;    
+        fill: theme(text tertiary);
+        text-transform: uppercase;
     }
 }
 
-.legend-element.triangle {
-    stroke: theme(text secondary, reverse);
-}
+    .legend-element.triangle { stroke: darken(theme(border), 25); }
