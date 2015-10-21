@@ -48,13 +48,11 @@
         }
 
         &:before {
-            // @extend %bracket;
             top: 0;
             background-position: top left, top right;
         }
 
         &:after {
-            // @extend %bracket;
             bottom: 0;
             background-position: bottom left, bottom right;
         }
@@ -62,21 +60,21 @@
 
     // loop through the $highlights map in the color library and output highlight-colored brackets for each
     @if $color == 'highlight' {
-        @each $name, $highlight in $highlights {
-            .multiplebgs.svg & {
-                &:before {
-                    background-image:
-                        url(image_path("icons/bracket-top-left-black.svg")),
-                        url(image_path("icons/bracket-top-right-black.svg"));
-                }
-
-                &:after {
-                    background-image:
-                        url(image_path("icons/bracket-bottom-left-black.svg")),
-                        url(image_path("icons/bracket-bottom-right-black.svg"));
-                }
+        .multiplebgs.svg & {
+            &:before {
+                background-image:
+                    url(image_path("icons/bracket-top-left-black.svg")),
+                    url(image_path("icons/bracket-top-right-black.svg"));
             }
 
+            &:after {
+                background-image:
+                    url(image_path("icons/bracket-bottom-left-black.svg")),
+                    url(image_path("icons/bracket-bottom-right-black.svg"));
+            }
+        }
+
+        @each $name, $highlight in $highlights {
             .multiplebgs.svg .theme-highlight.#{$name} {
                 &:before {
                     background-image:

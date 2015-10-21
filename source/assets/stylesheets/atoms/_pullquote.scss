@@ -1,0 +1,52 @@
+/* ==========================================================================
+// Card module
+// -> A short listing pointing at more detailed content, like a chapter
+//    or large table. Often found in 'feed' and 'gallery' organisms.
+// ========================================================================== */
+
+@import "../core/*";
+@import "../atoms/text";
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.pullquote {
+
+    &:before {
+        @extend %font-display;
+        @include font-scale(5);
+        @include border(top bottom);
+        @include chapter_highlights;
+        content: attr(data-pullquote);
+        display: block;
+        padding: 1.5em;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+        text-align: center;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+        color: theme(highlight);
+
+        .multiplebgs.svg & {
+            border: none;
+            background-image:
+                url(image_path("icons/bracket-top-left-black.svg")),
+                url(image_path("icons/bracket-top-right-black.svg")),
+                url(image_path("icons/bracket-bottom-left-black.svg")),
+                url(image_path("icons/bracket-bottom-right-black.svg"));
+            background-repeat: no-repeat;
+            background-size: 18px, 18px, 18px, 18px;
+            background-position: top left, top right, bottom left, bottom right;
+        }
+
+        @each $name, $highlight in $highlights {
+            .multiplebgs.svg .theme-highlight.#{$name} & {
+                background-image:
+                    url(image_path("icons/bracket-top-left-#{$name}.svg")),
+                    url(image_path("icons/bracket-top-right-#{$name}.svg")),
+                    url(image_path("icons/bracket-bottom-left-#{$name}.svg")),
+                    url(image_path("icons/bracket-bottom-right-#{$name}.svg"));
+            }
+        }
+    }
+}
