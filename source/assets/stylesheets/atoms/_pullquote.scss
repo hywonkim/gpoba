@@ -11,7 +11,6 @@
 // -------------------------------------------------------------------------- */
 
 .pullquote {
-
     &:before {
         @extend %font-display;
         @include font-scale(5);
@@ -27,6 +26,14 @@
         letter-spacing: -0.01em;
         color: theme(highlight);
 
+        @include respond-to('large') {
+            margin-left: -3em;
+            margin-right: -3em;
+        }
+
+        // corner bracket decorations
+        // -> can't use mixin here b/c we need to apply the bg directly to this element
+        // -> refactor mixin?
         .multiplebgs.svg & {
             border: none;
             background-image:
@@ -39,6 +46,7 @@
             background-position: top left, top right, bottom left, bottom right;
         }
 
+        // highlighted brackets
         @each $name, $highlight in $highlights {
             .multiplebgs.svg .theme-highlight.#{$name} & {
                 background-image:

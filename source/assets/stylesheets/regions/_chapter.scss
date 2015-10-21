@@ -127,26 +127,9 @@ $chapter-padding: fs(6);
         margin-top: 1em;
         margin-bottom: 0;
     }
-}
 
-// .chapter-aside {
-//     @include rem(margin-top, fs(5));
-//     @include rem(padding-top, fs(5));
-//     @include rem(padding-bottom, fs(5));
-//     background-color: theme('well');
-
-//     // if this is the last thing in the container, make it flush with the bottom
-//     &:last-child {
-//         @include rem(margin-bottom, -($chapter-padding));
-//     }
-// }
-
-.chapter-content {
-    padding-bottom: 2.5em;
-
-    p:first-of-type, p:first-child {
-        @extend .lead;
+    img {
+        margin-top: 1em;
+        margin-bottom: 1em;
     }
-
-    img { margin: 1em 0; }
 }

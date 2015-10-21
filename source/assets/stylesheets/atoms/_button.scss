@@ -54,16 +54,18 @@ button, .button {
 
 .button.read_more {
     @include font-scale(2);
-    color: theme(text-primary);
+    @include chapter_highlights(color);
+    // color: theme('text' 'primary');
+    color: theme('highlight');
 
     &:hover, &:active {
         @include chapter_highlights(color);
-        color: theme(highlight);
+        color: theme('highlight');
     }
 
     > .icon {
         @include chapter_highlights(fill);
         margin-left: 0.3em;
-        fill: theme(highlight);
+        fill: theme('highlight');
     }
 }
