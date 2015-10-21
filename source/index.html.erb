@@ -41,15 +41,21 @@ title: home
 <header class="hero" id="cover">
 
     <!-- GPOBA logo -->
-    <a href="http://www.gpoba.org" target="_blank">
-        <%= partial("layouts/partials/logo", :locals => { :classes => "hero-logo" }) %>
-    </a>
+    <%= partial("layouts/partials/logo", :locals => { :classes => "hero-logo" }) %>
+
+    <a class="hero-button" href="http://gpoba.org" target="_blank">&lsaquo; GPOBA Home</a>
+
+    <a class="hero-button right" href="<%= asset_url data.site.download_version %>">Download</a>
 
     <!-- main title lockup -->
     <%= partial "layouts/partials/hero-lockup" %>
 
     <!-- main menu -->
     <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav", :show_home => true }) %>
+
+    <div class="hero-pointer">
+
+    </div>
 </header>
 
 <article class="chapter" role="main">

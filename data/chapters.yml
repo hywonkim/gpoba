@@ -34,4 +34,5 @@
   slug: appendices
   image:
     - media/appendices-cover@2000.jpg
+  image_align: bottom
   color: blue

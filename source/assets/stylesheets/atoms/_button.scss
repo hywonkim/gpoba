@@ -29,18 +29,29 @@ You can mix and match classes to get the hierarchy/size you need. "small primary
 
 /* Config/mixins
 // -------------------------------------------------------------------------- */
-$button-radius--default: 3px;
+$button-radius--default: 0.3em;
 
 
 /* Base
 // -------------------------------------------------------------------------- */
 
 button, .button {
+    $c: theme(text primary);
     @extend %base-transition;
-    @extend %font-body--bold;
+    @extend %font-accent;
+    @include font-scale(2);
+    @include border($color: $c);
     display: inline-block;
-    text-transform: uppercase;
-    border-bottom: 0;
+    padding: 0.6em 1.8em 0.5em;
+    // text-transform: uppercase;
+    // border-bottom: 0;
+    border-radius: $button-radius--default;
+    color: $c;
+
+    &:hover, &:active {
+        color: theme(highlight);
+        background-color: $c;
+    }
 }
 
 
@@ -53,9 +64,13 @@ button, .button {
 
 
 .button.read_more {
+    @extend %font-accent--bold;
     @include font-scale(2);
     @include chapter_highlights(color);
+    padding: 0;
+    border: none;
     // color: theme('text' 'primary');
+    text-transform: uppercase;
     color: theme('highlight');
 
     &:hover, &:active {

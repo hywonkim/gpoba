@@ -4,8 +4,11 @@
 
 @import "../core/*";
 @import "../atoms/logo";
+@import "../atoms/button";
 @import "../atoms/heading";
 @import "../molecules/main_nav";
+
+$hero-pointer-h: 37px;
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -46,7 +49,7 @@
         position: absolute;
         width: 100%;
         top: auto;
-        bottom: 20%;
+        bottom: 25%;
         left: 50%;
         margin-top: 0;
         transform: translateX(-50%);
@@ -90,7 +93,7 @@
     @include border(bottom);
     display: none;
     position: absolute;
-    bottom: 0;
+    bottom: 0; //$hero-pointer-h;
     width: 100%;
     border: none;
     background-color: theme(bg, reverse);
@@ -98,4 +101,34 @@
     @include breakpoint(900px) {
         display: block;
     }
+}
+
+.hero-button {
+    $c: theme(text primary, reverse);
+    @extend .button;
+    position: absolute;
+    top: ($gutter * 0.75);
+    left: $gutter;
+    border-color: $c;
+    color: $c;
+
+    &:hover, &:active {
+        // color: theme(bg, reverse);
+        background-color: $c;
+    }
+
+    &.right {
+        left: auto;
+        right: $gutter;
+    }
+}
+
+.hero-pointer {
+    // @include border(top)
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: $hero-pointer-h;
+    background-color: darken(theme('bg', 'reverse'), 5);
 }
