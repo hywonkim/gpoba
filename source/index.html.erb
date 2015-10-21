@@ -57,7 +57,7 @@ title: home
     <%= partial "layouts/partials/hero-lockup" %>
 
     <!-- main menu -->
-    <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav", :show_home => true }) %>
+    <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav" }) %>
 
     <a class="hero-pointer" href="#intro">
         <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down", :classes => "hero-pointer-icon", :fallback_type => "text", :fallback => "Scroll for more" }) %>

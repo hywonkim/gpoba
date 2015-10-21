@@ -61,21 +61,43 @@ $footer-padding: $gutter-outside;
         color: theme('text' 'primary', 'reverse');
     }
 
-    .footer-affiliate {
+.footer-subnav {
+    @extend %base-transition;
+    @extend %font-accent;
+    @include border(top, $color: theme(border, reverse));
+    display: block;
+    margin-top: $gutter;
+    padding-top: 1em;
+    color: theme('text' 'primary', 'reverse');
+
+    @include breakpoint(450px) {
+        display: inline-block;
+        float: right;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    > li {
+        @include border(right, $color: theme(border, reverse));
+        display: inline-block;
+        list-style: none;
+        padding: 0 1em;
+
+        &:last-child { border: none; }
+    }
+}
+
+    .footer-subnav-item {
         @extend %base-transition;
         @extend %font-accent;
-        @include border(top, $color: theme(border, reverse));
-        display: block;
-        margin-top: $gutter;
-        padding-top: 1em;
-        color: theme('text' 'primary', 'reverse');
+        @include font-scale(3);
+        color: theme(text primary, reverse);
 
-        @include breakpoint(450px) {
-            display: inline-block;
-            float: right;
-            margin: 0;
-            padding: 0;
-            border: none;
+        &:hover, &:active {
+            @include chapter_highlights(color);
+            color: theme(highlight);
+            border-bottom: 0;
         }
     }
 
