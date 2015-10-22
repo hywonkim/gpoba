@@ -22,8 +22,4 @@ The communications team also promoted OBA in other key venues, including the ann
 </div>
 
 
-<% pullquote do %>
-
-GPOBA’s [web presence](http://www.gpoba.org) grew during the year. [quote]Improvements to its website and newsletter resulted in an 11 percent increase in unique website visitors, while average newsletter readership increased by 40 percent.[/quote] GPOBA also improved communication with donors by introducing bimonthly donor updates.
-
-<% end %>
+GPOBA’s [web presence](http://www.gpoba.org) grew during the year. Improvements to its website and newsletter resulted in an 11 percent increase in unique website visitors, while average newsletter readership increased by 40 percent. GPOBA also improved communication with donors by introducing bimonthly donor updates.
