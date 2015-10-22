@@ -399,10 +399,13 @@ gpoba.chartist = (function($) {
 
         // --- LINE CHART ---- 
 
-        new Chartist.Line('.ct-line-graph', {
+        var  lineData = 
+        {
             labels: ['FY07-08','FY09','FY10','FY11','FY12','FY13','FY14','FY15'],
             series: [ [.01,.42,.75,1.87,3.31,5.87,7.13,8.00] ]          
-        }, {
+        }
+
+        var lineOptions = {
             low: 0,
             showArea: true,
             fullWidth: true,
@@ -419,12 +422,24 @@ gpoba.chartist = (function($) {
             },
             chartPadding: {
                 right: 32
-            }
-        });
+            },
+        }
+
+        var lineReposniveOptions = [
+            ['screen and (max-width: 641px)', {                
+                axisX: {
+                  labelInterpolationFnc: function(value, index) {
+                    return index % 2 === 0 ? value : null;
+                  }
+                }
+            }]
+        ]
+
+        new Chartist.Line('.ct-line-graph', lineData, lineOptions, lineReposniveOptions);
 
         // --- LINE CHART ---- 
     
-    }
+    } // - close of init
 
 
     return exports;
