@@ -1,58 +1,66 @@
 - group:
       type: "p_for_r"
       countries: 
-        - MX      
+        - UY
+        - brazil-sub     
 
 - group:
       type: "sub"
       countries:
-        - AM
-        - BD
-        - BO
         - CM
-        - CO
-        - IN
-        - KE
         - LS
-        - ML
         - MN
-        - MA
         - MZ
         - SN
         - LK
-        - UG
-        - VN
-        - PS
-        - YE      
+        - YE     
 
 - group:
       type: "ta"
       countries:
         - BR
+        - KH
+        - CF
         - TD
-        - PH
+        - KM
+        - EG
+        - GT
+        - JO
         - SB
+        - SD
         - ZW
 
 - group:
       type: "ta-sub"
       countries:
+        - AM
+        - BD
+        - BO
+        - CO
         - GH
         - HN
-        - ID
+        - IN
+        - KE
+        - ML
         - LR
         - NP
         - NG
         - PH
         - VU
+        - WF
+        - ZM
 
 - group:
-      type: "p_for_r-sub"
+      type: "p_for_r-sub-ta"
       countries:
         - ET
+        - ID
+        - MA
+        - VN
+        - UG
 
 - group:
       type: "p_for_r-ta"
       countries:
-      - TZ
-      - UY
+        - TZ
+        - MX

@@ -30,6 +30,8 @@
 <% data.map.each do |g|  %>
     <%= g.group.countries.map{ |c| "#" + c }.join(',') %> {
         fill: theme(<%= g.group.type %>, map);
+        stroke: theme(stroke, map);
+        stroke-width: .25px;
     }
 
     .legend-element.<%= g.group.type %> {
@@ -81,4 +83,7 @@
 
 /* --- brazil dot ----------------------------------------------------------- */
 
-.brazil-sub { transform: translate(270px, 360px); }
+.brazil-sub { fill: theme(p_for_r, map); }
+
+.island-circle.ta { stroke: theme(ta, map); fill: none; }
+.island-circle.ta-sub { stroke: theme(ta-sub, map); fill: none; }
