@@ -12,8 +12,4 @@ This year GPOBA produced a range of assessments that supported learning and know
 
 A socio-economic impact assessment, which included a gender component, was prepared for the GPOBA Electrification Access project in Ethiopia. The study tracked how electricity provided by this project had changed living patterns in households by freeing up time in the evening for men and women, and also showed that electricity resulted in the number of boys and girls who study in the evening increasing by 15-20 percent.
 
-<% pullquote do %>
-
-As a component of GPOBA’s scoping study on education, a Beneficiary Assessment of the Vietnam education project was completed, drawing on qualitative data collected through interviews and focus group discussions, but also incorporating secondary data. The OBA project disbursed subsidies on achievement of pre-approved indicators related to student attendance and educational attainment. [quote] Results showed that beneficiaries were on the whole very positive in their assessment of the project[/quote], and that overall the project had met its goals of improving enrollment, attendance, and academic performance of poor students in upper-secondary education.
-
-<% end %>
+As a component of GPOBA’s scoping study on education, a Beneficiary Assessment of the Vietnam education project was completed, drawing on qualitative data collected through interviews and focus group discussions, but also incorporating secondary data. The OBA project disbursed subsidies on achievement of pre-approved indicators related to student attendance and educational attainment. Results showed that beneficiaries were on the whole very positive in their assessment of the project, and that overall the project had met its goals of improving enrollment, attendance, and academic performance of poor students in upper-secondary education.

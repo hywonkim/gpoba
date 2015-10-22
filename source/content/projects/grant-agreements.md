@@ -4,7 +4,7 @@ chapter: projects
 order: 2
 ---
 
-![Kenya-Slum-electrification_-Mediabase-Productions.jpg](/content/projects/media/Kenya-Slum-electrification_-Mediabase-Productions.jpg)
+![wbg_1.jpg](/content/projects/media/wbg_1.jpg)
 
 Over the years, OBA projects have utilized a range of approaches, each one with a unique design and financial model, and incorporating lessons learned from previous experience. All new project proposals come before an independent Panel of Experts (PoE) at two stages of their preparation:
 
