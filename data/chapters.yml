@@ -3,6 +3,7 @@
   image:
     - media/ch1-cover@2000.jpg
   color: green
+  teaser: "GPOBA was created to explore output based approaches to these challenges, with results and lessons generated over 12 years’ experience as reflected in our portfolio of subsidy projects, technical assistance, knowledge activities and evolution as a Center of Expertise."
 
 - title: "Our <strong>Portfolio</strong>"
   subtitle: "Results, Composition, and Performance"
@@ -11,24 +12,28 @@
     - media/ch2-cover@2000.jpg
   image_align: bottom
   color: red
+  teaser: "Grant funding is a critical element of GPOBA’s mission, serving as the catalyst for design and implementation of OBA projects. GPOBA grants provide operational support for subsidy projects, technical assistance (TA), and knowledge dissemination."
 
 - title: "<strong>Projects</strong>, Scale-ups &amp; Facilities"
   slug: projects
   image:
     - media/ch3-cover@2000.jpg
   color: orange
+  teaser: "In FY15, GPOBA focused on moving the pipeline of existing projects forward, while also testing the applicability of OBA in new sectors, and scaling up successful OBA projects in sectors where it has considerable experience. Technical assistance continued to be an important part of GPOBA’s work, with eight new TA activities initiated in FY15."
 
 - title: "Building a Center of <strong>Expertise</strong>"
   slug: center of expertise
   image:
     - media/ch4-cover@2000.jpg
   color: purple
+  teaser: "GPOBA continues to develop as a Center of Expertise. The aim is ensure that knowledge and experience gained through the design and implementation of OBA subsidy projects and TA activities feeds back into GPOBA’s own operations and is shared with donors, governments, and other development partners to support the use of OBA/RBF and to demonstrate proof of concept."
 
 - title: "Looking <strong>Ahead</strong>"
   slug: looking ahead
   image:
     - media/ch5-cover@2000.jpg
   color: blue
+  teaser: "At a strategy workshop in Paris in June 2015, GPOBA gathered with donors to assess progress and agree the strategic direction of future activities, based on the findings of the independent evaluation and donor direction. GPOBA’s vision and work is clearly relevant to current development goals and the broader RBF community, which has grown significantly since the establishment of GPOBA in 2003."
 
 - title: "Appendices"
   slug: appendices
@@ -36,3 +41,4 @@
     - media/appendices-cover@2000.jpg
   image_align: bottom
   color: blue
+  teaser: "GPOBA derives its resources from donor contributions, which are channeled through trust funds administered by the World Bank Group. The World Bank recovers an administrative fee for costs associated with this task. GPOBA’s budget and accounting processes are aligned with the World Bank fiscal year, which runs from July to June."
