@@ -1,0 +1,33 @@
+{
+  "labels": ["By Sector"],
+  "series": [
+    {
+     "name": "Education",
+     "data": [1]
+    },
+    {
+     "name": "Telecom",
+     "data": [1]
+    },
+    {
+     "name": "Solid Waste Management",
+     "data": [6]
+    },
+    {
+     "name": "Sanitation",
+     "data": [9]
+    },
+    {
+     "name": "Health",
+     "data": [16]
+    },
+    {
+     "name": "Water",
+     "data": [24]
+    },
+    {
+     "name": "Energy",
+     "data": [42]
+    }
+   ]
+}
