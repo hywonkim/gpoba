@@ -8,7 +8,8 @@
 /* Base
 // -------------------------------------------------------------------------- */
 .box {
-    @include half-circle;
+    @include half-circle($border: theme(border));
+    @include border(top);
     @include rem(padding, fs(6) $gutter-outside);
     position: relative;
     background-color: theme(well);

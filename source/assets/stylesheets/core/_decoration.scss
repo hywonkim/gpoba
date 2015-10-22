@@ -9,7 +9,7 @@
 // add a half-circle cutout to a container @ top & center
 // @param $w (number): width
 // @param $color (hex or rgb): color of the circle
-@mixin half-circle($w:30px, $color: theme(bg)) {
+@mixin half-circle($w:30px, $color: theme(bg), $border: false) {
     position: relative;
 
     &:before {
@@ -18,12 +18,16 @@
         position: absolute;
         left: 50%;
         margin-left: -($w/2);
-        top: 0;
+        top: -1px;
         z-index: $z--high;
         height: ($w/2);
         width: $w;
         border-radius: 0 0 $w $w;
         background-color: $color;
+
+        @if $border != false {
+            @include border(bottom left right, $color: $border);
+        }
     }
 }
 

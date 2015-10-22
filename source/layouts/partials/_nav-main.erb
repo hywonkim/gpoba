@@ -1,13 +1,10 @@
 <% classes ||= "main_nav" %>
-<% show_home ||= false %>
 
 <nav class="<%= classes %>" role="navigation">
     <ul>
-        <% if show_home == true %>
-            <li>
-                <a class="nav-item<% if current_dir? "/" %> is-active<% end %>" href="/">Home</a>
-            </li>
-        <% end %>
+        <li>
+            <a class="main_nav-item<% if current_page? "index.html" %> is-active<% end %>" href="/">Home</a>
+        </li>
         <% data.chapters.each do |chapter| %>
             <% current_url = "#{data.site.paths.chapter}#{chapter.slug.urlize}/" %>
             <li>
