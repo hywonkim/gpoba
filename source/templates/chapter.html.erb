@@ -80,6 +80,7 @@ layout: layout
         <% end %>
         <% if section.data.type == "box" %>
             <aside class="box<% if section.data.type.present? %> <%= section.data.type %><% end %>" id="<%= section.data.title.urlize %>">
+                <h3 class="slug">Box</h3>
                 <h1 class="box-title"><%= section.data.title %></h2>
                 <div class="box-content l-wrapper narrow">
                     <%= section.render %>

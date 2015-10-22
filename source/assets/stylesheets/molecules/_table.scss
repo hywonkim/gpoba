@@ -9,5 +9,111 @@
 // -------------------------------------------------------------------------- */
 
 table {
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    font-size: fs(2);
 
+    th {
+        border-bottom: 4px solid theme(highlight);
+        text-align: left;
+        background-color: #fff;
+        color: theme(text secondary);
+        padding: 10px;
+        font-size: fs(3);
+        line-height: 125%;
+
+    }
+
+    &.all-caps-header th {
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &.titled_table{
+        margin-top: 0px;
+    }
+
+    tr {
+        line-height: 115%;
+    }
+    td {
+        padding: 20px;
+
+        &.column_label {
+            @extend %font-body--bold;
+        }
+
+        &.number_class{
+            text-align: right;
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: theme(well);
+    }
+
+    &.total-table {
+        tr:last-child {
+            background-color: theme(highlight);
+            color: theme(text primary, reverse);
+            @extend %font-body--bold;
+        }
+    }
+
+    &.highlight-table {
+
+        .row-0, .row-1, .row-2 {
+            border-left: 4px solid theme(highlight);
+            border-right: 4px solid theme(highlight);
+
+            td:first-child {
+                background-color: rgba(94, 171, 188, .5);
+                border-bottom: 2px solid #fff;
+                border-right: 4px solid theme(highlight);
+                text-align: center;
+            }
+
+         }
+
+         td:first-child {
+            background-color: theme(well);
+            border-right: 1px solid theme(border);
+
+         }
+
+         .row-2 {
+            border-bottom: 4px solid theme(highlight);
+         }
+    }
+
+    &.basic-table {
+
+        th {
+            background-color: theme(well);
+            border-bottom: 0px;
+            text-align: none;
+            @extend %font-body;
+            padding: 20px;
+            line-height: 115%;
+            font-size: fs(2);
+        }
+    }
+}
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+.table_title {
+    font-size: fs(3);
+    color: theme(text tertiary);
+    text-align: left;
+    @extend %font-body--bold;
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+
+
+
+.tablesaw-advance a.tablesaw-nav-btn.disabled {
+    display: none;
 }
