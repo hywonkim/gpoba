@@ -21,6 +21,7 @@ gpoba.graph = (function($) {
     // -> "large" are settings applied above the breakpoint (see exports.breakpoints)
     exports.settings = {
         bar: {
+            width: 30,
             small: {
                 stackBars: true,
                 chartPadding: {
@@ -42,7 +43,7 @@ gpoba.graph = (function($) {
                 }
             }
         },
-        chart: {},
+        line: {},
     }
 
     var _createBarGraph = function(el, data) {
@@ -52,30 +53,29 @@ gpoba.graph = (function($) {
             ]).on('draw', function(chart) {
                 if(chart.type === 'bar') {
                     chart.element.attr({
-                        style: 'stroke-width: 30px'
+                        style: 'stroke-width: ' + exports.settings.bar.width
                     });
                 };
 
-                var offset = 0
-                var label_y1 = 0
-                var label_y2 = 0
-                var text_y = 0
-                var text2_y = 0
-                var line_boost = 1
-                var label_boost = 1
+                var offset = 0,
+                    label_y1 = 0,
+                    label_y2 = 0,
+                    text_y = 0,
+                    text2_y = 0,
+                    line_boost = 1,
+                    label_boost = 5;
 
+                // alternate top and bottom labels in horizontal layout
                 if (chart.seriesIndex%2 == 0) {
                     offset = 50
-                    label_y1 = 80
-                    label_y2 = 105
-                    text_y = 110
-                    text2_y = 125
+                    label_y1 = (exports.settings.bar.width/2 + 5)
+                    label_y2 = (exports.settings.bar.width/2 + 40)
+                    text_y = (exports.settings.bar.width/2 + 20)
                 } else {
                     offset = -50
-                    label_y1 = 50
-                    label_y2 = 30
-                    text_y = 0
-                    text2_y = -10
+                    label_y1 = (-exports.settings.bar.width/2 - 5)
+                    label_y2 = (-exports.settings.bar.width/2 - 40)
+                    text_y = (-exports.settings.bar.width/2 - 40)
                 }
 
                 if(chart.seriesIndex > 0){
@@ -86,16 +86,14 @@ gpoba.graph = (function($) {
                 console.log("chart");
                 console.log(chart);
 
-                // chart.element.parent().foreignObject(
-                //         '<p class="label-element">' + chart.series.name + '<strong class="label-value"> ' + chart.series.chart[0] + ' </strong>'+'</p>',
-                //         {x: chart.x1+label_boost, y: text_y, height:35, width:35 },
-                //         'bar-label')
-                //     .attr({ style: 'overflow: visible;' });
-                // chart.element.parent().elem('line', {y1: label_y1, y2: label_y2, x1: chart.x1+line_boost, x2: chart.x1+line_boost, }, 'label-line');
-
-                // chart.element.parent().foreignObject('<p class="label-element">'+ chart.series.name + '<strong class="label-value"> ' + chart.series.chart[0] + ' </strong>'+'</p>', {x: chart.x1+label_boost, y: text_y, height:35, width:35 }, 'bar-label').attr({ style: 'overflow: visible;' });
-                // // chart.element.parent().foreignObject('<p class="label-element">test2</p>', {x: chart.x1, y: text2_y, height:35, width:35 }, 'bar-label').attr({ style: 'overflow: visible;' });
-                // chart.element.parent().elem('line', {y1: label_y1, y2: label_y2, x1: chart.x1+line_boost, x2: chart.x1+line_boost, }, 'label-line');
+                if (chart.type == 'bar') {
+                    chart.element.parent().foreignObject(
+                            '<p class="label-element">' + chart.series.name + '<strong class="label-value"> ' + chart.series.data[0] + ' %</strong>'+'</p>',
+                            {x: chart.x1 + label_boost, y: chart.y2 + text_y, height:35, width:35 },
+                            'bar-label')
+                        .attr({ style: 'overflow: visible;' });
+                    chart.element.parent().elem('line', {y1: chart.y1 + label_y1, y2: chart.y2 + label_y2, x1: chart.x1+line_boost, x2: chart.x1+line_boost, }, 'label-line');
+                };
             });
         };
 
