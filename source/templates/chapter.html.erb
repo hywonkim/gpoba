@@ -25,7 +25,7 @@ layout: layout
 
         /* default bg */
         .chapter-hero {
-            background-image: url('<%= img_path + locals[:image][0].to_s %>');
+            background-image: url('<%= img_path + '/' + locals[:image][0].to_s %>');
             <% if locals[:image_align] %>
                 background-position: <%= locals[:image_align] %>;
             <% end %>

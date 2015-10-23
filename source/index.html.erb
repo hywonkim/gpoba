@@ -8,14 +8,14 @@ title: home
 
         /* cover image */
         #cover {
-            background-image: url('<%= img_path + data.site.cover_image[0].to_s %>');
+            background-image: url('<%= img_path + '/' + data.site.cover_image[0].to_s %>');
         }
         <% if data.site.cover_image.length > 1 %>
         <% data.site.breakpoints.values.each_with_index do |size, index| %>
             <% next if index == 0 %>
             <% break if index == data.site.cover_image.length %>
                 @media (min-width: <%= (size/16) %>em) {
-                  #cover { background-image: url('<%= img_path + data.site.cover_image[index].to_s %>'); }
+                  #cover { background-image: url('<%= img_path + '/' + data.site.cover_image[index].to_s %>'); }
                 }
             <% end %>
         <% end %>
@@ -23,14 +23,14 @@ title: home
         /* donors section */
         <% sitemap.where(:chapter => "home", :type => "billboard").order_by(:order).all.each do |billboard| %>
             #donors {
-                background-image: url('<%= img_path + billboard.data.background[0].to_s %>');
+                background-image: url('<%= img_path + '/' + billboard.data.background[0].to_s %>');
             }
             <% if billboard.data.background.length > 1 %>
             <% data.site.breakpoints.values.each_with_index do |size, index| %>
                 <% next if index == 0 %>
                 <% break if index == billboard.data.background.length %>
                     @media (min-width: <%= (size/16) %>em) {
-                      #cover { background-image: url('<%= img_path + billboard.data.background[index].to_s %>'); }
+                      #cover { background-image: url('<%= img_path + '/' + billboard.data.background[index].to_s %>'); }
                     }
                 <% end %>
             <% end %>

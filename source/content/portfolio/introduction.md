@@ -19,4 +19,4 @@ FY15 was a strong year for GPOBA, with five new grant agreements signed for subs
 - **Eight new TA activities were initiated**, totaling $1.4 million.
 - **Ten new knowledge dissemination activities** were undertaken for $1.7 million.
 
-Details of GPOBA’s complete portfolio and disbursements to date can be found in the [Appendices](localhost:4567/chapters/appendices) section.
+Details of GPOBA’s complete portfolio and disbursements to date can be found in the [Appendices](/chapters/appendices) section.

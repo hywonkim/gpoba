@@ -10,7 +10,7 @@ logo: logos/gpoba
 
 # feature image on the homepage
 cover_image:
-  - media/site-cover@2000.jpg
+  - /media/site-cover@2000.jpg
 
 # PDF version of the report for download
 download_version: assets/media/gpoba_2015-single-web-rev-1.2.0.pdf
