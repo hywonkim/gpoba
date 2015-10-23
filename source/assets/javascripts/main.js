@@ -1,26 +1,32 @@
 //= require 'jquery'
 //= require filament-tablesaw/dist/tablesaw.js
 
-// namespace for this site's custom code
-var gpoba = {};
-
 // =============================================================================
 // Modules
 // =============================================================================
+
 //= require modules/gpoba.sticky
-// require modules/gpoba.graph
+//= require modules/gpoba.graph
+
+// initialize the global namespace object if it doesn't already exist
+var gpoba = window.gpoba || {};
 
 // =============================================================================
 // Global/init logic
 // -> let's do this
 // =============================================================================
 
-
 jQuery(function($) {
     // make jump navs 'sticky' on scroll
+    // -> if there is a jump nav on this page
     if ($(".js-sticky").length > 0) gpoba.sticky.init(".js-sticky", ".js-highlight", ".js-sticky-stop");
-    if ($(".js-chart").length > 0) gpoba.chartist.init();
-    gpoba.tables.init();
+    // if ($(".js-chart").length > 0) gpoba.chartist.init();
+
+    // gpoba.graph.create('.ct-figure-03', '/content/overview/graphs/figure03.json', 'line');
+    gpoba.graph.create('.ct-figure-04', '/content/overview/graphs/figure04.json');
+
+    // run Tablesaw for responsive tables
+    $( document ).trigger( "enhance.tablesaw" );
 });
 
 

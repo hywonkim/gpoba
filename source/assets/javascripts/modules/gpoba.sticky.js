@@ -1,4 +1,6 @@
-gpoba || gpoba = {};
+//= require 'jquery'
+
+var gpoba = window.gpoba || {};
 
 // Sticky module
 // -> make an element "sticky" (fixed position) depending on scroll position
