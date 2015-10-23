@@ -29,17 +29,18 @@ gpoba.chart = (function($) {
                 },
                 axisY:{
                     offset: 70,
-                    showGrid: false
+                    showGrid: false,
+                    showLabel: false,
                 },
                 axisX: {
                     showLabel: false,
-                    showGrid: false
+                    showGrid: false,
                 }
             },
             large: {
                 horizontalBars: true,
                 axisY: {
-                  offset: 100
+                  offset: 100,
                 }
             }
         },
@@ -52,47 +53,84 @@ gpoba.chart = (function($) {
                 ['screen and (min-width: ' + exports.breakpoints.bar + ')', exports.settings.bar.large]
             ]).on('draw', function(chart) {
                 if(chart.type === 'bar') {
-                    chart.element.attr({
-                        style: 'stroke-width: ' + exports.settings.bar.width
-                    });
+                    chart.element.attr({ style: 'stroke-width: ' + exports.settings.bar.width });
                 };
 
                 var offset = 0,
-                    label_y1 = 0,
-                    label_y2 = 0,
-                    text_y = 0,
-                    text2_y = 0,
-                    line_boost = 1,
-                    label_boost = 5;
+                    pointer_y1 = 0,
+                    pointer_y2 = 0,
+                    label_x = 0,
+                    label_y = 5,
+                    pointer_offset_x = 1,
+                    pointer_offset_y = 0,
+                    pointer_x1 = 0,
+                    pointer_x2 = 0;
 
-                // alternate top and bottom labels in horizontal layout
-                if (chart.seriesIndex%2 == 0) {
-                    offset = 50
-                    label_y1 = (exports.settings.bar.width/2 + 5)
-                    label_y2 = (exports.settings.bar.width/2 + 40)
-                    text_y = (exports.settings.bar.width/2 + 20)
+                // get the list of classes on the parent SVG element currently drawn
+                // -> DOMTokenList: https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList
+                var ctClassList = chart.element._node.nearestViewportElement.classList;
+
+                // horizontal orientation (larger screens)
+                // -> if this has a "ct-horizontal-bars" class, render horizontal labels
+                if (ctClassList.contains("ct-horizontal-bars")) {
+
+                    console.log("horizontal chart");
+                    // alternate top and bottom labels in horizontal layout
+                    if (chart.seriesIndex%2 == 0) {
+                        // bottom row
+                        pointer_y1 = (exports.settings.bar.width/2 + 5);
+                        pointer_y2 = (exports.settings.bar.width/2 + 40);
+                        label_x = (exports.settings.bar.width/2 + 30);
+                    } else {
+                        // top row
+                        pointer_y1 = (-exports.settings.bar.width/2 - 5);
+                        pointer_y2 = (-exports.settings.bar.width/2 - 40);
+                        label_x = (-exports.settings.bar.width/2 - 40);
+                    }
+                    if(chart.seriesIndex > 0){
+                        pointer_offset_x = 10;
+                        label_y = 15;
+                    }
+
+                // vertical orientation (smaller screens)
+                // -> stack labels vertically, to the right of the bar
                 } else {
-                    offset = -50
-                    label_y1 = (-exports.settings.bar.width/2 - 5)
-                    label_y2 = (-exports.settings.bar.width/2 - 40)
-                    text_y = (-exports.settings.bar.width/2 - 40)
-                }
+                    label_x = 0;
+                    pointer_offset_x = 0;
 
-                if(chart.seriesIndex > 0){
-                    line_boost = 10
-                    label_boost = 15
-                }
+                    if(chart.seriesIndex > 1) {
+                        pointer_offset_y = 10;
+                        label_x = pointer_offset_y;
+                    }
 
-                console.log("chart");
-                console.log(chart);
+                    if (chart.seriesIndex%2 == 0) {
+                        pointer_x1 = (exports.settings.bar.width/2 + 5);
+                        pointer_x2 = (exports.settings.bar.width/2 + 40);
+                        label_y = (exports.settings.bar.width/2 + 40);
+                    } else {
+                        pointer_x1 = (-exports.settings.bar.width/2 - 5);
+                        pointer_x2 = (-exports.settings.bar.width/2 - 40);
+                        label_y = (-exports.settings.bar.width/2 - 40);
+                    }
+                }
 
                 if (chart.type == 'bar') {
+                    // build the label
                     chart.element.parent().foreignObject(
-                            '<p class="label-element">' + chart.series.name + '<strong class="label-value"> ' + chart.series.data[0] + ' %</strong>'+'</p>',
-                            {x: chart.x1 + label_boost, y: chart.y2 + text_y, height:35, width:35 },
-                            'bar-label')
-                        .attr({ style: 'overflow: visible;' });
-                    chart.element.parent().elem('line', {y1: chart.y1 + label_y1, y2: chart.y2 + label_y2, x1: chart.x1+line_boost, x2: chart.x1+line_boost, }, 'label-line');
+                            '<p class="label-element"><strong class="label-value">' + chart.series.data[0] + '%</strong> ' + chart.series.name +'</p>',
+                            {
+                                x: chart.x1 + label_y,
+                                y: chart.y2 + label_x,
+                                height:20,
+                                width:200,
+                            }, 'bar-label').attr({ style: 'overflow: visible;' });
+                    // build the pointer
+                    chart.element.parent().elem('line', {
+                        y1: chart.y2 + pointer_y1 + pointer_offset_y,
+                        y2: chart.y2 + pointer_y2 + pointer_offset_y,
+                        x1: chart.x1 + pointer_offset_x + pointer_x1,
+                        x2: chart.x1 + pointer_offset_x + pointer_x2,
+                    }, 'label-line');
                 };
             });
         };
