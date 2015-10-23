@@ -7,7 +7,7 @@ var gpoba = window.gpoba || {};
 // -> Create a graph from figure data
 // -> uses Chartist.js
 // -----------------------------------------------------------------------------
-gpoba.graph = (function($) {
+gpoba.chart = (function($) {
     'use strict';
     var exports = {};
 

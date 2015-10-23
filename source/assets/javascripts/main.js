@@ -23,7 +23,7 @@ jQuery(function($) {
     // if ($(".js-chart").length > 0) gpoba.chartist.init();
 
     // gpoba.graph.create('.ct-figure-03', '/content/overview/graphs/figure03.json', 'line');
-    gpoba.graph.create('.ct-figure-04', '/content/overview/graphs/figure04.json');
+    gpoba.chart.create('.ct-figure-04', '/content/overview/graphs/figure04.json');
 
     // run Tablesaw for responsive tables
     $( document ).trigger( "enhance.tablesaw" );
