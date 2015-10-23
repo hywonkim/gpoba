@@ -92,12 +92,13 @@
 }
 
 .label-element{
-    font-size: fs(1);
+    font-size: fs(3);
     line-height: 100%;
+    color: lighten(theme(text secondary), 10);
 }
 
 .label-line {
-    stroke: theme(border, wash);
+    stroke: darken(theme(border), 10);
     stroke-width: 1px;
 
 }
