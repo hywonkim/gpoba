@@ -1,0 +1,87 @@
+donors:
+  - name: UKAid
+    filename: logos/ukaid
+    url: https://www.gov.uk/government/organisations/department-for-international-development/
+  - name: Australian Government Department of Foreign Affairs and Trade
+    filename: logos/australian-dfat
+    url: http://dfat.gov.au/
+  - name: International Finance Corporation
+    filename: logos/ifc
+    url: http://www.ifc.org/
+  - name: Swedish International Development Agency
+    filename: logos/sida
+    url: http://www.sida.se/English/
+  - name: Buitenlandse Zaken Ontwikkelingssamenwerking
+    filename: logos/belgian-bzos
+    url: http://diplomatie.belgium.be/nl/Beleid/Ontwikkelingssamenwerking/
+
+partners:
+  # - name: [partner name]
+  #   filename: [logo file path w/out extension]
+  #   url: [website]
+  - name: Surtigas
+    filename: logos/partner_logos/surtigas
+    url: http://www.surtigas.com.co/
+  - name: Promigas
+    filename: logos/partner_logos/promigas
+    url: http://www.promigas.com/
+
+flags:
+  # - country: [country name]
+  #   filename: [flag file path w/o extension]
+  - name: Armenia
+    filename: flags/Armenia
+  - name: Bangladesh
+    filename: flags/Bangladesh
+  - name: Bolivia
+    filename: flags/Bolivia
+  - name: Cameroon
+    filename: flags/Cameroon
+  - name: Colombia
+    filename: flags/Colombia
+  - name: Ethiopia
+    filename: flags/Ethiopia
+  - name: Ghana
+    filename: flags/Ghana
+  - name: Honduras
+    filename: flags/Honduras
+  - name: India
+    filename: flags/India
+  - name: Indonesia
+    filename: flags/Indonesia
+  - name: Kenya
+    filename: flags/Kenya
+  - name: Lesotho
+    filename: flags/Lesotho
+  - name: Liberia
+    filename: flags/Liberia
+  - name: Mali
+    filename: flags/Mali
+  - name: Mongolia
+    filename: flags/Mongolia
+  - name: Morocco
+    filename: flags/Morocco
+  - name: Mozambique
+    filename: flags/Mozambique
+  - name: Nepal
+    filename: flags/Nepal
+  - name: Nigeria
+    filename: flags/Nigeria
+  - name: Philippines
+    filename: flags/Philippines
+  - name: Senegal
+    filename: flags/Senegal
+  - name: Sri Lanka
+    filename: flags/Sri-Lanka
+  - name: Uganda
+    filename: flags/Uganda
+  - name: Vanuatu
+    filename: flags/Vanuatu
+  - name: Vietnam
+    filename: flags/Vietnam
+  - name: West Bank
+    filename: flags/West-Bank
+  - name: Yemen
+    filename: flags/Yemen
+  - name: Zambia
+    filename: flags/Zambia
