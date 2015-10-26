@@ -1,9 +1,1 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 3750 2500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <g id="Layer 1" transform="matrix(4.16667,0,0,4.16667,0,0)">
-        <rect x="0" y="-0.001" width="900" height="300.001" style="fill:rgb(251,209,19);fill-rule:nonzero;"/>
-        <rect x="0" y="300.001" width="900" height="149.999" style="fill:rgb(33,64,141);fill-rule:nonzero;"/>
-        <rect x="0" y="450" width="900" height="150" style="fill:rgb(207,32,40);fill-rule:nonzero;"/>
-    </g>
-</svg>
+<svg viewBox="0 0 3750 2500" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><g fill-rule="nonzero"><path fill="#FBD113" d="M0-.004h3750.003V1250H0z"/><path fill="#21408D" d="M0 1250.005h3750.003V1875H0z"/><path fill="#CF2028" d="M0 1875h3750.003v625.002H0z"/></g></svg>

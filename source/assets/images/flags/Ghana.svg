@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="-80 247 450 300" style="enable-background:new -80 247 450 300;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#006C40;}
-	.st1{fill:#FBD116;}
-	.st2{fill:#CE2028;}
-</style>
-<rect x="-80" y="247" class="st0" width="450" height="300"/>
-<rect x="-80" y="247" class="st1" width="450" height="200"/>
-<rect x="-80" y="247" class="st2" width="450" height="100"/>
-<path d="M145,347.1l32.5,100l-85.1-61.8h105.1l-85.1,61.8L145,347.1z"/>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1875 1250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g id="Layer 1" transform="matrix(4.16667,0,0,4.16667,0,0)">
+        <rect x="0" y="0" width="450" height="300" style="fill:rgb(12,108,63);fill-rule:nonzero;"/>
+        <rect x="0" y="0" width="450" height="200" style="fill:rgb(251,209,19);fill-rule:nonzero;"/>
+        <rect x="0" y="0" width="450" height="100" style="fill:rgb(207,32,40);fill-rule:nonzero;"/>
+        <g transform="matrix(0.223559,0,0,0.223559,28.3394,2.97212)">
+            <path d="M879.762,434.015L935.258,604.815L1114.85,604.815L969.556,710.375L1025.05,881.174L879.762,775.615L734.471,881.174L789.967,710.375L644.676,604.815L824.265,604.815L879.762,434.015Z" style="fill:black;"/>
+        </g>
+    </g>
 </svg>

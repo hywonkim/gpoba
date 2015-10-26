@@ -108,7 +108,7 @@ title: home
             <%= billboard.render %>
         <% end %>
         <ul class="billboard-gallery small align-middle">
-            <% data.logos_and_flags.donors.each do |donor| %>
+            <% data.affiliates.donors.each do |donor| %>
             <li class="gallery-item">
                 <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => donor.filename, :link => donor.url, :alt => donor.name }) %>
             </li>
@@ -136,5 +136,17 @@ title: home
                 </div>
             </li>
         <% end %>
+    </ul>
+</section>
+
+<!-- Flags & Sponsors -->
+<section class="panel">
+    <h1 class="panel-slug">Where we work</h1>
+    <ul class="gallery tiny">
+    <% data.flags.each do |country| %>
+        <li class="gallery-item">
+            <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => country.filename, :alt => country.name }) %>
+        </li>
+    <% end %>
     </ul>
 </section>
