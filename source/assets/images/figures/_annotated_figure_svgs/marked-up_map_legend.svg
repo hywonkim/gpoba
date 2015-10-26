@@ -1,0 +1,77 @@
+
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" viewBox="0 0 445 347" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="map-legend">
+
+    <g>
+
+        <text x="6.328px" y="191.526px" fill="#332732" class="legend-element sub-text">Subsidy Portfolio</text>
+
+        <path d="M68.747,216.618c0,-7.375 -5.988,-13.363 -13.363,-13.363c-7.375,0 -13.362,5.988 -13.362,13.363c0,7.375 5.987,13.362 13.362,13.362c7.375,0 13.363,-5.987 13.363,-13.362Z" fill="#5eabbc" class="legend-element sub" />
+
+        <text x="159.107px" y="191.526px" fill="#332732" class="legend-element sub-text">Technical Assistance</text>
+
+        <path d="M230.857,216.618c0,-7.375 -5.988,-13.363 -13.363,-13.363c-7.375,0 -13.362,5.988 -13.362,13.363c0,7.375 5.987,13.362 13.362,13.362c7.375,0 13.363,-5.987 13.363,-13.362Z" fill="#f5c958" class="legend-element ta" />
+
+        <text x="322.986px" y="191.526px" fill="#332732" class="legend-element sub-text">Program for Results</text>
+
+        <path d="M392.761,216.618c0,-7.375 -5.987,-13.363 -13.362,-13.363c-7.375,0 -13.363,5.988 -13.363,13.363c0,7.375 5.988,13.362 13.363,13.362c7.375,0 13.362,-5.987 13.362,-13.362Z" fill="#f3385a" class="legend-element p_for_r" />
+
+        <path d="M147.729,104.936c0,-7.375 -5.987,-13.363 -13.362,-13.363c-7.375,0 -13.363,5.988 -13.363,13.363c0,7.375 5.988,13.362 13.363,13.362c7.375,0 13.362,-5.987 13.362,-13.362Z" fill="#5dc08a" class="legend-element sub-ta" />
+
+        <path d="M310.735,104.798c0,-7.375 -5.988,-13.362 -13.363,-13.362c-7.375,0 -13.362,5.987 -13.362,13.362c0,7.375 5.987,13.363 13.362,13.363c7.375,0 13.363,-5.988 13.363,-13.363Z" fill="#f5a100" class="legend-element p_for_r-ta" />
+
+        <path d="M230.687,300.443c0,-7.375 -5.988,-13.362 -13.363,-13.362c-7.374,0 -13.362,5.987 -13.362,13.362c0,7.375 5.988,13.363 13.362,13.363c7.375,0 13.363,-5.988 13.363,-13.363Z" fill="#805b9c" class="legend-element p_for_r-sub-ta"/>
+
+        <text x="168.495px" y="334.565px" fill="#8c9aa7" class="legend-element sub-text">COMBINED SERVICES</text>
+
+        <text x="178.952px" y="34.777px" fill="#4d384b" class="legend-element title">LEGEND</text>
+
+        <text x="85.538px" y="80.434px" fill="#8c9aa7" class="legend-element sub-text">COMBINED SERVICES</text>
+
+        <text x="248.543px" y="80.434px" fill="#8c9aa7" class="legend-element sub-text">COMBINED SERVICES</text>
+
+        <path d="M55.283,169.574l0,-19.496l159.217,0l0,19.708" fill="none" stroke-width="1px" stroke="#dbd9da" class="legend-element line"/>
+
+        <path d="M220.493,169.83l0,-19.782c0,0 105.912,0.004 158.873,-0.014l0,19.496" fill="none" stroke-width="1px" stroke="#dbd9da" class="legend-element line"/>
+
+        <path d="M55.283,235.323l0,19.495l324.083,0l0,-19.495" fill="none" stroke-width="1px" stroke="#dbd9da" class="legend-element line"/>
+
+        <path d="M134.367,142.974l0,-19.708" fill="none" stroke-width="1px" stroke="#dbd9da" class="legend-element line"/>
+
+        <path d="M298.156,142.974l0,-19.708" fill="none" stroke-width="1px" stroke="#dbd9da" class="legend-element line"/>
+
+        <path d="M217.324,235.11l0,46.648" fill="none" stroke-width="1px" stroke="#dbd9da" class="legend-element line"/>
+
+        <g>
+
+            <rect x="127.472" y="143.056" width="13.79" height="13.955" fill="#ffffff" class="legend-element box" />
+
+            <path d="M134.367,144.824l0,10.42" fill="none" stroke-width="3px" stroke="#8c9aa7" class="legend-element plus"/>
+
+            <path d="M129.157,150.034l10.42,0" fill="none" stroke-width="3px" stroke="#8c9aa7" class="legend-element plus"/>
+
+        </g>
+
+        <g>
+
+            <rect x="210.429" y="248.035" width="13.79" height="13.955" fill="#ffffff" class="legend-element box"  />
+
+            <path d="M217.324,249.802l0,10.42" fill="none" stroke-width="3px" stroke="#8c9aa7" class="legend-element plus" />
+
+            <path d="M212.114,255.012l10.421,0" fill="none" stroke-width="3px" stroke="#8c9aa7" class="legend-element plus" />
+
+        </g>
+
+        <g>
+
+            <rect x="291.175" y="143.056" width="13.79" height="13.955" fill="#ffffff" class="legend-element box" />
+
+            <path d="M298.07,144.824l0,10.42" fill="none" stroke-width="3px" stroke="#8c9aa7" class="legend-element plus" />
+
+            <path d="M292.86,150.034l10.42,0" fill="none" stroke-width="3px" stroke="#8c9aa7" class="legend-element plus"/>
+
+        </g>
+
+    </g>
+</svg>
