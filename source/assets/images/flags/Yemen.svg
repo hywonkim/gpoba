@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="144 97 900 600" style="enable-background:new 144 97 900 600;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;}
-	.st1{fill:#CE2028;}
-</style>
-<desc>flag of Yemen</desc>
-<rect x="144" y="97" class="st0" width="900" height="600"/>
-<rect x="144" y="97" class="st1" width="900" height="200"/>
-<rect x="144" y="497" width="900" height="200"/>
-</svg>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="144 97 900 600"><style>.st0{fill:#FFFFFF;} .st1{fill:#CE2028;}</style><desc>flag of Yemen</desc><path class="st0" d="M144 97h900v600H144z"/><path class="st1" d="M144 97h900v200H144z"/><path d="M144 497h900v200H144z"/></svg>

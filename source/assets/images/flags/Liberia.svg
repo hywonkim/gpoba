@@ -1,15 +1,1 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 4750 2500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <g id="Layer 1" transform="matrix(4.16667,0,0,4.16667,0,0)">
-        <rect x="0" y="0" width="1140" height="600" style="fill:rgb(191,31,51);fill-rule:nonzero;"/>
-        <path d="M0,81.818L1140,81.818L0,81.818ZM0,190.91L1140,190.91L0,190.91ZM0,300L1140,300L0,300ZM0,409.091L1140,409.091L0,409.091ZM0,518.182L1140,518.182L0,518.182Z" style="fill:rgb(3,4,4);fill-rule:nonzero;"/>
-        <g transform="matrix(0.24,0,0,0.24,0,0)">
-            <path d="M0,2179.92L0,2138.26L4750,2138.26L4750,2179.92C3166.67,2179.92 1583.33,2179.92 0,2179.92ZM0,1725.38L0,1683.71L4750,1683.71L4750,1725.38C3166.67,1725.38 1583.33,1725.38 0,1725.38ZM0,1270.83L0,1229.17L4750,1229.17L4750,1270.83C3166.67,1270.83 1583.33,1270.83 0,1270.83ZM0,816.287L0,774.62L4750,774.62L4750,816.287C3166.67,816.287 1583.33,816.287 0,816.287ZM0,361.741L0,320.074L4750,320.074L4750,361.741C3166.67,361.741 1583.33,361.741 0,361.741Z" style="fill:white;fill-rule:nonzero;"/>
-        </g>
-        <rect x="0" y="0" width="272.727" height="272.728" style="fill:rgb(32,47,100);fill-rule:nonzero;"/>
-        <g transform="matrix(0.24,0,0,0.24,0,0)">
-            <path d="M367.8,843.983L444.338,608.422L243.958,462.835L491.644,462.835L568.182,227.273L644.72,462.835L892.406,462.835L692.026,608.422L768.563,843.983L568.182,698.395L367.8,843.983Z" style="fill:white;"/>
-        </g>
-    </g>
-</svg>
+<svg viewBox="0 0 4750 2500" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path fill="#BF1F33" fill-rule="nonzero" d="M0 0h4750.004v2500.002H0z"/><path d="M0 340.91h4750.004H0zm0 454.55h4750.004H0zM0 1250h4750.004H0zm0 454.547h4750.004H0zm0 454.546h4750.004H0z" fill="#030404" fill-rule="nonzero"/><path d="M0 2179.922v-41.66h4750.004v41.66H0zm0-454.54v-41.67h4750.004v41.67H0zm0-454.55v-41.66h4750.004v41.66H0zm0-454.544V774.62h4750.004v41.668H0zM0 361.74v-41.666h4750.004v41.667H0z" fill="#fff" fill-rule="nonzero"/><path fill="#202F64" fill-rule="nonzero" d="M0 0h1136.363v1136.368H0z"/><path d="M367.8 843.984l76.538-235.562-200.38-145.587h247.686l76.538-235.562 76.54 235.562h247.685l-200.38 145.587 76.537 235.562-200.382-145.588L367.8 843.984z" fill="#fff"/></svg>
