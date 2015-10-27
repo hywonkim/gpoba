@@ -22,9 +22,144 @@ partners:
   # - name: [partner name]
   #   filename: [logo file path w/out extension, relative to images folder]
   #   url: [website]
-  - name: Surtigas
-    filename: logos/surtigas
-    url: http://www.surtigas.com.co/
+  - name: Aguas de Moçambique
+    filename: logos/aguas_de_mocambique
+    url: 
+  - name: Amendis 
+    filename: logos/amendis
+    url: http://www.client.veoliaenvironnement.ma/Tanger/Pages/Tanger.aspx
+  - name: ARB Apex Bank Ltd.
+    filename: logos/arb_apex
+    url: http://www.arbapexbank.com/
+  - name: Cameroon Water Utilities Corporation
+    filename: logos/cam_water
+    url:  
+  - name: Camerounaise des Eaux
+    filename: logos/cde
+    url: http://www.la-cde.com/en/home.html
+  - name: Communications Regulatory Commission of Mongolia
+    filename: logos/communication_mongolia
+    url: http://www.crc.gov.mn/
+  - name: East Meets West Foundation 
+    filename: logos/east_meets_west
+    url: http://thrivenetworks.org/
+  - name: Electricity Company of Ghana Limited
+    filename: logos/ecg
+    url: http://www.ecgonline.info/
+  - name: FHIS
+    filename: logos/fhis
+    url: http://www.fhis.hn/
+  - name: FIPAG
+    filename: logos/fipag
+    url: http://www.fipag.co.mz/
+  - name: Gases de La Guajira
+    filename: logos/gases_de_la_guajira
+    url: http://www.gasesdelaguajira.com/index/
+  - name: Gases de Occidente
+    filename: logos/gases_de_occidente
+    url: http://www.gasesdeoccidente.com/
+  - name: Gases del Caribe
+    filename: logos/gases_del_caribe
+    url: http://www.gascaribe.com/seccion/inicio.html
+  - name: Government of Mali
+    filename: logos/mali
+    url: 
+  - name: Government of Nepal
+    filename: logos/government_of_nepal
+    url: http://www.nepal.gov.np/
+  - name: Government of Vanuatu
+    filename: logos/government_of_vanuatu
+    url: https://governmentofvanuatu.gov.vu/
+  - name: Health Insurance Fund
+    filename: logos/health_insurance_fund
+    url: http://www.hifund.org/
+  - name: Hygeia Group
+    filename: logos/hygeia
+    url: http://www.hygeiagroup.com/Home.aspx
+  - name: Infrastructure Development Company Limited
+    filename: logos/id_col
+    url: http://www.idcol.org/
+  - name: Kenya Power
+    filename: logos/kenya_power
+    url: http://www.kplc.co.ke/
+  - name: K-Rep Bank
+    filename: logos/krep_bank
+    url: http://www.k-repbank.com/
+  - name: Liberia Electricity Corporation
+    filename: logos/liberia_electricity_corp
+    url: http://www.lecliberia.com/
+  - name: Lydec
+    filename: logos/lydec
+    url: https://www.lydec.ma/
+  - name: Manila Water
+    filename: logos/manila_water
+    url: http://www.manilawater.com/Pages/Home.aspx
+  - name: Marie Stopes Uganda
+    filename: logos/msi_uganda
+    url: http://mariestopes.org/where-in-the-world/uganda
+  - name: Naandi Foundation
+    filename: logos/naandi
+    url: http://www.naandi.org/
+  - name: Nairobi City Water and Sewerage Company
+    filename: logos/nairobi_water
+    url: https://www.nairobiwater.co.ke/
+  - name: National Water and Sewerage Corporation
+    filename: logos/national_water_sewerage_corporation
+    url: https://www.nwsc.co.ug/
+  - name: National Water Supply & Drainage Board
+    filename: logos/national_water_supply_board
+    url: http://www.waterboard.lk/
+  - name: Ministerio de Obras Públicas Servicios y Vivienda
+    filename: logos/obras
+    url: http://www.oopp.gob.bo/
+  - name: ONAS
+    filename: logos/onas
+    url: http://www.onas.sn/
+  - name: PALYJA
+    filename: logos/palyja
+    url: http://en.palyja.co.id/ 
+  - name: PDAM Surya Sembada Kota Surabaya
+    filename: logos/pdam
+    url: http://www.pdam-sby.go.id/
+  - name: PharmAccess Foundation
+    filename: logos/pharm_access
+    url: http://www.pharmaccess.org/
   - name: Promigas
     filename: logos/promigas
     url: http://www.promigas.com/
+  - name: R2E2
+    filename: logos/r2e2
+    url: http://www.r2e2.am/enversion/index.php
+  - name: Radem
+    filename: logos/radem
+    url: http://www.radem.ma/
+  - name: SANAA Honduras
+    filename: logos/sanaa
+    url: http://www.sanaa.hn/
+  - name: SOUL
+    filename: logos/soul_for_development
+    url: http://www.soul-yemen.org/
+  - name: Surtigas
+    filename: logos/surtigas
+    url: http://www.surtigas.com.co/
+  - name: Town Development Fund
+    filename: logos/town_development_fund
+    url: http://www.tdf.org.np/new/
+  - name: Umeme
+    filename: logos/umeme
+    url: http://www.umeme.co.ug/
+  - name: UNELCO
+    filename: logos/unelco
+    url: http://www.unelco.com.vu/en/
+  - name:  Vanuatu Utilities & Infrastructure
+    filename: logos/vui
+    url: 
+  - name: WaterHealth International
+    filename: logos/water_health
+    url: http://www.waterhealth.com/
+  - name: Water Services Trust Fund, Kenya
+    filename: logos/water_services_kenya
+    url: http://www.waterfund.go.ke/
+  - name: ZESCO
+    filename: logos/zesco
+    url: http://www.zesco.co.zm/
