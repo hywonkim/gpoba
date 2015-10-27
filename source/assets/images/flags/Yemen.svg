@@ -1,1 +1,14 @@
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="144 97 900 600"><style>.st0{fill:#FFFFFF;} .st1{fill:#CE2028;}</style><desc>flag of Yemen</desc><path class="st0" d="M144 97h900v600H144z"/><path class="st1" d="M144 97h900v200H144z"/><path d="M144 497h900v200H144z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="900px" height="600px" viewBox="0 0 900 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Flag_of_Yemen</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flag_of_Yemen" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-path" fill="#000000" sketch:type="MSShapeGroup" x="0" y="0" width="900" height="600"></rect>
+            <rect id="Rectangle-path" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="900" height="400"></rect>
+            <rect id="Rectangle-path" fill="#CE1126" sketch:type="MSShapeGroup" x="0" y="0" width="900" height="200"></rect>
+        </g>
+    </g>
+</svg>

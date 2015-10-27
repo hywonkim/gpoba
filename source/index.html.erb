@@ -43,11 +43,12 @@ title: home
     <!-- GPOBA logo -->
     <%= partial("layouts/partials/logo", :locals => { :classes => "hero-logo" }) %>
 
+    <!-- GPOBA home btn -->
     <a class="hero-button" href="http://gpoba.org" target="_blank">
         <%= partial("layouts/partials/icon", :locals => { :id => "arrow-left-outline", :classes => "button-icon before", :fallback_type => "text", :fallback => "&lsaquo;" }) %>
         GPOBA Home
     </a>
-
+    <!-- Download PDF btn -->
     <a class="hero-button right" href="https://www.gpoba.org/sites/gpoba/files/2015annualreport.pdf" target="_blank">
         <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "button-icon before", :fallback_type => "text", :fallback => "" }) %>
         Download
@@ -67,7 +68,7 @@ title: home
 <article class="chapter" role="main" id="intro">
 
     <!-- Executive summary -->
-    <div class="l-wrapper narrow chapter-content" id="summary">
+    <div class="chapter-content dropcap" id="summary">
         <% sitemap.where(:chapter => "home", :type => "introduction").order_by(:order).all.each do |summary| %>
             <h1 class="chapter-headline"><%= summary.data.title %></h1>
             <%= summary.render %>
@@ -142,11 +143,42 @@ title: home
 <!-- Flags & Sponsors -->
 <section class="panel">
     <h1 class="panel-slug">Where we work</h1>
-    <ul class="gallery tiny">
-    <% data.flags.each do |country| %>
-        <li class="gallery-item">
-            <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => country.filename, :alt => country.name }) %>
-        </li>
-    <% end %>
-    </ul>
+    <div class="l-wrapper">
+        <ul class="gallery tiny align-middle">
+        <% data.flags.each do |country| %>
+            <li class="gallery-item">
+                <% unless country.format.present? %>
+                    <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => country.filename, :alt => country.name }) %>
+                <% else %>
+                    <%= image_tag country.filename + "." + country.format, :alt => country.name, :class => "logo" %>
+                <% end %>
+            </li>
+        <% end %>
+        </ul>
+    </div>
+</section>
+
+<!-- Partners -->
+<section class="panel">
+    <h1 class="panel-slug">Our partners</h1>
+    <div class="l-wrapper">
+        <ul class="gallery small align-middle">
+        <% data.affiliates.partners.each do |partner| %>
+            <li class="gallery-item">
+                <% link = partner.url.present? ? partner.link : false %>
+                <%# unless partner.format.present? %>
+                    <%# partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => partner.filename, :link => link, :alt => partner.name }) %>
+                <%# else %>
+                    <% if partner.url.present? %>
+                    <a class="logo" href="<%= partner.url %>">
+                    <% end %>
+                        <%= image_tag partner.filename + ".png", :alt => partner.name %>
+                    <% if partner.url.present? %>
+                    </a>
+                    <% end %>
+                <%# end %>
+            </li>
+        <% end %>
+        </ul>
+    </div>
 </section>

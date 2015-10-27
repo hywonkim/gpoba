@@ -1,1 +1,13 @@
-<svg viewBox="0 0 3750 2500" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path fill="#DA2727" fill-rule="nonzero" d="M0 0h3750.003v2500.002H0z"/><path d="M1371.66 1815.1l168.39-518.24-440.84-320.288h544.9l168.39-518.24 168.392 518.24h544.9l-440.84 320.29 168.39 518.24-440.84-320.29-440.84 320.29z" fill="#F6EB14"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="900px" height="600px" viewBox="0 0 900 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Vietnam</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Vietnam" sketch:type="MSLayerGroup">
+            <path d="M0,600 L900,600 L900,0 L0,0 L0,600 Z" id="Fill-1" fill="#C72A2A" sketch:type="MSShapeGroup"></path>
+            <path d="M329.199,435.623 L369.611,311.246 L263.81,234.377 L394.587,234.377 L435,110 L475.413,234.377 L606.19,234.377 L500.389,311.246 L540.801,435.623 L435,358.754 L329.199,435.623" id="Fill-2" fill="#F4EA2A" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

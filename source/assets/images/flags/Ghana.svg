@@ -1,12 +1,17 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 1875 1250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <g id="Layer 1" transform="matrix(4.16667,0,0,4.16667,0,0)">
-        <rect x="0" y="0" width="450" height="300" style="fill:rgb(12,108,63);fill-rule:nonzero;"/>
-        <rect x="0" y="0" width="450" height="200" style="fill:rgb(251,209,19);fill-rule:nonzero;"/>
-        <rect x="0" y="0" width="450" height="100" style="fill:rgb(207,32,40);fill-rule:nonzero;"/>
-        <g transform="matrix(0.223559,0,0,0.223559,28.3394,2.97212)">
-            <path d="M879.762,434.015L935.258,604.815L1114.85,604.815L969.556,710.375L1025.05,881.174L879.762,775.615L734.471,881.174L789.967,710.375L644.676,604.815L824.265,604.815L879.762,434.015Z" style="fill:black;"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="900px" height="600px" viewBox="0 0 900 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Ghana</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Ghana" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-path" fill="#0C6C3F" sketch:type="MSShapeGroup" x="0" y="0" width="900" height="600"></rect>
+            <rect id="Rectangle-path" fill="#FBD113" sketch:type="MSShapeGroup" x="0" y="0" width="900" height="400"></rect>
+            <rect id="Rectangle-path" fill="#CF2028" sketch:type="MSShapeGroup" x="0" y="0" width="900" height="200"></rect>
+            <g id="Group" transform="translate(344.622792, 199.993452)" fill="#000000" sketch:type="MSShapeGroup">
+                <path d="M105.413434,0.00670677 L130.226694,76.3744612 L210.52551,76.3744612 L145.561948,123.572237 L170.374314,199.939545 L105.413434,152.742216 L40.4512126,199.939545 L65.2644731,123.572237 L0.302251768,76.3744612 L80.5997263,76.3744612 L105.413434,0.00670677 L105.413434,0.00670677 Z" id="Shape"></path>
+            </g>
         </g>
     </g>
 </svg>

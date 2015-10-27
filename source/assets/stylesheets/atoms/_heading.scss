@@ -90,13 +90,19 @@ h6, .zeta, %zeta {
 // -------------------------------------------------------------------------- */
 // -> specific applications headings or groups of headings
 
-.highlight {
+.title, %title {
+    @extend %beta;
+    @extend %highlight;
+}
+
+.highlight, %highlight {
+    @include chapter_highlights;
     color: theme(highlight);
 
     > a { color: inherit; }
 }
 
-.slug {
+.slug, %slug {
     @extend %epsilon;
     @extend %font-body--bold;
     display: block;

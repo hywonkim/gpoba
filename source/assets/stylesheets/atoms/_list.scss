@@ -22,8 +22,37 @@ li {
 ol, ul {
     margin-left: 1.5em; /* bump to the right a little @ mobile sizes so the numbers/bullets don't run off */
     padding-left: 0;
+}
 
-    @include respond-to('small') {
-        margin-left: 0;
+// make a definition list display like a table
+dl.table {
+    $col: 6em;
+
+    @include clearfix;
+    // @include inline-dl(true);
+    line-height: 1.4;
+
+    dt {
+        display: block;
+        clear: left;
+        margin-top: 1em;
+
+        @include respond-to('xsmall') {
+            float: left;
+            width: $col;
+            margin-right: -100%;
+        }
+    }
+
+    dd {
+        display: block;
+        margin: 0;
+
+        @include respond-to('xsmall') {
+            float: left;
+            margin: 1em 0 0 $col;
+        }
     }
 }
+dt { @extend %font-body--bold; }
+dd { @extend %font-body; }

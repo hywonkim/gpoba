@@ -9,7 +9,7 @@
 @import "../atoms/heading";
 @import "../molecules/main_nav";
 
-$hero-pointer-h: 37px;
+$hero-pointer-h: fs(7);
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -129,17 +129,18 @@ $hero-pointer-h: 37px;
     @extend %base-transition;
     @include font-scale(2);
     display: block;
-    // @include border(top)
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: $hero-pointer-h;
     text-align: center;
+    line-height: $hero-pointer-h;
     color: theme(text tertiary, reverse);
     background-color: darken(theme('bg', 'reverse'), 5);
 
     &:hover, &:active {
+        color: theme(text primary, reverse);
         background-color: theme(highlight);
         border: none;
     }
@@ -150,9 +151,6 @@ $hero-pointer-h: 37px;
         @extend .icon;
         height: $h;
         fill: theme(text primary, reverse);
-        // position: absolute;
-        // top: 50%;
-        // left: 50%;
-        // margin: -($h/2) 0 -($h/2);
         display: inline-block;
+        vertical-align: middle;
     }

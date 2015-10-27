@@ -92,11 +92,10 @@ address {
 
 // the first paragraph, often set slightly bigger
 .lead {
-    // @extend %dropcap;
     @include font-scale(3);
 
     &:first-letter {
-        @include chapter_highlights(color);
+        @include chapter_highlights;
         @extend %font-accent--bold;
         float: left;
         margin: 0 0.06em 0 -0.04em;
@@ -110,7 +109,7 @@ address {
 .caption, figcaption {
     @extend %font-body;
     @include font-scale(2);
-    color: theme('text' 'secondary');
+    color: theme('text' 'tertiary');
 }
 
 // base styles for menu items

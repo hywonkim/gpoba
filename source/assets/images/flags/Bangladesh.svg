@@ -1,1 +1,13 @@
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 300"><style>.st0{fill:#006B4F;} .st1{clip-path:url(#SVGID_2_);fill:#EE2E43;}</style><path class="st0" d="M0 0h500v300H0z"/><defs><path id="SVGID_1_" d="M0 0h500v300H0z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" overflow="visible"/></clipPath><path class="st1" d="M225 50c55.2 0 100 44.8 100 100s-44.8 100-100 100-100-44.8-100-100S169.8 50 225 50"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1000px" height="600px" viewBox="0 0 1000 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Bangladesh</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Bangladesh" sketch:type="MSLayerGroup">
+            <path d="M0,0 L1000,0 L1000,600 L0,600 L0,0 Z" id="Shape" fill="#006B4F" sketch:type="MSShapeGroup"></path>
+            <path d="M450,100 C560.4,100 650,189.6 650,300 C650,410.4 560.4,500 450,500 C339.6,500 250,410.4 250,300 C250,189.6 339.6,100 450,100" id="Shape" fill="#EE2E43" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

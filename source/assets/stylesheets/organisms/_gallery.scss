@@ -41,6 +41,7 @@ There are three (column) size variations: small, medium, and large. Medium is de
 */
 
 @import "../core/*";
+@import "../atoms/media";
 
 $gallery-gutter: $gutter;
 
@@ -62,27 +63,42 @@ $gallery-gutter: $gutter;
     @include unstyled-list;
     @include rem(margin-top, $gutter);
     display: block; // in case flexbox isn't supported
-    @include display(flex);
-    @include flex-direction(row);
-    @include flex-wrap(wrap);
-    @include align-items(stretch);
     position: relative;
     margin-bottom: 0;
     margin-right: -($gallery-gutter); // to prevent uneven column widths
     padding-bottom: 0;
     font-size: 0;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(stretch);
 }
 
 /* Modifiers
 // ---------------------------------------------------------------------------*/
 
+// "tiny" columns
+// -> see .gallery-item submodule for styles
+.gallery.tiny {
+    @include respond-to('xsmall') {
+        @include display(flex);
+    }
+}
+
 // "small" columns
 // -> see .gallery-item submodule for styles
-.gallery.small {}
+.gallery.small {
+    @include respond-to('xsmall') {
+        @include display(flex);
+    }
+}
 
 // "large" columns
 // -> see .gallery-item submodule for styles
-.gallery.large {}
+.gallery.large {
+    @include respond-to('small') {
+        @include display(flex);
+    }
+}
 
 // align everything to the middle
 .gallery.align-middle {

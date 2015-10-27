@@ -36,6 +36,8 @@
 }
 
 .box-content {
+    @extend .content;
+
     img {
         margin-top: 1em;
         margin-bottom: 1em;
