@@ -3,6 +3,7 @@ title: RBF in the Solid Waste Management sector
 chapter: center of expertise
 order: 7
 type: box
+box_number: 6
 ---
 
 With rapid urbanization, population growth, and new economic activity, municipal solid waste is growing at alarming rates. In low and lower middle income countries, it is expected to triple by 20251. At the same time, solid waste management (SWM) systems in most developing countries are critically underfunded. Municipalities are unable to improve services unless they can increase fee collection rates, while residents are unwilling to pay for inadequate services. The enormous amount of uncollected or improperly disposed of waste negatively effects public health, the environment, economic development, and quality of life, with the urban poor suffering the most, as they are more likely to live near unsanitary dumpsites.

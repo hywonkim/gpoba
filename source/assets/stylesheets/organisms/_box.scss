@@ -4,6 +4,7 @@
 // ========================================================================== */
 
 @import "../core/*";
+@import "../atoms/heading";
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -27,12 +28,21 @@
 /* Submodules
 // -------------------------------------------------------------------------- */
 
+.box-slug {
+    @extend .slug;
+    @include font-scale(2);
+    margin-top: -0.5em;
+    color: theme(text tertiary);
+}
+
 .box-title {
     @extend %font-accent--bold;
+    @include font-scale(4);
     @include chapter_highlights;
-    font-size: fs(4);
     text-align: center;
     color: theme(highlight);
+
+    .box-slug + & { margin-top: 0.25em; }
 }
 
 .box-content {

@@ -50,7 +50,11 @@ layout: layout
     <nav class="chapter-jump_nav js-sticky">
         <ol>
             <% sections.each_with_index do |section, index| %>
-            <li><a href="#<%= section.data.title.urlize %>" class="jump_nav-item js-highlight"><%= section.data.title %></a></li>
+                <% if section.data.type == "box" %>
+                    <li><a class="jump_nav-item js-highlight" href="#<%= section.data.box_number.present? ? "box" + section.data.box_number.to_s : section.data.title.urlize %>"><% if section.data.box_number.present? %><strong>Box <%= section.data.box_number %>:</strong> <% end %><%= section.data.title %></a></li>
+                <% else %>
+                    <li><a class="jump_nav-item js-highlight" href="#<%= section.data.title.urlize %>"><%= section.data.title %></a></li>
+                <% end %>
             <% end %>
         </ol>
     </nav>
@@ -79,8 +83,8 @@ layout: layout
             </section>
         <% end %>
         <% if section.data.type == "box" %>
-            <aside class="box<% if section.data.type.present? %> <%= section.data.type %><% end %>" id="<%= section.data.title.urlize %>">
-                <h3 class="slug">Box</h3>
+            <aside class="box" id="<%= section.data.box_number.present? ? "box" + section.data.box_number.to_s : section.data.title.urlize %>">
+                <span class="box-slug">Box <% if section.data.box_number.present? %><%= section.data.box_number %><% end %></span>
                 <h1 class="box-title"><%= section.data.title %></h2>
                 <div class="box-content">
                     <%= section.render %>
