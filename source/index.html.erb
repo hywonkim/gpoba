@@ -69,7 +69,7 @@ title: home
 <article class="chapter" role="main" id="intro">
 
     <!-- Executive summary -->
-    <div class="chapter-content" id="summary">
+    <div class="chapter-content dropcap" id="summary">
         <% sitemap.where(:chapter => "home", :type => "introduction").order_by(:order).all.each do |summary| %>
             <h1 class="chapter-headline"><%= summary.data.title %></h1>
             <%= summary.render %>

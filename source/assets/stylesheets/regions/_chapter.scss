@@ -77,15 +77,13 @@ $chapter-padding: fs(6);
 
 // section header
 .chapter-subtitle {
-    @extend %beta;
-    @include chapter_highlights;
+    @extend .title;
     text-align: center;
     margin: 0.5em auto 0 auto;
     padding: 0 $gutter-outside;
     margin-bottom: 0.5em;
     // max-width: add_outside_gutters($layout-w);
     letter-spacing: -0.02em;
-    color: theme(highlight);
 
     @include respond-to('medium') { max-width: add_outside_gutters($layout-w--narrow); }
     @include respond-to('large') { max-width: add_outside_gutters($layout-w); }
@@ -118,7 +116,7 @@ $chapter-padding: fs(6);
     &.first {
         border-top: none;
 
-        p:first-of-type, p:first-child {
+        > p:first-of-type, > p:first-child {
             @extend .lead;
         }
     }
@@ -143,8 +141,8 @@ $chapter-padding: fs(6);
 }
 
 .chapter-content {
-    @extend %l-wrapper--narrow;
-    @include rem(margin-bottom, fs(7));
+    @extend .content;
+    margin-top: 0;
 
     .chapter-section > & {
         margin-bottom: 0;

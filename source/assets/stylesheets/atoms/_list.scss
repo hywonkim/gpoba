@@ -22,10 +22,6 @@ li {
 ol, ul {
     margin-left: 1.5em; /* bump to the right a little @ mobile sizes so the numbers/bullets don't run off */
     padding-left: 0;
-
-    @include respond-to('small') {
-        margin-left: 0;
-    }
 }
 
 // make a definition list display like a table

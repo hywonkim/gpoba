@@ -1,7 +1,7 @@
 <% wrap_layout :layout do %>
     <%= partial "layouts/partials/header" %>
-    <main class="l-wrapper narrow">
-        <h1 class="beta highlight"><%= current_page.data.title %></h1>
+    <main class="content">
+        <h1 class="title"><%= current_page.data.title %></h1>
         <%= yield %>
     </main>
 <% end %>
