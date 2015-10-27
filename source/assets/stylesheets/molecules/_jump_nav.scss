@@ -15,7 +15,10 @@
     width: 180px;
     z-index: $z--high;
 
-    ul, ol { margin: 0; }
+    ul, ol {
+        margin: 0;
+        list-style: none;
+    }
 
     li { margin: 0; }
 
@@ -28,11 +31,11 @@
     $border-w: 4px;
 
     @extend .nav-item;
+    @include font-scale(1);
     display: block;
     position: relative;
     margin: 0;
     padding: 0.5em 0 0.5em $gutter;
-    font-size: fs(2);
     line-height: 1.2;
     color: lighten(theme(text tertiary), 20);
 
@@ -52,4 +55,24 @@
             bottom: -($border-w/2);
         }
     }
+
+    > strong { @extend %font-body; }
 }
+
+.jump_nav-top {
+    @extend .jump_nav-item;
+    @include border(top);
+    margin-top: 1em;
+    padding-top: 1.6em;
+    font-size: 0.7em;
+    font-weight: normal;
+
+    &:hover {
+        > .jump_nav-top-icon { fill: theme(text primary); }
+    }
+}
+
+    .jump_nav-top-icon {
+        @extend %base-transition;
+        fill: theme(text tertiary);
+    }
