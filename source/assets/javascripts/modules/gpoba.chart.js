@@ -75,6 +75,7 @@ gpoba.chart = (function($) {
                 };
 
                 var offset = 0,
+                    left_align = '',
                     pointer_y1 = 0,
                     pointer_y2 = 0,
                     label_x = 0,
@@ -91,24 +92,36 @@ gpoba.chart = (function($) {
                 // horizontal orientation (larger screens)
                 // -> if this has a "ct-horizontal-bars" class, render horizontal labels
                 if (ctClassList.contains("ct-horizontal-bars")) {
+                    
+                    // chart boost to separate as chart grows in size to reduce overlap.
+                    if (chart.seriesIndex ==  0) { 
+                        var index = 1;
+                        var label_x_offset = 3;
+                    } else {
+                        var index = chart.seriesIndex;
+                        var label_x_offset = 0;
+                    }
 
-                    console.log("horizontal chart");
+                    var chartboost = ( 3.5 / (index + .8 ) + 1 );
+                    
                     // alternate top and bottom labels in horizontal layout
                     if (chart.seriesIndex%2 == 0) {
                         // bottom row
                         pointer_y1 = (exports.settings.bar.width/2 + 5);
-                        pointer_y2 = (exports.settings.bar.width/2 + 40);
-                        label_x = (exports.settings.bar.width/2 + 30);
+                        pointer_y2 = (exports.settings.bar.width/2 + 40) * chartboost;
+                        label_x = (exports.settings.bar.width/2 + (32 + label_x_offset)) * chartboost;
                     } else {
                         // top row
                         pointer_y1 = (-exports.settings.bar.width/2 - 5);
-                        pointer_y2 = (-exports.settings.bar.width/2 - 40);
-                        label_x = (-exports.settings.bar.width/2 - 40);
+                        pointer_y2 = (-exports.settings.bar.width/2 - 40) * chartboost;
+                        label_x = (-exports.settings.bar.width/2 - 40) * chartboost;
                     }
+                    
                     if(chart.seriesIndex > 0){
                         pointer_offset_x = 10;
                         label_y = 15;
                     }
+
 
                 // vertical orientation (smaller screens)
                 // -> stack labels vertically, to the right of the bar
@@ -116,23 +129,26 @@ gpoba.chart = (function($) {
                     label_x = -5;
                     pointer_offset_x = 0;
 
-                    if(chart.seriesIndex > 1) {
-                        pointer_offset_y = 10;
-                        label_x = pointer_offset_y - 5;
+                    if(chart.seriesIndex > 0) {
+                        pointer_offset_y = 1;
+                        label_x = pointer_offset_y - 12;
                     }
 
                     if (chart.seriesIndex%2 == 0) {
                         pointer_x1 = (exports.settings.bar.width/2 + 5);
                         pointer_x2 = (exports.settings.bar.width/2 + 40);
                         label_y = (exports.settings.bar.width/2 + 45);
+
                     } else {
                         pointer_x1 = (-exports.settings.bar.width/2 - 5);
                         pointer_x2 = (-exports.settings.bar.width/2 - 40);
-                        label_y = (-exports.settings.bar.width/2 - 45);
+                        label_y = (-exports.settings.bar.width/2 - 245);
+                        left_align = ' text-align: right;'
                     }
                 }
 
                 if (chart.type == 'bar') {
+                    
                     // build the label
                     chart.element.parent().foreignObject(
                             '<p class="label-element"><strong class="label-value">' + chart.series.data[0] + '%</strong> ' + chart.series.name +'</p>',
@@ -141,7 +157,8 @@ gpoba.chart = (function($) {
                                 y: chart.y2 + label_x,
                                 height: 20,
                                 width: 200,
-                            }, 'bar-label').attr({ style: 'overflow: visible;' });
+                            }, 'bar-label').attr({ style: 'overflow: visible;' + left_align });
+                    
                     // build the pointer
                     chart.element.parent().elem('line', {
                         y1: chart.y2 + pointer_y1 + pointer_offset_y,
@@ -159,7 +176,7 @@ gpoba.chart = (function($) {
             ['screen and (max-width:' + exports.breakpoints.line + ')', {
                 axisX: {
                   labelInterpolationFnc: function(value, index) {
-                    return index % 2 === 0 ? value : null;
+                    return index % 2 === 0 ? null : value;
                   }
                 }
             }]
@@ -173,8 +190,7 @@ gpoba.chart = (function($) {
         var type = type || "bar"; // default type is bar graph
 
         $(el).each(function() {
-            $.getJSON(dataURL, function(data) {
-                console.log(data);
+            $.getJSON(dataURL, function(data) {                
                 if (type == "bar") {
                     _createBarGraph(el, data);
                 } else if (type == "line") {

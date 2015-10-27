@@ -58,8 +58,7 @@ gpoba.sticky = (function($) {
 
         if (_yPosInit <= _scrollPos && _scrollBottom <= stopPos) {
             $(el).addClass(exports.displayClass);
-            $(el).removeClass(exports.bottomClass);
-            console.log("sticky");
+            $(el).removeClass(exports.bottomClass);            
         } else {
             $(el).removeClass(exports.displayClass);
 

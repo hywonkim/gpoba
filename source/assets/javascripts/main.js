@@ -19,13 +19,14 @@ var gpoba = window.gpoba || {};
 jQuery(function($) {
     // make jump navs 'sticky' on scroll
     // -> if there is a jump nav on this page
-    if ($(".js-sticky").length > 0) gpoba.sticky.init(".js-sticky", ".js-highlight", ".js-sticky-stop");
-    // if ($(".js-chart").length > 0) gpoba.chartist.init();
+    if ($(".js-sticky").length > 0) gpoba.sticky.init(".js-sticky", ".js-highlight", ".js-sticky-stop");    
 
-    gpoba.chart.create('.ct-line-graph', '/content/overview/charts/figure03.json', 'line');
-    gpoba.chart.create('.ct-figure-04', '/content/overview/charts/figure04.json');
-    gpoba.chart.create('.ct-figure-05', '/content/portfolio/charts/figure05.json');
-    gpoba.chart.create('.ct-figure-06', '/content/portfolio/charts/figure06.json');
+    if ($(".js-chart").length > 0) {
+        gpoba.chart.create('.ct-line-graph', '/content/overview/charts/figure03.json', 'line');
+        gpoba.chart.create('.ct-figure-04', '/content/overview/charts/figure04.json');
+        gpoba.chart.create('.ct-figure-05', '/content/portfolio/charts/figure05.json');
+        gpoba.chart.create('.ct-figure-06', '/content/portfolio/charts/figure06.json');
+    }
 
     // run Tablesaw for responsive tables
     $( document ).trigger( "enhance.tablesaw" );
