@@ -142,11 +142,17 @@ title: home
 <!-- Flags & Sponsors -->
 <section class="panel">
     <h1 class="panel-slug">Where we work</h1>
-    <ul class="gallery tiny">
-    <% data.flags.each do |country| %>
-        <li class="gallery-item">
-            <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => country.filename, :alt => country.name }) %>
-        </li>
-    <% end %>
-    </ul>
+    <div class="l-wrapper">
+        <ul class="gallery tiny align-middle">
+        <% data.flags.each do |country| %>
+            <li class="gallery-item">
+                <% unless country.format.present? %>
+                    <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => country.filename, :alt => country.name }) %>
+                <% else %>
+                    <%= image_tag country.filename + "." + country.format, :alt => country.name %>
+                <% end %>
+            </li>
+        <% end %>
+        </ul>
+    </div>
 </section>

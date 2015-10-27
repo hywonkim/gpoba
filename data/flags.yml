@@ -1,11 +1,14 @@
 # - country: [country name]
 #   filename: [flag file path w/o extension, relative to images folder]
+#   format: [if different from svg, png]
+#   border: [true or false; default is true]
 - name: Armenia
   filename: flags/Armenia
 - name: Bangladesh
   filename: flags/Bangladesh
 - name: Bolivia
   filename: flags/Bolivia
+  format: png
 - name: Cameroon
   filename: flags/Cameroon
 - name: Colombia

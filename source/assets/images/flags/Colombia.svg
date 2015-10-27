@@ -1,1 +1,14 @@
-<svg viewBox="0 0 3750 2500" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><g fill-rule="nonzero"><path fill="#FBD113" d="M0-.004h3750.003V1250H0z"/><path fill="#21408D" d="M0 1250.005h3750.003V1875H0z"/><path fill="#CF2028" d="M0 1875h3750.003v625.002H0z"/></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="900px" height="600px" viewBox="0 0 900 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Colombia</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Colombia" sketch:type="MSLayerGroup">
+            <path d="M0,0.238848921 L899.281295,0.238848921 L899.281295,300 L0,300 L0,0.238848921 Z" id="Shape" fill="#FBD113" sketch:type="MSShapeGroup"></path>
+            <path d="M0,300.001199 L899.281295,300.001199 L899.281295,449.880096 L0,449.880096 L0,300.001199 Z" id="Shape" fill="#21408D" sketch:type="MSShapeGroup"></path>
+            <path d="M0,449.880096 L899.281295,449.880096 L899.281295,599.760671 L0,599.760671 L0,449.880096 Z" id="Shape" fill="#CF2028" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
