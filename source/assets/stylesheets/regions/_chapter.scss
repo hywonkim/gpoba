@@ -141,3 +141,12 @@ $chapter-padding: fs(6);
     //     @extend %l-wrapper--wide;
     // }
 }
+
+.chapter-content {
+    @extend %l-wrapper--narrow;
+    @include rem(margin-bottom, fs(7));
+
+    .chapter-section > & {
+        margin-bottom: 0;
+    }
+}
