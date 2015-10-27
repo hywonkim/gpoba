@@ -3,6 +3,7 @@ title: Supporting Independent Verification in Indonesia
 chapter: center of expertise
 order: 3
 type: box
+box_number: 4
 ---
 
 One of GPOBA’s largest TA activities to date is the support for the Independent Verification Agent (IVA) in the World Bank’s Local Government and Decentralization Project (LGDP) in Indonesia. The LGDP includes an output-based disbursement approach, in which a portion of the Indonesian government’s specific purpose grants for infrastructure sub-sectors is reimbursed following verification of specified outputs. The IVA in this case is the Indonesian National Government Internal Auditor (BPKP).

@@ -27,6 +27,7 @@ paths:
 
 # global breakpoints
 # -> in pixels, no units. converted to em's when used in media queries.
+# -> managed here because chapter and index pages use local styles
 breakpoints:
   xsmall: 400
   small: 700

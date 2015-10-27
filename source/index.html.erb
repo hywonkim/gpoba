@@ -49,7 +49,7 @@ title: home
         GPOBA Home
     </a>
     <!-- Download PDF btn -->
-    <a class="hero-button right" href="https://www.gpoba.org/sites/gpoba/files/2015annualreport.pdf" target="_blank">
+    <a class="hero-button right" href="<%= data.site.download_version %>" target="_blank">
         <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "button-icon before", :fallback_type => "text", :fallback => "" }) %>
         Download
     </a>
