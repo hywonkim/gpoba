@@ -24,8 +24,7 @@ partners:
   #   url: [website]
   - name: Aguas de Moçambique
     filename: logos/partner_logos/aguas_de_mocambique
-    url: 
-  - name: Amendis 
+  - name: Amendis
     filename: logos/partner_logos/amendis
     url: http://www.client.veoliaenvironnement.ma/Tanger/Pages/Tanger.aspx
   - name: ARB Apex Bank Ltd.
@@ -33,14 +32,13 @@ partners:
     url: http://www.arbapexbank.com/
   - name: Cameroon Water Utilities Corporation
     filename: logos/partner_logos/cam_water
-    url:  
   - name: Camerounaise des Eaux
     filename: logos/partner_logos/cde
     url: http://www.la-cde.com/en/home.html
   - name: Communications Regulatory Commission of Mongolia
     filename: logos/partner_logos/communication_mongolia
     url: http://www.crc.gov.mn/
-  - name: East Meets West Foundation 
+  - name: East Meets West Foundation
     filename: logos/partner_logos/east_meets_west
     url: http://thrivenetworks.org/
   - name: Electricity Company of Ghana Limited
@@ -63,7 +61,6 @@ partners:
     url: http://www.gascaribe.com/seccion/inicio.html
   - name: Government of Mali
     filename: logos/partner_logos/government_of_mali
-    url: 
   - name: Government of Nepal
     filename: logos/partner_logos/government_of_nepal
     url: http://www.nepal.gov.np/
@@ -104,7 +101,7 @@ partners:
     filename: logos/partner_logos/nairobi_water
     url: https://www.nairobiwater.co.ke/
   - name: National Water and Sewerage Corporation
-    filename: logos/partner_logos/national_water_sewerage_corporation
+    filename: logos/partner_logos/national_water_sewage_corporation
     url: https://www.nwsc.co.ug/
   - name: National Water Supply & Drainage Board
     filename: logos/partner_logos/national_water_supply_board
@@ -117,7 +114,7 @@ partners:
     url: http://www.onas.sn/
   - name: PALYJA
     filename: logos/partner_logos/palyja
-    url: http://en.palyja.co.id/ 
+    url: http://en.palyja.co.id/
   - name: PDAM Surya Sembada Kota Surabaya
     filename: logos/partner_logos/pdam
     url: http://www.pdam-sby.go.id/
@@ -153,7 +150,6 @@ partners:
     url: http://www.unelco.com.vu/en/
   - name:  Vanuatu Utilities & Infrastructure
     filename: logos/partner_logos/vui
-    url: 
   - name: WaterHealth International
     filename: logos/partner_logos/water_health
     url: http://www.waterhealth.com/

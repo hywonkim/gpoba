@@ -156,3 +156,28 @@ title: home
         </ul>
     </div>
 </section>
+
+<!-- Partners -->
+<section class="panel">
+    <h1 class="panel-slug">Our partners</h1>
+    <div class="l-wrapper">
+        <ul class="gallery small align-middle">
+        <% data.affiliates.partners.each do |partner| %>
+            <li class="gallery-item">
+                <% link = partner.url.present? ? partner.link : false %>
+                <%# unless partner.format.present? %>
+                    <%# partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => partner.filename, :link => link, :alt => partner.name }) %>
+                <%# else %>
+                    <% if partner.url.present? %>
+                    <a class="logo" href="<%= partner.url %>">
+                    <% end %>
+                        <%= image_tag partner.filename + ".png", :alt => partner.name %>
+                    <% if partner.url.present? %>
+                    </a>
+                    <% end %>
+                <%# end %>
+            </li>
+        <% end %>
+        </ul>
+    </div>
+</section>
