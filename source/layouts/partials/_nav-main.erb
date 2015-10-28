@@ -1,7 +1,24 @@
+<%# @PARAM page_title, string %>
+<%# @PARAM prev_page_slug, string %>
+<%# @PARAM prev_page_url, string %>
+<%# @PARAM next_page_slug, string %>
+<%# @PARAM next_page_url, string %>
 <% classes ||= "main_nav" %>
 
 <nav class="<%= classes %>" role="navigation">
-    <ul>
+    <%# if defined? page_title %>
+    <span class="main_nav-title">Portfolio<%# page_title %></span>
+    <%# end %>
+    <ul class="main_nav-pagination">
+        <% if defined? prev_page_url %>
+        <li><a class="main_nav-item" href="<%= prev_page_url %>"></a><%= prev_page_slug %></li>
+        <% end %>
+        <% if defined? next_page_url %>
+        <li><a class="main_nav-item" href="<%= next_page_url %>"><%= next_page_slug %></a></li>
+        <% end %>
+    </ul>
+    <a class="main_nav-toc js-has-flyout" href="#js-flyout">TOC</a>
+    <ul class="main_nav-full" id="js-flyout">
         <li>
             <a class="main_nav-item<% if current_page? "index.html" %> is-active<% end %>" href="/">Home</a>
         </li>

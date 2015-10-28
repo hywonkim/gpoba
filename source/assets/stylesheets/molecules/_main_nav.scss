@@ -42,6 +42,10 @@
 /* Submodules
 // -------------------------------------------------------------------------- */
 
+.main_nav-title {
+    @extend .nav-item;
+}
+
 .main_nav-item {
     @extend .nav-item;
     @include rem(margin, 0 fs(3));

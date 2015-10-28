@@ -64,7 +64,6 @@ $header-h: 36px;
 
 .header-nav {
     @extend .main_nav;
-    display: none;
     float: right;
     margin-right: $gutter-outside;
 
