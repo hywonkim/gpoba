@@ -7,6 +7,8 @@
 @import "../molecules/main_nav";
 
 $footer-padding: $gutter-outside;
+// pull in main nav breakpoint and use it here
+$footer-break: $main_nav-break;
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -31,10 +33,12 @@ $footer-padding: $gutter-outside;
 
 .footer-nav {
     @extend .main_nav;
+    display: none;
     @include border(bottom, $color: theme(border, reverse));
     width: 100%;
 
-    @include respond-to('small') { text-align: center; }
+    // @include respond-to('small') { text-align: center; }
+    @include respond-to($footer-break) { display: block; }
 }
 
 .footer-section {

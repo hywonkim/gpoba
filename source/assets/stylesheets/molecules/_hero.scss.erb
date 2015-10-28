@@ -23,13 +23,14 @@ $hero-pointer-h: fs(7);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-color: #ccc;
+    background-color: theme(bg, reverse);
 }
 
 /* Submodules
 // -------------------------------------------------------------------------- */
 
 .hero-logo {
+    @extend .logo;
     @include rem(max-width, 120px);
     @include rem(padding, 16px);
     display: inline-block;

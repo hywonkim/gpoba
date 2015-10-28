@@ -7,6 +7,8 @@
 @import "../molecules/main_nav";
 
 $header-h: 36px;
+// pull in the main_nav's breakpoint and use it here
+$header-break: $main_nav-break;
 
 // vertically center the children of an inline block element
 @mixin inline-block--centered($h: auto) {
@@ -30,11 +32,13 @@ $header-h: 36px;
     @include clearfix;
     display: block;
     position: absolute;
-    z-index: $z--high;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
 
-
-    @include respond-to($main_nav-break) {
+    @include respond-to($header-break) {
         position: relative;
+        text-align: left;
         color: theme(text primary, reverse);
         background-color: theme(bg, reverse);
     }
@@ -44,17 +48,28 @@ $header-h: 36px;
 // -------------------------------------------------------------------------- */
 
 .header-logo {
-    $h: 28px;
     @extend .logo;
-    @include rem(height, $h);
-    @include rem(width, 70px);
-    @include rem(margin-top, -($h/2));
+    @include rem(max-width, 120px);
+    @include rem(padding, 16px);
     display: inline-block;
-    position: absolute;
-    top: 50%;
-    margin-left: $gutter-outside;
-    border-bottom: none;
-    color: theme(text primary, reverse);
+    background-color: theme(bg);
+
+    @include respond-to($main_nav-break) {
+        $h: 28px;
+
+        @include rem(height, $h);
+        @include rem(width, 70px);
+        @include rem(margin-top, -($h/2));
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        margin-left: $gutter-outside;
+        padding: 0;
+        max-width: auto;
+        border-bottom: none;
+        color: theme(text primary, reverse);
+        background-color: transparent;
+    }
 }
 
 .header-nav {
