@@ -10,14 +10,14 @@
     <span class="main_nav-title">Portfolio<%# page_title %></span>
     <%# end %>
     <ul class="main_nav-pagination">
-        <% if defined? prev_page_url %>
-        <li><a class="main_nav-item" href="<%= prev_page_url %>"></a><%= prev_page_slug %></li>
-        <% end %>
-        <% if defined? next_page_url %>
-        <li><a class="main_nav-item" href="<%= next_page_url %>"><%= next_page_slug %></a></li>
-        <% end %>
+        <%# if defined? prev_page_url %>
+        <li><a class="main_nav-item" href="<%#= prev_page_url %>">Overview<%#= prev_page_slug %></a></li>
+        <%# end %>
+        <%# if defined? next_page_url %>
+        <li><a class="main_nav-item" href="<%#= next_page_url %>">Projects<%#= next_page_slug %></a></li>
+        <%# end %>
+        <li><a class="main_nav-toc js-has-flyout" href="#js-flyout">TOC</a></li>
     </ul>
-    <a class="main_nav-toc js-has-flyout" href="#js-flyout">TOC</a>
     <ul class="main_nav-full" id="js-flyout">
         <li>
             <a class="main_nav-item<% if current_page? "index.html" %> is-active<% end %>" href="/">Home</a>

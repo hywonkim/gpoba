@@ -4,15 +4,19 @@
 // ========================================================================== */
 
 @import "../core/*";
+@import "../atoms/text";
+
+$main_nav-break: 'medium';
 
 /* Base
 // -------------------------------------------------------------------------- */
 
 .main_nav {
     @include unstyled-list;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 $gutter-outside;
     z-index: $z--high;
+
+    @include respond-to($main_nav-break) { padding: 0; }
 
     ul {
         margin: 0;
@@ -44,6 +48,41 @@
 
 .main_nav-title {
     @extend .nav-item;
+    display: inline-block;
+    float: left;
+    padding: 1.5em 1em;
+    color: theme(text primary, reverse);
+
+    // override hover state of default nav link
+    &:hover, &:active { color: inherit; }
+
+    @include respond-to($main_nav-break) { display: none; }
+}
+
+.main_nav-pagination {
+    @include border(left, $color: theme(border, reverse));
+    display: inline-block;
+    float: right;
+
+    @include respond-to($main_nav-break) { display: none; }
+
+    li {
+        @include border(right, $color: theme(border, reverse));
+
+        &:last-child { border: none; }
+    }
+}
+
+.main_nav-toc {
+    @extend .main_nav-item;
+}
+
+.main_nav-full {
+    display: none;
+
+    @include respond-to($main_nav-break) {
+        display: block;
+    }
 }
 
 .main_nav-item {

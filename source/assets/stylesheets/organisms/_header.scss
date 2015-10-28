@@ -25,24 +25,19 @@ $header-h: 36px;
 /* Base
 // -------------------------------------------------------------------------- */
 
-.header, header, [role="banner"] {
+.main_header {
+    @include rem(min-height, 40px);
+    @include clearfix;
+    display: block;
+    position: absolute;
+    z-index: $z--high;
 
-}
 
-/* Modifiers
-// -------------------------------------------------------------------------- */
-
-.header, header, [role="banner"] {
-	&.main {
-        @include rem(min-height, 40px);
-        @include clearfix;
-        // height: $header-h;
+    @include respond-to($main_nav-break) {
         position: relative;
-        display: block;
-        z-index: $z--high;
         color: theme(text primary, reverse);
         background-color: theme(bg, reverse);
-	}
+    }
 }
 
 /* Submodules
@@ -64,10 +59,18 @@ $header-h: 36px;
 
 .header-nav {
     @extend .main_nav;
-    float: right;
-    margin-right: $gutter-outside;
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: theme(bg, reverse);
 
-    @include breakpoint(925px) {
+    @include respond-to('medium') {
         display: inline-block;
+        position: relative;
+        float: right;
+        margin-right: $gutter-outside;
+        background-color: transparent;
     }
 }
