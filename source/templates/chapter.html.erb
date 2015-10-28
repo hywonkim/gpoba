@@ -102,27 +102,23 @@ layout: layout
 <nav class="pagination js-sticky-stop">
     <!-- <h2 class="pagination-slug">Read more</h2> -->
     <ul class="pagination-wrapper">
-        <%= get_current_index %>
+        <%# get_current_index %>
         <% unless first_page? %>
         <li class="pagination-prev">
-            <% resource = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] - 1) } %>
-            <% resource.each do |chapter| %>
-            <a href="<%= asset_url("#{data.site.paths.chapter}#{chapter.metadata[:locals][:slug].urlize}/") %>">
+            <% prev_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] - 1) } %>
+            <a href="<%= asset_url("#{data.site.paths.chapter}#{prev_page[0].metadata[:locals][:slug].urlize}/") %>">
                 <span class="pagination-subtitle">Previous</span>
-                <strong class="pagination-title"><%= chapter.metadata[:locals][:title] %></strong>
+                <strong class="pagination-title"><%= prev_page[0].metadata[:locals][:title] %></strong>
             </a>
-            <% end %>
         </li>
         <% end %>
         <% unless last_page? %>
         <li class="pagination-next">
-            <% resource = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] + 1) } %>
-            <% resource.each do |chapter| %>
-            <a href="<%= asset_url("#{data.site.paths.chapter}#{chapter.metadata[:locals][:slug].urlize}/") %>">
+            <% next_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] + 1) } %>
+            <a href="<%= asset_url("#{data.site.paths.chapter}#{next_page[0].metadata[:locals][:slug].urlize}/") %>">
                 <span class="pagination-subtitle">Next</span>
-                <strong class="pagination-title"><%= chapter.metadata[:locals][:title] %></strong>
+                <strong class="pagination-title"><%= next_page[0].metadata[:locals][:title] %></strong>
             </a>
-            <% end %>
         </li>
         <% end %>
     </ul>

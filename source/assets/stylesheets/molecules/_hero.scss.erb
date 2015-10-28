@@ -10,6 +10,8 @@
 @import "../molecules/main_nav";
 
 $hero-pointer-h: fs(7);
+// pull in main nav breakpoint and use it here
+$hero-nav-break: $main_nav-break;
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -100,7 +102,7 @@ $hero-pointer-h: fs(7);
     border: none;
     background-color: theme(bg, reverse);
 
-    @include breakpoint(900px) {
+    @include respond-to($hero-nav-break) {
         display: block;
     }
 }
