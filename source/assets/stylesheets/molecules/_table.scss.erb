@@ -102,7 +102,6 @@ table {
 
 // sector icons
 [data-icon-value] {
-
     // add icon as a psuedo element, in front of the content
     // -> if the browser supports the background-size rule
     .backgroundsize &:before {
@@ -122,13 +121,12 @@ table {
 // loop through sectors on site.yml and add background images for each
 <% data.site.sectors.each do |sector| %>
 [data-icon-value="<%= sector.name %>"] {
-
     .backgroundsize &:before {
         background-image: url(image_path('<%= sector.path %>.<%= sector.formats[0] %>'));
     }
 
     <% if sector.formats.include? 'svg' %>
-        .backgroundsize.svg & { background-image: url(image_path('<%= sector.path %>.svg')); }
+        .backgroundsize.svg &:before { background-image: url(image_path('<%= sector.path %>.svg')); }
     <% end %>
 }
 <% end %>

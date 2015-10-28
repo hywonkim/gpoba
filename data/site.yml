@@ -41,6 +41,7 @@ sectors:
     path: 'icons/sector-energy'
     formats:
       - png
+      - svg
   - name: Education
     path: 'icons/sector-education'
     formats:
