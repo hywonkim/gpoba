@@ -33,3 +33,37 @@ breakpoints:
   small: 700
   medium: 1000
   large: 1280
+
+# sector icons
+# -> used in appendix tables, see molecules/_tables.scss.erb
+sectors:
+  - name: Energy
+    path: 'icons/sector-energy'
+    formats:
+      - png
+  - name: Education
+    path: 'icons/sector-education'
+    formats:
+      - png
+      - svg
+  - name: Health
+    path: 'icons/sector-health'
+    formats:
+      - png
+      - svg
+  - name: ICT
+    path: 'icons/sector-ict'
+    formats:
+      - png
+      - svg
+  - name: SWM
+    path: 'icons/sector-swm'
+    formats:
+      - png
+      - svg
+  - name: Water
+    path: 'icons/sector-water'
+    formats:
+      - png
+      - svg
+
