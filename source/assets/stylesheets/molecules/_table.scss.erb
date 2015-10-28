@@ -29,7 +29,7 @@ table {
         text-transform: uppercase;
         text-align: center;
     }
-    &.titled_table{
+    &.titled_table {
         margin-top: 0px;
     }
 
@@ -104,7 +104,7 @@ table {
 // -------------------------------------------------------------------------- */
 
 .table_title {
-    font-size: fs(3);
+    @include font-scale(3);
     color: theme(text tertiary);
     text-align: left;
     @extend %font-body--bold;
@@ -112,8 +112,37 @@ table {
     text-transform: uppercase;
 }
 
-
-
 .tablesaw-advance a.tablesaw-nav-btn.disabled {
     display: none;
 }
+
+// sector icons
+[data-icon-value] {
+
+    // add icon as a psuedo element, in front of the content
+    .backgroundsize &:before {
+        $size: 1.4em;
+        content: " ";
+        display: inline-block;
+        width: $size;
+        height: $size;
+        margin-right: 0.3em;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+}
+
+<% data.site.sectors.each do |sector| %>
+[data-icon-value="<%= sector.name %>"] {
+
+    .backgroundsize &:before {
+        background-image: url(image_path('<%= sector.path %>.<%= sector.formats[0] %>'));
+    }
+
+    <% if sector.formats.include? 'svg' %>
+        .backgroundsize.svg & { background-image: url(image_path('<%= sector.path %>.svg')); }
+    <% end %>
+}
+<% end %>
