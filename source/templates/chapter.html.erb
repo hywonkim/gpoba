@@ -57,6 +57,9 @@ layout: layout
                 <% end %>
             <% end %>
         </ol>
+        <a class="jump_nav-top" href="#">
+            <%= partial("layouts/partials/icon", :locals => {:id => "arrow-up-outline", :classes => "jump_nav-top-icon",:fallback_type => "text", :fallback => "&uarr;"}) %> Back to top
+        </a>
     </nav>
     <% end %>
 
