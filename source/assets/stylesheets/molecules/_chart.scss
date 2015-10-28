@@ -8,7 +8,7 @@
 /* Bar Chart Color Mixin 
 // -------------------------------------------------------------------------- */
 @mixin chart_color($color) {
-    $ct-series-names: (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o);
+    $ct-series-names: (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o); // from chartist settings
 
     $shade: 0;
     $shade-increment: 7;
