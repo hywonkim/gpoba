@@ -104,15 +104,13 @@ table {
 // -------------------------------------------------------------------------- */
 
 .table_title {
-    font-size: fs(3);
+    @include font-scale(3);
     color: theme(text tertiary);
     text-align: left;
     @extend %font-body--bold;
     margin-top: 25px;
     text-transform: uppercase;
 }
-
-
 
 .tablesaw-advance a.tablesaw-nav-btn.disabled {
     display: none;
