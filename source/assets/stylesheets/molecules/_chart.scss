@@ -8,60 +8,9 @@
 /* Base
 // -------------------------------------------------------------------------- */
 
-.chart {
-
-}
-
-//============ Figure Styles ============///
-    .figure .text {
-        @extend %font-body;
-        font-size: fs(6);
-
-        &.light { fill: theme('text' 'primary', 'reverse'); }
-        &.dark { fill: theme(text secondary); }
-        &.data { @extend %font-body--bold; }
-        &.bold { @extend %font-body--bold; }
-
-        &.title{
-            font-size: fs(7);
-            fill: theme(text tertiary);
-
-            &.type {
-                @extend %font-body--bold;
-            }
-        }
-    }
-
-    .figure {
-        margin: 50px;
-        width: 100%;
-    }
-
-    .gridline {
-        stroke-width: .2px;
-    }
-
-    .circle.white {
-        fill: theme('text' 'primary', 'reverse');
-    }
-
-    .rings {
-        fill: theme(border, wash);
-    }
-
-    .graph.fill{
-        fill: highlight('green');
-    }
-
-    .text.y-axis {
-        fill: highlight('green');
-    }
-
-
-// Chartist Styles ============///
 
 .ct-label {
-    font-size: fs(3);
+    @include font-scale(3);
     @extend %font-body;
     fill: theme(text secondary);
 
@@ -92,9 +41,13 @@
 }
 
 .label-element{
-    font-size: fs(3);
+    @include font-scale(2);
     line-height: 100%;
     color: lighten(theme(text secondary), 10);
+
+    @include respond-to('small') {
+        @include font-scale(3);
+    }
 }
 
 .label-line {
@@ -103,10 +56,6 @@
 
 }
 
-.bar-chart {
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
 
 .vertical_text{
     transform: rotate(90deg);
@@ -115,4 +64,8 @@
 
 .ct-series-a .ct-bar{
     fill: green;
+}
+
+.js-chart {
+    margin: 50px 0px;    
 }

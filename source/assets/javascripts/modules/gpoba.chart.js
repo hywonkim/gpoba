@@ -75,7 +75,9 @@ gpoba.chart = (function($) {
                 };
 
                 var offset = 0,
-                    left_align = '',
+                    right_align = '',
+                    label_height = 0,
+                    label_width = 0,
                     pointer_y1 = 0,
                     pointer_y2 = 0,
                     label_x = 0,
@@ -92,6 +94,8 @@ gpoba.chart = (function($) {
                 // horizontal orientation (larger screens)
                 // -> if this has a "ct-horizontal-bars" class, render horizontal labels
                 if (ctClassList.contains("ct-horizontal-bars")) {
+                    label_height = 50 ;
+                    label_width = 250 ;
                     
                     // chart boost to separate as chart grows in size to reduce overlap.
                     if (chart.seriesIndex ==  0) { 
@@ -128,22 +132,30 @@ gpoba.chart = (function($) {
                 } else {
                     label_x = -5;
                     pointer_offset_x = 0;
+                    label_height = 20 ;
+                    label_width = 90 ;
 
-                    if(chart.seriesIndex > 0) {
-                        pointer_offset_y = 1;
-                        label_x = pointer_offset_y - 12;
+                    if( chart.seriesIndex == 2 || chart.seriesIndex == 3) {
+                        pointer_offset_y = 0;
+                        label_x = pointer_offset_y - 15;
+                    } else if( chart.seriesIndex > 0 ) {
+                        pointer_offset_y = 3;
+                        label_x = pointer_offset_y - 10;
+                    } else {
+                        pointer_offset_y = 2;
+                        label_x = pointer_offset_y;
                     }
 
                     if (chart.seriesIndex%2 == 0) {
                         pointer_x1 = (exports.settings.bar.width/2 + 5);
-                        pointer_x2 = (exports.settings.bar.width/2 + 40);
-                        label_y = (exports.settings.bar.width/2 + 45);
+                        pointer_x2 = (exports.settings.bar.width/2 + 30);
+                        label_y = (exports.settings.bar.width/2 + 35);
 
                     } else {
                         pointer_x1 = (-exports.settings.bar.width/2 - 5);
-                        pointer_x2 = (-exports.settings.bar.width/2 - 40);
-                        label_y = (-exports.settings.bar.width/2 - 245);
-                        left_align = ' text-align: right;'
+                        pointer_x2 = (-exports.settings.bar.width/2 - 30);
+                        label_y = (-exports.settings.bar.width/2 - 125);
+                        right_align = ' text-align: right;'
                     }
                 }
 
@@ -155,9 +167,9 @@ gpoba.chart = (function($) {
                             {
                                 x: chart.x1 + label_y,
                                 y: chart.y2 + label_x,
-                                height: 20,
-                                width: 200,
-                            }, 'bar-label').attr({ style: 'overflow: visible;' + left_align });
+                                height: label_height,
+                                width: label_width,
+                            }, 'bar-label').attr({ style: 'overflow: visible;' + right_align });
                     
                     // build the pointer
                     chart.element.parent().elem('line', {
