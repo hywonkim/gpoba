@@ -42,22 +42,12 @@ $hero-nav-break: $main_nav-break;
 .hero-headline {
     @extend %alpha;
     display: block;
-    position: relative;
-    top: 40%;
+    position: absolute;
+    bottom: 26%;
     margin: 0 auto;
     padding-left: $gutter-outside;
     padding-right: $gutter-outside;
     text-align: center;
-
-    .csstransforms & {
-        position: absolute;
-        // width: 100%;
-        top: auto;
-        bottom: 25%;
-        left: 50%;
-        margin-top: 0;
-        transform: translateX(-50%);
-    }
 }
 
     .hero-title {
@@ -90,6 +80,13 @@ $hero-nav-break: $main_nav-break;
 .hero-lockup {
     @extend .hero-headline;
     @include rem(max-width, 400px);
+
+    .csstransforms & {
+        position: absolute;
+        left: 50%;
+        margin-top: 0;
+        transform: translateX(-50%);
+    }
 }
 
 .hero-nav {
