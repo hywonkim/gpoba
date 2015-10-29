@@ -55,6 +55,8 @@
     @include respond-to('medium') {
         min-height: 400px;
         min-height: 50vh;
+
+        .ie9 &, .ie & { height: 80vh; }
     }
 }
 
