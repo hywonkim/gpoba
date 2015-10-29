@@ -95,6 +95,7 @@ $main_nav-break: 'medium';
     display: block;
     position: relative;
     padding: 1.5em 0;
+    line-height: 1.2em; // to match the height of .main_nav-icon
     color: theme(text tertiary, reverse);
 
     &:hover, &:active {
@@ -140,8 +141,3 @@ $main_nav-break: 'medium';
         &.left { margin-right: 0.3em; }
         &.right { margin-left: 0.3em; }
     }
-
-.main_nav-toc {
-    @extend .main_nav-item;
-    display: none;
-}

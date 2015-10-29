@@ -1,6 +1,21 @@
+<%# local vars used by main nav %>
+<% page_title ||= false %>
+<% prev_page_slug ||= false %>
+<% prev_page_url ||= false %>
+<% next_page_slug ||= false %>
+<% next_page_url ||= false %>
+
 <footer class="main" role="contentinfo">
     <div class="l-wrapper">
-        <%= partial("layouts/partials/nav-main", :locals => { :classes => "footer-nav" }) %>
+        <%= partial("layouts/partials/nav-main", :locals => {
+                :classes => "footer-nav",
+                :show_mobile_nav => true,
+                :page_title => page_title,
+                :prev_page_slug => prev_page_slug,
+                :prev_page_url => prev_page_url,
+                :next_page_slug => next_page_slug,
+                :next_page_url => next_page_url,
+            }) %>
         <div class="footer-section">
             <a class="footer-lockup" href="/">
             <!-- GPOBA logo -->
