@@ -70,8 +70,24 @@
     stroke-width: 1px;
 }
 
-.js-chart {
-    margin: 50px 0px;    
+.chart {
+    margin: 50px 0px;
+}
+
+.chart-caption{
+    font-style: italic;
+    @include font-scale(3);
+    color: highlight('green');
+    text-align: left;
+    display: block;
+
+    strong {
+        display: block;
+        @include font-scale(2);
+        text-align: left;
+        text-transform: uppercase;
+        color: lighten(theme(text secondary), 10);
+    }
 }
 
 .ct-figure-04 {
