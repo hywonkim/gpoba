@@ -7,6 +7,7 @@
 // SVG Sprite Icons
 // -----------------------------------------------------------------------------
 .icon {
+    @extend %base-transition;
     display: inline-block;
     height: 1.4em;
     width: 1.4em;
