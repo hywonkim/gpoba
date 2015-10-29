@@ -8,12 +8,12 @@ With the addition of five new grant agreements signed in FY15, GPOBA’s portfol
 
 Access to energy and water are crucial in alleviating extreme poverty, and the energy sector currently receives the largest share of GPOBA subsidies, with 43 percent of the project portfolio. Water is the second largest sector in the portfolio, followed by health. Solid waste management is a growing sector for GPOBA. Geographically, sub- Saharan Africa has the largest share of funding, followed by South Asia.
 
-<figure class="ct-figure-05-sector chart js-chart ct-golden-section">
+<figure class="ct-figure-05-sector chart js-chart ct-golden-section" alt="Share of Funding by Sector">
     <figcaption class="chart-caption"><strong>Figure 5 </strong> Share of Funding by Sector</figcaption>
     <!-- <img src="<%= image_path '/figure05.png' %>" /> -->
 </figure>
 
-<figure class="ct-figure-05-region chart js-chart ct-golden-section">
+<figure class="ct-figure-05-region chart js-chart ct-golden-section" alt="Share of Funding by Sector">
     <figcaption class="chart-caption"> Share of Funding by Region</figcaption>
 </figure>
 
