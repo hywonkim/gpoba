@@ -143,6 +143,49 @@ table {
     text-transform: uppercase;
 }
 
-.tablesaw-advance a.tablesaw-nav-btn.disabled {
-    display: none;
+.chapter .tablesaw-advance {
+
+    a.tablesaw-nav-btn.disabled {
+        display: none;
+    }
+
+    a.tablesaw-nav-btn {
+
+            $c: theme(text primary);
+            @extend %base-transition;
+            @extend %font-accent;
+            @include font-scale(2);
+            @include border($color: $c);
+            display: inline-block;
+            padding: 0.6em 1.8em 0.5em;
+            background-image: none;
+            // text-transform: uppercase;
+            // border-bottom: 0;
+            border-radius: $button-radius--default;
+            color: $c;
+
+            &.right:before{
+                border-left: 5px solid $c;
+            }
+
+            &.left:before{
+                border-right: 5px solid $c;
+            }
+
+            &:hover, &:active {
+                
+                &.right:before{
+                    border-left: 5px solid theme('bg');
+                }
+
+                &.left:before{
+                    border-right: 5px solid theme('bg');
+                }
+
+
+                color: theme('bg');
+                background-color: lighten(highlight('blue'), 20);
+            }
+        
+    }
 }
