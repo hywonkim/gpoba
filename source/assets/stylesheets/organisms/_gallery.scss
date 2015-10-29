@@ -79,8 +79,10 @@ $gallery-gutter: $gutter;
 // "tiny" columns
 // -> see .gallery-item submodule for styles
 .gallery.tiny {
+    @include display(flex);
+
     @include respond-to('xsmall') {
-        @include display(flex);
+
     }
 }
 
