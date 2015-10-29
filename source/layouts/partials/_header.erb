@@ -1,21 +1,8 @@
-<%# local vars used by main nav %>
-<% page_title ||= false %>
-<% prev_page_slug ||= false %>
-<% prev_page_url ||= false %>
-<% next_page_slug ||= false %>
-<% next_page_url ||= false %>
-
 <header class="main_header">
     <a class="header-logo" href="/">
         <%= partial("layouts/partials/logo") %>
     </a>
     <%= partial("layouts/partials/nav-main", :locals => {
             :classes => "header-nav is-above",
-            :show_mobile_nav => true,
-            :page_title => page_title,
-            :prev_page_slug => prev_page_slug,
-            :prev_page_url => prev_page_url,
-            :next_page_slug => next_page_slug,
-            :next_page_url => next_page_url,
         }) %>
 </header>

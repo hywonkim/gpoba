@@ -33,12 +33,23 @@ $footer-break: $main_nav-break;
 
 .footer-nav {
     @extend .main_nav;
-    display: none;
-    @include border(bottom, $color: theme(border, reverse));
-    width: 100%;
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: theme(bg, reverse);
 
     // @include respond-to('small') { text-align: center; }
-    @include respond-to($footer-break) { display: block; }
+    @include respond-to($footer-break) {
+        @include border(bottom, $color: theme(border, reverse));
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        background-color: transparent;
+    }
 }
 
 .footer-section {
@@ -71,10 +82,12 @@ $footer-break: $main_nav-break;
     @include border(top, $color: theme(border, reverse));
     display: block;
     margin-top: $gutter;
+    margin-left: 0;
     padding-top: 1em;
+    padding-left: 0;
     color: theme('text' 'primary', 'reverse');
 
-    @include breakpoint(450px) {
+    @include breakpoint(660px) {
         display: inline-block;
         float: right;
         margin: 0;
@@ -88,7 +101,11 @@ $footer-break: $main_nav-break;
         list-style: none;
         padding: 0 1em;
 
-        &:last-child { border: none; }
+        &:first-child { padding-left: 0; }
+        &:last-child {
+            padding-right: 0;
+            border: none;
+        }
     }
 }
 

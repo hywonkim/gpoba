@@ -74,18 +74,12 @@ $header-break: $main_nav-break;
 
 .header-nav {
     @extend .main_nav;
-    display: block;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: theme(bg, reverse);
+    display: none;
 
     @include respond-to('medium') {
         display: inline-block;
         position: relative;
         float: right;
         margin-right: $gutter-outside;
-        background-color: transparent;
     }
 }

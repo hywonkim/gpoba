@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <%# show interior page title if it's in the frontmatter %>
-        <title><%= data.site.organization %> <%= data.site.title %> <%= data.site.year %><% if current_page.data.title.present? && current_page.data.title != "home" %> | <%= current_page.data.title %><% end %></title>
+        <title><%= data.site.organization %> <%= data.site.title %> <%= data.site.year %><% if current_page.data.title.present? && current_page.data.title != "home" %> | <%= current_page.data.title %><% elsif current_page.metadata[:locals][:title].present? %> | <%= current_page.metadata[:locals][:slug].titleize %><% end %></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
@@ -23,7 +23,27 @@
 
         <%= yield %>
 
-        <%= partial "layouts/partials/footer" %>
+        <% if current_page.metadata[:locals][:type] == "chapter" %>
+            <%# previous page %>
+            <% unless first_page? %>
+                <% prev_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] - 1) } %>
+                <% prev_page_url = asset_url("#{data.site.paths.chapter}#{prev_page[0].metadata[:locals][:slug].urlize}/") %>
+            <% end %>
+
+            <%# next page %>
+            <% unless last_page? %>
+                <% next_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] + 1) } %>
+                <% next_page_url = asset_url("#{data.site.paths.chapter}#{next_page[0].metadata[:locals][:slug].urlize}/") %>
+            <% end %>
+
+            <%= partial("layouts/partials/footer", :locals => {
+                    :page_title => current_page.metadata[:locals][:title],
+                    :prev_page_slug => first_page? ? false : prev_page[0].metadata[:locals][:slug],
+                    :prev_page_url => first_page? ? false : prev_page_url,
+                    :next_page_slug => last_page? ? false : next_page[0].metadata[:locals][:slug],
+                    :next_page_url => last_page? ? false : next_page_url,
+                }) %>
+        <% end %>
 
         <%= javascript_include_tag "main" %>
         <%= partial "layouts/partials/analytics" %>
