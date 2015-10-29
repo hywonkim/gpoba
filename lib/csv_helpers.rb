@@ -61,7 +61,14 @@ class CSV_Helpers < Middleman::Extension
 
             # Adds value for rows in data element
             if column_icon && index == (column_icon - 1)
-              column_icon_value = " data-icon-value=\"#{value}\" "
+              if value == 'Solid Waste Management'
+                icon_value = 'SWM'
+              elsif value == 'Information and Communication Technology'
+                icon_value = 'ICT'
+              else
+                icon_value = value
+              end
+              column_icon_value = " data-icon-value=\"#{icon_value}\" "
             end
 
             html_table += "<td class=\"#{number_class} #{column_class}\" #{column_icon_value} data-label=\"#{header_label}\"> #{value} </td>"

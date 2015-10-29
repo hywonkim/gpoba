@@ -14,7 +14,7 @@ Access to energy and water are crucial in alleviating extreme poverty, and the e
 </figure>
 
 <figure class="ct-figure-05-region chart js-chart ct-golden-section">
-    <figcaption class="chart-caption"><strong>Figure 5 </strong> Share of Funding by Region</figcaption>
+    <figcaption class="chart-caption"> Share of Funding by Region</figcaption>
 </figure>
 
 GPOBA also has a significant cumulative portfolio of TA and knowledge activities, with 177 projects totaling $28 million. TA support for RBF activities is wide ranging and includes work with the World Bank’s Program for Results (PforR), which links disbursement of funds to governments to the achievement of specific program results. GPOBA has provided TA for five PforR operations: Ethiopia (urban), Tanzania (education), Brazil (multi-sectoral), Mexico (water and sanitation) and Uruguay (transport), the latter four projects were active in FY15. GPOBA’s RBF activities have indirectly benefitted approximately 3 million people. Both TA and knowledge activities are reported in more detail throughout this report.
