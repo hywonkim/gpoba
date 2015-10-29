@@ -8,7 +8,7 @@ order: 2
 
 Over the years, OBA projects have utilized a range of approaches, each one with a unique design and financial model, and incorporating lessons learned from previous experience. All new project proposals come before an independent Panel of Experts (PoE) at two stages of their preparation:
 
-**Eligibility**: An initial assessment to ensure that the project meets GPOBA’s eligibility criteria, which include the country and sector, project sustainability, and the number of poor people expected to receive services.
+**Eligibility**: An initial assessment to ensure that the project meets GPOBA’s eligibility criteria, which include the country and sector, project sustainability, and the number of poor people expected to receive services.[^3]
 
 **Commitment**: A review of the project to determine whether it is ready for implementation and that, in its final form, it continues to meet the eligibility criteria. Since GPOBA is administered by the World Bank, projects going to commitment undergo fiduciary reviews with respect to financial management and procurement, along with assessments of environmental and social impacts, in accordance with World Bank policy.
 
@@ -71,3 +71,5 @@ of a larger IDA-financed scheme to increase access to improved water and sanitat
 - **Project Total**: $75.6m
 
 - **Est. Beneficiaries**: 1.21m
+
+[^3]: A full list of the eligibility criteria can be found in [GPOBA’s Operating Principles](http://www.gpoba.org/gpoba/governance).

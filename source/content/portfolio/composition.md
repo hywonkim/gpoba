@@ -4,7 +4,7 @@ chapter: portfolio
 order: 2
 ---
 
-With the addition of five new grant agreements signed in FY15, GPOBA’s portfolio of subsidy projects grew to 44. The subsidy portfolio focuses on provision of basic services to the poor, with 82 percent of funding going to IDA countries and 8 percent to IDA blended countries. There are sixteen active projects under implementation, with a total of $106.5 million in commitments.
+With the addition of five new grant agreements signed in FY15, GPOBA’s portfolio of subsidy projects grew to 44. The subsidy portfolio focuses on provision of basic services to the poor, with 82 percent of funding going to IDA countries and 8 percent to IDA blended countries.[^2] There are sixteen active projects under implementation, with a total of $106.5 million in commitments.
 
 Access to energy and water are crucial in alleviating extreme poverty, and the energy sector currently receives the largest share of GPOBA subsidies, with 43 percent of the project portfolio. Water is the second largest sector in the portfolio, followed by health. Solid waste management is a growing sector for GPOBA. Geographically, sub- Saharan Africa has the largest share of funding, followed by South Asia.
 
@@ -22,3 +22,5 @@ GPOBA also has a significant cumulative portfolio of TA and knowledge activities
 <!-- [_infographic_ _pop-up_ _on this page for funding by region and sector as in printed AR?_]
 
 _Link to: _(newly designed) table showing overall portfolio – by sector / region_ -->
+
+[^2]: The International Development Association (IDA) is the World Bank’s fund for the poorest. Countries that lack the creditworthiness needed to borrow from the International Bank for Reconstruction and Development (IBRD) and those with per capita gross national income below $1,175 are eligible for IDA support. Countries that are IDA-eligible based on per capita income levels and are also creditworthy for some IBRD borrowings are referred to as ‘blend’ countries.

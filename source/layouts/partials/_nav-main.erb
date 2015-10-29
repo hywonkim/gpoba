@@ -1,23 +1,53 @@
-<%# @PARAM page_title, string %>
-<%# @PARAM prev_page_slug, string %>
-<%# @PARAM prev_page_url, string %>
-<%# @PARAM next_page_slug, string %>
-<%# @PARAM next_page_url, string %>
+<% show_mobile_nav ||= false %>
+<% page_title ||= false %>
+<% prev_page_slug ||= false %>
+<% prev_page_url ||= false %>
+<% next_page_slug ||= false %>
+<% next_page_url ||= false %>
 <% classes ||= "main_nav" %>
 
 <nav class="<%= classes %>" role="navigation">
-    <%# if defined? page_title %>
-    <span class="main_nav-title">Portfolio<%# page_title %></span>
-    <%# end %>
+    <% if show_mobile_nav %>
+    <% if page_title %>
+    <span class="main_nav-title"><%= page_title %></span>
+    <% end %>
     <ul class="main_nav-pagination">
-        <%# if defined? prev_page_url %>
-        <li><a class="main_nav-item" href="<%#= prev_page_url %>">Overview<%#= prev_page_slug %></a></li>
-        <%# end %>
-        <%# if defined? next_page_url %>
-        <li><a class="main_nav-item" href="<%#= next_page_url %>">Projects<%#= next_page_slug %></a></li>
-        <%# end %>
-        <li><a class="main_nav-toc js-has-flyout" href="#js-flyout">TOC</a></li>
+        <% if prev_page_url %>
+        <li><a class="main_nav-item" href="<%= prev_page_url %>">
+                <%= partial("layouts/partials/icon", :locals => {
+                        :id => "arrow-left-outline",
+                        :classes => "main_nav-icon left",
+                        :fallback_type => "text",
+                        :fallback => "&lsaquo;"
+                    }) %>
+                <span class="main_nav-label"><%= prev_page_slug %></span>
+            </a>
+        </li>
+        <% end %>
+        <% if next_page_url %>
+        <li><a class="main_nav-item" href="<%= next_page_url %>">
+                <span class="main_nav-label"><%= next_page_slug %></span>
+                <%= partial("layouts/partials/icon", :locals => {
+                        :id => "arrow-right-outline",
+                        :classes => "main_nav-icon right",
+                        :fallback_type => "text",
+                        :fallback => "&lsaquo;"
+                    }) %>
+            </a>
+        </li>
+        <% end %>
+        <li><a class="main_nav-toc js-has-flyout" href="#js-flyout">
+                <%= partial("layouts/partials/icon", :locals => {
+                        :id => "toc",
+                        :classes => "main_nav-icon left",
+                        :fallback_type => "none",
+                        :fallback => "&lsaquo;"
+                    }) %>
+                <span class="main_nav-label">Contents</span>
+            </a>
+        </li>
     </ul>
+    <% end %>
     <ul class="main_nav-full" id="js-flyout">
         <li>
             <a class="main_nav-item<% if current_page? "index.html" %> is-active<% end %>" href="/">Home</a>

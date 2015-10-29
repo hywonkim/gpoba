@@ -15,6 +15,19 @@ layout: layout
 
 <% sections = sitemap.where(:chapter => locals[:slug]).order_by(:order).all %>
 
+<%# previous page %>
+<% unless first_page? %>
+    <% prev_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] - 1) } %>
+    <% prev_page_url = asset_url("#{data.site.paths.chapter}#{prev_page[0].metadata[:locals][:slug].urlize}/") %>
+<% end %>
+
+<%# next page %>
+<% unless last_page? %>
+    <% next_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] + 1) } %>
+    <% next_page_url = asset_url("#{data.site.paths.chapter}#{next_page[0].metadata[:locals][:slug].urlize}/") %>
+<% end %>
+
+
 <% content_for :local_styles do %>
     <style>
         <%# http://www.css3.info/preview/multiple-backgrounds/ %>
@@ -30,8 +43,16 @@ layout: layout
     </style>
 <% end %>
 
-<%= partial "layouts/partials/header" %>
+<!-- global header -->
+<%= partial("layouts/partials/header", :locals => {
+        :page_title => locals[:title],
+        :prev_page_slug => first_page? ? false : prev_page[0].metadata[:locals][:slug],
+        :prev_page_url => first_page? ? false : prev_page_url,
+        :next_page_slug => last_page? ? false : next_page[0].metadata[:locals][:slug],
+        :next_page_url => last_page? ? false : next_page_url,
+    }) %>
 
+<!-- chapter header -->
 <article class="chapter">
     <header class="chapter-hero">
         <div class="chapter-hero-lockup">
@@ -105,8 +126,8 @@ layout: layout
         <%# get_current_index %>
         <% unless first_page? %>
         <li class="pagination-prev">
-            <% prev_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] - 1) } %>
-            <a href="<%= asset_url("#{data.site.paths.chapter}#{prev_page[0].metadata[:locals][:slug].urlize}/") %>">
+
+            <a href="<%= prev_page_url %>">
                 <span class="pagination-subtitle">Previous</span>
                 <strong class="pagination-title"><%= prev_page[0].metadata[:locals][:title] %></strong>
             </a>
@@ -114,8 +135,7 @@ layout: layout
         <% end %>
         <% unless last_page? %>
         <li class="pagination-next">
-            <% next_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] + 1) } %>
-            <a href="<%= asset_url("#{data.site.paths.chapter}#{next_page[0].metadata[:locals][:slug].urlize}/") %>">
+            <a href="<%= next_page_url %>">
                 <span class="pagination-subtitle">Next</span>
                 <strong class="pagination-title"><%= next_page[0].metadata[:locals][:title] %></strong>
             </a>

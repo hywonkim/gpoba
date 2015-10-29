@@ -42,6 +42,12 @@ $main_nav-break: 'medium';
 // -> used to place the highlight rule over or under the active item.
 .main_nav.is-above {}
 
+// hide the (mobile) pagination nav with JS
+// -> happens at bottom of the page, when you scroll past the local pagination nav
+// -> see .main_nav-pagination for styles
+// -> see gpoba.mobile_nav.js for behavior
+.main_nav.js-hide-pagination {}
+
 
 /* Submodules
 // -------------------------------------------------------------------------- */
@@ -54,7 +60,7 @@ $main_nav-break: 'medium';
     color: theme(text primary, reverse);
 
     // override hover state of default nav link
-    &:hover, &:active { color: inherit; }
+    &:hover, &:active { color: theme(text primary, reverse); }
 
     @include respond-to($main_nav-break) { display: none; }
 }
@@ -66,15 +72,13 @@ $main_nav-break: 'medium';
 
     @include respond-to($main_nav-break) { display: none; }
 
+    .js-hide-pagination & { display: none; }
+
     li {
         @include border(right, $color: theme(border, reverse));
 
         &:last-child { border: none; }
     }
-}
-
-.main_nav-toc {
-    @extend .main_nav-item;
 }
 
 .main_nav-full {
@@ -93,7 +97,9 @@ $main_nav-break: 'medium';
     padding: 1.5em 0;
     color: theme(text tertiary, reverse);
 
-    &:hover, &:active { color: theme(text primary, reverse); }
+    &:hover, &:active {
+        color: theme(text primary, reverse);
+    }
 
     &.is-active {
         $border-w: 4px;
@@ -116,11 +122,26 @@ $main_nav-break: 'medium';
                 }
             }
         }
-
-        // .top & {
-        //     @include chapter_highlights(border-top-color color);
-        //     border-bottom: none;
-        //     border-top: 4px solid theme(highlight);
-        // }
     }
+}
+
+    .main_nav-icon {
+        @extend .icon;
+        margin: 0;
+        height: 1.2em;
+        width: 1.2em;
+        fill: theme(text primary, reverse);
+
+        &:hover, &:active, .main_nav-item:hover &, .main_nav-item:active & {
+            @include chapter_highlights(fill);
+            fill: theme(highlight);
+        }
+
+        &.left { margin-right: 0.3em; }
+        &.right { margin-left: 0.3em; }
+    }
+
+.main_nav-toc {
+    @extend .main_nav-item;
+    display: none;
 }
