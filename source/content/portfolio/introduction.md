@@ -15,8 +15,10 @@ FY15 was a strong year for GPOBA, with five new grant agreements signed for subs
 
 - As of June 2015, the GPOBA cumulative subsidy portfolio consists of **44 grant agreements in seven sectors, totaling $228 million.** Three projects closed in FY15, bringing to 28 the number of closed projects in GPOBA’s subsidy portfolio from which valuable lessons are being drawn.
 - **GPOBA disbursed a total of $10 million in FY15 for subsidy projects**, bringing cumulative disbursements since 2006 to $116.3 million.
-- **Five new grant agreements were signed** for a total of $50 million, including three scale-ups of successful GPOBA pilots in Bangladesh, Kenya, and Uganda.
+- **Five new grant agreements were signed**[^1] for a total of $50 million, including three scale-ups of successful GPOBA pilots in Bangladesh, Kenya, and Uganda.
 - **Eight new TA activities were initiated**, totaling $1.4 million.
 - **Ten new knowledge dissemination activities** were undertaken for $1.7 million.
 
 Details of GPOBA’s complete portfolio and disbursements to date can be found in the [Appendices](localhost:4567/chapters/appendices) section.
+
+[^1]: This figure does not include a $4.9 million project signed at the close of 2014 for increasing access to grid electricity in Vanuatu.
