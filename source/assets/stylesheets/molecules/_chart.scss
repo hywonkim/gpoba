@@ -5,7 +5,7 @@
 
 @import "../core/*";
 
-/* Bar Chart Color Mixin 
+/* Bar Chart Color Mixin
 // -------------------------------------------------------------------------- */
 @mixin chart_color($color) {
     $ct-series-names: (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o); // from chartist settings
@@ -23,12 +23,85 @@
 
 /* Base
 // -------------------------------------------------------------------------- */
+.chart {
+    margin: 50px 0px;
 
+    img { display: none; }
+    .no-js.no-svg img, .ie9 img { display: block; }
+}
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+.chart-title {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.chart-caption {
+    @include font-scale(3);
+    font-style: italic;
+    color: highlight('green');
+    text-align: left;
+    display: block;
+}
+
+.chart-number {
+    @include font-scale(2);
+    display: block;
+    text-align: left;
+    text-transform: uppercase;
+    color: lighten(theme(text secondary), 10);
+}
+
+.chart-render {
+    position: relative;
+    clear: both;
+    margin: 1em 0;
+    overflow: visible;
+}
+
+    .chart-axis {
+        @include font-scale(2);
+        color: theme(text tertiary);
+        display: block;
+        position: absolute;
+
+        &.y {
+            top: 50%;
+            left: -8em;
+            @include transform(rotate(-90deg) translateY(-50%));
+        }
+        &.x {}
+    }
+
+    .chart-axis-unit {
+        @extend %font-body--bold;
+        font-size: 0.6em;
+        text-transform: uppercase;
+    }
+
+    .label-element {
+        @include font-scale(2);
+        line-height: 100%;
+        color: lighten(theme(text secondary), 10);
+
+        @include respond-to('small') {
+            @include font-scale(3);
+        }
+    }
+
+    .label-line {
+        stroke: darken(theme(border), 10);
+        stroke-width: 1px;
+    }
+
+/* Chartist overrides
+// -------------------------------------------------------------------------- */
 .ct-label {
     @include font-scale(3);
     @extend %font-body;
     fill: theme(text secondary);
-
 }
 
 .ct-line-graph {
@@ -44,55 +117,8 @@
         stroke: highlight('green');
     }
 
-    .ct-area{
+    .ct-area {
         fill: highlight('green');
-    }
-}
-
-.chart-title {
-    text-align: center;
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
-
-.label-element{
-    @include font-scale(2);
-    line-height: 100%;
-    color: lighten(theme(text secondary), 10);
-
-    @include respond-to('small') {
-        @include font-scale(3);
-    }
-}
-
-.label-line {
-    stroke: darken(theme(border), 10);
-    stroke-width: 1px;
-}
-
-.chart {
-    margin: 50px 0px;
-
-    .axis-title{
-        @include font-scale(2);
-        color: darken(theme(border),15);
-
-    }
-}
-
-.chart-caption{    
-    @include font-scale(3);
-    font-style: italic;
-    color: highlight('green');
-    text-align: left;
-    display: block;
-
-    strong {        
-        @include font-scale(2);
-        display: block;
-        text-align: left;
-        text-transform: uppercase;
-        color: lighten(theme(text secondary), 10);
     }
 }
 
