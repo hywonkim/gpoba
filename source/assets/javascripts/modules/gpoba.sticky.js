@@ -19,7 +19,7 @@ gpoba.sticky = (function($) {
     exports.init = function(el, highlightEl, stopEl, parent) {
         $(el).each(function() {
             var _parent = parent ? parent : window; // the parent container; defaults to the window
-            var _parentH = $(_parent).height;
+            var _parentH = $(_parent).height();
             var _yPosInit = $(el).offset().top; // target element's offset (distance to top)
             var _$highlightEl = highlightEl ? $(highlightEl) : false; // a nav element to be highlighted on scroll
             var _stopPos = stopEl ? $(stopEl).offset().top : false; // element which "stops" the sticky behavior

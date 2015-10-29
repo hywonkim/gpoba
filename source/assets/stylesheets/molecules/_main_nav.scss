@@ -13,7 +13,6 @@ $main_nav-break: 'medium';
 
 .main_nav {
     @include unstyled-list;
-    padding: 0 $gutter-outside;
     z-index: $z--high;
 
     @include respond-to($main_nav-break) { padding: 0; }
@@ -25,12 +24,9 @@ $main_nav-break: 'medium';
 
     li {
         display: block;
+        list-style: none;
         margin: 0;
         padding: 0;
-
-        @include breakpoint(400px) {
-            display: inline-block;
-        }
     }
 }
 
@@ -42,19 +38,14 @@ $main_nav-break: 'medium';
 // -> used to place the highlight rule over or under the active item.
 .main_nav.is-above {}
 
-// hide the (mobile) pagination nav with JS
-// -> happens at bottom of the page, when you scroll past the local pagination nav
-// -> see .main_nav-pagination for styles
-// -> see gpoba.mobile_nav.js for behavior
-.main_nav.js-hide-pagination {}
-
 
 /* Submodules
 // -------------------------------------------------------------------------- */
 
 .main_nav-title {
     @extend .nav-item;
-    display: inline-block;
+    display: none;
+    // display: inline-block;
     float: left;
     padding: 1.5em 1em;
     color: theme(text primary, reverse);
@@ -72,20 +63,66 @@ $main_nav-break: 'medium';
 
     @include respond-to($main_nav-break) { display: none; }
 
-    .js-hide-pagination & { display: none; }
-
     li {
         @include border(right, $color: theme(border, reverse));
+        display: inline-block;
 
         &:last-child { border: none; }
+
+        // show/hide the (mobile) pagination nav with JS
+        // -> happens at bottom of the page, when you scroll past the local pagination nav
+        // -> see .main_nav-pagination for styles
+        // -> see gpoba.mobile_nav.js for behavior
+        &.js-hide-pagination { display: none; }
     }
 }
 
 .main_nav-full {
+    $pointer-size: 14px;
+
+    @extend %base-transition;
+    @include border;
     display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    min-width: em(180px);
+    background-color: theme(bg);
+    border-radius: em(3px);
+
+    &.is-visible {
+        display: block;
+    }
+
+    &:before {
+        @include triangle($pointer-size, theme(border), up);
+        content: " ";
+        display: block;
+        position: absolute;
+        top: -($pointer-size/2);
+        right: 26px;
+    }
+
+    &:after {
+        @include triangle($pointer-size, theme(bg), up);
+        content: " ";
+        display: block;
+        position: absolute;
+        top: -(($pointer-size/2) - 2);
+        right: 26px;
+    }
 
     @include respond-to($main_nav-break) {
         display: block;
+        position: relative;
+        top: 0;
+        background-color: transparent;
+        border-radius: none;
+        border: none;
+
+        &:before, &:after { content: none; }
+
+        li { display: inline-block; }
     }
 }
 
@@ -105,7 +142,7 @@ $main_nav-break: 'medium';
     &.is-active {
         $border-w: 4px;
 
-        @include breakpoint(820px) {
+        @include respond-to($main_nav-break) {
             &:after {
                 @include chapter_highlights(background-color);
                 content: " ";
@@ -124,7 +161,33 @@ $main_nav-break: 'medium';
             }
         }
     }
+
+    .main_nav-full & {
+        padding: 0.5em 0;
+
+        &:hover, &:active { color: theme(text primary); }
+        &:first-child { margin-top: 0.5em; }
+        &:last-child { margin-bottom: 0.5em; }
+
+        @include respond-to($main_nav-break) {
+            padding: 1.5em 0;
+
+            &:hover, &:active { color: theme(text primary, reverse); }
+            &:first-child { margin-top: 0; }
+            &:last-child { margin-bottom: 0; }
+        }
+    }
+
 }
+
+    .main_nav-toc {
+        @extend .main_nav-item;
+
+        &.is-active {
+            @include chapter_highlights;
+            color: theme(highlight);
+        }
+    }
 
     .main_nav-icon {
         @extend .icon;
@@ -133,11 +196,17 @@ $main_nav-break: 'medium';
         width: 1.2em;
         fill: theme(text primary, reverse);
 
-        &:hover, &:active, .main_nav-item:hover &, .main_nav-item:active & {
-            @include chapter_highlights(fill);
-            fill: theme(highlight);
-        }
+        // &:hover, &:active, .main_nav-item:hover &, .main_nav-item:active & {
+        //     @include chapter_highlights(fill);
+        //     fill: theme(highlight);
+        // }
 
         &.left { margin-right: 0.3em; }
         &.right { margin-left: 0.3em; }
+    }
+
+    .main_nav-label {
+        display: none;
+
+        @include breakpoint(550px) { display: inline-block; }
     }

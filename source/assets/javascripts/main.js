@@ -7,6 +7,7 @@
 
 //= require modules/gpoba.sticky
 //= require modules/gpoba.chart
+// require modules/gpoba.mobile_nav
 
 // initialize the global namespace object if it doesn't already exist
 var gpoba = window.gpoba || {};
@@ -19,17 +20,26 @@ var gpoba = window.gpoba || {};
 jQuery(function($) {
     // make jump navs 'sticky' on scroll
     // -> if there is a jump nav on this page
-    if ($(".js-sticky").length > 0) gpoba.sticky.init(".js-sticky", ".js-highlight", ".js-sticky-stop");    
+    if ($(".js-sticky").length > 0) gpoba.sticky.init(".js-sticky", ".js-highlight", ".js-sticky-stop");
 
     if ($(".js-chart").length > 0) {
         gpoba.chart.create('.ct-line-graph', '/content/overview/charts/figure03.json', 'line');
         gpoba.chart.create('.ct-figure-04', '/content/overview/charts/figure04.json');
-        gpoba.chart.create('.ct-figure-05-sector', '/content/portfolio/charts/figure05_sector.json');        
-        gpoba.chart.create('.ct-figure-05-region', '/content/portfolio/charts/figure05_region.json');        
+        gpoba.chart.create('.ct-figure-05-sector', '/content/portfolio/charts/figure05_sector.json');
+        gpoba.chart.create('.ct-figure-05-region', '/content/portfolio/charts/figure05_region.json');
     }
+
+    // if ($(".js-mobile_nav").length > 0) gpoba.mobile_nav.init(".js-mobile_nav");
 
     // run Tablesaw for responsive tables
     $( document ).trigger( "enhance.tablesaw" );
+
+    // mobile nav flyout behavior
+    $('.js-has-flyout').click(function(event) {
+        $($(this).attr("href")).toggleClass("is-visible");
+        $(this).toggleClass("is-active");
+        event.preventDefault();
+    });
 });
 
 

@@ -33,8 +33,11 @@ $footer-break: $main_nav-break;
 
 .footer-nav {
     @extend .main_nav;
-    display: block;
-    position: fixed;
+    @include clearfix;
+    @include border(bottom, $color: theme(border, reverse));
+    display: none;
+    position: relative;
+    width: 100%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -43,12 +46,15 @@ $footer-break: $main_nav-break;
 
     // @include respond-to('small') { text-align: center; }
     @include respond-to($footer-break) {
-        @include border(bottom, $color: theme(border, reverse));
         display: inline-block;
-        position: relative;
-        width: 100%;
         text-align: center;
         background-color: transparent;
+    }
+
+    &.is-fixed {
+        position: fixed;
+        padding: 0 $gutter-outside;
+        border-bottom: none;
     }
 }
 

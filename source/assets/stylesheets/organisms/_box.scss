@@ -47,6 +47,8 @@
 
 .box-content {
     @extend .content;
+    padding-left: 0;
+    padding-right: 0;
 
     img {
         margin-top: 1em;

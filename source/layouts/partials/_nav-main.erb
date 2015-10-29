@@ -36,7 +36,7 @@
             </a>
         </li>
         <% end %>
-        <li style="display: none;"><a class="main_nav-item js-has-flyout" href="#js-toc">
+        <li><a class="main_nav-toc js-has-flyout" href="#js-toc">
                 <%= partial("layouts/partials/icon", :locals => {
                         :id => "toc",
                         :classes => "main_nav-icon left",
@@ -48,7 +48,7 @@
         </li>
     </ul>
     <% end %>
-    <ul class="main_nav-full" id="js-flyout">
+    <ul class="main_nav-full" id="js-toc">
         <li>
             <a class="main_nav-item<% if current_page? "index.html" %> is-active<% end %>" href="/">Home</a>
         </li>

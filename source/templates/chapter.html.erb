@@ -13,20 +13,6 @@ layout: layout
     'image_align' => locals[:image_align],
 }) %>
 
-<% sections = sitemap.where(:chapter => locals[:slug]).order_by(:order).all %>
-
-<%# previous page %>
-<% unless first_page? %>
-    <% prev_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] - 1) } %>
-    <% prev_page_url = asset_url("#{data.site.paths.chapter}#{prev_page[0].metadata[:locals][:slug].urlize}/") %>
-<% end %>
-
-<%# next page %>
-<% unless last_page? %>
-    <% next_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] + 1) } %>
-    <% next_page_url = asset_url("#{data.site.paths.chapter}#{next_page[0].metadata[:locals][:slug].urlize}/") %>
-<% end %>
-
 
 <% content_for :local_styles do %>
     <style>
@@ -41,6 +27,20 @@ layout: layout
             <% end %>
         }
     </style>
+<% end %>
+
+<% sections = sitemap.where(:chapter => locals[:slug]).order_by(:order).all %>
+
+<%# previous page %>
+<% unless first_page? %>
+    <% prev_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] - 1) } %>
+    <% prev_page_url = asset_url("#{data.site.paths.chapter}#{prev_page[0].metadata[:locals][:slug].urlize}/") %>
+<% end %>
+
+<%# next page %>
+<% unless last_page? %>
+    <% next_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] + 1) } %>
+    <% next_page_url = asset_url("#{data.site.paths.chapter}#{next_page[0].metadata[:locals][:slug].urlize}/") %>
 <% end %>
 
 <!-- global header -->
