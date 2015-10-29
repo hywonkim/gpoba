@@ -38,6 +38,12 @@ $chapter-padding: fs(6);
 
 .chapter-hero-lockup {
     @extend .hero-headline;
+    width: 100%;
+
+    .csstransforms & {
+        left: 0;
+        transform: none;
+    }
 }
 
 // headline lockup appearing in a hero
