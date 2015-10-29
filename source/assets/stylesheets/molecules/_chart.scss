@@ -72,18 +72,24 @@
 
 .chart {
     margin: 50px 0px;
+
+    .axis-title{
+        @include font-scale(2);
+        color: darken(theme(border),15);
+
+    }
 }
 
-.chart-caption{
-    font-style: italic;
+.chart-caption{    
     @include font-scale(3);
+    font-style: italic;
     color: highlight('green');
     text-align: left;
     display: block;
 
-    strong {
-        display: block;
+    strong {        
         @include font-scale(2);
+        display: block;
         text-align: left;
         text-transform: uppercase;
         color: lighten(theme(text secondary), 10);
