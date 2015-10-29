@@ -21,7 +21,7 @@ gpoba.chart = (function($) {
     // -> "large" are settings applied above the breakpoint (see exports.breakpoints)
     exports.settings = {
         bar: {
-            width: 30,
+            width: 50,
             small: {
                 stackBars: true,
                 chartPadding: {
@@ -98,15 +98,15 @@ gpoba.chart = (function($) {
                     label_width = 250 ;
                     
                     // chart boost to separate as chart grows in size to reduce overlap.
-                    if (chart.seriesIndex ==  0) { 
-                        var index = 1;
+                    if (chart.seriesIndex <=  1) { 
+                        var index = 1.5;
                         var label_x_offset = 3;
                     } else {
                         var index = chart.seriesIndex;
                         var label_x_offset = 0;
                     }
 
-                    var chartboost = ( 3.5 / (index + .8 ) + 1 );
+                    var chartboost = ( 5 / (index + .9 ) + 1 );
                     
                     // alternate top and bottom labels in horizontal layout
                     if (chart.seriesIndex%2 == 0) {
