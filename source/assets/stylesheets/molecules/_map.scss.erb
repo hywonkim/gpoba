@@ -55,6 +55,8 @@
     @include respond-to('medium') {
         min-height: 400px;
         min-height: 50vh;
+
+        .ie9 &, .ie & { height: 80vh; }
     }
 }
 
@@ -70,6 +72,7 @@
 /* --- the legend ----------------------------------------------------------- */
 .map-legend {
     @include rem(max-width, 320px);
+    @include rem(max-height, 265px);
     @include font-scale(2);
     display: block;
     position: relative;
@@ -79,6 +82,7 @@
 
     @include respond-to('medium') {
         @include font-scale(2);
+        @include rem(min-height, 200px);
         margin-top: -3em;
         // bottom: 0;
     }
