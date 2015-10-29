@@ -83,10 +83,11 @@ $hero-nav-break: $main_nav-break;
     @include rem(max-height, 267px);
 
     .csstransforms & {
+        @include transform(translateX(-50%));
         position: absolute;
         left: 50%;
         margin-top: 0;
-        transform: translateX(-50%);
+        // transform: translateX(-50%);
     }
 }
 
