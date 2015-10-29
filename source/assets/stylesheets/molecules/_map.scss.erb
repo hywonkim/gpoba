@@ -14,6 +14,7 @@
     @include rem(padding-top, $gutter);
     @include border(top);
     position: relative;
+    // width: 100%;
 
     @include respond-to('medium') {
         @include rem(margin, $gutter -100px);
@@ -45,9 +46,16 @@
 
 /* --- the actual map ------------------------------------------------------- */
 .map-render {
-    // height: 700px;
     width: 100%;
+    max-height: 600px;
+    max-height: 80vh;
     fill: darken(theme(well), 5);
+
+    // for ie9
+    @include respond-to('medium') {
+        min-height: 400px;
+        min-height: 50vh;
+    }
 }
 
 /* --- map title ------------------------------------------------------------ */
