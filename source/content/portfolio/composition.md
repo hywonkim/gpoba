@@ -10,7 +10,7 @@ Access to energy and water are crucial in alleviating extreme poverty, and the e
 
 <figure class="ct-figure-05-sector chart js-chart ct-golden-section">
     <figcaption class="chart-caption"><strong>Figure 5 </strong> Share of Funding by Sector</figcaption>
-    <img src="<%= img_path + '/figures/figure05.png' %>" />
+    <!-- <img src="<%= image_path '/figure05.png' %>" /> -->
 </figure>
 
 <figure class="ct-figure-05-region chart js-chart ct-golden-section">
