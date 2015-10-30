@@ -26,8 +26,8 @@
 .chart {
     margin: 50px 0px;
 
-    img { display: none; }
-    .no-js.no-svg img, .ie9 img { display: block; }
+    img, .ie9 & img { display: block; }
+    .js.svg & img { display: none; } // hide image where chartist is supported
 }
 
 /* Submodules
@@ -49,7 +49,6 @@
 .chart-number {
     @include font-scale(2);
     display: block;
-    text-align: left;
     text-transform: uppercase;
     color: lighten(theme(text secondary), 10);
 }
@@ -59,28 +58,36 @@
     clear: both;
     margin: 1em 0;
     overflow: visible;
+
+    .no-js &, .no-svg &, .ie9 & { display: none; }
 }
 
+    // axis labels
     .chart-axis {
         @include font-scale(2);
         color: theme(text tertiary);
-        display: block;
+        display: inline-block;
+        text-align: center;
         position: absolute;
 
+        // modifiers: x or y axis
         &.y {
             top: 50%;
-            left: -8em;
-            @include transform(rotate(-90deg) translateY(-50%));
+            left: 0;
+            @include transform(rotate(-90deg) translateX(-45%));
+            @include transform-origin(left top);
         }
         &.x {}
     }
 
+    // the "millions" or whatever on an axis label
     .chart-axis-unit {
         @extend %font-body--bold;
-        font-size: 0.6em;
+        font-size: 0.75em;
         text-transform: uppercase;
     }
 
+    // stacked line graph labels
     .label-element {
         @include font-scale(2);
         line-height: 100%;

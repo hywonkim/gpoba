@@ -19,14 +19,15 @@ This report reviews GPOBA’s progress towards its objectives during the last fi
 <figure class="chart" alt="GPOBA's Development Impact">
     <figcaption class="chart-caption"> <strong class="chart-number">Figure 3 </strong> GPOBA's Development Impact</figcaption>
     <div class="chart-render ct-line-graph ct-golden-section js-chart">
-        <span class="chart-axis y"> Number of Verified Beneficiaries <small class="chart-axis-unit">(Millions)</small></span>
+        <span class="chart-axis y">Number of Verified Beneficiaries <small class="chart-axis-unit">(Millions)</small></span>
     </div>
-    <img src="<%= asset_url images_dir + '/figures/figure03.png' %>" />
+    <img src="<%= asset_url 'content/overview/charts/figure03.png' %>" />
 </figure>
 
-<figure class="ct-figure-04 js-chart chart ct-golden-section" alt="GPOBA Project Partners">
-    <figcaption class="chart-caption"> <strong>Figure 4 </strong>GPOBA Project Partners </figcaption>
-    <img src="<%= '/' + images_dir + '/figures/figure04.png' %>" />
+<figure class="chart">
+    <figcaption class="chart-caption"> <strong class="chart-number">Figure 4 </strong>GPOBA Project Partners</figcaption>
+    <div class="chart-render ct-figure-04 js-chart chart ct-golden-section"></div>
+    <img src="<%= asset_url 'content/overview/charts/figure04.png' %>" alt="GPOBA Project Partners" />
 </figure>
 
 <%= partial("layouts/partials/figures/map") %>
