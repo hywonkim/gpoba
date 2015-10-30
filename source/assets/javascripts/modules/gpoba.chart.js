@@ -94,7 +94,7 @@ gpoba.chart = (function($) {
                 // horizontal orientation (larger screens)
                 // -> if this has a "ct-horizontal-bars" class, render horizontal labels
                 if (ctClassList.contains("ct-horizontal-bars")) {
-                    label_height = 50 ;
+                    label_height = 100 ;
                     label_width = 250 ;
                     
                     // chart boost to separate as chart grows in size to reduce overlap.
@@ -121,9 +121,12 @@ gpoba.chart = (function($) {
                         label_x = (-exports.settings.bar.width/2 - 40) * chartboost;
                     }
                     
-                    if(chart.seriesIndex > 0){
+                    if(chart.seriesIndex > 1){
                         pointer_offset_x = 10;
                         label_y = 15;
+                    } else if (chart.seriesIndex == 1) {
+                        pointer_offset_x = 5;
+                        label_y = 10;
                     }
 
 
@@ -132,7 +135,7 @@ gpoba.chart = (function($) {
                 } else {
                     label_x = -5;
                     pointer_offset_x = 0;
-                    label_height = 20 ;
+                    label_height = 100 ;
                     label_width = 90 ;
 
                     if( chart.seriesIndex == 2 || chart.seriesIndex == 3) {
