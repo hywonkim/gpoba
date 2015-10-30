@@ -13,7 +13,7 @@ order: 2
 type: message
 ---
 
-The Global Partnership on Output-based Aid (GPOBA) has had a year of important transition and growth, as we continue to expand our reach and development impact. With support from our donors and through partnerships with 18 governments and 33 service providers, we have now delivered basic services to over eight million people. This achievement is a significant milestone for GPOBA, and represents a 14 percent increase from fiscal year 2014.
+The Global Partnership on Output-Based Aid (GPOBA) has had a year of important transition and growth, as we continue to expand our reach and development impact. With support from our donors and through partnerships with 18 governments and 33 service providers, we have now delivered basic services to over eight million people. This achievement is a significant milestone for GPOBA, and represents a 14 percent increase from fiscal year 2014.
 
 The Annual Report for fiscal year 2015 (FY15) details GPOBA’s work toward fulfilling its mandate to fund, design, demonstrate, and document OBA approaches to service delivery. During FY15, we balanced our ongoing commitment to deepening the impact of OBA in tested sectors with exploring the applicability of OBA in new sectors and environments. GPOBA’s $228 million subsidy portfolio now comprises 44 projects in seven sectors in 28 countries, with cumulative disbursements of $116.3 million. Three of the five grant agreements signed were scale-ups of successful OBA projects in the energy and water sectors, including the $15 million renewable energy scale-up in Bangladesh, which underscores GPOBA’s commitment to clean energy.
 
