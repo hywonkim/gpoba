@@ -10,7 +10,7 @@
 // require modules/gpoba.mobile_nav
 
 // Set correct URL
-<% ENV['APP_DOMAIN'] ? content_url = settings.url_root + 'chapters' : content_url = settings.url_root + 'content' %>
+<% ENV['APP_DOMAIN'] ? content_url = settings.url_root + '/chapters' : content_url = settings.url_root + '/content' %>
 
 // initialize the global namespace object if it doesn't already exist
 var gpoba = window.gpoba || {};
