@@ -91,7 +91,7 @@ helpers do
 
     # is this url in the current directory (in the sitemap)?
     def current_dir?(url)
-        if current_page.url.include? url.gsub(".html", "/").to_s
+        if current_page.url.include? url.gsub(settings.url_root,'').gsub(".html", "/").to_s
             return true
         end
     end
