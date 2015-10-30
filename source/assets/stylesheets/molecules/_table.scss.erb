@@ -143,37 +143,44 @@ table {
     text-transform: uppercase;
 }
 
+/* Tablesaw overrides
+// -------------------------------------------------------------------------- */
 .chapter .tablesaw-advance {
 
-    a.tablesaw-nav-btn.disabled {
+    .tablesaw-nav-btn.disabled.tablesaw-nav-btn.disabled {
         display: none;
     }
 
-    a.tablesaw-nav-btn {
+    .tablesaw-nav-btn.tablesaw-nav-btn {
 
-            $c: theme(text primary);
+            $c: theme(border);
             @extend %base-transition;
             @extend %font-accent;
             @include font-scale(2);
             @include border($color: $c);
             display: inline-block;
-            padding: 0.6em 1.8em 0.5em;
+            padding: 0.5em;
             background-image: none;
-            // text-transform: uppercase;
-            // border-bottom: 0;
             border-radius: $button-radius--default;
             color: $c;
+            text-shadow: none;
+            box-shadow: none;
 
-            &.right:before{
+            &.right:before {
                 border-left: 5px solid $c;
             }
 
-            &.left:before{
+            &.left:before {
                 border-right: 5px solid $c;
             }
 
-            &:hover, &:active {
-                
+            &:hover, &:active, &:focus {
+                color: theme('bg');
+                background-color: lighten(highlight('blue'), 20);
+                text-shadow: none;
+                box-shadow: none;
+                border-color: theme(bg);
+
                 &.right:before{
                     border-left: 5px solid theme('bg');
                 }
@@ -182,10 +189,7 @@ table {
                     border-right: 5px solid theme('bg');
                 }
 
-
-                color: theme('bg');
-                background-color: lighten(highlight('blue'), 20);
             }
-        
+
     }
 }

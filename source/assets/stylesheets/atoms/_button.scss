@@ -62,7 +62,6 @@ button, .button {
 // --- special variations ------------------------------------------------------
 // -> buttons of a strange and amazing nature
 
-
 .button.read_more {
     @extend %font-accent--bold;
     @include font-scale(2);
