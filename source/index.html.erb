@@ -58,7 +58,7 @@ title: home
     <%= partial "layouts/partials/hero-lockup" %>
 
     <!-- main menu -->
-    <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav", :show_home => true }) %>
+    <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav" }) %>
 
     <a class="hero-pointer" href="#intro">
         <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "hero-pointer-icon", :fallback_type => "text", :fallback => "Scroll for more" }) %> Year in Review
@@ -142,7 +142,7 @@ title: home
 
 <!-- Flags & Sponsors -->
 <section class="panel">
-    <h1 class="panel-slug">Where we work</h1>
+    <h1 class="title">Where we work</h1>
     <div class="l-wrapper">
         <ul class="gallery tiny align-middle">
         <% data.flags.each do |country| %>
@@ -160,7 +160,7 @@ title: home
 
 <!-- Partners -->
 <section class="panel">
-    <h1 class="panel-slug">Our partners</h1>
+    <h1 class="title">Our partners</h1>
     <div class="l-wrapper">
         <ul class="gallery small align-middle">
         <% data.affiliates.partners.each do |partner| %>

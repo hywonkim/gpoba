@@ -31,7 +31,7 @@ $header-break: $main_nav-break;
     @include rem(min-height, 40px);
     @include clearfix;
     display: block;
-    position: absolute;
+    position: relative;
     width: 100%;
     z-index: 1000;
     // text-align: center;
