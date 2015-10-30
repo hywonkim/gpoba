@@ -6,7 +6,7 @@
 <% next_page_url ||= false %>
 
 <header class="main_header">
-    <a class="header-logo" href="/">
+    <a class="header-logo" href="<%= settings.url_root %>">
         <%= partial("layouts/partials/logo") %>
     </a>
     <%= partial("layouts/partials/nav-main", :locals => {

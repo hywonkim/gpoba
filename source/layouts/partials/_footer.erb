@@ -11,7 +11,7 @@
                 :classes => "footer-nav js-mobile_nav"
             }) %>
         <div class="footer-section">
-            <a class="footer-lockup" href="/">
+            <a class="footer-lockup" href="<%= settings.url_root %>">
             <!-- GPOBA logo -->
                 <%= partial("layouts/partials/logo", :locals => { :classes => "footer-logo" }) %>
                 <span class="footer-title"><%= data.site.title %> <strong><%= data.site.year %></strong></span>
