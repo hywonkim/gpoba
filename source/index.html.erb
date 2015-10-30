@@ -78,7 +78,7 @@ title: home
     <!-- Leadership messages -->
     <aside class="box" id="messages">
         <h1 class="slug">Messages from our leadership</h1>
-        <div class="l-wrapper">
+        <div class="box-content wide">
             <ul class="gallery large">
                 <% sitemap.where(:chapter => "home", :type => "message").order_by(:order).all.each do |message| %>
                 <li class="gallery-item">

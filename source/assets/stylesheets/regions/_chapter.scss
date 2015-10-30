@@ -51,7 +51,7 @@ $chapter-padding: fs(6);
     @include rem(font-size, 54px);
     margin: 0;
     letter-spacing: -0.04em;
-    line-height: 1;
+    line-height: 1.1;
     color: theme(bg);
 
     @include respond-to('xsmall') { @include rem(font-size, 68px); }
@@ -134,7 +134,7 @@ $chapter-padding: fs(6);
         img {
             margin:0 .5em 0 0;
             padding: 10px;
-            float:left;            
+            float:left;
         }
     }
 

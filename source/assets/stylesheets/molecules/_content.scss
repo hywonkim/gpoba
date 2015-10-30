@@ -24,3 +24,7 @@
         @extend .lead;
     }
 }
+
+.content.wide {
+    @extend %l-wrapper;
+}

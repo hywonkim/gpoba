@@ -9,7 +9,7 @@
 
 %base-pullquote {
     @extend %font-display;
-    @include font-scale(5);
+    @include font-scale(3);
     @include border(top bottom);
     @include chapter_highlights;
     display: block;
@@ -20,6 +20,9 @@
     line-height: 1.4;
     letter-spacing: -0.01em;
     color: theme(highlight);
+
+    @include respond-to('xsmall') { @include font-scale(4); }
+    @include respond-to('medium') { @include font-scale(5); }
 
     @include respond-to('large') {
         margin-left: -3em;
