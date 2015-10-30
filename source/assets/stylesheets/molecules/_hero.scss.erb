@@ -85,7 +85,7 @@ $hero-nav-break: $main_nav-break;
 .hero-lockup {
     @extend .hero-headline;
     @include rem(max-width, 400px);
-    @include rem(max-height, 220px);
+    @include rem(max-height, 230px);
     width: 100%;
 
     .csstransforms & {
@@ -94,6 +94,13 @@ $hero-nav-break: $main_nav-break;
         left: 50%;
         margin-top: 0;
         // transform: translateX(-50%);
+    }
+
+    @include respond-to('medium') {
+        // for IE
+        @include rem(min-height, 200px);
+
+        svg { height: 220px; }
     }
 }
 
