@@ -9,19 +9,25 @@
 @import "../atoms/heading";
 @import "../organisms/gallery";
 
-$billboard-padding: fs(8);
+$billboard-break: 830px;
+$billboard-padding: $gutter fs(8);
 
 /* Base
 // -------------------------------------------------------------------------- */
 
 .billboard {
-    @include rem(padding-top, $billboard-padding);
-    @include rem(padding-bottom, $billboard-padding);
+    @include rem(padding-top, nth($billboard-padding, 1));
+    @include rem(padding-bottom, nth($billboard-padding, 1));
     position: relative;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-color: #ccc;
+
+    @include respond-to('xsmall') {
+        @include rem(padding-top, nth($billboard-padding, 2));
+        @include rem(padding-bottom, nth($billboard-padding, 2));
+    }
 }
 
 /* Submodules
@@ -30,12 +36,15 @@ $billboard-padding: fs(8);
 .billboard-frame {
     @extend %l-wrapper--narrow;
     @include border($color: theme(bg));
-    @include brackets;
     position: relative;
     z-index: $z--low;
     padding: $gutter;
 
     .multiplebgs & { border: none; }
+
+    @include breakpoint($billboard-break) {
+        @include brackets;
+    }
 }
 
 .billboard-title {
@@ -44,11 +53,11 @@ $billboard-padding: fs(8);
     // color: theme(bg);
 }
 
-.billboard-gallery {
+.billboard-gallery.small {
     @extend .gallery;
-    padding: $gutter $gutter 0 $gutter;
-    margin-left: -($gutter);
-    margin-right: -($gutter * 2);
+    padding: $gutter $gutter 0 0;
+    // margin-left: -($gutter);
+    margin-right: -($gutter);
     z-index: $z--low;
 
     &:last-child { margin-bottom: -($gutter); }
@@ -60,5 +69,11 @@ $billboard-padding: fs(8);
         display: block;
         z-index: -1;
         background-color: theme(bg);
+    }
+
+    @include breakpoint($billboard-break) {
+        padding: $gutter $gutter 0 $gutter;
+        margin-left: -($gutter);
+        margin-right: -($gutter * 2);
     }
 }
