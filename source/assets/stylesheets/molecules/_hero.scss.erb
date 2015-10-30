@@ -33,10 +33,15 @@ $hero-nav-break: $main_nav-break;
 
 .hero-logo {
     @extend .logo;
-    @include rem(max-width, 120px);
-    @include rem(padding, 16px);
+    @include rem(max-width, 80px);
     display: inline-block;
+    padding: 0.6em;
     background-color: theme(bg);
+
+    @include breakpoint(530px) {
+        @include rem(max-width, 120px);
+        padding: 1em;
+    }
 }
 
 .hero-headline {
@@ -80,7 +85,8 @@ $hero-nav-break: $main_nav-break;
 .hero-lockup {
     @extend .hero-headline;
     @include rem(max-width, 400px);
-    @include rem(max-height, 267px);
+    @include rem(max-height, 220px);
+    width: 100%;
 
     .csstransforms & {
         @include transform(translateX(-50%));
@@ -94,7 +100,7 @@ $hero-nav-break: $main_nav-break;
 .hero-nav {
     @extend .main_nav;
     @include border(bottom);
-    display: none;
+    display: block;
     position: absolute;
     bottom: $hero-pointer-h;
     width: 100%;
@@ -109,9 +115,11 @@ $hero-nav-break: $main_nav-break;
 .hero-button {
     $c: theme(text primary, reverse);
     @extend .button;
+    @include font-scale(1);
     position: absolute;
-    top: ($gutter * 0.75);
-    left: $gutter;
+    top: ($gutter/3);
+    left: ($gutter/3);
+    padding: 0.4em 1em 0.35em;
     border-color: $c;
     color: $c;
 
@@ -122,7 +130,17 @@ $hero-nav-break: $main_nav-break;
 
     &.right {
         left: auto;
-        right: $gutter;
+        right: ($gutter/3);
+    }
+
+
+    @include breakpoint(530px) {
+        @include font-scale(2);
+        top: ($gutter * 0.75);
+        left: $gutter;
+        padding: 0.6em 1.8em 0.5em;
+
+        &.right { right: $gutter; }
     }
 }
 

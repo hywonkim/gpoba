@@ -93,6 +93,7 @@ h6, .zeta, %zeta {
 .title, %title {
     @extend %beta;
     @extend %highlight;
+    text-align: center;
 }
 
 .highlight, %highlight {
