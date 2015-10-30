@@ -59,7 +59,12 @@
     margin: 1em 0;
     overflow: visible;
 
-    .no-js &, .no-svg &, .ie9 & { display: none; }
+    .no-js &, .no-svg &, .ie9 & {
+        display: none;
+        position: absolute;
+        height: 0;
+        width: 0;
+    }
 }
 
     // axis labels
