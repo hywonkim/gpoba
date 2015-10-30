@@ -1,5 +1,5 @@
 ---
-title: RBF in the Solid Waste Management sector
+title: RBF in the Solid Waste Management Sector
 chapter: center of expertise
 order: 7
 type: box
