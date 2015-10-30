@@ -27,7 +27,7 @@
     margin: 50px 0px;
 
     img, .ie9 & img { display: block; }
-    .js.svg & img { display: none; } // hide image where chartist is supported
+    .js.svg:not(.ie9) & img { display: none; } // hide image where chartist is supported
 }
 
 /* Submodules
