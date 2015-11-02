@@ -44,7 +44,6 @@ $footer-break: $main_nav-break;
     z-index: 1000;
     background-color: theme(bg, reverse);
 
-    // @include respond-to('small') { text-align: center; }
     @include respond-to($footer-break) {
         display: inline-block;
         text-align: center;
@@ -149,8 +148,12 @@ $footer-break: $main_nav-break;
         margin-right: $gutter;
 
         &.copyright {
-            margin-right: 0;
-            float: right;
+            display: block;
+
+            @include respond-to('small') {
+                margin-right: 0;
+                float: right;
+            }
         }
 
         a, small {
