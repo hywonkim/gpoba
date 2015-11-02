@@ -150,7 +150,7 @@ title: home
                 <% unless country.format.present? %>
                     <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => country.filename, :alt => country.name }) %>
                 <% else %>
-                    <%= image_tag country.filename + "." + country.format, :alt => country.name, :class => "logo" %>
+                    <%= image_tag country.filename + "." + country.format, :title => country.name, :alt => country.name, :class => "logo" %>
                 <% end %>
             </li>
         <% end %>
