@@ -16,6 +16,7 @@
                 <%= partial("layouts/partials/logo", :locals => { :classes => "footer-logo" }) %>
                 <span class="footer-title"><%= data.site.title %> <strong><%= data.site.year %></strong></span>
             </a>
+
             <ul class="footer-subnav">
                 <li><a class="footer-subnav-item" href="http://gpoba.org" target="_blank">gpoba.org</a></li>
                 <li><a class="footer-subnav-item" href="<%= asset_url data.site.download_version %>" target="_blank">Download the PDF version</a></li>

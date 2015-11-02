@@ -31,17 +31,16 @@ $header-break: $main_nav-break;
     @include rem(min-height, 40px);
     @include clearfix;
     display: block;
-    position: relative;
+    position: absolute;
     width: 100%;
     z-index: 1000;
-    // text-align: center;
-    background-color: theme(bg, reverse);
+    text-align: center;
 
     @include respond-to($header-break) {
         position: relative;
         text-align: left;
         color: theme(text primary, reverse);
-
+        background-color: theme(bg, reverse);
     }
 }
 
@@ -50,12 +49,12 @@ $header-break: $main_nav-break;
 
 .header-logo {
     @extend .logo;
-    // @include rem(max-width, 120px);
-    // @include rem(padding, 16px);
-    // display: inline-block;
-    // background-color: theme(bg);
+    @include rem(max-width, 120px);
+    @include rem(padding, 16px);
+    display: inline-block;
+    background-color: theme(bg);
 
-    // @include respond-to($main_nav-break) {
+    @include respond-to($main_nav-break) {
         $h: 28px;
 
         @include rem(height, $h);
@@ -70,17 +69,23 @@ $header-break: $main_nav-break;
         border-bottom: none;
         color: theme(text primary, reverse);
         background-color: transparent;
-    // }
+    }
 }
 
 .header-nav {
     @extend .main_nav;
     // display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $z--nav;
+    background-color: theme(bg, reverse);
 
-    // @include respond-to('medium') {
+    @include respond-to('medium') {
         display: inline-block;
         position: relative;
         float: right;
         margin-right: $gutter-outside;
-    // }
+    }
 }
