@@ -98,10 +98,6 @@
         line-height: 100%;
         color: lighten(theme(text secondary), 10);
 
-        @include respond-to('xsmall') {
-            @include font-scale(2);
-        }
-
         @include respond-to('small') {
             @include font-scale(3);
         }

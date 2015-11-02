@@ -3,8 +3,8 @@ title: home
 ---
 
 <% content_for :local_styles do %>
-    <style>
-        <% img_path = asset_url(data.site.paths.content + 'home/') %>
+    <style>        
+        <% img_path = asset_url(data.site.paths.content + 'home/') + '/' %>
 
         /* cover image */
         #cover {
@@ -58,7 +58,7 @@ title: home
     <%= partial "layouts/partials/hero-lockup" %>
 
     <!-- main menu -->
-    <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav" }) %>
+    <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav", :home => true }) %>
 
     <a class="hero-pointer" href="#intro">
         <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "hero-pointer-icon", :fallback_type => "text", :fallback => "Scroll for more" }) %> Year in Review
@@ -78,11 +78,11 @@ title: home
     <!-- Leadership messages -->
     <aside class="box" id="messages">
         <h1 class="slug">Messages from our leadership</h1>
-        <div class="l-wrapper">
+        <div class="box-content wide">
             <ul class="gallery large">
                 <% sitemap.where(:chapter => "home", :type => "message").order_by(:order).all.each do |message| %>
                 <li class="gallery-item">
-                    <a class="card tile secondary" href="<%= message.url %>">
+                    <a class="card tile secondary" href="<%= settings.url_root + message.url %>">
                         <h2 class="card-title"><%= message.data.title %></h2>
                         <span class="card-subtitle">
                             <% message.data.authors.each_with_index do |author, index| %>
@@ -111,7 +111,7 @@ title: home
         <ul class="billboard-gallery small align-middle">
             <% data.affiliates.donors.each do |donor| %>
             <li class="gallery-item">
-                <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => donor.filename, :link => donor.url, :alt => donor.name }) %>
+                <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => donor.filename, :link => donor.url, :alt => donor.name, :target => "target='_blank'" }) %>
             </li>
             <% end %>
         </ul>
@@ -124,13 +124,13 @@ title: home
     <ul class="feed l-wrapper">
         <% data.chapters.each do |chapter| %>
             <li class="feed-item card horizontal tile theme-highlight <%= chapter.color %>">
-                <a class="card-thumb" href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>">
+                <a class="card-thumb" href="<%= settings.url_root %><%= data.site.paths.chapter %><%= chapter.slug.urlize %>">
                     <img src="<%= asset_url(data.site.paths.content + chapter.slug.urlize + '/' + chapter.image[0].to_s) %>" />
                 </a>
                 <div class="card-content">
-                    <h2 class="card-title"><a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>"><%= chapter.title %></a></h2>
+                    <h2 class="card-title"><a href="<%= settings.url_root %><%= data.site.paths.chapter %><%= chapter.slug.urlize %>"><%= chapter.title %></a></h2>
                     <p><%= chapter.teaser %> </p>
-                    <a class="button read_more" href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>">
+                    <a class="button read_more" href="<%= settings.url_root %><%= data.site.paths.chapter %><%= chapter.slug.urlize %>">
                         Read More
                         <%= partial("layouts/partials/icon", :locals => { :id => "arrow-right", :classes => "button-icon", :fallback_type => "text", :fallback => "&rsaquo;" }) %>
                     </a>
@@ -170,7 +170,7 @@ title: home
                     <%# partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => partner.filename, :link => link, :alt => partner.name }) %>
                 <%# else %>
                     <% if partner.url.present? %>
-                    <a class="logo" href="<%= partner.url %>">
+                    <a class="logo" href="<%= partner.url %>" target="_blank">
                     <% end %>
                         <%= image_tag partner.filename + ".png", :alt => partner.name %>
                     <% if partner.url.present? %>

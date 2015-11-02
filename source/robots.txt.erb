@@ -1,0 +1,6 @@
+# robotstxt.org/
+
+User-agent: *
+<% if ENV['APP_DOMAIN'] == 'production' %>
+    Disallow: /
+<% end %>

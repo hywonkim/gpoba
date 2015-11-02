@@ -91,7 +91,7 @@ helpers do
 
     # is this url in the current directory (in the sitemap)?
     def current_dir?(url)
-        if current_page.url.include? url.gsub(".html", "/").to_s
+        if current_page.url.include? url.gsub(settings.url_root,'').gsub(".html", "/").to_s
             return true
         end
     end
@@ -141,10 +141,10 @@ helpers do
 
 end
 
-set :css_dir, 'assets/stylesheets'
-set :js_dir, 'assets/javascripts'
-set :images_dir, 'assets/images'
-set :fonts_dir, 'assets/fonts'
+set :css_dir, 'assets/stylesheets/'
+set :js_dir, 'assets/javascripts/'
+set :images_dir, 'assets/images/'
+set :fonts_dir, 'assets/fonts/'
 
 # Add bower's directory to sprockets asset path
 # -> use bundler for back-end dependencies, bower for front-end dependencies
@@ -161,15 +161,18 @@ after_configuration do
   sprockets.import_asset 'filament-tablesaw/dist/tablesaw.js'
 end
 
+# For heroku use https else default to http
+ENV['RACK_ENV'] == 'production' ? http = 'https' : http = 'http'
+
 # For Heroku Builds
-set :url_root, "https://#{ENV['APP_DOMAIN'] ? ENV['APP_DOMAIN'] : 'localhost:4567'}"
+set :url_root, "#{http}://#{ENV['APP_DOMAIN'] ? ENV['APP_DOMAIN'] : 'localhost:4567'}"
 
 activate :search_engine_sitemap,
          exclude_if: -> (resource) {
            # Exclude all paths from sitemap that are sub-date indexes
            resource.path.match(/[0-9]{4}(\/[0-9]{2})*.html/)
          },
-         default_change_frequency: 'weekly'
+         default_change_frequency: 'monthly'
 
 # Filewatcher ignore list (workaround for search_engine_sitemap on
 # Heroku - see https://github.com/Aupajo/middleman-search_engine_sitemap/issues/2)
@@ -192,8 +195,13 @@ set :file_watcher_ignore,
         /^tmp\//
     ]
 
+# Use relative URLs
+activate :relative_assets
+
 # Build-specific configuration
-configure :build do
+configure :build do  
+  set :strip_index_file, true
+
   # For example, change the Compass output style for deployment
   activate :minify_css
 
@@ -210,9 +218,6 @@ configure :build do
 
   # Gzip
   # activate :gzip
-
-  # Use relative URLs
-  # activate :relative_assets
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"

@@ -4,6 +4,7 @@
 <% prev_page_url ||= false %>
 <% next_page_slug ||= false %>
 <% next_page_url ||= false %>
+<% home ||= false %>
 <% classes ||= "main_nav" %>
 
 <nav class="<%= classes %>" role="navigation">
@@ -50,12 +51,13 @@
     <% end %>
     <ul class="main_nav-full" id="js-toc">
         <li>
-            <a class="main_nav-item<% if current_page? "index.html" %> is-active<% end %>" href="/">Home</a>
+            <% home ? item_class = 'main_nav-item is-active' : item_class = 'main_nav-item' %>
+            <%= link_to 'Home', settings.url_root, :class => item_class %>
         </li>
         <% data.chapters.each do |chapter| %>
-            <% current_url = "#{data.site.paths.chapter}#{chapter.slug.urlize}/" %>
+            <% current_url = "#{settings.url_root}#{data.site.paths.chapter}#{chapter.slug.urlize}/" %>
             <li>
-                <a class="main_nav-item<% if current_dir? current_url %> is-active<% end %>" href="<%= asset_url(current_url) %>"><%= chapter.slug %></a>
+                <a class="main_nav-item<% if current_dir? current_url %> is-active<% end %>" href="<%= current_url %>"><%= chapter.slug %></a>
             </li>
         <% end %>
     </ul>

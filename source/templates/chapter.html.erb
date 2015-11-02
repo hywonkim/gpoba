@@ -16,8 +16,8 @@ layout: layout
 
 <% content_for :local_styles do %>
     <style>
-        <%# http://www.css3.info/preview/multiple-backgrounds/ %>
-        <% img_path = asset_url(data.site.paths.content + locals[:slug].to_s.urlize + '/') %>
+        <%# http://www.css3.info/preview/multiple-backgrounds/ %>        
+        <% img_path = asset_url(data.site.paths.content + locals[:slug].to_s.urlize + '/') + '/' %>
 
         /* default bg */
         .chapter-hero {
@@ -34,13 +34,13 @@ layout: layout
 <%# previous page %>
 <% unless first_page? %>
     <% prev_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] - 1) } %>
-    <% prev_page_url = asset_url("#{data.site.paths.chapter}#{prev_page[0].metadata[:locals][:slug].urlize}/") %>
+    <% prev_page_url = "#{settings.url_root}#{data.site.paths.chapter}#{prev_page[0].metadata[:locals][:slug].urlize}/" %>
 <% end %>
 
 <%# next page %>
 <% unless last_page? %>
     <% next_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] + 1) } %>
-    <% next_page_url = asset_url("#{data.site.paths.chapter}#{next_page[0].metadata[:locals][:slug].urlize}/") %>
+    <% next_page_url = "#{settings.url_root}#{data.site.paths.chapter}#{next_page[0].metadata[:locals][:slug].urlize}/" %>
 <% end %>
 
 <!-- global header -->
