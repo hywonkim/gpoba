@@ -24,9 +24,9 @@ jQuery(function($) {
 
     if ($(".js-chart").length > 0) {
         gpoba.chart.create('.ct-line-graph', "<%= settings.url_root %>/content/overview/charts/figure03.json", "line");
-        gpoba.chart.create(".ct-figure-04", "<%= settings.url_root %>/content/overview/charts/figure04.json");
-        gpoba.chart.create(".ct-figure-05-sector", "<%= settings.url_root %>/content/portfolio/charts/figure05_sector.json");
-        gpoba.chart.create(".ct-figure-05-region", "<%= settings.url_root %>/content/portfolio/charts/figure05_region.json");
+        gpoba.chart.create(".ct-figure-04", "<%= settings.url_root %>/content/overview/charts/figure04.json", 'bar', '');
+        gpoba.chart.create(".ct-figure-05-sector", "<%= settings.url_root %>/content/portfolio/charts/figure05_sector.json", 'bar', '%');
+        gpoba.chart.create(".ct-figure-05-region", "<%= settings.url_root %>/content/portfolio/charts/figure05_region.json", 'bar', '%');
     }
 
     // if ($(".js-mobile_nav").length > 0) gpoba.mobile_nav.init(".js-mobile_nav");

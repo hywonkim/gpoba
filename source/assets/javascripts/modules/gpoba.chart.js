@@ -65,7 +65,9 @@ gpoba.chart = (function($) {
         },
     }
 
-    var _createBarGraph = function(el, data) {
+    var _createBarGraph = function(el, data, labelAppend, axisLabel) {
+    
+        exports.settings.bar.small.axisY.showLabel = axisLabel;
 
         new Chartist.Bar(el, data, exports.settings.bar.small, [
                 ['screen and (min-width: ' + exports.breakpoints.bar + ')', exports.settings.bar.large]
@@ -166,7 +168,7 @@ gpoba.chart = (function($) {
                     
                     // build the label
                     chart.element.parent().foreignObject(
-                            '<p class="label-element"><strong class="label-value">' + chart.series.data[0] + '%</strong> ' + chart.series.name +'</p>',
+                            '<p class="label-element"><strong class="label-value">' + chart.series.data[0] + labelAppend + '</strong> ' + chart.series.name +'</p>',
                             {
                                 x: chart.x1 + label_y,
                                 y: chart.y2 + label_x,
@@ -185,7 +187,7 @@ gpoba.chart = (function($) {
             });
         };
 
-    var _createLineGraph = function(el, data) {
+    var _createLineGraph = function(el, data, labelAppend, axisLabel) {
 
         var _lineResponsiveOptions = [
             ['screen and (max-width:' + exports.breakpoints.line + ')', {
@@ -201,15 +203,18 @@ gpoba.chart = (function($) {
     };
 
     // init function
-    exports.create = function(el, dataURL, type) {
-        var type = type || "bar"; // default type is bar graph
+    exports.create = function(el, dataURL, type, labelAppend, axisLabel) {
+        // set defaults default type is bar graph        
+        if (typeof type === 'undefined') { type = 'bar'; }
+        if (typeof axisLabel === 'undefined') { axisLabel = false; }
+        if (typeof labelAppend === 'undefined') { labelAppend = ''; }
 
         $(el).each(function() {
             $.getJSON(dataURL, function(data) {                
                 if (type == "bar") {
-                    _createBarGraph(el, data);
+                    _createBarGraph(el, data, labelAppend, axisLabel);
                 } else if (type == "line") {
-                    _createLineGraph(el, data);
+                    _createLineGraph(el, data, labelAppend, axisLabel);
                 }
             });
         });
