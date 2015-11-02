@@ -60,6 +60,12 @@ $footer-break: $main_nav-break;
     }
 }
 
+    .footer-toc {
+        float: right;
+
+        @include respond-to($footer-break) { display: none; }
+    }
+
 .footer-section {
     padding: $gutter 0;
 }
@@ -91,11 +97,12 @@ $footer-break: $main_nav-break;
     display: block;
     margin-top: $gutter;
     margin-left: 0;
+    margin-bottom: 0;
     padding-top: 1em;
     padding-left: 0;
     color: theme('text' 'primary', 'reverse');
 
-    @include breakpoint(660px) {
+    @include respond-to($footer-break) {
         display: inline-block;
         float: right;
         margin: 0;
@@ -152,8 +159,10 @@ $footer-break: $main_nav-break;
 
         &.copyright {
             display: block;
+            margin-top: 0.5em;
 
             @include respond-to('small') {
+                margin-top: 0;
                 margin-right: 0;
                 float: right;
             }

@@ -75,13 +75,12 @@ $header-break: $main_nav-break;
 
 .header-nav {
     @extend .main_nav;
-    // display: none;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: $z--nav;
-    padding-left: $gutter-outside;
+    padding: 0 $gutter-outside;
     background-color: theme(bg, reverse);
 
     @include respond-to($header-break) {

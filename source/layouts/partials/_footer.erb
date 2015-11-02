@@ -17,6 +17,16 @@
                 <span class="footer-title"><%= data.site.title %> <strong><%= data.site.year %></strong></span>
             </a>
 
+            <a class="footer-toc js-has-flyout" href="#js-footer-toc">
+                <%= partial("layouts/partials/icon", :locals => {
+                        :id => "toc",
+                        :classes => "main_nav-icon left",
+                        :fallback_type => "none",
+                        :fallback => "&lsaquo;"
+                    }) %>
+                <span class="main_nav-label">Contents</span>
+            </a>
+
             <ul class="footer-subnav">
                 <li><a class="footer-subnav-item" href="http://gpoba.org" target="_blank">gpoba.org</a></li>
                 <li><a class="footer-subnav-item" href="<%= asset_url data.site.download_version %>" target="_blank">Download the PDF version</a></li>
