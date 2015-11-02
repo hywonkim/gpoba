@@ -172,7 +172,7 @@ title: home
                     <% if partner.url.present? %>
                     <a class="logo" href="<%= partner.url %>" target="_blank">
                     <% end %>
-                        <%= image_tag partner.filename + ".png", :alt => partner.name %>
+                        <%= image_tag partner.filename + ".png", :alt => partner.name, :title => partner.name %>
                     <% if partner.url.present? %>
                     </a>
                     <% end %>
