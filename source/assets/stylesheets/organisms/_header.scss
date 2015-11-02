@@ -49,9 +49,10 @@ $header-break: $main_nav-break;
 
 .header-logo {
     @extend .logo;
-    @include rem(max-width, 120px);
-    @include rem(padding, 16px);
-    display: inline-block;
+    @extend .logo.tag;
+    // @include rem(max-width, 120px);
+    // @include rem(padding, 16px);
+    // display: inline-block;
     z-index: $z--high;
     background-color: theme(bg);
 

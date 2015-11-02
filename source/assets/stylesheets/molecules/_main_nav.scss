@@ -108,8 +108,8 @@ $main_nav-break: 'medium';
     @include border;
     display: none;
     position: absolute;
-    top: 70px;
-    right: 0;
+    bottom: 70px;
+    right: $gutter-outside;
     min-width: em(180px);
     background-color: theme(bg);
     border-radius: em(3px);
@@ -119,21 +119,23 @@ $main_nav-break: 'medium';
     }
 
     &:before {
-        @include triangle($pointer-size, theme(border), up);
+        @include triangle($pointer-size, theme(border), down);
         content: " ";
         display: block;
         position: absolute;
-        top: -($pointer-size/2);
-        right: 26px;
+        bottom: -($pointer-size/2);
+        right: 50%;
+        margin-right: -($pointer-size/2);
     }
 
     &:after {
-        @include triangle($pointer-size, theme(bg), up);
+        @include triangle($pointer-size, theme(bg), down);
         content: " ";
         display: block;
         position: absolute;
-        top: -(($pointer-size/2) - 2);
-        right: 26px;
+        bottom: -(($pointer-size/2) - 2);
+        right: 50%;
+        margin-right: -($pointer-size/2);
     }
 
     @include respond-to($main_nav-break) {
@@ -232,6 +234,10 @@ $main_nav-break: 'medium';
     .main_nav-label {
         @extend .nav-item;
         display: none;
+
+        &:hover, &:active {
+            color: inherit;
+        }
 
         @include breakpoint(780px) { display: inline-block; }
     }

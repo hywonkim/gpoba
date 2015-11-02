@@ -38,7 +38,7 @@ $footer-break: $main_nav-break;
     @extend .main_nav;
     @include clearfix;
     @include border(bottom, $color: theme(border, reverse));
-    display: none;
+    // display: none;
     position: relative;
     width: 100%;
     left: 0;
@@ -61,7 +61,18 @@ $footer-break: $main_nav-break;
 }
 
     .footer-toc {
+        // @extend .nav-item;
         float: right;
+        border-bottom: none;
+
+        &:hover, &:active {
+            color: theme(text primary, reverse);
+        }
+
+        &.is-active {
+            @include chapter_highlights;
+            color: theme(highlight);
+        }
 
         @include respond-to($footer-break) { display: none; }
     }

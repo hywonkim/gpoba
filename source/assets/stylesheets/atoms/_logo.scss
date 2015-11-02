@@ -12,3 +12,15 @@
     font-weight: bold;
     color: theme('text' 'primary');
 }
+
+
+.logo.tag {
+    @include rem(max-width, 80px);
+    padding: 0.6em;
+    background-color: theme(bg);
+
+    @include breakpoint(530px) {
+        @include rem(max-width, 120px);
+        padding: 1em;
+    }
+}

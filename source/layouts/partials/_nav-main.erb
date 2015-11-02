@@ -6,53 +6,57 @@
 <% next_page_url ||= false %>
 <% home ||= false %>
 <% classes ||= "main_nav" %>
+<% toc_id ||= "js-toc" %>
 
 <nav class="<%= classes %>" role="navigation">
     <% if show_mobile_nav %>
-    <a class="main_nav-logo" href="<%= settings.url_root %>">
-        <%= partial("layouts/partials/logo") %>
-    </a>
-    <% if page_title %>
-    <span class="main_nav-title"><%= page_title %></span>
-    <% end %>
-    <ul class="main_nav-pagination">
-        <% if prev_page_url %>
-        <li><a class="main_nav-item" href="<%= prev_page_url %>">
-                <%= partial("layouts/partials/icon", :locals => {
-                        :id => "arrow-left-outline",
-                        :classes => "main_nav-icon left",
-                        :fallback_type => "text",
-                        :fallback => "&lsaquo;"
-                    }) %>
-                <span class="main_nav-label"><%= prev_page_slug %></span>
-            </a>
-        </li>
+        <a class="main_nav-logo" href="<%= settings.url_root %>">
+            <%= partial("layouts/partials/logo") %>
+        </a>
+        <% if page_title %>
+            <span class="main_nav-title"><%= page_title %></span>
         <% end %>
-        <% if next_page_url %>
-        <li><a class="main_nav-item" href="<%= next_page_url %>">
-                <span class="main_nav-label"><%= next_page_slug %></span>
-                <%= partial("layouts/partials/icon", :locals => {
-                        :id => "arrow-right-outline",
-                        :classes => "main_nav-icon right",
-                        :fallback_type => "text",
-                        :fallback => "&lsaquo;"
-                    }) %>
-            </a>
-        </li>
-        <% end %>
-        <li><a class="main_nav-toc js-has-flyout" href="#js-toc">
-                <%= partial("layouts/partials/icon", :locals => {
-                        :id => "toc",
-                        :classes => "main_nav-icon left",
-                        :fallback_type => "none",
-                        :fallback => "&lsaquo;"
-                    }) %>
-                <span class="main_nav-label">Contents</span>
-            </a>
-        </li>
-    </ul>
+        <ul class="main_nav-pagination">
+            <% if prev_page_url %>
+                <li>
+                    <a class="main_nav-item" href="<%= prev_page_url %>">
+                        <%= partial("layouts/partials/icon", :locals => {
+                                :id => "arrow-left-outline",
+                                :classes => "main_nav-icon left",
+                                :fallback_type => "text",
+                                :fallback => "&lsaquo;"
+                            }) %>
+                        <span class="main_nav-label"><%= prev_page_slug %></span>
+                    </a>
+                </li>
+            <% end %>
+            <% if next_page_url %>
+                <li>
+                    <a class="main_nav-item" href="<%= next_page_url %>">
+                        <span class="main_nav-label"><%= next_page_slug %></span>
+                        <%= partial("layouts/partials/icon", :locals => {
+                                :id => "arrow-right-outline",
+                                :classes => "main_nav-icon right",
+                                :fallback_type => "text",
+                                :fallback => "&lsaquo;"
+                            }) %>
+                    </a>
+                </li>
+            <% end %>
+            <li>
+                <a class="main_nav-toc js-has-flyout" href="#<%= toc_id %>">
+                    <%= partial("layouts/partials/icon", :locals => {
+                            :id => "toc",
+                            :classes => "main_nav-icon left",
+                            :fallback_type => "none",
+                            :fallback => "&lsaquo;"
+                        }) %>
+                    <span class="main_nav-label">Contents</span>
+                </a>
+            </li>
+        </ul>
     <% end %>
-    <ul class="main_nav-full" id="js-toc">
+    <ul class="main_nav-full" id="<%= toc_id %>">
         <li>
             <% home ? item_class = 'main_nav-item is-active' : item_class = 'main_nav-item' %>
             <%= link_to 'Home', settings.url_root, :class => item_class %>

@@ -8,7 +8,8 @@
 <footer class="main js-capture_nav" role="contentinfo">
     <div class="l-wrapper">
         <%= partial("layouts/partials/nav-main", :locals => {
-                :classes => "footer-nav js-mobile_nav"
+                :classes => "footer-nav",
+                :toc_id => "js-footer-toc",
             }) %>
         <div class="footer-section">
             <a class="footer-lockup" href="<%= settings.url_root %>">
