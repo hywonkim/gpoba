@@ -150,7 +150,7 @@ title: home
                 <% unless country.format.present? %>
                     <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => country.filename, :alt => country.name }) %>
                 <% else %>
-                    <%= image_tag country.filename + "." + country.format, :alt => country.name, :class => "logo" %>
+                    <%= image_tag country.filename + "." + country.format, :title => country.name, :alt => country.name, :class => "logo" %>
                 <% end %>
             </li>
         <% end %>
@@ -172,7 +172,7 @@ title: home
                     <% if partner.url.present? %>
                     <a class="logo" href="<%= partner.url %>" target="_blank">
                     <% end %>
-                        <%= image_tag partner.filename + ".png", :alt => partner.name %>
+                        <%= image_tag partner.filename + ".png", :alt => partner.name, :title => partner.name %>
                     <% if partner.url.present? %>
                     </a>
                     <% end %>

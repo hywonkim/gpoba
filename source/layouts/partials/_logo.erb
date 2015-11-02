@@ -11,7 +11,7 @@
     <!--[if IE 9]><video style="display: none;"><![endif]-->
     <source type="image/svg+xml" srcset="<%= asset_url images_dir + filename + '.svg'%>">
     <!--[if IE 9]></video><![endif]-->
-    <img src="<%= asset_url images_dir + filename + '.png'%>" alt="<%= alt %>" />
+    <img src="<%= asset_url images_dir + filename + '.png'%>" alt="<%= alt %>" title="<%= alt %>" />
 </picture>
 <% if link != false %>
 </a>

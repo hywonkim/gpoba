@@ -33,6 +33,7 @@
     @include font-scale(2);
     margin-top: -0.5em;
     color: theme(text tertiary);
+    display: none;
 }
 
 .box-title {
@@ -40,7 +41,7 @@
     @include font-scale(4);
     @include chapter_highlights;
     text-align: center;
-    color: theme(highlight);
+    color: theme(highlight);    
 
     .box-slug + & { margin-top: 0.25em; }
 }
