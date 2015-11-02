@@ -230,6 +230,7 @@ $main_nav-break: 'medium';
     }
 
     .main_nav-label {
+        @extend .nav-item;
         display: none;
 
         @include breakpoint(780px) { display: inline-block; }
