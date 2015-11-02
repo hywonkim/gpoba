@@ -24,8 +24,11 @@ $footer-break: $main_nav-break;
 // global/main footer @ bottom of each page
 [role="contentinfo"].main, .footer.main {
     @extend %theme--reverse;
+    position: relative;
+    z-index: $z--footer;
     padding-top: 0;
     padding-bottom: $footer-padding;
+    background-color: theme(bg, reverse);
 }
 
 /* Submodules

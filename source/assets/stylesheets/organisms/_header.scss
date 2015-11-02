@@ -33,7 +33,7 @@ $header-break: $main_nav-break;
     display: block;
     position: absolute;
     width: 100%;
-    z-index: 1000;
+    z-index: $z--nav;
     text-align: center;
 
     @include respond-to($header-break) {
@@ -52,6 +52,7 @@ $header-break: $main_nav-break;
     @include rem(max-width, 120px);
     @include rem(padding, 16px);
     display: inline-block;
+    z-index: $z--high;
     background-color: theme(bg);
 
     @include respond-to($main_nav-break) {
@@ -80,10 +81,12 @@ $header-break: $main_nav-break;
     left: 0;
     right: 0;
     z-index: $z--nav;
+    padding-left: $gutter-outside;
     background-color: theme(bg, reverse);
 
-    @include respond-to('medium') {
+    @include respond-to($header-break) {
         display: inline-block;
+        z-index: $z--middle;
         position: relative;
         float: right;
         margin-right: $gutter-outside;

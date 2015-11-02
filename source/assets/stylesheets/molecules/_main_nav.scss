@@ -13,7 +13,7 @@ $main_nav-break: 'medium';
 
 .main_nav {
     @include unstyled-list;
-    z-index: $z--high;
+    z-index: $z--nav;
 
     @include respond-to($main_nav-break) { padding: 0; }
 
@@ -42,17 +42,41 @@ $main_nav-break: 'medium';
 /* Submodules
 // -------------------------------------------------------------------------- */
 
+.main_nav-logo {
+    $h: 28px;
+
+    @include rem(height, $h);
+    @include rem(width, 70px);
+    // @include rem(margin-top, -($h/2));
+    display: none;
+    position: relative;
+    // top: 50%;
+    // left: 0;
+    // margin-left: $gutter-outside;
+    padding: 0.7em 0;
+    margin-right: 1em;
+    float: left;
+    max-width: auto;
+    border-bottom: none;
+    color: theme(text primary, reverse);
+    background-color: transparent;
+
+    @include respond-to('small') { display: inline-block; }
+
+    @include respond-to($main_nav-break) { display: none; }
+}
+
 .main_nav-title {
     @extend .nav-item;
     display: none;
-    // display: inline-block;
     float: left;
-    padding: 1.5em 1em;
+    padding: 1.5em 1em 1.5em 0;
     color: theme(text primary, reverse);
 
     // override hover state of default nav link
     &:hover, &:active { color: theme(text primary, reverse); }
 
+    @include respond-to('xsmall') { display: inline-block; }
     @include respond-to($main_nav-break) { display: none; }
 }
 
@@ -208,5 +232,5 @@ $main_nav-break: 'medium';
     .main_nav-label {
         display: none;
 
-        @include breakpoint(550px) { display: inline-block; }
+        @include breakpoint(780px) { display: inline-block; }
     }

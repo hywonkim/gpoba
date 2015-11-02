@@ -9,6 +9,9 @@
 
 <nav class="<%= classes %>" role="navigation">
     <% if show_mobile_nav %>
+    <a class="main_nav-logo" href="<%= settings.url_root %>">
+        <%= partial("layouts/partials/logo") %>
+    </a>
     <% if page_title %>
     <span class="main_nav-title"><%= page_title %></span>
     <% end %>
