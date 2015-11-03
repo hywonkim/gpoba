@@ -89,6 +89,14 @@ $header-label-break: $nav-label-break;
     z-index: $z--nav;
     padding: 0 $gutter-outside;
     background-color: theme(bg, reverse);
+
+    @include respond-to($header-break) {
+        display: inline-block;
+        z-index: $z--middle;
+        position: relative;
+        float: right;
+        // margin-right: $gutter-outside;
+    }
 }
 
 .header-pagination {
@@ -100,22 +108,4 @@ $header-label-break: $nav-label-break;
     @extend .nav-toc;
     bottom: 70px;
     right: $gutter;
-
-    &:before, &:after {
-        right: 2em;
-        margin-right: 0;
-
-        @include breakpoint($header-label-break) {
-            right: 50%;
-            margin-right: -7px;
-        }
-    }
-
-    @include respond-to($header-break) {
-        display: inline-block;
-        z-index: $z--middle;
-        position: relative;
-        float: right;
-        margin-right: $gutter-outside;
-    }
 }

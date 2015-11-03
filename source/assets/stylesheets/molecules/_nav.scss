@@ -47,6 +47,7 @@ $nav-label-break: 780px;
 .nav-pagination {
     display: block;
     font-size: 0;
+    list-style: none;
 
     @include respond-to($nav-break) { display: none; }
 
@@ -72,12 +73,15 @@ $nav-label-break: 780px;
     $pointer-size: 14px;
 
     @extend %base-transition;
+    @include unstyled-list;
     @include border;
     display: none;
     position: absolute;
     min-width: em(180px);
+    list-style: none;
     background-color: theme(bg);
     border-radius: em(3px);
+    text-align: left;
 
     &.is-visible {
         display: block;
@@ -89,8 +93,12 @@ $nav-label-break: 780px;
         display: block;
         position: absolute;
         bottom: -($pointer-size/2);
-        right: 50%;
-        margin-right: -($pointer-size/2);
+        right: 2em;
+
+        @include breakpoint($nav-label-break) {
+            right: 50%;
+            margin-right: -($pointer-size/2);
+        }
     }
 
     &:after {
@@ -107,6 +115,7 @@ $nav-label-break: 780px;
         background-color: transparent;
         border-radius: none;
         border: none;
+        text-align: center;
 
         &:before, &:after { content: none; }
 
@@ -204,6 +213,7 @@ $nav-label-break: 780px;
 
     .nav-flyout {
         @extend .nav-item;
+        margin-right: 0;
 
         &.is-active {
             @include chapter_highlights;

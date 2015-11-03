@@ -5,11 +5,11 @@
 <%# next_page_slug ||= false %>
 <%# next_page_url ||= false %>
 
-<footer class="main" role="contentinfo">
-    <div class="l-wrapper">
+<footer class="main_footer" role="contentinfo">
+    <nav class="l-wrapper">
         <%= partial("layouts/partials/nav", :locals => {
-                :classes => "footer-nav",
-                :toc_id => "js-footer-toc",
+                :classes => "footer-toc",
+                :id => "js-footer-toc",
             }) %>
         <div class="footer-section">
             <a class="footer-lockup" href="<%= settings.url_root %>">
@@ -18,7 +18,7 @@
                 <span class="footer-title"><%= data.site.title %> <strong><%= data.site.year %></strong></span>
             </a>
 
-            <a class="footer-toc js-has-flyout" href="#js-footer-toc">
+            <a class="footer-flyout js-has-flyout" href="#js-footer-toc">
                 <%= partial("layouts/partials/icon", :locals => {
                         :id => "toc",
                         :classes => "nav-icon left",
@@ -33,7 +33,7 @@
                 <li><a class="footer-subnav-item" href="<%= asset_url data.site.download_version %>" target="_blank">Download the PDF version</a></li>
             </ul>
         </div>
-    </div>
+    </nav>
     <div class="footer-utility">
         <div class="l-wrapper">
             <ul>

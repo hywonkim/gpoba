@@ -13,83 +13,42 @@ $footer-break: $nav-break;
 /* Base
 // -------------------------------------------------------------------------- */
 
-[role="contentinfo"], .footer {
-
-}
-
-
-/* Modifiers
-// -------------------------------------------------------------------------- */
-
-// global/main footer @ bottom of each page
-[role="contentinfo"].main, .footer.main {
+.main_footer {
     @extend %theme--reverse;
     position: relative;
     z-index: $z--footer;
     padding-top: 0;
     padding-bottom: $footer-padding;
+    text-align: center;
     background-color: theme(bg, reverse);
 }
 
 /* Submodules
 // -------------------------------------------------------------------------- */
 
-.footer-nav {
-    @extend .nav;
-    @include clearfix;
-    @include border(bottom, $color: theme(border, reverse));
-    // display: none;
-    position: relative;
-    width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    background-color: theme(bg, reverse);
+
+.footer-toc {
+    @extend .nav-toc;
+    bottom: 145px;
+    right: ($gutter - 10px);
 
     @include respond-to($footer-break) {
         display: inline-block;
+        bottom: auto;
+        right: auto;
         text-align: center;
         background-color: transparent;
     }
-
-    &.is-fixed {
-        position: fixed;
-        padding: 0 $gutter-outside;
-        border-bottom: none;
-    }
 }
-
-    .footer-toc {
-        // @extend .nav-item;
-        float: right;
-        border-bottom: none;
-
-        &:hover, &:active {
-            color: theme(text primary, reverse);
-        }
-
-        &.is-active {
-            @include chapter_highlights;
-            color: theme(highlight);
-        }
-
-        @include respond-to($footer-break) { display: none; }
-    }
 
 .footer-section {
     padding: $gutter 0;
+    text-align: left;
 }
     .footer-lockup {
+        display: inline-block;
+        vertical-align: middle;
         border-bottom: none;
-    }
-
-    .footer-title {
-        @extend %font-accent;
-        color: theme(text primary, reverse);
-        text-transform: uppercase;
-
-        strong { @extend %font-accent--bold; }
     }
 
     .footer-logo {
@@ -99,6 +58,28 @@ $footer-break: $nav-break;
         vertical-align: middle;
         margin-right: 0.5em;
         color: theme('text' 'primary', 'reverse');
+    }
+
+    .footer-title {
+        @extend %font-accent;
+        display: inline-block;
+        vertical-align: middle;
+        color: theme(text primary, reverse);
+        text-transform: uppercase;
+
+        strong { @extend %font-accent--bold; }
+    }
+
+    .footer-flyout {
+        @extend .nav-flyout;
+        display: inline-block;
+        vertical-align: middle;
+        float: right;
+        border-bottom: none;
+        padding: 0.4em 0;
+        margin: 0;
+
+        @include respond-to($footer-break) { display: none; }
     }
 
 .footer-subnav {
@@ -151,6 +132,7 @@ $footer-break: $nav-break;
 .footer-utility {
     @include inline-list;
     padding-top: $gutter;
+    text-align: left;
     background-color: darken(theme('bg', 'reverse'), 5);
 
     // if this is the last child in the footer, add padding inside
