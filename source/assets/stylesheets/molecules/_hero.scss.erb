@@ -7,11 +7,11 @@
 @import "../atoms/logo";
 @import "../atoms/button";
 @import "../atoms/heading";
-@import "../molecules/main_nav";
+@import "../molecules/nav";
 
 $hero-pointer-h: fs(7);
 // pull in main nav breakpoint and use it here
-$hero-nav-break: $main_nav-break;
+$hero-nav-break: $nav-break;
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -105,7 +105,7 @@ $hero-nav-break: $main_nav-break;
 }
 
 .hero-nav {
-    @extend .main_nav;
+    @extend .nav;
     @include border(bottom);
     display: block;
     position: absolute;

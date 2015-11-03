@@ -4,11 +4,11 @@
 
 @import "../core/*";
 @import "../atoms/logo";
-@import "../molecules/main_nav";
+@import "../molecules/nav";
 
 $footer-padding: $gutter-outside;
 // pull in main nav breakpoint and use it here
-$footer-break: $main_nav-break;
+$footer-break: $nav-break;
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -35,7 +35,7 @@ $footer-break: $main_nav-break;
 // -------------------------------------------------------------------------- */
 
 .footer-nav {
-    @extend .main_nav;
+    @extend .nav;
     @include clearfix;
     @include border(bottom, $color: theme(border, reverse));
     // display: none;

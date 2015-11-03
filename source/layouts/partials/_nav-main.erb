@@ -5,38 +5,38 @@
 <% next_page_slug ||= false %>
 <% next_page_url ||= false %>
 <% home ||= false %>
-<% classes ||= "main_nav" %>
+<% classes ||= "nav" %>
 <% toc_id ||= "js-toc" %>
 
 <nav class="<%= classes %>" role="navigation">
     <% if show_mobile_nav %>
-        <a class="main_nav-logo" href="<%= settings.url_root %>">
+        <a class="nav-logo" href="<%= settings.url_root %>">
             <%= partial("layouts/partials/logo") %>
         </a>
         <% if page_title %>
-            <span class="main_nav-title"><%= page_title %></span>
+            <span class="nav-title"><%= page_title %></span>
         <% end %>
-        <ul class="main_nav-pagination">
+        <ul class="nav-pagination">
             <% if prev_page_url %>
                 <li>
-                    <a class="main_nav-item" href="<%= prev_page_url %>">
+                    <a class="nav-item" href="<%= prev_page_url %>">
                         <%= partial("layouts/partials/icon", :locals => {
                                 :id => "arrow-left-outline",
-                                :classes => "main_nav-icon left",
+                                :classes => "nav-icon left",
                                 :fallback_type => "text",
                                 :fallback => "&lsaquo;"
                             }) %>
-                        <span class="main_nav-label"><%= prev_page_slug %></span>
+                        <span class="nav-label"><%= prev_page_slug %></span>
                     </a>
                 </li>
             <% end %>
             <% if next_page_url %>
                 <li>
-                    <a class="main_nav-item" href="<%= next_page_url %>">
-                        <span class="main_nav-label"><%= next_page_slug %></span>
+                    <a class="nav-item" href="<%= next_page_url %>">
+                        <span class="nav-label"><%= next_page_slug %></span>
                         <%= partial("layouts/partials/icon", :locals => {
                                 :id => "arrow-right-outline",
-                                :classes => "main_nav-icon right",
+                                :classes => "nav-icon right",
                                 :fallback_type => "text",
                                 :fallback => "&lsaquo;"
                             }) %>
@@ -44,27 +44,27 @@
                 </li>
             <% end %>
             <li>
-                <a class="main_nav-toc js-has-flyout" href="#<%= toc_id %>">
+                <a class="nav-toc js-has-flyout" href="#<%= toc_id %>">
                     <%= partial("layouts/partials/icon", :locals => {
                             :id => "toc",
-                            :classes => "main_nav-icon left",
+                            :classes => "nav-icon left",
                             :fallback_type => "none",
                             :fallback => "&lsaquo;"
                         }) %>
-                    <span class="main_nav-label">Contents</span>
+                    <span class="nav-label">Contents</span>
                 </a>
             </li>
         </ul>
     <% end %>
-    <ul class="main_nav-full" id="<%= toc_id %>">
+    <ul class="nav-full" id="<%= toc_id %>">
         <li>
-            <% home ? item_class = 'main_nav-item is-active' : item_class = 'main_nav-item' %>
+            <% home ? item_class = 'nav-item is-active' : item_class = 'nav-item' %>
             <%= link_to 'Home', settings.url_root, :class => item_class %>
         </li>
         <% data.chapters.each do |chapter| %>
             <% current_url = "#{settings.url_root}#{data.site.paths.chapter}#{chapter.slug.urlize}/" %>
             <li>
-                <a class="main_nav-item<% if current_dir? current_url %> is-active<% end %>" href="<%= current_url %>"><%= chapter.slug %></a>
+                <a class="nav-item<% if current_dir? current_url %> is-active<% end %>" href="<%= current_url %>"><%= chapter.slug %></a>
             </li>
         <% end %>
     </ul>

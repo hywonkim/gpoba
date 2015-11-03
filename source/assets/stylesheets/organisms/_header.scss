@@ -4,11 +4,11 @@
 
 @import "../core/*";
 @import "../atoms/logo";
-@import "../molecules/main_nav";
+@import "../molecules/nav";
 
 $header-h: 36px;
-// pull in the main_nav's breakpoint and use it here
-$header-break: $main_nav-break;
+// pull in the nav's breakpoint and use it here
+$header-break: $nav-break;
 
 // vertically center the children of an inline block element
 @mixin inline-block--centered($h: auto) {
@@ -56,7 +56,7 @@ $header-break: $main_nav-break;
     z-index: $z--high;
     background-color: theme(bg);
 
-    @include respond-to($main_nav-break) {
+    @include respond-to($nav-break) {
         $h: 28px;
 
         @include rem(height, $h);
@@ -75,7 +75,7 @@ $header-break: $main_nav-break;
 }
 
 .header-nav {
-    @extend .main_nav;
+    @extend .nav;
     position: fixed;
     bottom: 0;
     left: 0;

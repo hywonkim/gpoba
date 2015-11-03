@@ -5,7 +5,7 @@
 <%# next_page_slug ||= false %>
 <%# next_page_url ||= false %>
 
-<footer class="main js-capture_nav" role="contentinfo">
+<footer class="main" role="contentinfo">
     <div class="l-wrapper">
         <%= partial("layouts/partials/nav-main", :locals => {
                 :classes => "footer-nav",
@@ -21,11 +21,11 @@
             <a class="footer-toc js-has-flyout" href="#js-footer-toc">
                 <%= partial("layouts/partials/icon", :locals => {
                         :id => "toc",
-                        :classes => "main_nav-icon left",
+                        :classes => "nav-icon left",
                         :fallback_type => "none",
                         :fallback => "&lsaquo;"
                     }) %>
-                <span class="main_nav-label">Contents</span>
+                <span class="nav-label">Contents</span>
             </a>
 
             <ul class="footer-subnav">

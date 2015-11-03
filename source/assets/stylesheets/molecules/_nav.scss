@@ -6,16 +6,16 @@
 @import "../core/*";
 @import "../atoms/text";
 
-$main_nav-break: 'medium';
+$nav-break: 'medium';
 
 /* Base
 // -------------------------------------------------------------------------- */
 
-.main_nav {
+.nav {
     @include unstyled-list;
     z-index: $z--nav;
 
-    @include respond-to($main_nav-break) { padding: 0; }
+    @include respond-to($nav-break) { padding: 0; }
 
     ul {
         margin: 0;
@@ -33,16 +33,20 @@ $main_nav-break: 'medium';
 /* Modifiers
 // -------------------------------------------------------------------------- */
 
+.nav.mobile {}
+
+.nav.full {}
+
 /* ------- STATE: above/below ----------------------------------------------- */
 // -> the nav's relationship to the section 'border'.
 // -> used to place the highlight rule over or under the active item.
-.main_nav.is-above {}
+.nav.is-above {}
 
 
 /* Submodules
 // -------------------------------------------------------------------------- */
 
-.main_nav-logo {
+.nav-logo {
     $h: 28px;
 
     @include rem(height, $h);
@@ -63,10 +67,10 @@ $main_nav-break: 'medium';
 
     @include respond-to('small') { display: inline-block; }
 
-    @include respond-to($main_nav-break) { display: none; }
+    @include respond-to($nav-break) { display: none; }
 }
 
-.main_nav-title {
+.nav-title {
     @extend .nav-item;
     display: none;
     float: left;
@@ -77,15 +81,15 @@ $main_nav-break: 'medium';
     &:hover, &:active { color: theme(text primary, reverse); }
 
     @include respond-to('xsmall') { display: inline-block; }
-    @include respond-to($main_nav-break) { display: none; }
+    @include respond-to($nav-break) { display: none; }
 }
 
-.main_nav-pagination {
+.nav-pagination {
     @include border(left, $color: theme(border, reverse));
     display: inline-block;
     float: right;
 
-    @include respond-to($main_nav-break) { display: none; }
+    @include respond-to($nav-break) { display: none; }
 
     li {
         @include border(right, $color: theme(border, reverse));
@@ -95,13 +99,13 @@ $main_nav-break: 'medium';
 
         // show/hide the (mobile) pagination nav with JS
         // -> happens at bottom of the page, when you scroll past the local pagination nav
-        // -> see .main_nav-pagination for styles
+        // -> see .nav-pagination for styles
         // -> see gpoba.mobile_nav.js for behavior
         &.js-hide-pagination { display: none; }
     }
 }
 
-.main_nav-full {
+.nav-full {
     $pointer-size: 14px;
 
     @extend %base-transition;
@@ -138,7 +142,7 @@ $main_nav-break: 'medium';
         margin-right: -($pointer-size/2);
     }
 
-    @include respond-to($main_nav-break) {
+    @include respond-to($nav-break) {
         display: block;
         position: relative;
         top: 0;
@@ -152,13 +156,13 @@ $main_nav-break: 'medium';
     }
 }
 
-.main_nav-item {
+.nav-item {
     @extend .nav-item;
     @include rem(margin, 0 fs(3));
     display: block;
     position: relative;
     padding: 1.5em 0;
-    line-height: 1.2em; // to match the height of .main_nav-icon
+    line-height: 1.2em; // to match the height of .nav-icon
     color: theme(text tertiary, reverse);
 
     &:hover, &:active {
@@ -168,7 +172,7 @@ $main_nav-break: 'medium';
     &.is-active {
         $border-w: 4px;
 
-        @include respond-to($main_nav-break) {
+        @include respond-to($nav-break) {
             &:after {
                 @include chapter_highlights(background-color);
                 content: " ";
@@ -188,14 +192,14 @@ $main_nav-break: 'medium';
         }
     }
 
-    .main_nav-full & {
+    .nav-full & {
         padding: 0.5em 0;
 
         &:hover, &:active { color: theme(text primary); }
         &:first-child { margin-top: 0.5em; }
         &:last-child { margin-bottom: 0.5em; }
 
-        @include respond-to($main_nav-break) {
+        @include respond-to($nav-break) {
             padding: 1.5em 0;
 
             &:hover, &:active { color: theme(text primary, reverse); }
@@ -206,8 +210,8 @@ $main_nav-break: 'medium';
 
 }
 
-    .main_nav-toc {
-        @extend .main_nav-item;
+    .nav-toc {
+        @extend .nav-item;
 
         &.is-active {
             @include chapter_highlights;
@@ -215,14 +219,14 @@ $main_nav-break: 'medium';
         }
     }
 
-    .main_nav-icon {
+    .nav-icon {
         @extend .icon;
         margin: 0;
         height: 1.2em;
         width: 1.2em;
         fill: theme(text primary, reverse);
 
-        // &:hover, &:active, .main_nav-item:hover &, .main_nav-item:active & {
+        // &:hover, &:active, .nav-item:hover &, .nav-item:active & {
         //     @include chapter_highlights(fill);
         //     fill: theme(highlight);
         // }
@@ -231,7 +235,7 @@ $main_nav-break: 'medium';
         &.right { margin-left: 0.3em; }
     }
 
-    .main_nav-label {
+    .nav-label {
         @extend .nav-item;
         display: none;
 

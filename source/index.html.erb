@@ -57,12 +57,28 @@ title: home
     <!-- main title lockup -->
     <%= partial "layouts/partials/hero-lockup" %>
 
-    <!-- main menu -->
-    <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav", :home => true }) %>
+    <nav class="hero-nav">
+        <!-- main menu -->
+        <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav", :home => true }) %>
 
-    <a class="hero-pointer" href="#intro">
-        <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "hero-pointer-icon", :fallback_type => "text", :fallback => "Scroll for more" }) %> Year in Review
-    </a>
+        <a class="hero-pointer" href="#intro">
+            <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "hero-pointer-icon", :fallback_type => "text", :fallback => "Scroll for more" }) %> Year in Review
+        </a>
+
+        <a class="nav-logo" href="<%= settings.url_root %>">
+            <%= partial("layouts/partials/logo") %>
+        </a>
+
+        <a class="nav-toc js-has-flyout" href="#js-toc">
+            <%= partial("layouts/partials/icon", :locals => {
+                    :id => "toc",
+                    :classes => "nav-icon left",
+                    :fallback_type => "none",
+                    :fallback => "&lsaquo;"
+                }) %>
+            <span class="nav-label">Contents</span>
+        </a>
+    </nav>
 </header>
 
 <article class="chapter" role="main" id="intro">
