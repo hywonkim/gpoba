@@ -201,6 +201,14 @@ $hero-nav-break: $nav-break;
             border: none;
         }
 
+        &.is-hidden {
+            display: none;
+
+            @include respond-to($hero-nav-break) {
+                display: block;
+            }
+        }
+
         @include respond-to($hero-nav-break) {
             display: block;
             position: relative;
