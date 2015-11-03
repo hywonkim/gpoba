@@ -7,6 +7,7 @@
 @import "../atoms/text";
 
 $nav-break: 'medium';
+$nav-label-break: 780px;
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -33,10 +34,6 @@ $nav-break: 'medium';
 /* Modifiers
 // -------------------------------------------------------------------------- */
 
-.nav.mobile {}
-
-.nav.full {}
-
 /* ------- STATE: above/below ----------------------------------------------- */
 // -> the nav's relationship to the section 'border'.
 // -> used to place the highlight rule over or under the active item.
@@ -46,74 +43,38 @@ $nav-break: 'medium';
 /* Submodules
 // -------------------------------------------------------------------------- */
 
-.nav-logo {
-    $h: 28px;
-
-    @include rem(height, $h);
-    @include rem(width, 70px);
-    // @include rem(margin-top, -($h/2));
-    display: none;
-    position: relative;
-    // top: 50%;
-    // left: 0;
-    // margin-left: $gutter-outside;
-    padding: 0.7em 0;
-    margin-right: 1em;
-    float: left;
-    max-width: auto;
-    border-bottom: none;
-    color: theme(text primary, reverse);
-    background-color: transparent;
-
-    @include respond-to('small') { display: inline-block; }
-
-    @include respond-to($nav-break) { display: none; }
-}
-
-.nav-title {
-    @extend .nav-item;
-    display: none;
-    float: left;
-    padding: 1.5em 1em 1.5em 0;
-    color: theme(text primary, reverse);
-
-    // override hover state of default nav link
-    &:hover, &:active { color: theme(text primary, reverse); }
-
-    @include respond-to('xsmall') { display: inline-block; }
-    @include respond-to($nav-break) { display: none; }
-}
-
+// "small" (next/prev page) nav used on small screens
 .nav-pagination {
-    @include border(left, $color: theme(border, reverse));
-    display: inline-block;
-    float: right;
+    display: block;
+    font-size: 0;
 
     @include respond-to($nav-break) { display: none; }
+
+    > ul {
+        display: inline-block;
+        float: right;
+    }
 
     li {
         @include border(right, $color: theme(border, reverse));
         display: inline-block;
+        font-size: 16px;
 
+        &:first-child { @include border(left, $color: theme(border, reverse)); }
         &:last-child { border: none; }
-
-        // show/hide the (mobile) pagination nav with JS
-        // -> happens at bottom of the page, when you scroll past the local pagination nav
-        // -> see .nav-pagination for styles
-        // -> see gpoba.mobile_nav.js for behavior
-        &.js-hide-pagination { display: none; }
     }
 }
 
-.nav-full {
+// full nav used on large screens
+// => becomes a flyout on small screens
+.nav-toc {
+    // flyout state @ small screens
     $pointer-size: 14px;
 
     @extend %base-transition;
     @include border;
     display: none;
     position: absolute;
-    bottom: 70px;
-    right: $gutter-outside;
     min-width: em(180px);
     background-color: theme(bg);
     border-radius: em(3px);
@@ -133,15 +94,12 @@ $nav-break: 'medium';
     }
 
     &:after {
-        @include triangle($pointer-size, theme(bg), down);
-        content: " ";
-        display: block;
-        position: absolute;
+        @extend .nav-toc:before;
+        border-top-color: theme(bg);
         bottom: -(($pointer-size/2) - 2);
-        right: 50%;
-        margin-right: -($pointer-size/2);
     }
 
+    // horizontal (persistent) state on large screens
     @include respond-to($nav-break) {
         display: block;
         position: relative;
@@ -156,8 +114,42 @@ $nav-break: 'medium';
     }
 }
 
+.nav-logo {
+    $h: 28px;
+
+    @include rem(height, $h);
+    @include rem(width, 70px);
+    display: none;
+    position: relative;
+    padding: 0.7em 0;
+    margin-right: 1em;
+    float: left;
+    max-width: auto;
+    border-bottom: none;
+    color: theme(text primary, reverse);
+    background-color: transparent;
+
+    @include respond-to('small') { display: inline-block; }
+
+    @include respond-to($nav-break) { display: none; }
+}
+
+.nav-title {
+    @extend .nav_link;
+    display: none;
+    float: left;
+    padding: 1.5em 1em 0 0;
+    color: theme(text primary, reverse);
+
+    // override hover state of default nav link
+    &:hover, &:active { color: theme(text primary, reverse); }
+
+    @include respond-to('xsmall') { display: inline-block; }
+    @include respond-to($nav-break) { display: none; }
+}
+
 .nav-item {
-    @extend .nav-item;
+    @extend .nav_link;
     @include rem(margin, 0 fs(3));
     display: block;
     position: relative;
@@ -192,7 +184,7 @@ $nav-break: 'medium';
         }
     }
 
-    .nav-full & {
+    .nav-toc & {
         padding: 0.5em 0;
 
         &:hover, &:active { color: theme(text primary); }
@@ -210,7 +202,7 @@ $nav-break: 'medium';
 
 }
 
-    .nav-toc {
+    .nav-flyout {
         @extend .nav-item;
 
         &.is-active {
@@ -236,12 +228,12 @@ $nav-break: 'medium';
     }
 
     .nav-label {
-        @extend .nav-item;
+        @extend .nav_link;
         display: none;
 
         &:hover, &:active {
             color: inherit;
         }
 
-        @include breakpoint(780px) { display: inline-block; }
+        @include breakpoint($nav-label-break) { display: inline-block; }
     }

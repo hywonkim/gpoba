@@ -9,6 +9,7 @@
 $header-h: 36px;
 // pull in the nav's breakpoint and use it here
 $header-break: $nav-break;
+$header-label-break: $nav-label-break;
 
 // vertically center the children of an inline block element
 @mixin inline-block--centered($h: auto) {
@@ -74,6 +75,11 @@ $header-break: $nav-break;
     }
 }
 
+    // .header-logo.is-fixed {
+    //     position: fixed;
+
+    // }
+
 .header-nav {
     @extend .nav;
     position: fixed;
@@ -83,6 +89,27 @@ $header-break: $nav-break;
     z-index: $z--nav;
     padding: 0 $gutter-outside;
     background-color: theme(bg, reverse);
+}
+
+.header-pagination {
+    @extend .nav-pagination;
+    float: right;
+}
+
+.header-toc {
+    @extend .nav-toc;
+    bottom: 70px;
+    right: $gutter;
+
+    &:before, &:after {
+        right: 2em;
+        margin-right: 0;
+
+        @include breakpoint($header-label-break) {
+            right: 50%;
+            margin-right: -7px;
+        }
+    }
 
     @include respond-to($header-break) {
         display: inline-block;
