@@ -59,17 +59,17 @@ title: home
 
     <nav class="hero-nav">
         <!-- main menu -->
-        <%= partial("layouts/partials/nav", :locals => { :classes => "hero-nav", :home => true }) %>
+        <%= partial("layouts/partials/nav", :locals => {
+                :classes => "hero-toc",
+                :id => "js-hero-toc",
+                :home => true
+            }) %>
 
         <a class="hero-pointer" href="#intro">
             <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "hero-pointer-icon", :fallback_type => "text", :fallback => "Scroll for more" }) %> Year in Review
         </a>
 
-        <a class="nav-logo" href="<%= settings.url_root %>">
-            <%= partial("layouts/partials/logo") %>
-        </a>
-
-        <a class="nav-toc js-has-flyout" href="#js-toc">
+        <a class="hero-flyout js-has-flyout" href="#js-hero-toc">
             <%= partial("layouts/partials/icon", :locals => {
                     :id => "toc",
                     :classes => "nav-icon left",
