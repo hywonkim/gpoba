@@ -1,14 +1,17 @@
-Country,Project Name,"Grant Amount ($)","Cumulative Disbursements ($)","Disbursement (%)"
-Ghana,Urban Sanitation Facility for Greater Accra,"4,850,000",0,0%
-Kenya,Kenya Electricity Expansion Project,"5,150,000","4,375,497",85%
-Kenya,Urban Water and Sanitation OBA Fund for Low Income Areas Project,"11,835,000","250,000",2%
-Kenya,Nairobi Sanitation Project ,"4,330,000",0,0%
-Liberia,Monrovia Improved Electricity Access Project,"10,000,000","5,280,744",53%
-Mali,Rural Electrification Hybrid System ,"5,000,000","519,570",10%
-Nepal,Nepal Solid Waste Management,"4,288,381","504,569",12%
-Philippines,Philippines Reproductive Health,"2,977,530","1,271,232",43%
-Sri Lanka,Sri Lanka Sanitation,"5,080,000","82,000",2%
-Uganda,Energy for Rural Transformation Project ,"5,500,000",0,0%
-Vanuatu,Improved Electricity Access ,"4,850,000","160,799",3%
-West Bank,West Bank Solid Waste Management,"8,256,623","3,644,708",44%
-Total,,"72,117,534","16,089,120",
+Country,Project Name,"Grant Amount ($)","Cumulative Disbursements ($)","Disbursement (%)",Sector,Region
+Closed projects,,,,,,
+Ghana,Urban Sanitation Facility for Greater Accra,"4,850,000",0,0%,Sanitation,AFR
+Kenya,Kenya Electricity Expansion Project,"5,150,000","4,375,497",85%,Energy,AFR
+Kenya,Urban Water and Sanitation OBA Fund for Low Income Areas Project,"11,835,000","250,000",2%,Water and Sanitation,AFR
+Kenya,Nairobi Sanitation Project ,"4,330,000",0,0%,Sanitation,AFR
+Liberia,Monrovia Improved Electricity Access Project,"10,000,000","5,280,744",53%,Energy,AFR
+Mali,Rural Electrification Hybrid System ,"5,000,000","519,570",10%,Energy,AFR
+Nepal,Nepal Solid Waste Management,"4,288,381","504,569",12%,SWM,SAR
+Philippines,Philippines Reproductive Health,"2,977,530","1,271,232",43%,Health,EAP
+Sri Lanka,Sri Lanka Sanitation,"5,080,000","82,000",2%,Sanitation,SAR
+Uganda,Energy for Rural Transformation Project ,"5,500,000",0,0%,Energy,AFR
+Vanuatu,Improved Electricity Access ,"4,850,000","160,799",3%,Energy,EAP
+West Bank,West Bank Solid Waste Management,"8,256,623","3,644,708",44%,SWM,MNA
+Total for Projects Under Implementation,,"72,117,534 ","16,089,120 ",,,
+,,,,,,
+Grand Total,,"194,738,994 ","116,278,540 ",,,
