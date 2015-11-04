@@ -1,29 +1,14 @@
-Country,Project Name,Grant Amount,Disbursements,Sector,Region,Disbursement Percent
-Uganda,OBA in Water Supply in Uganda's Small Towns and Rural Growth Centers," $3,207,000 "," $2,973,434 ",Water,AFR,93%
-Morocco,Improved Access to Water and Sanitation Services Project," $7,000,000 "," $6,487,022 ",Water,MNA,93%
-Vietnam,Vietnam Rural Water (EMW)," $4,500,000 "," $3,831,938 ",Water,EAP,85%
-Uganda,Reproductive Health Vouchers in Western Uganda," $4,300,000 "," $2,915,954 ",Health,AFR,68%
-Nepal,Biogas Support Program in Nepal," $5,000,000 "," $3,377,960 ",Energy,SAR,68%
-Indonesia,Expansion of Water Services in Low income areas of Jakarta," $2,573,140 "," $1,689,187 ",Water,EAP,66%
-Senegal,On-Site Sanitation Project," $5,764,000 "," $3,062,661 ",Water,AFR,53%
-Bangladesh,Rural Electrification and Renewable Energy Development - SHS Project," $13,950,000 "," $7,200,000 ",Energy,SAR,52%
-Honduras,Extension of Water and Sanitation Services in Low income areas of Honduras," $4,440,000 "," $1,832,135 ",Water,LAC,41%
-Kenya,Microfinance for Community-managed Water Projects," $3,087,630 "," $1,133,827 ",Water,AFR,37%
-Nigeria,Pre-paid Health Scheme Pilot in Nigeria," $6,015,160 "," $1,701,383 ",Health,AFR,28%
-Vietnam,Vietnam Education Project," $3,000,000 "," $836,238 ",Education,EAP,28%
-Philippines,Manila Water Supply," $2,850,000 "," $756,152 ",Water,EAP,27%
-Ghana,Solar PV Systems to Increase Access to Electricity Services in Ghana," $4,350,000 "," $982,416 ",Energy,AFR,23%
-Indonesia,Expanding Piped Water Supply to Surabaya's Urban Poor," $2,407,500 "," $500,000 ",Water,EAP,21%
-Indonesia,Extending Telecommunications in Rural Indonesia Project," $1,868,340 "," $295,490 ",Telecom,EAP,16%
-Yemen,Yemen Safe Motherhood Program," $6,232,100 "," $984,628 ",Health,MNA,16%
-Uganda,OBA in Kampala - Water Connections for the Poor," $2,527,100 "," $397,540 ",Water,AFR,16%
-Bangladesh,Rural Electrification and Renewable Energy Development - Mini Grid Project," $1,100,000 "," $170,116 ",Energy,SAR,15%
-Lesotho,Lesotho New Hospital PPP," $6,250,000 "," $521,061 ",Health,AFR,8%
-Cameroon,Cameroon Water Affermage contract - OBA for coverage expansion," $5,250,000 "," $367,128 ",Water,AFR,7%
-Mozambique,Water Private Sector Contracts OBA for coverage expansion in Mozambique," $6,000,000 "," $400,565 ",Water,AFR,7%
-Bolivia,Bolivia Rural Electricity Access with Small-Scale Providers," $5,175,000 "," $120,761 ",Energy,LAC,2%
-Ethiopia,Ethiopia Electricity Access Rural Expansion Project," $8,000,000 ", - ,Energy,AFR,0%
-India,Improved Electricity Access to Indian Slum Dwellers," $1,650,000 ", - ,Energy,SAR,0%
-Yemen,Yemen Water for Urban Centers," $5,000,000 ", - ,Water,MNA,0%
-Total for On-going Projects,," $121,496,970 "," $42,537,603 ",,,
-Grant Total,," $130,791,370 "," $51,596,793 ",,,
+Country,Project Name,"Grant Amount ($)","Cumulative Disbursements ($)","Disbursement (%)"
+Ghana,Urban Sanitation Facility for Greater Accra,"4,850,000",0,0%
+Kenya,Kenya Electricity Expansion Project,"5,150,000","4,375,497",85%
+Kenya,Urban Water and Sanitation OBA Fund for Low Income Areas Project,"11,835,000","250,000",2%
+Kenya,Nairobi Sanitation Project ,"4,330,000",0,0%
+Liberia,Monrovia Improved Electricity Access Project,"10,000,000","5,280,744",53%
+Mali,Rural Electrification Hybrid System ,"5,000,000","519,570",10%
+Nepal,Nepal Solid Waste Management,"4,288,381","504,569",12%
+Philippines,Philippines Reproductive Health,"2,977,530","1,271,232",43%
+Sri Lanka,Sri Lanka Sanitation,"5,080,000","82,000",2%
+Uganda,Energy for Rural Transformation Project ,"5,500,000",0,0%
+Vanuatu,Improved Electricity Access ,"4,850,000","160,799",3%
+West Bank,West Bank Solid Waste Management,"8,256,623","3,644,708",44%
+Total,,"72,117,534","16,089,120",
