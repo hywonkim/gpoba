@@ -6,6 +6,9 @@
 @import "../core/*";
 @import "../atoms/text";
 @import "../atoms/pullquote";
+@import "../molecules/nav";
+
+$content-break: $nav-break;
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -27,4 +30,13 @@
 
 .content.wide {
     @extend %l-wrapper;
+}
+
+.content.first {
+    // add some padding to clear the header on small screens
+    @include rem(padding-top, fs(8));
+
+    @include respond-to($content-break) {
+        padding-top: 0;
+    }
 }

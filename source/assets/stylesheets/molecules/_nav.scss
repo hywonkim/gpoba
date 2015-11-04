@@ -148,6 +148,7 @@ $nav-label-break: 780px;
     display: none;
     float: left;
     padding: 1.5em 1em 0 0;
+    text-overflow: ellipsis;
     color: theme(text primary, reverse);
 
     // override hover state of default nav link

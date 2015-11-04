@@ -45,6 +45,7 @@ layout: layout
 
 <!-- global header -->
 <%= partial("layouts/partials/header", :locals => {
+        :classes => "main_header is-over_bg",
         :page_title => locals[:slug],
         :prev_page_slug => first_page? ? false : prev_page[0].metadata[:locals][:slug],
         :prev_page_url => first_page? ? false : prev_page_url,

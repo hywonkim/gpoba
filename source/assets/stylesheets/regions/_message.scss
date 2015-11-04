@@ -6,15 +6,23 @@
 
 @import "../core/*";
 @import "../atoms/heading";
+@import "../molecules/nav";
+@import "../molecules/content";
 @import "../organisms/feed";
 
 $chapter-padding: fs(6);
+$message-break: $nav-break; // pull in reference to navigation breakpoint
 
 /* Base
 // -------------------------------------------------------------------------- */
 
 .message {
     position: relative;
+
+    // add some padding to clear the header on small screens
+    @include rem(padding-top, fs(8));
+
+    @include respond-to($message-break) { padding-top: 0; }
 }
 
 /* Base
@@ -23,9 +31,10 @@ $chapter-padding: fs(6);
 // "back to report" link
 .message-nav {
     @extend %l-wrapper--narrow;
-    @include rem(padding-top, $gutter/2);
     @include rem(padding-bottom, $gutter/2);
     @include border(bottom);
+
+    @include respond-to($message-break) { @include rem(padding-top, $gutter/2); }
 }
 
 // headines

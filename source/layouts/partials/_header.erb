@@ -1,11 +1,12 @@
 <%# local vars used by main nav %>
+<% classes ||= "main_header" %>
 <% page_title ||= false %>
 <% prev_page_slug ||= false %>
 <% prev_page_url ||= false %>
 <% next_page_slug ||= false %>
 <% next_page_url ||= false %>
 
-<header class="main_header">
+<header class="<%= classes %>">
     <!-- GPOBA logo -->
     <a class="header-logo" href="<%= settings.url_root %>">
         <%= partial("layouts/partials/logo") %>

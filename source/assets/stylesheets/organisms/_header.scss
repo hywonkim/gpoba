@@ -33,6 +33,7 @@ $header-label-break: $nav-label-break;
     @include clearfix;
     display: block;
     position: absolute;
+    top: 0;
     width: 100%;
     z-index: $z--nav;
     text-align: center;
@@ -45,6 +46,13 @@ $header-label-break: $nav-label-break;
     }
 }
 
+/* Modifiers
+// -------------------------------------------------------------------------- */
+
+// if the header is sitting over a non-white bg, like a hero unit
+// -> see header-logo
+.main_header.is-over_bg {}
+
 /* Submodules
 // -------------------------------------------------------------------------- */
 
@@ -56,6 +64,9 @@ $header-label-break: $nav-label-break;
     // display: inline-block;
     z-index: $z--high;
     background-color: theme(bg);
+    @include border(left right bottom);
+
+    .main_header.is-over_bg & { border: none; }
 
     @include respond-to($nav-break) {
         $h: 28px;

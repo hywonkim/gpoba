@@ -31,18 +31,11 @@ $hero-nav-break: $nav-break;
 /* Submodules
 // -------------------------------------------------------------------------- */
 
-// .hero-logo {
-//     @extend .logo;
-//     @include rem(max-width, 80px);
-//     display: inline-block;
-//     padding: 0.6em;
-//     background-color: theme(bg);
-
-//     @include breakpoint(530px) {
-//         @include rem(max-width, 120px);
-//         padding: 1em;
-//     }
-// }
+.hero-logo {
+    @extend .logo;
+    @extend .logo.tag;
+    border: none;
+}
 
 .hero-button {
     $c: theme(text primary, reverse);

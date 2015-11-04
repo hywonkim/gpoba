@@ -1,6 +1,8 @@
 <% wrap_layout :layout do %>
-    <%= partial "layouts/partials/header" %>
-    <main class="content">
+    <%= partial("layouts/partials/header", :locals => {
+            :page_title => current_page.data.title,
+        }) %>
+    <main class="content first">
         <h1 class="title"><%= current_page.data.title %></h1>
         <%= yield %>
     </main>
