@@ -6,16 +6,17 @@
 @import "../core/*";
 @import "../atoms/text";
 
-$main_nav-break: 'medium';
+$nav-break: 'medium';
+$nav-label-break: 780px;
 
 /* Base
 // -------------------------------------------------------------------------- */
 
-.main_nav {
+.nav {
     @include unstyled-list;
-    z-index: $z--high;
+    z-index: $z--nav;
 
-    @include respond-to($main_nav-break) { padding: 0; }
+    @include respond-to($nav-break) { padding: 0; }
 
     ul {
         margin: 0;
@@ -36,89 +37,85 @@ $main_nav-break: 'medium';
 /* ------- STATE: above/below ----------------------------------------------- */
 // -> the nav's relationship to the section 'border'.
 // -> used to place the highlight rule over or under the active item.
-.main_nav.is-above {}
+.nav.is-above {}
 
 
 /* Submodules
 // -------------------------------------------------------------------------- */
 
-.main_nav-title {
-    @extend .nav-item;
-    display: none;
-    // display: inline-block;
-    float: left;
-    padding: 1.5em 1em;
-    color: theme(text primary, reverse);
+// "small" (next/prev page) nav used on small screens
+.nav-pagination {
+    display: block;
+    font-size: 0;
+    list-style: none;
 
-    // override hover state of default nav link
-    &:hover, &:active { color: theme(text primary, reverse); }
+    @include respond-to($nav-break) { display: none; }
 
-    @include respond-to($main_nav-break) { display: none; }
-}
-
-.main_nav-pagination {
-    @include border(left, $color: theme(border, reverse));
-    display: inline-block;
-    float: right;
-
-    @include respond-to($main_nav-break) { display: none; }
+    > ul {
+        display: inline-block;
+        float: right;
+    }
 
     li {
         @include border(right, $color: theme(border, reverse));
         display: inline-block;
+        font-size: 16px;
 
+        &:first-child { @include border(left, $color: theme(border, reverse)); }
         &:last-child { border: none; }
-
-        // show/hide the (mobile) pagination nav with JS
-        // -> happens at bottom of the page, when you scroll past the local pagination nav
-        // -> see .main_nav-pagination for styles
-        // -> see gpoba.mobile_nav.js for behavior
-        &.js-hide-pagination { display: none; }
     }
 }
 
-.main_nav-full {
+// full nav used on large screens
+// => becomes a flyout on small screens
+.nav-toc {
+    // flyout state @ small screens
     $pointer-size: 14px;
 
     @extend %base-transition;
+    @include unstyled-list;
     @include border;
     display: none;
     position: absolute;
-    top: 70px;
-    right: 0;
     min-width: em(180px);
+    list-style: none;
     background-color: theme(bg);
     border-radius: em(3px);
+    text-align: left;
 
     &.is-visible {
         display: block;
     }
 
     &:before {
-        @include triangle($pointer-size, theme(border), up);
+        @include triangle($pointer-size, theme(border), down);
         content: " ";
         display: block;
         position: absolute;
-        top: -($pointer-size/2);
-        right: 26px;
+        bottom: -($pointer-size/2);
+        right: 2em;
+
+        @include breakpoint($nav-label-break) {
+            right: 50%;
+            margin-right: -($pointer-size/2);
+        }
     }
 
     &:after {
-        @include triangle($pointer-size, theme(bg), up);
-        content: " ";
-        display: block;
-        position: absolute;
-        top: -(($pointer-size/2) - 2);
-        right: 26px;
+        @extend .nav-toc:before;
+        border-top-color: theme(bg);
+        bottom: -(($pointer-size/2) - 2);
     }
 
-    @include respond-to($main_nav-break) {
+    // horizontal (persistent) state on large screens
+    @include respond-to($nav-break) {
         display: block;
         position: relative;
         top: 0;
         background-color: transparent;
         border-radius: none;
         border: none;
+        text-align: center;
 
         &:before, &:after { content: none; }
 
@@ -126,13 +123,47 @@ $main_nav-break: 'medium';
     }
 }
 
-.main_nav-item {
-    @extend .nav-item;
+.nav-logo {
+    $h: 28px;
+
+    @include rem(height, $h);
+    @include rem(width, 70px);
+    display: none;
+    position: relative;
+    padding: 0.7em 0;
+    margin-right: 1em;
+    float: left;
+    max-width: auto;
+    border-bottom: none;
+    color: theme(text primary, reverse);
+    background-color: transparent;
+
+    @include respond-to('small') { display: inline-block; }
+
+    @include respond-to($nav-break) { display: none; }
+}
+
+.nav-title {
+    @extend .nav_link;
+    display: none;
+    float: left;
+    padding: 1.5em 1em 0 0;
+    color: theme(text primary, reverse);
+
+    // override hover state of default nav link
+    &:hover, &:active { color: theme(text primary, reverse); }
+
+    @include respond-to('xsmall') { display: inline-block; }
+    @include respond-to($nav-break) { display: none; }
+}
+
+.nav-item {
+    @extend .nav_link;
     @include rem(margin, 0 fs(3));
     display: block;
     position: relative;
     padding: 1.5em 0;
-    line-height: 1.2em; // to match the height of .main_nav-icon
+    line-height: 1.2em; // to match the height of .nav-icon
     color: theme(text tertiary, reverse);
 
     &:hover, &:active {
@@ -142,7 +173,7 @@ $main_nav-break: 'medium';
     &.is-active {
         $border-w: 4px;
 
-        @include respond-to($main_nav-break) {
+        @include respond-to($nav-break) {
             &:after {
                 @include chapter_highlights(background-color);
                 content: " ";
@@ -162,14 +193,14 @@ $main_nav-break: 'medium';
         }
     }
 
-    .main_nav-full & {
+    .nav-toc & {
         padding: 0.5em 0;
 
         &:hover, &:active { color: theme(text primary); }
         &:first-child { margin-top: 0.5em; }
         &:last-child { margin-bottom: 0.5em; }
 
-        @include respond-to($main_nav-break) {
+        @include respond-to($nav-break) {
             padding: 1.5em 0;
 
             &:hover, &:active { color: theme(text primary, reverse); }
@@ -180,8 +211,9 @@ $main_nav-break: 'medium';
 
 }
 
-    .main_nav-toc {
-        @extend .main_nav-item;
+    .nav-flyout {
+        @extend .nav-item;
+        margin-right: 0;
 
         &.is-active {
             @include chapter_highlights;
@@ -189,14 +221,14 @@ $main_nav-break: 'medium';
         }
     }
 
-    .main_nav-icon {
+    .nav-icon {
         @extend .icon;
         margin: 0;
         height: 1.2em;
         width: 1.2em;
         fill: theme(text primary, reverse);
 
-        // &:hover, &:active, .main_nav-item:hover &, .main_nav-item:active & {
+        // &:hover, &:active, .nav-item:hover &, .nav-item:active & {
         //     @include chapter_highlights(fill);
         //     fill: theme(highlight);
         // }
@@ -205,8 +237,13 @@ $main_nav-break: 'medium';
         &.right { margin-left: 0.3em; }
     }
 
-    .main_nav-label {
+    .nav-label {
+        @extend .nav_link;
         display: none;
 
-        @include breakpoint(550px) { display: inline-block; }
+        &:hover, &:active {
+            color: inherit;
+        }
+
+        @include breakpoint($nav-label-break) { display: inline-block; }
     }

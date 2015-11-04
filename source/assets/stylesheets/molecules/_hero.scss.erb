@@ -7,11 +7,11 @@
 @import "../atoms/logo";
 @import "../atoms/button";
 @import "../atoms/heading";
-@import "../molecules/main_nav";
+@import "../molecules/nav";
 
 $hero-pointer-h: fs(7);
 // pull in main nav breakpoint and use it here
-$hero-nav-break: $main_nav-break;
+$hero-nav-break: $nav-break;
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -31,16 +31,48 @@ $hero-nav-break: $main_nav-break;
 /* Submodules
 // -------------------------------------------------------------------------- */
 
-.hero-logo {
-    @extend .logo;
-    @include rem(max-width, 80px);
-    display: inline-block;
-    padding: 0.6em;
-    background-color: theme(bg);
+// .hero-logo {
+//     @extend .logo;
+//     @include rem(max-width, 80px);
+//     display: inline-block;
+//     padding: 0.6em;
+//     background-color: theme(bg);
+
+//     @include breakpoint(530px) {
+//         @include rem(max-width, 120px);
+//         padding: 1em;
+//     }
+// }
+
+.hero-button {
+    $c: theme(text primary, reverse);
+    @extend .button;
+    @include font-scale(1);
+    position: absolute;
+    top: ($gutter/3);
+    left: ($gutter/3);
+    padding: 0.4em 1em 0.35em;
+    border-color: $c;
+    color: $c;
+
+    &:hover, &:active {
+        // color: theme(bg, reverse);
+        background-color: $c;
+    }
+
+    &.right {
+        left: auto;
+        right: ($gutter/3);
+    }
+
 
     @include breakpoint(530px) {
-        @include rem(max-width, 120px);
-        padding: 1em;
+        @include font-scale(2);
+        top: ($gutter * 0.75);
+        left: $gutter;
+        padding: 0.6em 1.8em 0.5em;
+
+        &.right { right: $gutter; }
     }
 }
 
@@ -105,79 +137,99 @@ $hero-nav-break: $main_nav-break;
 }
 
 .hero-nav {
-    @extend .main_nav;
-    @include border(bottom);
+    @extend .nav;
     display: block;
-    position: absolute;
-    bottom: $hero-pointer-h;
-    width: 100%;
-    border: none;
-    background-color: theme(bg, reverse);
-
-    @include respond-to($hero-nav-break) {
-        display: block;
-    }
-}
-
-.hero-button {
-    $c: theme(text primary, reverse);
-    @extend .button;
-    @include font-scale(1);
-    position: absolute;
-    top: ($gutter/3);
-    left: ($gutter/3);
-    padding: 0.4em 1em 0.35em;
-    border-color: $c;
-    color: $c;
-
-    &:hover, &:active {
-        // color: theme(bg, reverse);
-        background-color: $c;
-    }
-
-    &.right {
-        left: auto;
-        right: ($gutter/3);
-    }
-
-
-    @include breakpoint(530px) {
-        @include font-scale(2);
-        top: ($gutter * 0.75);
-        left: $gutter;
-        padding: 0.6em 1.8em 0.5em;
-
-        &.right { right: $gutter; }
-    }
-}
-
-.hero-pointer {
-    @extend %font-accent;
-    @extend %base-transition;
-    @include font-scale(2);
-    display: block;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    height: $hero-pointer-h;
-    text-align: center;
-    line-height: $hero-pointer-h;
-    color: theme(text tertiary, reverse);
-    background-color: darken(theme('bg', 'reverse'), 5);
+    width: 100%;
+    padding: 0 $gutter-outside;
+    border: none;
+    text-align: left;
+    background-color: theme(bg, reverse);
 
-    &:hover, &:active {
-        color: theme(text primary, reverse);
-        background-color: theme(highlight);
-        border: none;
+    @include respond-to($hero-nav-break) {
+        position: absolute;
+        padding: 0;
+        text-align: center;
     }
 }
 
-    .hero-pointer-icon {
-        $h: 1em;
-        @extend .icon;
-        height: $h;
-        fill: theme(text primary, reverse);
+    // the full nav
+    // -> a flyout on small screens, horizontal/persistent on large screens
+    .hero-toc {
+        @extend .nav-toc;
+        bottom: 70px;
+        right: ($gutter - 10px);
+
+        @include respond-to($hero-nav-break) {
+            display: block;
+            position: relative;
+            left: 0;
+            bottom: $hero-pointer-h;
+        }
+    }
+
+    // the contents button in the nav
+    .hero-flyout {
+        @extend .nav-flyout;
         display: inline-block;
         vertical-align: middle;
+        float: right;
+
+        @include respond-to($hero-nav-break) {
+            display: none;
+        }
     }
+
+    // anchor link pointing to the first bit of content ("year in review")
+    .hero-pointer {
+        @extend %font-accent;
+        @extend %base-transition;
+        @include font-scale(3);
+
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0.5em 0;
+        float: left;
+        line-height: $hero-pointer-h;
+        color: theme(text tertiary, reverse);
+
+        &:hover, &:active {
+            color: theme(text primary, reverse);
+            border: none;
+        }
+
+        &.is-hidden {
+            display: none;
+
+            @include respond-to($hero-nav-break) {
+                display: block;
+            }
+        }
+
+        @include respond-to($hero-nav-break) {
+            @include font-scale(2);
+            display: block;
+            position: relative;
+            padding: 0;
+            width: 100%;
+            height: $hero-pointer-h;
+            float: none;
+            text-align: center;
+            background-color: darken(theme('bg', 'reverse'), 5);
+
+            &:hover, &:active { background-color: theme(highlight); }
+        }
+    }
+
+        // icon in the pointer link
+        .hero-pointer-icon {
+            $h: 1em;
+            @extend .icon;
+            height: $h;
+            fill: theme(text primary, reverse);
+            display: inline-block;
+            vertical-align: middle;
+        }

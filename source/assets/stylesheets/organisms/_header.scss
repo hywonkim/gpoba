@@ -4,11 +4,12 @@
 
 @import "../core/*";
 @import "../atoms/logo";
-@import "../molecules/main_nav";
+@import "../molecules/nav";
 
 $header-h: 36px;
-// pull in the main_nav's breakpoint and use it here
-$header-break: $main_nav-break;
+// pull in the nav's breakpoint and use it here
+$header-break: $nav-break;
+$header-label-break: $nav-label-break;
 
 // vertically center the children of an inline block element
 @mixin inline-block--centered($h: auto) {
@@ -31,17 +32,16 @@ $header-break: $main_nav-break;
     @include rem(min-height, 40px);
     @include clearfix;
     display: block;
-    position: relative;
+    position: absolute;
     width: 100%;
-    z-index: 1000;
-    // text-align: center;
-    background-color: theme(bg, reverse);
+    z-index: $z--nav;
+    text-align: center;
 
     @include respond-to($header-break) {
         position: relative;
         text-align: left;
         color: theme(text primary, reverse);
-
+        background-color: theme(bg, reverse);
     }
 }
 
@@ -50,12 +50,14 @@ $header-break: $main_nav-break;
 
 .header-logo {
     @extend .logo;
+    @extend .logo.tag;
     // @include rem(max-width, 120px);
     // @include rem(padding, 16px);
     // display: inline-block;
-    // background-color: theme(bg);
+    z-index: $z--high;
+    background-color: theme(bg);
 
-    // @include respond-to($main_nav-break) {
+    @include respond-to($nav-break) {
         $h: 28px;
 
         @include rem(height, $h);
@@ -70,17 +72,40 @@ $header-break: $main_nav-break;
         border-bottom: none;
         color: theme(text primary, reverse);
         background-color: transparent;
-    // }
+    }
 }
 
-.header-nav {
-    @extend .main_nav;
-    // display: none;
+    // .header-logo.is-fixed {
+    //     position: fixed;
 
-    // @include respond-to('medium') {
+    // }
+
+.header-nav {
+    @extend .nav;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $z--nav;
+    padding: 0 $gutter-outside;
+    background-color: theme(bg, reverse);
+
+    @include respond-to($header-break) {
         display: inline-block;
+        z-index: $z--middle;
         position: relative;
         float: right;
-        margin-right: $gutter-outside;
-    // }
+        // margin-right: $gutter-outside;
+    }
+}
+
+.header-pagination {
+    @extend .nav-pagination;
+    float: right;
+}
+
+.header-toc {
+    @extend .nav-toc;
+    bottom: 70px;
+    right: $gutter;
 }

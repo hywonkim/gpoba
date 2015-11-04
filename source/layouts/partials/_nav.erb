@@ -1,0 +1,16 @@
+<% home ||= false %>
+<% classes ||= "nav-toc" %>
+<% id ||= "js-toc" %>
+
+<ul class="<%= classes %>" id="<%= id %>">
+    <li>
+        <% home ? item_class = 'nav-item is-active' : item_class = 'nav-item' %>
+        <%= link_to 'Home', settings.url_root, :class => item_class %>
+    </li>
+    <% data.chapters.each do |chapter| %>
+        <% current_url = "#{settings.url_root}#{data.site.paths.chapter}#{chapter.slug.urlize}/" %>
+        <li>
+            <a class="nav-item<% if current_dir? current_url %> is-active<% end %>" href="<%= current_url %>"><%= chapter.slug %></a>
+        </li>
+    <% end %>
+</ul>

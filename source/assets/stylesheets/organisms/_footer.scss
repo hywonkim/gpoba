@@ -4,73 +4,51 @@
 
 @import "../core/*";
 @import "../atoms/logo";
-@import "../molecules/main_nav";
+@import "../molecules/nav";
 
 $footer-padding: $gutter-outside;
 // pull in main nav breakpoint and use it here
-$footer-break: $main_nav-break;
+$footer-break: $nav-break;
 
 /* Base
 // -------------------------------------------------------------------------- */
 
-[role="contentinfo"], .footer {
-
-}
-
-
-/* Modifiers
-// -------------------------------------------------------------------------- */
-
-// global/main footer @ bottom of each page
-[role="contentinfo"].main, .footer.main {
+.main_footer {
     @extend %theme--reverse;
+    position: relative;
+    z-index: $z--footer;
     padding-top: 0;
     padding-bottom: $footer-padding;
+    text-align: center;
+    background-color: theme(bg, reverse);
 }
 
 /* Submodules
 // -------------------------------------------------------------------------- */
 
-.footer-nav {
-    @extend .main_nav;
-    @include clearfix;
-    @include border(bottom, $color: theme(border, reverse));
-    display: none;
-    position: relative;
-    width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    background-color: theme(bg, reverse);
 
-    // @include respond-to('small') { text-align: center; }
+.footer-toc {
+    @extend .nav-toc;
+    bottom: 145px;
+    right: ($gutter - 10px);
+
     @include respond-to($footer-break) {
         display: inline-block;
+        bottom: auto;
+        right: auto;
         text-align: center;
         background-color: transparent;
-    }
-
-    &.is-fixed {
-        position: fixed;
-        padding: 0 $gutter-outside;
-        border-bottom: none;
     }
 }
 
 .footer-section {
     padding: $gutter 0;
+    text-align: left;
 }
     .footer-lockup {
+        display: inline-block;
+        vertical-align: middle;
         border-bottom: none;
-    }
-
-    .footer-title {
-        @extend %font-accent;
-        color: theme(text primary, reverse);
-        text-transform: uppercase;
-
-        strong { @extend %font-accent--bold; }
     }
 
     .footer-logo {
@@ -82,6 +60,28 @@ $footer-break: $main_nav-break;
         color: theme('text' 'primary', 'reverse');
     }
 
+    .footer-title {
+        @extend %font-accent;
+        display: inline-block;
+        vertical-align: middle;
+        color: theme(text primary, reverse);
+        text-transform: uppercase;
+
+        strong { @extend %font-accent--bold; }
+    }
+
+    .footer-flyout {
+        @extend .nav-flyout;
+        display: inline-block;
+        vertical-align: middle;
+        float: right;
+        border-bottom: none;
+        padding: 0.4em 0;
+        margin: 0;
+
+        @include respond-to($footer-break) { display: none; }
+    }
+
 .footer-subnav {
     @extend %base-transition;
     @extend %font-accent;
@@ -89,11 +89,12 @@ $footer-break: $main_nav-break;
     display: block;
     margin-top: $gutter;
     margin-left: 0;
+    margin-bottom: 0;
     padding-top: 1em;
     padding-left: 0;
     color: theme('text' 'primary', 'reverse');
 
-    @include breakpoint(660px) {
+    @include respond-to($footer-break) {
         display: inline-block;
         float: right;
         margin: 0;
@@ -131,6 +132,7 @@ $footer-break: $main_nav-break;
 .footer-utility {
     @include inline-list;
     padding-top: $gutter;
+    text-align: left;
     background-color: darken(theme('bg', 'reverse'), 5);
 
     // if this is the last child in the footer, add padding inside
@@ -149,8 +151,14 @@ $footer-break: $main_nav-break;
         margin-right: $gutter;
 
         &.copyright {
-            margin-right: 0;
-            float: right;
+            display: block;
+            margin-top: 0.5em;
+
+            @include respond-to('small') {
+                margin-top: 0;
+                margin-right: 0;
+                float: right;
+            }
         }
 
         a, small {

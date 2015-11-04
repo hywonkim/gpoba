@@ -3,7 +3,7 @@ title: home
 ---
 
 <% content_for :local_styles do %>
-    <style>        
+    <style>
         <% img_path = asset_url(data.site.paths.content + 'home/') + '/' %>
 
         /* cover image */
@@ -41,7 +41,7 @@ title: home
 <header class="hero" id="cover">
 
     <!-- GPOBA logo -->
-    <%= partial("layouts/partials/logo", :locals => { :classes => "hero-logo" }) %>
+    <%= partial("layouts/partials/logo", :locals => { :classes => "logo tag" }) %>
 
     <!-- GPOBA home btn -->
     <a class="hero-button" href="http://gpoba.org" target="_blank">
@@ -57,12 +57,28 @@ title: home
     <!-- main title lockup -->
     <%= partial "layouts/partials/hero-lockup" %>
 
-    <!-- main menu -->
-    <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav", :home => true }) %>
+    <nav class="hero-nav">
+        <!-- main menu -->
+        <%= partial("layouts/partials/nav", :locals => {
+                :classes => "hero-toc",
+                :id => "js-hero-toc",
+                :home => true
+            }) %>
 
-    <a class="hero-pointer" href="#intro">
-        <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "hero-pointer-icon", :fallback_type => "text", :fallback => "Scroll for more" }) %> Year in Review
-    </a>
+        <a class="hero-pointer js-pointer" href="#intro">
+            <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "hero-pointer-icon", :fallback_type => "text", :fallback => "Scroll for more" }) %> Year in Review
+        </a>
+
+        <a class="hero-flyout js-has-flyout" href="#js-hero-toc">
+            <%= partial("layouts/partials/icon", :locals => {
+                    :id => "toc",
+                    :classes => "nav-icon left",
+                    :fallback_type => "none",
+                    :fallback => "&lsaquo;"
+                }) %>
+            <span class="nav-label">Contents</span>
+        </a>
+    </nav>
 </header>
 
 <article class="chapter" role="main" id="intro">

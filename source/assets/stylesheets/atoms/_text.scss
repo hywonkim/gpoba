@@ -120,7 +120,7 @@ sup {
 
 // base styles for menu items
 // -> see jump nav and main nav modules
-.nav-item {
+.nav_link {
     @extend %base-transition;
     @extend %font-body--bold;
     @include font-scale(2);

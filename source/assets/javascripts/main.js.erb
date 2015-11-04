@@ -40,6 +40,25 @@ jQuery(function($) {
         $(this).toggleClass("is-active");
         event.preventDefault();
     });
+
+    // hide pointer btn on scroll on mobile screens
+    // -> TODO: modularize this
+    if ($('.js-pointer').length > 0) {
+        var targetScrollTop = $($('.js-pointer').attr("href")).offset().top;
+        // console.log(targetScrollTop);
+        var displayClass = "is-hidden";
+        var $link = $('.js-pointer');
+
+        $(window).scroll(function() {
+            // console.log($(window).scrollTop() + $(window).height());
+            if ($(window).scrollTop() + $(window).height() >= targetScrollTop) {
+                $link.addClass(displayClass);
+            } else {
+                $link.removeClass(displayClass);
+            }
+        });
+    }
+
 });
 
 
