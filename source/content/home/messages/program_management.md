@@ -2,7 +2,7 @@
 title: Program Management Unit
 authors:
   - name: Carmen Nonay
-    job_title: Program Manager, Parnterships and Resource Mobilization, GPSURR
+    job_title: Practice Manager, Partnerships and Resource Mobilization, GPSURR
     portrait: "media/carmen_nonay@600.jpg"
   - name: Catherine Commander O'Farrell
     job_title: Head, GPOBA
