@@ -30,7 +30,7 @@
 .jump_nav-item {
     $border-w: 4px;
 
-    @extend .nav-item;
+    @extend .nav_link;
     @include font-scale(1);
     display: block;
     position: relative;
