@@ -51,8 +51,9 @@ $gallery-gutter: $gutter;
     padding-right: $g;
 
     .flexbox & {
-        width: auto;
         flex: 0 0 (100%/$number);
+        width: auto;
+        min-width: 1px;
     }
 }
 
