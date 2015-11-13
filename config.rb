@@ -199,7 +199,7 @@ set :file_watcher_ignore,
 activate :relative_assets
 
 # Build-specific configuration
-configure :build do  
+configure :build do
   set :strip_index_file, true
 
   # For example, change the Compass output style for deployment
@@ -214,7 +214,7 @@ configure :build do
   # end
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Gzip
   # activate :gzip
