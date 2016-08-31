@@ -1,7 +1,7 @@
 ---
 title: Communications
 chapter: center of expertise
-order: 10
+order: 7
 ---
 
 A key communications activity this fiscal year was the initiation of a re-branding exercise that will continue through FY17. The initial phase of this work used an in-depth landscape analysis to discern current perceptions of and context for GPOBA through stakeholder interviews, focus group workshops, and an online survey. Results of the research and analysis will inform GPOBA’s positioning and communications strategy, brand guidelines, and tone and writing style guide.
