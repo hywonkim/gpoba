@@ -1,7 +1,7 @@
 ---
-title: Knowledge Management
+title: Knowledge Management, Learning, and Innovation
 chapter: center of expertise
-order: 6
+order: 5
 ---
 
 ![picks3635.jpg](/content/center-of-expertise/media/picks3635.jpg)
