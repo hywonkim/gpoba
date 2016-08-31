@@ -1,7 +1,7 @@
 ---
 title: Monitoring, Evaluation and Reporting
 chapter: portfolio
-order: 5
+order: 4
 ---
 
 GPOBA tracks the progress of each subsidy project toward intermediate outcomes and project objectives, integrating monitoring and evaluation (M&E) findings into future project design and sharing best practices. In FY16, GPOBA continued to expand the evidence base for the OBA approach through M&E at the project level, as well as through two comprehensive sector studies. A significant addition to GPOBA’s M&E capacities during the fiscal year was the development of an OBA results framework, which will guide M&E going forward (see Box 1).
