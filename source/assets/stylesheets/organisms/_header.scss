@@ -64,13 +64,11 @@ $header-label-break: $nav-label-break;
     // display: inline-block;
     z-index: $z--high;
     background-color: theme(bg);
-    @include border(left right bottom);
 
     .main_header.is-over_bg & { border: none; }
 
     @include respond-to($nav-break) {
         $h: 28px;
-
         @include rem(height, $h);
         @include rem(width, 70px);
         @include rem(margin-top, -($h/2));
@@ -81,15 +79,10 @@ $header-label-break: $nav-label-break;
         padding: 0;
         max-width: auto;
         border-bottom: none;
-        color: theme(text primary, reverse);
+        color: theme('text' 'primary', 'reverse');
         background-color: transparent;
     }
 }
-
-    // .header-logo.is-fixed {
-    //     position: fixed;
-
-    // }
 
 .header-nav {
     @extend .nav;
