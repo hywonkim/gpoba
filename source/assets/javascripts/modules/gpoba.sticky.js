@@ -4,7 +4,6 @@ var gpoba = window.gpoba || {};
 
 // Sticky module
 // -> make an element "sticky" (fixed position) depending on scroll position
-// -> can't get this to work right now -- commenting out and will come back to it later
 // -----------------------------------------------------------------------------
 gpoba.sticky = (function($) {
     'use strict';

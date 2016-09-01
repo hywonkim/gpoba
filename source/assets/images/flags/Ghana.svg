@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="900px" height="600px" viewBox="0 0 900 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
-    <title>Ghana</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Ghana" sketch:type="MSLayerGroup">
-            <rect id="Rectangle-path" fill="#0C6C3F" sketch:type="MSShapeGroup" x="0" y="0" width="900" height="600"></rect>
-            <rect id="Rectangle-path" fill="#FBD113" sketch:type="MSShapeGroup" x="0" y="0" width="900" height="400"></rect>
-            <rect id="Rectangle-path" fill="#CF2028" sketch:type="MSShapeGroup" x="0" y="0" width="900" height="200"></rect>
-            <g id="Group" transform="translate(344.622792, 199.993452)" fill="#000000" sketch:type="MSShapeGroup">
-                <path d="M105.413434,0.00670677 L130.226694,76.3744612 L210.52551,76.3744612 L145.561948,123.572237 L170.374314,199.939545 L105.413434,152.742216 L40.4512126,199.939545 L65.2644731,123.572237 L0.302251768,76.3744612 L80.5997263,76.3744612 L105.413434,0.00670677 L105.413434,0.00670677 Z" id="Shape"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg"><title>Ghana</title><g fill="none" fill-rule="evenodd"><path fill="#0C6C3F" d="M0 0h900v600H0z"/><path fill="#FBD113" d="M0 0h900v400H0z"/><path fill="#CF2028" d="M0 0h900v200H0z"/><path d="M450.036 200l24.813 76.368h80.298l-64.963 47.198 24.812 76.367-64.96-47.197-64.963 47.197 24.813-76.367-64.962-47.198h80.298L450.036 200z" fill="#000"/></g></svg>

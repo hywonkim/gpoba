@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="900px" height="600px" viewBox="0 0 900 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
-    <title>Cameroon</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Cameroon" sketch:type="MSLayerGroup">
-            <path d="M0,600 L300,600 L300,0 L0,0 L0,600 Z" id="Fill-1" fill="#137156" sketch:type="MSShapeGroup"></path>
-            <path d="M300,600 L600,600 L600,0 L300,0 L300,600 Z" id="Fill-2" fill="#BC242C" sketch:type="MSShapeGroup"></path>
-            <path d="M600,600 L900.0015,600 L900.0015,0 L600,0 L600,600 Z" id="Fill-3" fill="#F7CD2B" sketch:type="MSShapeGroup"></path>
-            <path d="M402.978,364.722 L420.939,309.4425 L373.9155,275.2785 L432.039,275.2785 L450,220.0005 L467.961,275.2785 L526.0845,275.2785 L479.061,309.4425 L497.022,364.722 L450,330.5565 L402.978,364.722" id="Fill-4" fill="#F7CD2B" sketch:type="MSShapeGroup"></path>
-        </g>
-    </g>
-</svg>
+<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg"><title>Cameroon</title><g fill="none" fill-rule="evenodd"><path d="M0 600h300V0H0v600z" fill="#137156"/><path d="M300 600h300V0H300v600z" fill="#BC242C"/><path d="M600 600h300V0H600v600zM402.978 364.722l17.96-55.28-47.022-34.163h58.123L450 220l17.96 55.28h58.125l-47.024 34.163 17.962 55.28L450 330.556l-47.022 34.165" fill="#F7CD2B"/></g></svg>

@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="900px" height="600px" viewBox="0 0 900 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
-    <title>Mali</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Mali" sketch:type="MSLayerGroup">
-            <path d="M0,0 L300,0 L300,600 L0,600 L0,0 Z" id="Shape" fill="#22B24B" sketch:type="MSShapeGroup"></path>
-            <path d="M300,0 L600,0 L600,600 L300,600 L300,0 Z" id="Shape" fill="#FBD116" sketch:type="MSShapeGroup"></path>
-            <path d="M600,0 L900,0 L900,600 L600,600 L600,0 Z" id="Shape" fill="#CE2028" sketch:type="MSShapeGroup"></path>
-        </g>
-    </g>
-</svg>
+<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg"><title>Mali</title><g fill="none" fill-rule="evenodd"><path d="M0 0h300v600H0V0z" fill="#22B24B"/><path d="M300 0h300v600H300V0z" fill="#FBD116"/><path d="M600 0h300v600H600V0z" fill="#CE2028"/></g></svg>

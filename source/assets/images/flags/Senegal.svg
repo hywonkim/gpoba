@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="900px" height="600px" viewBox="0 0 900 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
-    <title>Senegal</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Senegal" sketch:type="MSLayerGroup">
-            <path d="M0,600 L300,600 L300,0 L0,0 L0,600 Z" id="Fill-1" fill="#107C40" sketch:type="MSShapeGroup"></path>
-            <path d="M300,600 L600.001,600 L600.001,0 L300,0 L300,600 Z" id="Fill-2" fill="#F9ED4C" sketch:type="MSShapeGroup"></path>
-            <path d="M600,600 L900,600 L900,0 L600,0 L600,600 Z" id="Fill-3" fill="#CF232A" sketch:type="MSShapeGroup"></path>
-            <path d="M391.221,380.902 L413.673,311.804 L354.894,269.098 L427.548,269.098 L450,200 L472.452,269.098 L545.106,269.098 L486.327,311.804 L508.778,380.902 L450,338.196 L391.221,380.902" id="Fill-4" fill="#107C40" sketch:type="MSShapeGroup"></path>
-        </g>
-    </g>
-</svg>
+<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg"><title>Senegal</title><g fill="none" fill-rule="evenodd"><path d="M0 600h300V0H0v600z" fill="#107C40"/><path d="M300 600h300V0H300v600z" fill="#F9ED4C"/><path d="M600 600h300V0H600v600z" fill="#CF232A"/><path d="M391.22 380.902l22.453-69.098-58.78-42.706h72.655L450 200l22.452 69.098h72.654l-58.78 42.706 22.452 69.098L450 338.196l-58.78 42.706" fill="#107C40"/></g></svg>

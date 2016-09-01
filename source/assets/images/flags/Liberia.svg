@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="1140px" height="600px" viewBox="0 0 1140 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
-    <title>Liberia</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Liberia" sketch:type="MSLayerGroup">
-            <path d="M0,600 L1140,600 L1140,0 L0,0 L0,600 Z" id="Fill-1" fill="#AD2534" sketch:type="MSShapeGroup"></path>
-            <path d="M0,81.818 L1140,81.818 L0,81.818 L0,81.818 Z M0,190.91 L1140,190.91 L0,190.91 L0,190.91 Z M0,300 L1140,300 L0,300 L0,300 Z M0,409.091 L1140,409.091 L0,409.091 L0,409.091 Z M0,518.182 L1140,518.182 L0,518.182 L0,518.182 Z" id="Fill-2" fill="#0A0A08" sketch:type="MSShapeGroup"></path>
-            <path d="M0,523.182 L0,513.182 L1140,513.182 L1140,523.182 L0,523.182 L0,523.182 Z M0,414.091 L0,404.091 L1140,404.091 L1140,414.091 L0,414.091 L0,414.091 Z M0,305 L0,295 L1140,295 L1140,305 L0,305 L0,305 Z M0,195.909 L0,185.909 L1140,185.909 L1140,195.909 L0,195.909 L0,195.909 Z M0,86.818 L0,76.818 L1140,76.818 L1140,86.818 L0,86.818 L0,86.818 Z" id="Fill-3" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
-            <path d="M0,272.728 L272.727,272.728 L272.727,0 L0,0 L0,272.728 Z" id="Fill-4" fill="#1F284E" sketch:type="MSShapeGroup"></path>
-            <path d="M88.272,202.556 L106.641,146.021 L58.55,111.08 L117.995,111.08 L136.364,54.546 L154.733,111.08 L214.177,111.08 L166.086,146.021 L184.455,202.556 L136.364,167.615 L88.272,202.556" id="Fill-5" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
-        </g>
-    </g>
-</svg>
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="100%" height="100%" viewBox="0 0 209 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><rect x="0" y="0" width="209" height="110" style="fill:#bf0a30;"/><path d="M0,100l0,-10l209,0l0,10c-69.667,0 -139.333,0 -209,0ZM0,80l0,-10l209,0l0,10c-69.667,0 -139.333,0 -209,0ZM0,60l0,-10l209,0l0,10c-69.667,0 -139.333,0 -209,0ZM0,40l0,-10l209,0l0,10c-69.667,0 -139.333,0 -209,0ZM0,20l0,-10l209,0l0,10c-69.667,0 -139.333,0 -209,0Z" style="fill:#fff;fill-rule:nonzero;"/><rect x="0" y="0" width="50" height="50" style="fill:#002868;"/><g><path id="star" d="M16.183,37.135l3.368,-10.365l-8.817,-6.405l10.898,0l3.368,-10.365l3.368,10.365l10.898,0l-8.817,6.405l3.368,10.365l-8.817,-6.406l-8.817,6.406" style="fill:#fff;"/></g></svg>

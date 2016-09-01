@@ -76,19 +76,25 @@ $border-style: solid !default;
 // -----------------------------------------------------------------------------
 
 .has-border {
+    @include border;
+
     &.top {
+        border: none;
         @include border(top);
         padding-top: $gutter;
     }
     &.bottom {
+        border: none;
         @include border(bottom);
         padding-bottom: $gutter;
     }
     &.left {
+        border: none;
         @include border(left);
         padding-left: $gutter;
     }
     &.right {
+        border: none;
         @include border(right);
         padding-right: $gutter;
     }
