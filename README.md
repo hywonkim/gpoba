@@ -1,6 +1,6 @@
-# GPOBA 2015 Annual Report
+# GPOBA 2016 Annual Report
 
-A web-based version of the 2015 Annual Report. Built primarily with [Middleman](http://middlemanapp.com).
+A web-based version of the 2016 Annual Report. Built primarily with [Middleman](http://middlemanapp.com).
 
 ##### To edit content (here on Github):
 

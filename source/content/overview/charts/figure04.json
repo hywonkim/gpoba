@@ -1,9 +1,9 @@
 {
-    "labels": ["Total: 51"],
+    "labels": ["Total: 62"],
     "series": [
         {
             "name": "Financial Institution",
-            "data": [2]
+            "data": [3]
         },
         {
             "name": "Non-Governmental Organization",
@@ -11,15 +11,15 @@
         },
         {
             "name": "Public Sector",
-            "data": [7]
+            "data": [8]
         },
         {
             "name": "Government",
-            "data": [18]
+            "data": [23]
         },
         {
             "name": "Private Sector",
-            "data": [19]
+            "data": [23]
         }
     ]
 }
