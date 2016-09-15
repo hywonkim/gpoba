@@ -5,7 +5,7 @@ require 'rack/deflater'
 require 'rack/cache'
 
 # Forces SSL on all requests
-unless ENV['RACK_ENV'] == 'development'
+unless ENV['RACK_ENV'] == 'development' || ENV['RACK_ENV'] == 'staging'
   require 'rack/ssl'
   use Rack::SSL
 end
@@ -22,7 +22,7 @@ end
 ONE_WEEK = 604_800
 
 # Basic Auth:
-if ENV['RACK_ENV'] == 'production'
+if ENV['RACK_ENV'] == 'production' || ENV['RACK_ENV'] == 'staging'
   use Rack::Auth::Basic, "Restricted Area" do |username, password|
     [username, password] == [ENV['HTTP_AUTH_USER'], ENV['HTTP_AUTH_PASS']]
   end
