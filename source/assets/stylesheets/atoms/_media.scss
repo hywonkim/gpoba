@@ -4,31 +4,32 @@
 
 // padding to force an aspect ratio
 // -> apply mixin to a container element, and the child image will be constrained
-@mixin aspect($w, $ratio: 1, $child_el: ".aspect-content") {
+@mixin aspect($w, $ratio: 1, $child_el: ".constrained-content", $cover: false) {
     position: relative;
 
     &:before {
         display: block;
         content: " ";
         width: $w;
-        padding-top: (ms(2)/ms(1)) * 100%;
+        padding-top: (ms(2)/ms($ratio)) * 100%;
     }
 
-    > img, #{$child_el} {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        object-fit: cover;
-    }
-
-    // center the image within its frame if transforms are supported
-    .csstransforms & {
-        > img, > .aspect-content {
-            @include transform(translateY(-50%) translateX(-50%));
-            top: 50%;
-            left: 50%;
+    @if ($cover != false) {
+        > img, #{$child_el} {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            object-fit: cover;
+        }
+        // center the image within its frame if transforms are supported
+        .csstransforms & {
+            > img, #{$child_el} {
+                @include transform(translateY(-50%) translateX(-50%));
+                top: 50%;
+                left: 50%;
+            }
         }
     }
 }
@@ -76,6 +77,8 @@ video {
         height: 100%;
     }
 }
+
+.constrained { @include aspect(100%, $ratio: 3); }
 
 
 /* Fix IE SVG scaling issue

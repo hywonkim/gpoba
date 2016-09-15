@@ -4,7 +4,7 @@ title: home
 
 <% content_for :local_styles do %>
     <style>
-        <% img_path = asset_url(data.site.paths.content + 'home/') %>
+        <% img_path = asset_url(data.site.paths.content + 'home/') + '/' %>
 
         /* cover image */
         #cover {
@@ -41,14 +41,15 @@ title: home
 <header class="hero" id="cover">
 
     <!-- GPOBA logo -->
-    <%= partial("layouts/partials/logo", :locals => { :classes => "hero-logo" }) %>
+    <%= partial("layouts/partials/logo", :locals => { :classes => "logo tag" }) %>
 
+    <!-- GPOBA home btn -->
     <a class="hero-button" href="http://gpoba.org" target="_blank">
         <%= partial("layouts/partials/icon", :locals => { :id => "arrow-left-outline", :classes => "button-icon before", :fallback_type => "text", :fallback => "&lsaquo;" }) %>
         GPOBA Home
     </a>
-
-    <a class="hero-button right" href="<%= asset_url data.site.download_version %>" target="_blank">
+    <!-- Download PDF btn -->
+    <a class="hero-button right" href="<%= data.site.download_version %>" target="_blank">
         <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "button-icon before", :fallback_type => "text", :fallback => "" }) %>
         Download
     </a>
@@ -56,18 +57,34 @@ title: home
     <!-- main title lockup -->
     <%= partial "layouts/partials/hero-lockup" %>
 
-    <!-- main menu -->
-    <%= partial("layouts/partials/nav-main", :locals => { :classes => "hero-nav", :show_home => true }) %>
+    <nav class="hero-nav">
+        <!-- main menu -->
+        <%= partial("layouts/partials/nav", :locals => {
+                :classes => "hero-toc",
+                :id => "js-hero-toc",
+                :home => true
+            }) %>
 
-    <a class="hero-pointer" href="#intro">
-        <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "hero-pointer-icon", :fallback_type => "text", :fallback => "Scroll for more" }) %> Year in Review
-    </a>
+        <a class="hero-pointer js-pointer" href="#intro">
+            <%= partial("layouts/partials/icon", :locals => { :id => "arrow-down-outline", :classes => "hero-pointer-icon", :fallback_type => "text", :fallback => "Scroll for more" }) %> Year in Review
+        </a>
+
+        <a class="hero-flyout js-has-flyout" href="#js-hero-toc">
+            <%= partial("layouts/partials/icon", :locals => {
+                    :id => "toc",
+                    :classes => "nav-icon left",
+                    :fallback_type => "none",
+                    :fallback => "&lsaquo;"
+                }) %>
+            <span class="nav-label">Contents</span>
+        </a>
+    </nav>
 </header>
 
 <article class="chapter" role="main" id="intro">
 
     <!-- Executive summary -->
-    <div class="l-wrapper narrow chapter-content" id="summary">
+    <div class="chapter-content dropcap" id="summary">
         <% sitemap.where(:chapter => "home", :type => "introduction").order_by(:order).all.each do |summary| %>
             <h1 class="chapter-headline"><%= summary.data.title %></h1>
             <%= summary.render %>
@@ -77,11 +94,11 @@ title: home
     <!-- Leadership messages -->
     <aside class="box" id="messages">
         <h1 class="slug">Messages from our leadership</h1>
-        <div class="l-wrapper">
+        <div class="box-content wide">
             <ul class="gallery large">
                 <% sitemap.where(:chapter => "home", :type => "message").order_by(:order).all.each do |message| %>
                 <li class="gallery-item">
-                    <a class="card tile secondary" href="<%= message.url %>">
+                    <a class="card tile secondary" href="<%= settings.url_root + message.url %>">
                         <h2 class="card-title"><%= message.data.title %></h2>
                         <span class="card-subtitle">
                             <% message.data.authors.each_with_index do |author, index| %>
@@ -110,7 +127,7 @@ title: home
         <ul class="billboard-gallery small align-middle">
             <% data.affiliates.donors.each do |donor| %>
             <li class="gallery-item">
-                <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => donor.filename, :link => donor.url, :alt => donor.name }) %>
+                <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => donor.filename, :link => donor.url, :alt => donor.name, :target => "target='_blank'" }) %>
             </li>
             <% end %>
         </ul>
@@ -123,13 +140,13 @@ title: home
     <ul class="feed l-wrapper">
         <% data.chapters.each do |chapter| %>
             <li class="feed-item card horizontal tile theme-highlight <%= chapter.color %>">
-                <a class="card-thumb" href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>">
+                <a class="card-thumb" href="<%= settings.url_root %><%= data.site.paths.chapter %><%= chapter.slug.urlize %>">
                     <img src="<%= asset_url(data.site.paths.content + chapter.slug.urlize + '/' + chapter.image[0].to_s) %>" />
                 </a>
                 <div class="card-content">
-                    <h2 class="card-title"><a href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>"><%= chapter.title %></a></h2>
+                    <h2 class="card-title"><a href="<%= settings.url_root %><%= data.site.paths.chapter %><%= chapter.slug.urlize %>"><%= chapter.title %></a></h2>
                     <p><%= chapter.teaser %> </p>
-                    <a class="button read_more" href="<%= data.site.paths.chapter %><%= chapter.slug.urlize %>">
+                    <a class="button read_more" href="<%= settings.url_root %><%= data.site.paths.chapter %><%= chapter.slug.urlize %>">
                         Read More
                         <%= partial("layouts/partials/icon", :locals => { :id => "arrow-right", :classes => "button-icon", :fallback_type => "text", :fallback => "&rsaquo;" }) %>
                     </a>
@@ -139,14 +156,45 @@ title: home
     </ul>
 </section>
 
-<!-- Flags & Sponsors -->
+<!-- Flags -->
 <section class="panel">
-    <h1 class="panel-slug">Where we work</h1>
-    <ul class="gallery tiny">
-    <% data.flags.each do |country| %>
-        <li class="gallery-item">
-            <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => country.filename, :alt => country.name }) %>
-        </li>
-    <% end %>
-    </ul>
+    <h1 class="title">Where we work</h1>
+    <div class="l-wrapper">
+        <ul class="gallery tiny align-middle">
+        <% data.flags.each do |country| %>
+            <li class="gallery-item">
+                <% unless country.format.present? %>
+                    <%= partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => country.filename, :alt => country.name }) %>
+                <% else %>
+                    <%= image_tag country.filename + "." + country.format, :title => country.name, :alt => country.name, :class => "logo" %>
+                <% end %>
+            </li>
+        <% end %>
+        </ul>
+    </div>
+</section>
+
+<!-- Partners -->
+<section class="panel">
+    <h1 class="title">Our partners</h1>
+    <div class="l-wrapper">
+        <ul class="gallery small align-middle">
+        <% data.affiliates.partners.each do |partner| %>
+            <li class="gallery-item">
+                <% link = partner.url.present? ? partner.link : false %>
+                <%# unless partner.format.present? %>
+                    <%# partial("layouts/partials/logo", :locals => { :classes => "logo", :filename => partner.filename, :link => link, :alt => partner.name }) %>
+                <%# else %>
+                    <% if partner.url.present? %>
+                    <a class="logo" href="<%= partner.url %>" target="_blank">
+                    <% end %>
+                        <%= image_tag partner.filename + ".png", :alt => partner.name, :title => partner.name %>
+                    <% if partner.url.present? %>
+                    </a>
+                    <% end %>
+                <%# end %>
+            </li>
+        <% end %>
+        </ul>
+    </div>
 </section>

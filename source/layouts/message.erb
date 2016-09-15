@@ -1,8 +1,10 @@
 <% wrap_layout :layout do %>
-    <%= partial "layouts/partials/header" %>
+    <%= partial("layouts/partials/header", :locals => {
+            :page_title => current_page.data.title,
+        }) %>
     <article class="message">
         <div class="message-nav">
-            <a href="/" class="button read_more">&lsaquo; Back to the <strong>Annual Report</strong></a>
+            <a href="<%= settings.url_root %>" class="button read_more">&lsaquo; Back to the <strong>Annual Report</strong></a>
         </div>
         <header class="message-header">
             <span class="message-slug"><strong>Message</strong> from the</span>

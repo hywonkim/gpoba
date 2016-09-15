@@ -1,0 +1,30 @@
+{
+  "labels": ["By Region"],
+  "series": 
+     [
+        {
+          "name": "Europe & Central Asia",
+          "data": [1]
+        },
+        {
+          "name": "Latin America & the Caribbean",
+          "data": [7]
+        },
+        {
+          "name": "Middle East & North Africa",
+          "data": [8]
+        },
+        {
+          "name": "East Asia & the Pacific",
+          "data": [11]
+        },
+        {
+          "name": "South Asia Region",
+          "data": [21]
+        },
+        {
+          "name": "Africa",
+          "data": [52]
+        }
+    ]
+}

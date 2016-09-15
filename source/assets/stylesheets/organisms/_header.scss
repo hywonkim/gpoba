@@ -4,9 +4,12 @@
 
 @import "../core/*";
 @import "../atoms/logo";
-@import "../molecules/main_nav";
+@import "../molecules/nav";
 
 $header-h: 36px;
+// pull in the nav's breakpoint and use it here
+$header-break: $nav-break;
+$header-label-break: $nav-label-break;
 
 // vertically center the children of an inline block element
 @mixin inline-block--centered($h: auto) {
@@ -25,50 +28,88 @@ $header-h: 36px;
 /* Base
 // -------------------------------------------------------------------------- */
 
-.header, header, [role="banner"] {
+.main_header {
+    @include rem(min-height, 40px);
+    @include clearfix;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: $z--nav;
+    text-align: center;
 
+    @include respond-to($header-break) {
+        position: relative;
+        text-align: left;
+        color: theme(text primary, reverse);
+        background-color: theme(bg, reverse);
+    }
 }
 
 /* Modifiers
 // -------------------------------------------------------------------------- */
 
-.header, header, [role="banner"] {
-	&.main {
-        @include rem(min-height, 40px);
-        @include clearfix;
-        // height: $header-h;
-        position: relative;
-        display: block;
-        z-index: $z--high;
-        color: theme(text primary, reverse);
-        background-color: theme(bg, reverse);
-	}
-}
+// if the header is sitting over a non-white bg, like a hero unit
+// -> see header-logo
+.main_header.is-over_bg {}
 
 /* Submodules
 // -------------------------------------------------------------------------- */
 
 .header-logo {
-    $h: 28px;
     @extend .logo;
-    @include rem(height, $h);
-    @include rem(width, 70px);
-    @include rem(margin-top, -($h/2));
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    margin-left: $gutter-outside;
-    border-bottom: none;
-    color: theme(text primary, reverse);
+    @extend .logo.tag;
+    // @include rem(max-width, 120px);
+    // @include rem(padding, 16px);
+    // display: inline-block;
+    z-index: $z--high;
+    background-color: theme(bg);
+
+    .main_header.is-over_bg & { border: none; }
+
+    @include respond-to($nav-break) {
+        $h: 28px;
+        @include rem(height, $h);
+        @include rem(width, 70px);
+        @include rem(margin-top, -($h/2));
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        margin-left: $gutter-outside;
+        padding: 0;
+        max-width: auto;
+        border-bottom: none;
+        color: theme('text' 'primary', 'reverse');
+        background-color: transparent;
+    }
 }
 
 .header-nav {
-    @extend .main_nav;
-    display: none;
-    float: right;
-    margin-right: $gutter-outside;
+    @extend .nav;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $z--nav;
+    padding: 0 $gutter-outside;
+    background-color: theme(bg, reverse);
 
-    @include breakpoint(925px) {
+    @include respond-to($header-break) {
         display: inline-block;
+        z-index: $z--middle;
+        position: relative;
+        float: right;
+        // margin-right: $gutter-outside;
     }
+}
+
+.header-pagination {
+    @extend .nav-pagination;
+    float: right;
+}
+
+.header-toc {
+    @extend .nav-toc;
+    bottom: 70px;
+    right: $gutter;
 }

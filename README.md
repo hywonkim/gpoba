@@ -1,6 +1,6 @@
-# GPOBA 2015 Annual Report
+# GPOBA 2016 Annual Report
 
-A web-based version of the 2015 Annual Report. Built primarily with [Middleman](http://middlemanapp.com).
+A web-based version of the 2016 Annual Report. Built primarily with [Middleman](http://middlemanapp.com).
 
 ##### To edit content (here on Github):
 
@@ -16,6 +16,8 @@ A web-based version of the 2015 Annual Report. Built primarily with [Middleman](
 3. Run `$ bundle exec middleman`. This will start a local server at `localhost:4567` and will live-reload your browser.
 
 To run a (deploy-able) build, `$ bundle exec middleman build`
+
+To run local build: `ENV APP_DOMAIN=www.gpoba.org/2015ar middleman build` - this will adjust for url issues. Then zip this file and send to Ritesh for deployment.
 
 ****
 

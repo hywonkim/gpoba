@@ -1,0 +1,42 @@
+/* ==========================================================================
+//  Content module
+// -> simple container for a page's main content
+// ========================================================================== */
+
+@import "../core/*";
+@import "../atoms/text";
+@import "../atoms/pullquote";
+@import "../molecules/nav";
+
+$content-break: $nav-break;
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.content {
+    @extend %l-wrapper--narrow;
+    @include rem(margin-top, fs(7));
+    @include rem(margin-bottom, fs(7));
+}
+
+/* Modifiers
+// -------------------------------------------------------------------------- */
+
+.content.dropcap {
+    > p:first-of-type, > p:first-child {
+        @extend .lead;
+    }
+}
+
+.content.wide {
+    @extend %l-wrapper;
+}
+
+.content.first {
+    // add some padding to clear the header on small screens
+    @include rem(padding-top, fs(8));
+
+    @include respond-to($content-break) {
+        padding-top: 0;
+    }
+}

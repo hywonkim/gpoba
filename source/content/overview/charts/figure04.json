@@ -1,33 +1,25 @@
 {
-    "labels": ["By Sector"],
+    "labels": ["Total: 62"],
     "series": [
         {
-            "name": "Education",
-            "data": [1]
+            "name": "Financial Institution",
+            "data": [3]
         },
         {
-            "name": "Telecom",
-            "data": [1]
+            "name": "Non-Governmental Organization",
+            "data": [5]
         },
         {
-            "name": "Solid Waste Management",
-            "data": [6]
+            "name": "Public Sector",
+            "data": [8]
         },
         {
-            "name": "Sanitation",
-            "data": [9]
+            "name": "Government",
+            "data": [23]
         },
         {
-            "name": "Health",
-            "data": [16]
-        },
-        {
-            "name": "Water",
-            "data": [24]
-        },
-        {
-            "name": "Energy",
-            "data": [42]
+            "name": "Private Sector",
+            "data": [23]
         }
     ]
 }

@@ -1,6 +1,32 @@
-Country,Project Name,Grant Amount,Funds disbursed,Sector,Region
-Colombia,Colombia Natural Gas," $5,085,000.00 "," $4,880,382.34 ",Energy,LAC
-Mongolia,Mongolia Univ Access to Tele," $259,400.00 "," $257,335.00 ",Telecom,EAP
-India,India Naandi Foundation," $849,999.99 "," $834,276.10 ",Water,SAR
-Armenia,Amenia Access to Heat/Gas," $3,100,000.00 "," $3,087,196.22 ",Energy,ECA
-Total for Closed Projects,," $9,294,399.99 "," $9,059,189.66 ",,
+Country,Project Name,"Grant Amount ($)","Cumulative Disbursements ($)","Disbursement (%)",Sector,Region
+Closed projects,,,,,,
+Armenia,Armenia Access to Gas and Heating,"3,100,000 ","3,087,196 ",100%,Energy,ECA
+Bangladesh,Rural Electrification and Renewable Energy Development - Solar Home Systems,"13,950,000 ","13,950,000 ",100%,Energy,SAR
+Bangladesh,Rural Electrification and Renewable Energy Development - Mini Grid ,"1,100,000 ","968,790 ",88%,Energy,SAR
+Bolivia,Bolivia Rural Electricity Access with Small-Scale Providers,"5,175,000 ","5,152,403 ",100%,Energy,LAC
+Cameroon,Cameroon Water Affermage contract - OBA for coverage expansion,"5,250,000 ","1,816,259 ",35%,Water,AFR
+Colombia,Access to Natural Gas,"5,085,000 ","4,880,382 ",96%,Energy,LAC
+Ethiopia,Ethiopia Electricity Access Rural Expansion ,"8,000,000 ","451,290 ",6%,Energy,AFR
+Ghana,Solar PV Systems to Increase Access to Electricity Services ,"4,350,000 ","4,065,021 ",93%,Energy,AFR
+Honduras,Extension of Water and Sanitation Services in Low income areas of Honduras,"4,590,000 ","4,536,847 ",99%,Water,LAC
+India,Improved Rural Community Water in Andhra Pradesh,"850,000 ","834,276 ",98%,Water,SAR
+India,Improved Electricity Access to Indian Slum Dwellers in Mumbai,"1,650,000 ","40,901 ",2%,Energy,SAR
+Indonesia,Expanding Piped Water Supply to Surabaya's Urban Poor,"2,407,500 ","1,084,391 ",45%,Water,EAP
+Indonesia,Expansion of Water Services in Low income areas of Jakarta,"2,573,140 ","1,743,902 ",68%,Water,EAP
+Indonesia,Extending Telecommunications in Rural Indonesia ,"1,868,340 ","1,516,534 ",81%,Telecom,EAP
+Kenya,Microfinance for Community-managed Water Projects,"3,087,630 ","2,597,119 ",84%,Water,AFR
+Lesotho,Lesotho New Hospital PPP,"6,250,000 ","6,250,000 ",100%,Health,AFR
+Mongolia,Mongolia Universal Access to Telecommunications,"259,400 ","257,335 ",99%,Telecom,EAP
+Morocco,Improved Access to Water and Sanitation Services Project,"7,000,000 ","6,999,766 ",100%,Water and Sanitation,MNA
+Mozambique,Water Private Sector Contracts OBA for Coverage Expansion,"5,000,000 ","4,768,183 ",95%,Water,AFR
+Nepal,Biogas Support Programme ,"5,000,000 ","4,974,979 ",99%,Energy,SAR
+Nigeria,Pre-paid Health Scheme Pilot,"6,015,160 ","4,128,973 ",69%,Health,AFR
+Philippines,Improved Access to Water Services in Metro Manila,"2,850,000 ","2,063,573 ",72%,Water,EAP
+Senegal,Access to On-Site Sanitation Services,"5,764,000 ","5,099,544 ",88%,Sanitation,AFR
+Uganda,Reproductive Health Vouchers in Western Uganda,"4,300,000 ","4,046,688 ",94%,Health,AFR
+Uganda,OBA in Water Supply in Uganda's Small Towns and Rural Growth Centers,"3,207,000 ","2,414,031 ",75%,Water,AFR
+Uganda,Kampala Water Connections for the Poor,"2,527,100 ","1,509,455 ",60%,Water,AFR
+Vietnam,Upper Secondary Education Enhancement,"3,000,000 ","2,896,389 ",97%,Education,EAP
+Vietnam,Vietnam Rural Water East Meets West Foundation,"4,500,000 ","4,499,967 ",100%,Water,EAP
+Yemen,Safe Motherhood Program,"3,912,190 ","3,555,225 ",91%,Health,MNA
+Total for Closed Projects,,"122,621,460 ","100,189,420 ",,,

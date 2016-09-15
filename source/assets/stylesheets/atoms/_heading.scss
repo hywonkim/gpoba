@@ -55,20 +55,25 @@ Many modules (like `media-box`, `profile`, etc.) define their own special headin
 
 h1, .alpha, %alpha {
     @extend %font-display;
-    @include font-scale(8);
+    @include font-scale(6);
     letter-spacing: -0.05em;
+
+    @include respond-to('xsmall') { @include font-scale(8); }
 }
 
 h2, .beta, %beta {
     @extend %font-display;
-    @include font-scale(6);
+    @include font-scale(5);
     letter-spacing: -0.02em;
 
+    @include respond-to('xsmall') { @include font-scale(6); }
 }
 
 h3, .cappa, %cappa {
     @extend %font-display;
-    @include font-scale(5);
+    @include font-scale(4);
+
+    @include respond-to('xsmall') { @include font-scale(5); }
 }
 
 h4, .delta, %delta {
@@ -90,13 +95,20 @@ h6, .zeta, %zeta {
 // -------------------------------------------------------------------------- */
 // -> specific applications headings or groups of headings
 
-.highlight {
+.title, %title {
+    @extend %beta;
+    @extend %highlight;
+    text-align: center;
+}
+
+.highlight, %highlight {
+    @include chapter_highlights;
     color: theme(highlight);
 
     > a { color: inherit; }
 }
 
-.slug {
+.slug, %slug {
     @extend %epsilon;
     @extend %font-body--bold;
     display: block;

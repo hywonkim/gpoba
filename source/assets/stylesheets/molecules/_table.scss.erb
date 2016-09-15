@@ -1,0 +1,224 @@
+/* ==========================================================================
+// Table modules
+// ========================================================================== */
+
+@import "../core/*";
+@import "../atoms/heading";
+
+/* Globals
+// -------------------------------------------------------------------------- */
+
+table {
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    font-size: fs(2);
+
+    th {
+        border-bottom: 4px solid theme(highlight);
+        text-align: left;
+        background-color: #fff;
+        color: theme(text secondary);
+        padding: 10px;
+        font-size: fs(3);
+        line-height: 125%;
+
+    }
+
+    &.all-caps-header th {
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &.titled_table {
+        margin-top: 0px;
+    }
+
+    tr {
+        line-height: 115%;
+    }
+    td {
+        padding: 20px;
+
+        &.column_label {
+            @extend %font-body--bold;
+        }
+
+        &.number_class{
+            text-align: right;
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: theme(well);
+    }
+
+    &.total-table {
+        tr:last-child {
+            background-color: theme(highlight);
+            color: theme(text primary, reverse);
+            @extend %font-body--bold;
+        }
+    }
+
+    &.highlight-table {
+
+        .row-0, .row-1, .row-2 {
+            border-left: 4px solid theme(highlight);
+            border-right: 4px solid theme(highlight);
+
+            td:first-child {
+                background-color: rgba(94, 171, 188, .5);
+                border-bottom: 2px solid #fff;
+                border-right: 4px solid theme(highlight);
+                text-align: center;
+            }
+
+         }
+
+         td:first-child {
+            background-color: theme(well);
+            border-right: 1px solid theme(border);
+
+         }
+
+         .row-2 {
+            border-bottom: 4px solid theme(highlight);
+         }
+    }
+
+    &.basic-table {
+
+        th {
+            background-color: theme(well);
+            border-bottom: 0px;
+            text-align: left;
+            @extend %font-body;
+            padding: 10px;
+            line-height: 115%;
+            font-size: fs(2);
+        }
+    }
+}
+
+// sector icons
+[data-icon-value] {
+    // add icon as a psuedo element, in front of the content
+    // -> if the browser supports the background-size rule
+    .backgroundsize &:before {
+        $size: 1.4em;
+        content: " ";
+        display: inline-block;
+        width: $size;
+        height: $size;
+        margin-right: 0.3em;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+}
+
+// loop through sectors on site.yml and add background images for each
+<% data.site.sectors.each do |sector| %>
+[data-icon-value="<%= sector.name %>"] {
+    .backgroundsize &:before {
+        background-image: url(image_path('<%= sector.path %>.<%= sector.formats[0] %>'));
+    }
+
+    <% if sector.formats.include? 'svg' %>
+        .backgroundsize.svg &:before { background-image: url(image_path('<%= sector.path %>.svg')); }
+    <% end %>
+}
+<% end %>
+
+/* Submodules
+// -------------------------------------------------------------------------- */
+
+.table_title {
+    @include font-scale(3);
+    color: theme(text tertiary);
+    text-align: left;
+    @extend %font-body--bold;
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+
+/* Tablesaw overrides
+// -------------------------------------------------------------------------- */
+.chapter .tablesaw-advance {
+
+    .tablesaw-nav-btn.disabled.tablesaw-nav-btn.disabled {
+        display: none;
+    }
+
+    .tablesaw-nav-btn.tablesaw-nav-btn {
+            $label-w: 9em;
+
+            $c: theme(border);
+            @extend %base-transition;
+            @extend %font-accent;
+            @include font-scale(2);
+            @include border($color: $c);
+            display: inline-block;
+            padding: 0.5em;
+            background-image: none;
+            border-radius: $button-radius--default;
+            color: $c;
+            text-shadow: none;
+            box-shadow: none;
+            overflow: visible;
+
+            &.right {
+                margin-left: $label-w;
+                margin-right: 0;
+
+                &:before {
+                    border-left: 5px solid $c;
+                }
+            }
+
+            &.left {
+                margin-left: -($label-w);
+
+                &:before {
+                    border-right: 5px solid $c;
+                }
+            }
+
+            &:hover, &:active, &:focus {
+                color: theme('bg');
+                background-color: lighten(highlight('blue'), 20);
+                text-shadow: none;
+                box-shadow: none;
+                border-color: theme(bg);
+
+                &.right:before {
+                    border-left: 5px solid theme('bg');
+                }
+
+                &.left:before {
+                    border-right: 5px solid theme('bg');
+                }
+
+            }
+
+            &:after {
+                @extend %font-body--bold;
+                @include font-scale(1);
+                content: attr(title);
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 3em;
+                margin-top: -(1.2em/2);
+                height: 1.2em;
+                line-height: 1.2em;
+                width: $label-w;
+                text-align: right;
+                text-transform: uppercase;
+                z-index: 1002;
+                color: theme(text tertiary);
+            }
+
+    }
+}

@@ -1,0 +1,10 @@
+---
+title: "Acronyms &amp; Abbreviations"
+layout: interior
+---
+<dl class="table">
+    <% data.acronyms.each do |term| %>
+    <dt id="<%= term.abbreviation %>"><%= term.abbreviation %></dt>
+    <dd><%= term.full_name %></dd>
+    <% end %>
+</dl>

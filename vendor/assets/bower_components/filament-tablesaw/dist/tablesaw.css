@@ -1,4 +1,4 @@
-/*! Tablesaw - v2.0.1 - 2015-10-09
+/*! Tablesaw - v2.0.2 - 2015-10-27
 * https://github.com/filamentgroup/tablesaw
 * Copyright (c) 2015 Filament Group; Licensed MIT */
 
@@ -79,9 +79,9 @@ table.tablesaw {
 
 .tablesaw-enhanced .tablesaw-bar .btn:active {
   background-color: #ddd;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba( 100,100,100,.35 )), to(rgba( 255,255,255,0 )));
+/*  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba( 100,100,100,.35 )), to(rgba( 255,255,255,0 )));
   background-image: -webkit-linear-gradient(top, rgba( 100,100,100,.35 ) 0%, rgba( 255,255,255,0 ) 70%);
-  background-image: linear-gradient( top, rgba( 100,100,100,.35 ) 0%, rgba( 255,255,255,0 ) 70% );
+  background-image: linear-gradient( top, rgba( 100,100,100,.35 ) 0%, rgba( 255,255,255,0 ) 70% );*/
 }
 
 .tablesaw-enhanced .tablesaw-bar .btn:hover,

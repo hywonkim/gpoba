@@ -13,7 +13,7 @@ cover_image:
   - media/site-cover@2000.jpg
 
 # PDF version of the report for download
-download_version: assets/media/gpoba_2015-single-web-rev-1.2.0.pdf
+download_version: https://www.gpoba.org/annualreport2015
 
 # the copyright message (appears in the footer)
 # -> 'Copyright 2015' is automatically prepended to this.
@@ -27,8 +27,43 @@ paths:
 
 # global breakpoints
 # -> in pixels, no units. converted to em's when used in media queries.
+# -> managed here because chapter and index pages use local styles
 breakpoints:
   xsmall: 400
   small: 700
   medium: 1000
   large: 1280
+
+# sector icons
+# -> used in appendix tables, see molecules/_tables.scss.erb
+sectors:
+  - name: Energy
+    path: 'icons/sector-energy'
+    formats:
+      - png
+      - svg
+  - name: Education
+    path: 'icons/sector-education'
+    formats:
+      - png
+      - svg
+  - name: Health
+    path: 'icons/sector-health'
+    formats:
+      - png
+      - svg
+  - name: ICT
+    path: 'icons/sector-ict'
+    formats:
+      - png
+      - svg
+  - name: SWM
+    path: 'icons/sector-swm'
+    formats:
+      - png
+      - svg
+  - name: Water
+    path: 'icons/sector-water'
+    formats:
+      - png
+      - svg

@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
-    <title>check copy</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="-assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <path d="M20.1763738,0.832540687 C9.48811435,0.832540687 0.823626236,9.50014328 0.823626236,20.1922446 C0.823626236,30.884346 9.48811435,39.5519486 20.1763738,39.5519486 C30.8646332,39.5519486 39.5291213,30.884346 39.5291213,20.1922446 C39.5291213,9.50014328 30.8646332,0.832540687 20.1763738,0.832540687 Z M16.8838702,30.6200766 L7.74054246,21.4710189 L11.6336389,17.5757712 L16.8836823,22.8291115 L29.0043268,10.7041101 L32.8992082,14.5977601 L16.8838702,30.6200766 Z" id="check-copy" fill="#4D384B" sketch:type="MSShapeGroup"></path>
-    </g>
-</svg>
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><title>check copy</title><path d="M20.176.833C9.488.833.824 9.5.824 20.193c0 10.69 8.664 19.36 19.352 19.36 10.69 0 19.353-8.67 19.353-19.36C39.53 9.5 30.862.833 20.173.833zM16.884 30.62L7.74 21.47l3.894-3.894 5.25 5.253L29.004 10.7l3.895 3.894L16.88 30.62z" fill="#4D384B" fill-rule="evenodd"/></svg>

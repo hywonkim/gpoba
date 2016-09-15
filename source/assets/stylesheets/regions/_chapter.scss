@@ -8,7 +8,7 @@
 @import "../atoms/heading";
 @import "../atoms/text";
 @import "../molecules/hero";
-@import "../molecules/jump_nav";
+@import "../molecules/jump";
 
 $chapter-padding: fs(6);
 
@@ -38,6 +38,12 @@ $chapter-padding: fs(6);
 
 .chapter-hero-lockup {
     @extend .hero-headline;
+    width: 100%;
+
+    .csstransforms & {
+        left: 0;
+        transform: none;
+    }
 }
 
 // headline lockup appearing in a hero
@@ -45,7 +51,7 @@ $chapter-padding: fs(6);
     @include rem(font-size, 54px);
     margin: 0;
     letter-spacing: -0.04em;
-    line-height: 1;
+    line-height: 1.1;
     color: theme(bg);
 
     @include respond-to('xsmall') { @include rem(font-size, 68px); }
@@ -77,15 +83,13 @@ $chapter-padding: fs(6);
 
 // section header
 .chapter-subtitle {
-    @extend %beta;
-    @include chapter_highlights;
+    @extend .title;
     text-align: center;
     margin: 0.5em auto 0 auto;
     padding: 0 $gutter-outside;
     margin-bottom: 0.5em;
     // max-width: add_outside_gutters($layout-w);
     letter-spacing: -0.02em;
-    color: theme(highlight);
 
     @include respond-to('medium') { max-width: add_outside_gutters($layout-w--narrow); }
     @include respond-to('large') { max-width: add_outside_gutters($layout-w); }
@@ -118,7 +122,7 @@ $chapter-padding: fs(6);
     &.first {
         border-top: none;
 
-        p:first-of-type, p:first-child {
+        > p:first-of-type, > p:first-child {
             @extend .lead;
         }
     }
@@ -126,6 +130,12 @@ $chapter-padding: fs(6);
     h3 {
         margin-top: 1em;
         margin-bottom: 0;
+
+        img {
+            margin:0 .5em 0 0;
+            padding: 10px;
+            float:left;
+        }
     }
 
     img {
@@ -140,4 +150,13 @@ $chapter-padding: fs(6);
     // table {
     //     @extend %l-wrapper--wide;
     // }
+}
+
+.chapter-content {
+    @extend .content;
+    margin-top: 0;
+
+    .chapter-section > & {
+        margin-bottom: 0;
+    }
 }

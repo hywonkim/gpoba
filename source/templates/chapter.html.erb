@@ -13,15 +13,11 @@ layout: layout
     'image_align' => locals[:image_align],
 }) %>
 
-<% sections = sitemap.where(:chapter => locals[:slug]).order_by(:order).all %>
 
 <% content_for :local_styles do %>
     <style>
-
-        /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients */
-        /* https://css-tricks.com/css3-gradients/ */
-        /* http://www.css3.info/preview/multiple-backgrounds/ */
-        <% img_path = asset_url(data.site.paths.content + locals[:slug].to_s.urlize + '/') %>
+        <%# http://www.css3.info/preview/multiple-backgrounds/ %>
+        <% img_path = asset_url(data.site.paths.content + locals[:slug].to_s.urlize + '/') + '/' %>
 
         /* default bg */
         .chapter-hero {
@@ -33,8 +29,31 @@ layout: layout
     </style>
 <% end %>
 
-<%= partial "layouts/partials/header" %>
+<% sections = sitemap.where(:chapter => locals[:slug]).order_by(:order).all %>
 
+<%# previous page %>
+<% unless first_page? %>
+    <% prev_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] - 1) } %>
+    <% prev_page_url = "#{settings.url_root}#{data.site.paths.chapter}#{prev_page[0].metadata[:locals][:slug].urlize}/" %>
+<% end %>
+
+<%# next page %>
+<% unless last_page? %>
+    <% next_page = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] + 1) } %>
+    <% next_page_url = "#{settings.url_root}#{data.site.paths.chapter}#{next_page[0].metadata[:locals][:slug].urlize}/" %>
+<% end %>
+
+<!-- global header -->
+<%= partial("layouts/partials/header", :locals => {
+        :classes => "main_header is-over_bg",
+        :page_title => locals[:slug],
+        :prev_page_slug => first_page? ? false : prev_page[0].metadata[:locals][:slug],
+        :prev_page_url => first_page? ? false : prev_page_url,
+        :next_page_slug => last_page? ? false : next_page[0].metadata[:locals][:slug],
+        :next_page_url => last_page? ? false : next_page_url,
+    }) %>
+
+<!-- chapter header -->
 <article class="chapter">
     <header class="chapter-hero">
         <div class="chapter-hero-lockup">
@@ -50,9 +69,16 @@ layout: layout
     <nav class="chapter-jump_nav js-sticky">
         <ol>
             <% sections.each_with_index do |section, index| %>
-            <li><a href="#<%= section.data.title.urlize %>" class="jump_nav-item js-highlight"><%= section.data.title %></a></li>
+                <% if section.data.type == "box" %>
+                    <li><a class="jump_nav-item js-highlight" href="#<%= section.data.box_number.present? ? "box" + section.data.box_number.to_s : section.data.title.urlize %>"><% if section.data.box_number.present? %><strong>Box <%= section.data.box_number %>:</strong> <% end %><%= section.data.title %></a></li>
+                <% else %>
+                    <li><a class="jump_nav-item js-highlight" href="#<%= section.data.title.urlize %>"><%= section.data.title %></a></li>
+                <% end %>
             <% end %>
         </ol>
+        <a class="jump_nav-top" href="#">
+            <%= partial("layouts/partials/icon", :locals => {:id => "arrow-up-outline", :classes => "jump_nav-top-icon",:fallback_type => "text", :fallback => "&uarr;"}) %> Back to top
+        </a>
     </nav>
     <% end %>
 
@@ -73,16 +99,16 @@ layout: layout
         <% unless section.data.type == "introduction" || section.data.type == "box" %>
             <section class="chapter-section<% if section.data.type.present? %> <%= section.data.type %><% end %>" id="<%= section.data.title.urlize %>">
                 <h2 class="chapter-subtitle"><%= section.data.title %></h2>
-                <div class="l-wrapper narrow">
+                <div class="chapter-content">
                     <%= section.render %>
                 </div>
             </section>
         <% end %>
         <% if section.data.type == "box" %>
-            <aside class="box<% if section.data.type.present? %> <%= section.data.type %><% end %>" id="<%= section.data.title.urlize %>">
-                <h3 class="slug">Box</h3>
+            <aside class="box" id="<%= section.data.box_number.present? ? "box" + section.data.box_number.to_s : section.data.title.urlize %>">
+                <span class="box-slug">Box <% if section.data.box_number.present? %><%= section.data.box_number %><% end %></span>
                 <h1 class="box-title"><%= section.data.title %></h2>
-                <div class="box-content l-wrapper narrow">
+                <div class="box-content">
                     <%= section.render %>
                 </div>
             </aside>
@@ -96,29 +122,24 @@ layout: layout
 <!-- https://forum.middlemanapp.com/t/creating-next-and-prev-links-for-pages/1414/3 -->
 
 <nav class="pagination js-sticky-stop">
-    <h2 class="pagination-slug">Read more</h2>
+    <!-- <h2 class="pagination-slug">Read more</h2> -->
     <ul class="pagination-wrapper">
-        <%= get_current_index %>
+        <%# get_current_index %>
         <% unless first_page? %>
         <li class="pagination-prev">
-            <% resource = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] - 1) } %>
-            <% resource.each do |chapter| %>
-            <a href="<%= asset_url("#{data.site.paths.chapter}#{chapter.metadata[:locals][:slug].urlize}/") %>">
+
+            <a href="<%= prev_page_url %>">
                 <span class="pagination-subtitle">Previous</span>
-                <strong class="pagination-title"><%= chapter.metadata[:locals][:title] %></strong>
+                <strong class="pagination-title"><%= prev_page[0].metadata[:locals][:title] %></strong>
             </a>
-            <% end %>
         </li>
         <% end %>
         <% unless last_page? %>
         <li class="pagination-next">
-            <% resource = sitemap.resources.select {|r| r.metadata[:locals][:type] == "chapter" && r.metadata[:locals][:order] == (current_page.metadata['order'] + 1) } %>
-            <% resource.each do |chapter| %>
-            <a href="<%= asset_url("#{data.site.paths.chapter}#{chapter.metadata[:locals][:slug].urlize}/") %>">
+            <a href="<%= next_page_url %>">
                 <span class="pagination-subtitle">Next</span>
-                <strong class="pagination-title"><%= chapter.metadata[:locals][:title] %></strong>
+                <strong class="pagination-title"><%= next_page[0].metadata[:locals][:title] %></strong>
             </a>
-            <% end %>
         </li>
         <% end %>
     </ul>

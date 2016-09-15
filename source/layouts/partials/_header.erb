@@ -1,6 +1,70 @@
-<header class="main">
-    <a class="header-logo" href="/">
+<%# local vars used by main nav %>
+<% classes ||= "main_header" %>
+<% page_title ||= false %>
+<% prev_page_slug ||= false %>
+<% prev_page_url ||= false %>
+<% next_page_slug ||= false %>
+<% next_page_url ||= false %>
+
+<header class="<%= classes %>">
+    <!-- GPOBA logo -->
+    <a class="header-logo" href="<%= settings.url_root %>">
         <%= partial("layouts/partials/logo") %>
     </a>
-    <%= partial("layouts/partials/nav-main", :locals => { :classes => "header-nav is-above" }) %>
+
+    <!-- next/prev links -->
+    <nav class="header-nav">
+        <!-- full nav/TOC -->
+        <%= partial("layouts/partials/nav", :locals => {
+                :classes => "header-toc full is-above",
+                :id => "header-toc",
+            }) %>
+
+        <!-- page title -->
+        <% if page_title %>
+            <span class="nav-title"><%= page_title %></span>
+        <% end %>
+
+        <!-- next/prev page links -->
+        <ul class="header-pagination">
+            <% if prev_page_url %>
+                <li>
+                    <a class="nav-item" href="<%= prev_page_url %>">
+                        <%= partial("layouts/partials/icon", :locals => {
+                                :id => "arrow-left-outline",
+                                :classes => "nav-icon left",
+                                :fallback_type => "text",
+                                :fallback => "&lsaquo;"
+                            }) %>
+                        <span class="nav-label"><%= prev_page_slug %></span>
+                    </a>
+                </li>
+            <% end %>
+            <% if next_page_url %>
+                <li>
+                    <a class="nav-item" href="<%= next_page_url %>">
+                        <span class="nav-label"><%= next_page_slug %></span>
+                        <%= partial("layouts/partials/icon", :locals => {
+                                :id => "arrow-right-outline",
+                                :classes => "nav-icon right",
+                                :fallback_type => "text",
+                                :fallback => "&lsaquo;"
+                            }) %>
+                    </a>
+                </li>
+            <% end %>
+            <li>
+                <!-- TOC flyout button -->
+                <a class="nav-flyout js-has-flyout" href="#header-toc">
+                    <%= partial("layouts/partials/icon", :locals => {
+                            :id => "toc",
+                            :classes => "nav-icon left",
+                            :fallback_type => "none",
+                        }) %>
+                    <span class="nav-label">Contents</span>
+                </a>
+            </li>
+        </ul>
+
+    </nav>
 </header>

@@ -4,6 +4,7 @@
 // ========================================================================== */
 
 @import "../core/*";
+@import "../atoms/heading";
 
 /* Base
 // -------------------------------------------------------------------------- */
@@ -27,17 +28,36 @@
 /* Submodules
 // -------------------------------------------------------------------------- */
 
+.box-slug {
+    @extend .slug;
+    @include font-scale(2);
+    margin-top: -0.5em;
+    color: theme(text tertiary);
+    display: none;
+}
+
 .box-title {
     @extend %font-accent--bold;
+    @include font-scale(4);
     @include chapter_highlights;
-    font-size: fs(4);
     text-align: center;
-    color: theme(highlight);
+    color: theme(highlight);    
+
+    .box-slug + & { margin-top: 0.25em; }
 }
 
 .box-content {
+    @extend .content;
+    padding-left: 0;
+    padding-right: 0;
+
     img {
         margin-top: 1em;
         margin-bottom: 1em;
+    }
+
+    &.wide {
+        padding-left: 0;
+        padding-right: 0;
     }
 }

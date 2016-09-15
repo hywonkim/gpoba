@@ -20,7 +20,7 @@
         <use xlink:href="#icon-<%= id %>"></use>
         <% if fallback_type == "png" %>
         <image src="<%= asset_url("#{images_dir}/icons/#{fallback}") %>" xlink:href="" />
-        <% else %>
+        <% elsif fallback_type == "text" %>
         <desc>
             <%= fallback %>
         </desc>
